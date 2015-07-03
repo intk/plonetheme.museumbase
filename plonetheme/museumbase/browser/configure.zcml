@@ -357,13 +357,13 @@
       layer=".interfaces.IThemeSpecific"
      />
 
-     <!--<plone:portletRenderer
+     <plone:portletRenderer
       portlet="collective.mailchimp.browser.portlet.IMailChimpPortlet"
       template="alternative_templates/portlet_mailchimp.pt"
       layer=".interfaces.IThemeSpecific"
      />
 
-     <plone:portlet
+     <!--<plone:portlet
         name="plonetheme.bootstrapModern.extendedMailchimp"
         interface=".extendedMailchimp.IExtendedMailChimp"
         assignment=".extendedMailchimp.Assignment"

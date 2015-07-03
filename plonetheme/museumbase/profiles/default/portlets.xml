@@ -26,7 +26,7 @@
  />
 
  <portlet
-    addview="plonetheme.museumbase.extendedMailchimp"
+    addview="plonetheme.bootstrapModern.extendedMailchimp"
     title="Extended mailchimp portlet"
     description="A portlet that adds a mailchimp subscriber with description"
     i18n:attributes="title;description"
