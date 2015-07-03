@@ -329,7 +329,7 @@ body.canvas-slid  .bt-menu-trigger span:after {
     	position: fixed;
     	width: 60px;
     	height: 60px;
-    	background-color: #D75745;
+    	background-color: #000000;
     	z-index: 10;
 	}
 
@@ -340,7 +340,7 @@ body.canvas-slid  .bt-menu-trigger span:after {
     	top: 0;
     	width: 60px;
     	height: 60px;
-    	background-color: #D75745;
+    	background-color: #000000;
     	z-index: 10;
 	}
 

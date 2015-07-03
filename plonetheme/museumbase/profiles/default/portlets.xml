@@ -3,26 +3,26 @@
  
  <portletmanager 
    name="plonetheme.bootstrapModern.footerPortletManager"
-   type="plonetheme.bootstrapModern.browser.interfaces.IFooterPortlet"
+   type="plonetheme.museumbase.browser.interfaces.IFooterPortlet"
  />
  <portletmanager 
    name="plonetheme.bootstrapModern.pagePortletManager"
-   type="plonetheme.bootstrapModern.browser.interfaces.IPagePortlet"
+   type="plonetheme.museumbase.browser.interfaces.IPagePortlet"
  />
 
  <portletmanager 
    name="plonetheme.bootstrapModern.collectionPortletManager"
-   type="plonetheme.bootstrapModern.browser.interfaces.ICollectionPortletManager"
+   type="plonetheme.museumbase.browser.interfaces.ICollectionPortletManager"
  />
 
  <portletmanager 
    name="plonetheme.bootstrapModern.folderPortletManager"
-   type="plonetheme.bootstrapModern.browser.interfaces.IFolderPortletManager"
+   type="plonetheme.museumbase.browser.interfaces.IFolderPortletManager"
  />
 
  <portletmanager 
    name="plonetheme.bootstrapModern.searchPortletManager"
-   type="plonetheme.bootstrapModern.browser.interfaces.ISearchPortletManager"
+   type="plonetheme.museumbase.browser.interfaces.ISearchPortletManager"
  />
 
  <portlet

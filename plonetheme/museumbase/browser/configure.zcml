@@ -357,7 +357,7 @@
       layer=".interfaces.IThemeSpecific"
      />
 
-     <plone:portletRenderer
+     <!--<plone:portletRenderer
       portlet="collective.mailchimp.browser.portlet.IMailChimpPortlet"
       template="alternative_templates/portlet_mailchimp.pt"
       layer=".interfaces.IThemeSpecific"
@@ -370,5 +370,5 @@
         renderer=".extendedMailchimp.Renderer"
         addview=".extendedMailchimp.AddForm"
         editview=".extendedMailchimp.EditForm"
-      />
+      />-->
 </configure>

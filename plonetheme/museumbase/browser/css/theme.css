@@ -3665,7 +3665,7 @@ body.portaltype-formthankspage #content blockquote > * {
     height: 22%;
     background-color: red;
     margin: 0 auto;
-    background: url("++resource++plonetheme.bootstrapModern.css/play.svg") no-repeat;
+    background: url("++resource++plonetheme.museumbase.css/play.svg") no-repeat;
     background-size: 100% 100%;
     opacity: 0.75;
 }
@@ -4067,13 +4067,13 @@ body.portaltype-portlet-page .slick-prev:hover, body.portaltype-portlet-page .sl
 /* NEW SLIDESHOW */
 
 .slick-prev {
-    background: url("++resource++plonetheme.bootstrapModern.css/arrow-left.svg") no-repeat 27px !important;
+    background: url("++resource++plonetheme.museumbase.css/arrow-left.svg") no-repeat 27px !important;
     background-position: 50% 50%;
     background-size: 20px 20px;
 }
 
 .slick-next {
-    background: url("++resource++plonetheme.bootstrapModern.css/arrow-right.svg") no-repeat 30px !important;
+    background: url("++resource++plonetheme.museumbase.css/arrow-right.svg") no-repeat 30px !important;
     background-position: 50% 50%;
     background-size: 20px 20px;
 }
@@ -4168,13 +4168,13 @@ body.portaltype-portlet-page .slick-prev:hover, body.portaltype-portlet-page .sl
     }
 
     .slick-prev {
-        background: url("++resource++plonetheme.bootstrapModern.css/arrow-left.svg") no-repeat 10px !important;
+        background: url("++resource++plonetheme.museumbase.css/arrow-left.svg") no-repeat 10px !important;
         background-position: 50% 50%;
         background-size: 20px 20px;
     }
 
     .slick-next {
-        background: url("++resource++plonetheme.bootstrapModern.css/arrow-right.svg") no-repeat 10px !important;
+        background: url("++resource++plonetheme.museumbase.css/arrow-right.svg") no-repeat 10px !important;
         background-position: 50% 50%;
         background-size: 20px 20px;
     }
@@ -4257,7 +4257,7 @@ body.portaltype-portlet-page .slick-prev:hover, body.portaltype-portlet-page .sl
     position: fixed;
     width: 80px;
     height: 80px;
-    background-color: #D75745;
+    background-color: #000000;
     z-index: 10;
 }
 
@@ -4795,7 +4795,7 @@ body.template-book_view .slideshow {
 }
 
 body.template-double_view #portal-logo img {
-    content: url('++resource++plonetheme.bootstrapModern.css/teylers_black.png') !important;
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
 }
 
 .portaltype-object #slickslideshow,
@@ -6101,7 +6101,7 @@ body.template-search #search-page-header .documentFirstHeading, body.template-se
 
 #search-page-header {
     position: relative;
-    background-image: url('++resource++plonetheme.bootstrapModern.css/bibliotheek_large.jpg');
+    background-image: url('++resource++plonetheme.museumbase.css/bibliotheek_large.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -7186,7 +7186,7 @@ body.portaltype-portlet-page.userrole-authenticated #edit-content-views {
 }
 
 body.portaltype-portlet-page.userrole-authenticated #portal-logo img {
-    content: url('++resource++plonetheme.bootstrapModern.css/teylers_black.png') !important; 
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important; 
 }
 
 .template-document form[class^="kssattr-formname"] {
@@ -7337,7 +7337,7 @@ body.template-edit.portaltype-object #content-core {
 }
 
 body.template-edit.portaltype-object #portal-logo img {
-    content: url('++resource++plonetheme.bootstrapModern.css/teylers_black.png');
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png');
 }
 
 
@@ -7535,7 +7535,7 @@ body:not(.userrole-authenticated) .slick-init .video-play-btn {
     left: 50%;
     width: 100px;
     height: 100px;
-    background: url("++resource++plonetheme.bootstrapModern.css/play.svg") no-repeat;
+    background: url("++resource++plonetheme.museumbase.css/play.svg") no-repeat;
     background-size: 100% 100%;
     z-index: 10;
     margin-left: -50px;
@@ -7825,7 +7825,7 @@ div.bdaorders_wrapper {
 }
 
 #bdaploneorders_wrapper .contenttype-document {
-    background: no-repeat transparent 2px 9px url(++resource++plonetheme.bootstrapModern.css/contenttypes-sprite.png);
+    background: no-repeat transparent 2px 9px url(++resource++plonetheme.museumbase.css/contenttypes-sprite.png);
     line-height: 2em !important;
     display: inline-block;
     padding-left: 20px !important;
@@ -7902,19 +7902,19 @@ div.bdaorders_wrapper {
 }
 
 body.template-orders #portal-logo img {
-    content: url('++resource++plonetheme.bootstrapModern.css/teylers_black.png') !important;
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
 }
 
 label[for='input-checkout-payment_method_selection-payment_method-ideal'] {
     height: 40px;
-    background-image: url('++resource++plonetheme.bootstrapModern.css/payment_icons.png');
+    background-image: url('++resource++plonetheme.museumbase.css/payment_icons.png');
     background-repeat: no-repeat;
     background-position: 25px -69px;
 }
 
 label[for='input-checkout-payment_method_selection-payment_method-creditcard'] {
     height: 40px;
-    background-image: url('++resource++plonetheme.bootstrapModern.css/payment_icons.png');
+    background-image: url('++resource++plonetheme.museumbase.css/payment_icons.png');
     background-repeat: no-repeat;
     background-position: 25px -227px;;
 }
@@ -7969,7 +7969,7 @@ body.template-template-image_reference_view div.title-description-wrapper {
 }
 
 body.portaltype-formfolder #portal-logo img {
-    content: url('++resource++plonetheme.bootstrapModern.css/teylers_black.png') !important;
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
 }
 
 body.canvas-slid {
@@ -8132,15 +8132,15 @@ ul.cart_item_content li {
 }
 
 body.template-cart #portal-logo img {
-    content: url('++resource++plonetheme.bootstrapModern.css/teylers_black.png') !important;
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
 }
 
 body.template-etickets #portal-logo img {
-    content: url('++resource++plonetheme.bootstrapModern.css/teylers_black.png') !important;
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
 }
 
 body.template-checkout #portal-logo img {
-    content: url('++resource++plonetheme.bootstrapModern.css/teylers_black.png') !important;
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
 }
 
 #cart.checkout div.cart_item.disable {
@@ -8278,7 +8278,7 @@ div.tickets-checkout #field-checkout-personal_data-company label, div.tickets-ch
 }
 
 body.template-mollie_payment_success #portal-logo img {
-    content: url('++resource++plonetheme.bootstrapModern.css/teylers_black.png') !important;
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
 }
 
 .ticket-information {
@@ -8383,7 +8383,7 @@ body.template-checkout #portal-logo img {
 
 body.template-cart #portal-logo img,
 body.template-checkout #portal-logo img {
-    content: url('++resource++plonetheme.bootstrapModern.css/teylers.png') !important;
+    content: url('++resource++plonetheme.museumbase.css/teylers.png') !important;
 }
 
 body.template-cart #portal-logo,
@@ -8853,7 +8853,7 @@ body.userrole-authenticated .overlay-image {
 }
 
 body.template-redeem #portal-logo img {
-    content: url('++resource++plonetheme.bootstrapModern.css/teylers.png') !important;
+    content: url('++resource++plonetheme.museumbase.css/teylers.png') !important;
 }
 
 

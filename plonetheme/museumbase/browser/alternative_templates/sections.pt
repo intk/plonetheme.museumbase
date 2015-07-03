@@ -2,10 +2,6 @@
     tal:define="portal_tabs view/portal_tabs;"
     tal:condition="portal_tabs"
     i18n:domain="plone">
-    
-   <!--<a id="trigger-overlay"><img src="++resource++plonetheme.bootstrapModern.css/menu.svg"></a>-->
-
-
 
     <div class="menu_wrapper" data-toggle="offcanvas" data-target="#nav_menu" data-canvas="body">
         <div class="main_menu">
