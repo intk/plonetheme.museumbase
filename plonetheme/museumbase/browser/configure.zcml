@@ -33,8 +33,6 @@
     <browser:jbot directory="overrides" />
 
     <include package="plone.app.portlets" />
-    <include package="bda.plone.orders" />
-    
 
     <browser:page
         name="search"
