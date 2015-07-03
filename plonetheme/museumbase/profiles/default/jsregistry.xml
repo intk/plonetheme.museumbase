@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!-- This file holds the setup configuration for the portal_javascripts tool.
+     -->
+
+<object name="portal_javascripts">
+
+  <javascript
+    id="++resource++plonetheme.museumbase.js/modernizr.custom.js"
+    cacheable="True" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"/>
+
+   <javascript
+    id="++resource++plonetheme.museumbase.js/vendor/youtube.js"
+    cacheable="True" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"/>
+
+  <javascript
+    id="++resource++plonetheme.museumbase.js/vendor/twitter.js"
+    cacheable="True" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"/>
+
+  <javascript
+    id="++resource++plonetheme.museumbase.js/vendor/pinit_main.js"
+    cacheable="True" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"/>
+
+  <javascript
+    id="++resource++plonetheme.museumbase.js/vendor/jasny-bootstrap.min.js"
+    cacheable="True" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"/>
+
+  <javascript
+    id="++resource++plonetheme.museumbase.js/classie.js"
+    cacheable="True" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"/>
+
+  <javascript
+    id="++resource++plonetheme.museumbase.js/fastclick.js"
+    cacheable="True" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"/>
+
+  <javascript
+    id="++resource++plonetheme.museumbase.js/vendor/slick.js"
+    cacheable="True" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"/>
+
+  <javascript
+    id="++resource++plonetheme.museumbase.js/menu.js"
+    cacheable="True" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"/>
+
+  <javascript
+    id="++resource++plonetheme.museumbase.js/slideshow.js"
+    cacheable="True" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"/>
+
+</object>

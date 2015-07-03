@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plonetheme.museumbase\n"
+"POT-Creation-Date: 2015-05-21 15:28+0000\n"
+"PO-Revision-Date: 2015-05-21 15:29+0000’\n"
+"Last-Translator: INTK <info@intk.com>\n"
+"Language-Team: Dutch <info@intk.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: nl\n"
+"Language-Name: Dutch\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: plonetheme.museumbase\n"
+
+#: ../browser/configure.zcml
+msgid "Product"
+msgstr "Product"
+
+# Breadcrumbs
+
+#: ../browser/configure.zcml
+msgid "Product"
+msgstr "Product"
+
+#: browser/ticket_summary.pt
+msgid "Ticket type"
+msgstr "Type ticket"
+
+#: browser/ticket_summary.pt
+msgid "Price"
+msgstr "Prijs"
+
+#: browser/ticket_summary.pt
+msgid "Amount"
+msgstr "Aantal"
+
+#: browser/ticket_summary.pt
+msgid "Subtotal"
+msgstr "Subtotaal"
+
+#: browser/ticket_summary.pt
+msgid "Subtotal"
+msgstr "Subtotaal"
+
+#: browser/ticket_summary.pt
+msgid "2. Person details"
+msgstr "2. Gegevens"
+
+#: browser/ticket_summary.pt
+msgid "3. Verify details"
+msgstr "3. Gegevens controleren"
+
+#: browser/ticket_summary.pt
+msgid "Type of ticket"
+msgstr "Type ticket"
+
+#: browser/ticket_summary.pt
+msgid "Customer name"
+msgstr "Klantnaam"
+
+#: browser/ticket_summary.pt
+msgid "Price"
+msgstr "Prijs"
+
+#: browser/ticket_summary.pt
+msgid "Date of purchase"
+msgstr "Aankoopdatum"
+
+#: browser/ticket_summary.pt
+msgid "Address"
+msgstr "Bezoekadres"
+
+#: browser/ticket_summary.pt
+msgid "Opening hours"
+msgstr "Openingstijden"
+
+#: browser/ticket_summary.pt
+msgid "Accessibility"
+msgstr "Bereikbaardheid en toegankelijkheid"
+
+#: browser/ticket_summary.pt
+msgid "This ticket is only valid on the date/time indicated above."
+msgstr "Dit ticket is uitsluitend geldig op de daum/tijd zoals vermeld."
+
+#: browser/ticket_summary.pt
+msgid "You do not need to go to the admissions counter."
+msgstr "Met dit ticket hoeft u niet langs de kassa. U heeft directe toegang tot het museum."
+
+#: browser/ticket_summary.pt
+msgid "This ticket is not redeemable for cash or for a ticket for a later time."
+msgstr "Dit ticket is niet inwisselbaar voor geld, of voor een entreebewijs voor een wordt gescand bij entree."
+
+
+
+
+

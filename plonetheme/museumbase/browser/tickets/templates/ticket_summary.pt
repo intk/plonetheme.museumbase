@@ -1,0 +1,99 @@
+
+<div id="cart"
+     i18n:domain="plonetheme.museumbase"
+     tal:define="tickets view/get_tickets;
+                 currency view/currency;
+                 order_id python: request.get('order_id', 0);">
+
+  <tal:cart
+    tal:define="orders python: view.get_etickets(order_id);
+                total_tickets python: orders['total_tickets'];
+                global counter python: 0;">
+
+    <tal:entry tal:repeat="order python: orders['tickets']"
+               tal:define="customer python: orders['customer']">
+
+      <tal:block
+        tal:define="title python: order['cart_item_title'];
+                    price python: order['cart_item_price'];
+                    count python: order['cart_item_count'];
+                    original_price python: order['cart_item_original_price'];
+                    booking_uid python: order['booking_uid'];
+                    show python: count > 0;
+                    ">
+
+        <tal:count tal:repeat="item python:range(count)">
+          <div class="ticket-item">
+            <div id="ticket-header" class="ticket-header">
+                <div class="logo-container">
+                  <img class="logo" src="++resource++plonetheme.bootstrapModern.css/teylers.png" width="160" height="35"/>
+                </div>
+                <div class="tickets-title">
+                  <h1>E-Ticket</h1>
+                </div>
+            </div>
+
+            <tal:block
+              tal:define="number repeat/item/number;
+                          booking_uid_count python: '%s-%03d' %(str(booking_uid), number);
+                          global counter python: counter + 1;">
+
+              <div class="cart_item summary_item" tal:condition="show">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><h3 i18n:translate="">Type of ticket</h3></td><td><span tal:content="title"></span></td>
+                      <td rowspan="5" class="ticket-info" tal:define="qr_code python: view.get_qr_code(booking_uid_count)">
+
+                        <img class="ticket-qr-code" tal:attributes="src qr_code"/>
+                        <p tal:content="booking_uid_count" style="margin-left:15px; line-height: 10px;"></p>
+                        <div class="info-div">
+                          <p i18n:translate="">This ticket is only valid on the date/time indicated above.</p>
+                          <p i18n:translate="">You do not need to go to the admissions counter.</p>
+                          <p i18n:translate="">This ticket is not redeemable for cash or for a ticket for a later time.</p>
+                          <p i18n:translate="">De algemene bezoekersvoorwaarden zijn van toepassing op dit e-ticket.<br>
+                                                Zie: www.teylersmuseum.nl</p>
+                        </div>
+                      </td>
+                    </tr>
+                     <tr>
+                      <td><h3 i18n:translate="">Customer name</h3></td><td><span tal:content="customer">Customer</span></td>
+                    </tr>
+                    <tr>
+                      <td><h3 i18n:translate="">Price</h3></td><td><span tal:content="currency">EUR</span><span tal:content="price"></span></td>
+                    </tr>
+                    <tr>
+                      <td><h3 i18n:translate="">Ticketnummer</h3></td><td><span tal:content="python: '%s/%s' %(counter, total_tickets)">1/2</span></td>
+                    </tr>
+                    <tr>
+                      <td><h3 i18n:translate="">Date of purchase</h3></td><td><span>25/06/2015</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div id="ticket-footer" class="ticket-footer">
+                  <div>
+                    <h4 i18n:translate="">Address</h4>
+                    <p i18n:translate="">Teylers Museum, Spaarne 16, 2011 CH HAARLEM</p>
+                  </div>
+                  <div>
+                    <h4 i18n:translate="">Opening hours</h4>
+                    <p i18n:translate="">Kijk voor de actuele openingstijden op www.teylersmuseum.nl/nl/bezoek-het-museum/praktische-informatie/openingstijden-en-prijzen</p>
+                  </div>
+                  <div class="accessibility">
+                    <h4 i18n:translate="">Accessibility</h4>
+                    <p i18n:translate="">Teylers Museum is goed te bereiken met de auto of lopend vanaf het Centraal Station in Haarlem (ca. 10 minuten) via De Jansweg, Jansstraat, linksaf de Korte Jansstraat in, rechtsaf de Bakenessergracht aflopen tot aan het eind, bij het Spaarne slaat u rechtsaf, Teylers Museum is vervolgens aan uw rechterhand</p>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </tal:block>
+          
+          </div>
+          
+      </tal:count>
+
+      </tal:block>
+    </tal:entry>
+  </tal:cart>
+</div>

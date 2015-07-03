@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers> 
+    <layer 
+        name="plonetheme.museumbase" 
+        interface="plonetheme.museumbase.browser.interfaces.IThemeSpecific" 
+    /> 
+</layers>

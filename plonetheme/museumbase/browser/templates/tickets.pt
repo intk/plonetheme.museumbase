@@ -1,0 +1,139 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plonelocales">
+<body>
+
+  <div metal:fill-slot="content-core"  tal:define="showall python:True"> 
+    <metal:block define-macro="content-core"
+                 tal:define="kssClassesView context/@@kss_field_decorator_view;
+                             getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                             templateId template/getId;
+                             portal_type context/portal_type">
+
+    <div class="tileColumns container-fluid wrapper" id="cart">
+      
+      <div class="row-fluid">
+        <div class="header-wrapper">
+          <div class="col-xs-6">
+            <h2></h2>
+          </div>
+
+          <div class="col-xs-4">
+            <h2 i18n:translate="">Prijs</h2>
+          </div>
+
+          <div class="col-xs-2">
+            <h2 i18n:translate="">Aantal</h2>
+          </div>
+        </div>
+
+        <metal:listingmacro define-macro="listing">
+        <tal:results define="
+                 b_start python:request.get('b_start', 0);
+                 sort_on python: getattr(context, 'sort_on', None);
+                 item_count python: getattr(context, 'item_count', 33);
+                 batch python:view.results(b_start=b_start, sort_on=sort_on, pagesize=item_count);
+                 site_properties context/portal_properties/site_properties;
+                 use_view_action site_properties/typesUseViewActionInListings|python:();
+                 isAnon context/@@plone_portal_state/anonymous;
+                 normalizeString nocall: context/plone_utils/normalizeString;
+                 toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                 collection_id context/UID;
+                 show_about python:not isAnon or site_properties.allowAnonymousViewAbout;
+                 navigation_root_url context/@@plone_portal_state/navigation_root_url;
+                 pas_member context/@@pas_member;">
+        <tal:listing condition="batch">
+
+        <metal:block metal:define-slot="entries">
+            <tal:entry tal:repeat="item batch" metal:define-macro="entries">
+            <tal:block tal:define="item_id item/getId;
+                       item_description item/description;
+                       item_type item/Type;
+                       item_title item/Title;
+                       item_obj item/getObject;
+                       excluded_from_nav python:item_obj.exclude_from_nav;
+                       item_url python: item.getURL();
+                       item_icon item/getIcon;
+                       item_wf_state_class python:'state-' + normalizeString(item.review_state);
+                       number repeat/item/number;
+                       item_img python:view.getImageObject(item);
+                       item_is_buyable python:view.isBuyable(item_obj);
+                       item_link python: (item_type == 'Press Kit' and not view.checkPermission(item, 'Add portal content')) and item_url + '/download_zip' or (item_type in use_view_action and item_url+'/view' or item_url);">
+            
+            <metal:block define-slot="entry">
+
+              <!-- CART ITEM -->
+              <div class="item-wrapper cart_item summary_item col-xs-12" metal:define-macro="listitem"
+                tal:condition="python: item.portal_type == 'product'">
+
+                <span class="cart_item_uid" style="display: none;" tal:content="item/UID"></span>
+                <span class="cart_item_comment" style="display: none;"></span>
+
+                <div class="col-xs-6">
+                  <h3><a href="#"
+                         tal:attributes="href python: item_link; class item_wf_state_class"
+                         tal:content="item/Title"
+                         >
+                      Title
+                      </a>
+                    </h3>
+                </div>
+
+                <div class="col-xs-4">
+
+                  <!-- Caption -->
+                  <div class="caption">
+                    <p tal:condition="item_is_buyable">
+                      <tal:buyable-info tal:define="price python:view.getPrice(item_obj)" tal:condition="python: price != None">
+                        <span class="item-prices">€ <span class="cart_item_price" tal:content="python: '%0.2f' % price"></span></span>
+                      </tal:buyable-info>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-xs-2">
+                  <input type="text" size="2" value="0" class="cart_item_count"/>
+                </div>
+
+              </div>
+
+              <div class="clearfix"></div>
+            
+            </metal:block>
+            </tal:block>
+            </tal:entry>
+            
+            <div class="cart_summary_buttons">
+                <a href=""
+                   class="buy_now_item buyable_update_cart show_status_message"
+                   i18n:translate="checkout">Afrekenen</a>
+            </div>
+
+
+        </metal:block>
+        
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+    
+        </tal:listing>
+        <metal:empty metal:define-slot="no_items_in_listing">
+        <p class="discreet"
+           tal:condition="not: batch">
+            There is currently no content in this section.
+        </p>
+        </metal:empty>
+    
+        </tal:results>
+        </metal:listingmacro>
+
+    </div>
+  </div>
+    
+    </metal:block>
+  </div>
+
+</body>
+</html>

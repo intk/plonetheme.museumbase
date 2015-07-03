@@ -1,0 +1,374 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    i18n_domain="plonetheme.museumbase">
+
+    <include package="plone.app.contentmenu" />
+    <include package="z3c.jbot" file="meta.zcml" />
+    <include package="collective.portletpage" />
+
+    <browser:resourceDirectory
+      name="plonetheme.museumbase.css"
+      directory="css"
+      layer=".interfaces.IThemeSpecific"
+    />
+
+    <browser:resourceDirectory
+      name="plonetheme.museumbase.js"
+      directory="js"
+      layer=".interfaces.IThemeSpecific"
+    />
+
+
+    <browser:resourceDirectory
+      name="plonetheme.museumbase.fonts"
+      directory="fonts"
+      layer=".interfaces.IThemeSpecific"
+    />
+
+    <browser:jbot directory="overrides" />
+
+    <include package="plone.app.portlets" />
+    <include package="bda.plone.orders" />
+    
+
+    <browser:page
+        name="search"
+        class=".views.SearchView"
+        permission="zope2.View"
+        for="*"
+        layer=".interfaces.IThemeSpecific"
+        template="templates/searchview.pt"
+    />
+
+    <browser:page
+        name="updated_search"
+        class=".views.SearchView"
+        permission="zope2.View"
+        for="Products.CMFCore.interfaces.IFolderish"
+        layer=".interfaces.IThemeSpecific"
+        template="templates/updated_search.pt"
+    />
+
+    <!-- Viewlets -->
+
+    <browser:viewlet
+      name="plone.footer"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      layer=".interfaces.IThemeSpecific"
+      class=".views.FooterView"
+      template="templates/footer.pt"
+      permission="zope2.View"
+    />
+
+    <browser:viewlet
+        name="plone.contentactions"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        class="plone.app.layout.viewlets.common.ContentActionsViewlet"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
+
+
+    <browser:viewlet
+        name="plone.contentviews"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        class="plone.app.layout.viewlets.common.ContentViewsViewlet"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
+    <browser:viewlet
+        name="plone.path_bar"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+        class="plone.app.layout.viewlets.common.PathBarViewlet"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
+    <browser:viewlet
+        name="plone.searchbox"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class="plone.app.layout.viewlets.common.SearchBoxViewlet"
+        template="templates/searchbox.pt"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
+    <browser:viewlet
+      name="bda.plone.shop.buyable"
+      for="bda.plone.shop.interfaces.IBuyable"
+      class="plone.app.layout.viewlets.common.ViewletBase"
+      template="templates/buyable_viewlet.pt"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+      permission="zope2.View"
+      layer="bda.plone.shop.interfaces.IShopExtensionLayer" 
+      zcml:condition="installed bda.plone.shop"
+    />
+
+    
+
+    <!-- Pages -->
+
+    <browser:page
+        name="collection_view"
+        menu="plone_displayviews"
+        title="Media  View"
+        for="*"
+        class=".views.FolderListing"
+        template="templates/collection_custom.pt"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
+    <!-- Tickets view - Deprecated -->
+    <browser:page
+        name="tickets_view"
+        menu="plone_displayviews"
+        title="Tickets view"
+        for="*"
+        class=".views.FolderListing"
+        template="templates/tickets.pt"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
+    <!-- TICKETS -->
+
+    <browser:page
+      for="*"
+      name="ticket_summary"
+      class=".tickets.views.TicketView"
+      template="tickets/templates/ticket_summary.pt"
+      permission="zope2.View"
+      layer="bda.plone.cart.interfaces.ICartExtensionLayer" 
+      zcml:condition="installed bda.plone.cart"/>
+
+    <browser:page
+      for="*"
+      name="etickets"
+      template="tickets/templates/tickets.pt"
+      permission="zope2.View"
+      layer="bda.plone.cart.interfaces.ICartExtensionLayer" 
+      zcml:condition="installed bda.plone.cart"/>
+
+    <!-- redeem view -->
+    <browser:page
+      for="zope.component.interfaces.ISite"
+      name="redeem"
+      template="tickets/templates/redeem_view.pt"
+      class=".tickets.views.RedeemView"
+      permission="bda.plone.orders.ViewOrders"
+      layer="bda.plone.orders.interfaces.IOrdersExtensionLayer"
+      zcml:condition="installed bda.plone.orders" />
+
+    <!-- redeem table -->
+    <browser:page
+      for="zope.component.interfaces.ISite"
+      name="redeemtable"
+      template="tickets/templates/redeem.pt"
+      class=".tickets.views.RedeemTable"
+      permission="bda.plone.orders.ViewOrders"
+      layer="bda.plone.orders.interfaces.IOrdersExtensionLayer"
+      zcml:condition="installed bda.plone.orders"/>
+
+    <browser:page
+      for="zope.component.interfaces.ISite"
+      name="redeemtransition"
+      class=".tickets.views.RedeemStateTransition"
+      permission="bda.plone.orders.ModifyOrders"
+      layer="bda.plone.orders.interfaces.IOrdersExtensionLayer"
+      zcml:condition="installed bda.plone.orders"/>
+
+
+    <!-- orders data -->
+    <browser:page
+      for="zope.component.interfaces.ISite"
+      name="redeemdata"
+      class=".tickets.views.RedeemData"
+      permission="bda.plone.orders.ViewOrders"
+      layer="bda.plone.orders.interfaces.IOrdersExtensionLayer"
+      zcml:condition="installed bda.plone.orders"/>
+
+
+    <!-- Views -->
+
+    <browser:page
+      name="content_view"
+      for="*"
+      layer=".interfaces.IThemeSpecific"
+      class=".views.ContentView"
+      template="templates/content_view.pt"
+      permission="zope2.View"
+      menu="plone_displayviews"
+      title="View Content"
+    />
+
+    <browser:page
+        name="content_view"
+        for="plone.event.interfaces.IEvent"
+        layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+        template="templates/content_view.pt"
+        permission="zope2.View"
+        menu="plone_displayviews"
+        title="View Content"
+    />
+
+    <browser:page
+      name="get_number_of_results"
+      for="*"
+      class=".views.NumberOfResults"
+      template="templates/get_number_of_results.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+    />
+
+    <browser:page
+      name="get_image_resolution"
+      for="*"
+      class=".views.get_image_resolution"
+      template="templates/get_image_resolution.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+    />
+
+
+    <!-- Navigation feature -->
+    <browser:page
+      name="get_nav_objects"
+      for="*"
+      class=".slideshow.get_nav_objects"
+      template="templates/get_nav_objects.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+    />
+
+    <browser:page
+      name="get_fields"
+      for="*"
+      class=".slideshow.get_fields"
+      template="templates/get_fields.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+    />
+
+    <browser:page
+      name="get_collection_items"
+      for="*"
+      class=".slideshow.CollectionSlideshow"
+      template="templates/get_collection_items.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+    />
+
+    <browser:page
+      name="get_next_objects"
+      for="*"
+      class=".slideshow.get_nav_objects"
+      template="templates/get_next_objects.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+    />
+
+    <browser:page
+      name="get_prev_objects"
+      for="*"
+      class=".slideshow.get_nav_objects"
+      template="templates/get_prev_objects.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+    />
+
+    <browser:page
+      name="get_slideshow_items"
+      for="*"
+      class=".slideshow.get_nav_objects"
+      template="templates/get_slideshow_items.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+    />
+
+    <!-- Slideshow options -->
+
+    <browser:page
+      name="get_slideshow_options"
+      for="collective.leadmedia.behaviors.slideshow.ISlideshow"
+      class=".slideshow.get_slideshow_options"
+      template="templates/get_slideshow_options.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+    />
+    
+    <!-- Portlets --> 
+    <!-- Portlet manager interface -->
+    <include package="plone.app.portlets" />
+    
+    <browser:page
+      for="plone.portlets.interfaces.ILocalPortletAssignable"
+      class="plone.app.portlets.browser.manage.ManageContextualPortlets"
+      name="manage-site-footer"
+      template="templates/managefooter.pt"
+      permission="plone.app.portlets.ManagePortlets"
+    />
+
+    <browser:page
+      for="plone.portlets.interfaces.ILocalPortletAssignable"
+      class="plone.app.portlets.browser.manage.ManageContextualPortlets"
+      name="manage-page-portlets"
+      template="templates/managepageportlet.pt"
+      permission="plone.app.portlets.ManagePortlets"
+    />
+
+    <browser:page
+      for="plone.portlets.interfaces.ILocalPortletAssignable"
+      class="plone.app.portlets.browser.manage.ManageContextualPortlets"
+      name="manage-collection-portlets"
+      template="templates/managecollectionportlets.pt"
+      permission="plone.app.portlets.ManagePortlets"
+    />
+
+    <browser:page
+      for="plone.portlets.interfaces.ILocalPortletAssignable"
+      class="plone.app.portlets.browser.manage.ManageContextualPortlets"
+      name="manage-folder-portlets"
+      template="templates/managefolderportlets.pt"
+      permission="plone.app.portlets.ManagePortlets"
+    />
+
+    <browser:page
+      for="plone.portlets.interfaces.ILocalPortletAssignable"
+      class="plone.app.portlets.browser.manage.ManageContextualPortlets"
+      name="manage-search-portlets"
+      template="templates/managesearchportlets.pt"
+      permission="plone.app.portlets.ManagePortlets"
+    />
+    
+    <include package="plone.portlet.collection"  />
+    <include package="collective.mailchimp"  />
+
+    <plone:portletRenderer
+      portlet="plone.portlet.collection.collection.ICollectionPortlet"
+      class=".views.CollectionPortlet"
+      layer=".interfaces.IThemeSpecific"
+     />
+
+     <plone:portletRenderer
+      portlet="collective.mailchimp.browser.portlet.IMailChimpPortlet"
+      template="alternative_templates/portlet_mailchimp.pt"
+      layer=".interfaces.IThemeSpecific"
+     />
+
+     <plone:portlet
+        name="plonetheme.bootstrapModern.extendedMailchimp"
+        interface=".extendedMailchimp.IExtendedMailChimp"
+        assignment=".extendedMailchimp.Assignment"
+        renderer=".extendedMailchimp.Renderer"
+        addview=".extendedMailchimp.AddForm"
+        editview=".extendedMailchimp.EditForm"
+      />
+</configure>
