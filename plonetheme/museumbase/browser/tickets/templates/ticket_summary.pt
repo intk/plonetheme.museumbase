@@ -26,7 +26,7 @@
           <div class="ticket-item">
             <div id="ticket-header" class="ticket-header">
                 <div class="logo-container">
-                  <img class="logo" src="++resource++plonetheme.bootstrapModern.css/teylers.png" width="160" height="35"/>
+                  <img class="logo" src="++resource++plonetheme.museumbase.css/teylers.png" width="160" height="35"/>
                 </div>
                 <div class="tickets-title">
                   <h1>E-Ticket</h1>
