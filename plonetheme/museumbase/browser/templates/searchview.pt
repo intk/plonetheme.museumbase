@@ -39,8 +39,7 @@
           batch_size batch/sequence_length|string:0;
           ">
 
-          <input type="hidden" name="advanced_search" value="True" />
-          <input type="hidden" name="sort_on" value="" />
+          
 
           <div id="search-page-header">
 
@@ -129,6 +128,7 @@
                                 </tal:nl>
 
                                 
+                                
                                 <div class="images-only-filter"
                                   tal:define="images_checked python: request.get('hasMedia', None) == True">
                                   <input type="checkbox" name="hasMedia:boolean" value="False" id="images-only-filter"
@@ -191,6 +191,9 @@
                                         />
                                         <br/>
                                       </tal:items>
+
+                                      <input type="checkbox" id="search-checkbox-advanced_search" checked="checked" name="advanced_search" value="True" />
+                                      <input type="hidden" name="sort_on" value="" />
 
                                       <input type="radio"
                                        id="query-date-ever"

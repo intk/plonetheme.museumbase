@@ -9167,6 +9167,10 @@ body.template-mollie_payment_success #portal-logo img {
 
 }
 
+#search-checkbox-advanced_search {
+    display: none !important;
+}
+
 
 
 
