@@ -8856,6 +8856,318 @@ body.template-redeem #portal-logo img {
     content: url('++resource++plonetheme.museumbase.css/teylers.png') !important;
 }
 
+div.images-only-filter {
+    padding-top: 10px;
+}
+
+/* * * * * * * * */
+/* Webshop       */
+/* * * * * * * * */
+
+.cart_item_title {
+    color: #333333 !important;
+}
+
+/* * * * * * * * */ 
+/* Tickets page  */
+/* * * * * * * * */
+
+.post-cart {
+    padding-top: 50px;
+} 
+
+/* Tickets - Success page */
+body.template-mollie_payment_success #content .documentFirstHeading {
+    color: #ffffff !important;
+}
+
+body.template-mollie_payment_success header,
+body.template-mollie_payment_success #portal-header-wrapper,
+body.template-mollie_payment_success #portal-header {
+    height: 0px !important;
+}
+
+body.portaltype-product #portal-logo img {
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
+}
+
+body.template-cart #portal-logo img,
+body.template-checkout #portal-logo img {
+    content: url('++resource++plonetheme.museumbase.css/teylers.png') !important;
+}
+
+.template-checkout span.cart_item_count {
+    margin-left: 0px !important;
+}
+
+body.template-mollie_payment_success #portal-logo img {
+    content: url('++resource++plonetheme.museumbase.css/teylers.png') !important;
+    position: absolute;
+    z-index: 2;
+}
+
+/* Tickets - Media queries */
+@media (max-width: 480px) {
+    body.template-cart #cart,
+    body.template-checkout div.tickets-breadcrumbs {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    #cart.cart_tickets h4, #cart.cart_tickets h4 span {
+        font-size: 1.00em !important;
+    }
+
+    #cart select {
+        width: 65px !important;
+    }
+
+    div.tickets-breadcrumbs {
+        padding-top: 25px !important;
+        padding-bottom: 30px !important;
+    }
+
+    body.template-cart .table-responsive,
+    body.template-checkout .table-responsive {
+        border: 0px !important;
+    }
+
+    .subtotal-col, .subtotal-th {
+        display: none !important;
+    }
+
+    th.quantity-th {
+        text-align: right;
+    }
+
+    td.quantity-col {
+        padding-left: 20px !important;
+        padding-right: 0px !important;
+    }
+
+    .pre-cart p:not(:first-child):not(:last-child) {
+        padding-bottom: 50px;
+        font-size: 1.000em;
+    }
+
+    .pre-cart h2, .post-cart h2 {
+        font-size: 1.250em;
+        padding-bottom: 15px;
+    }
+
+    .pre-cart h3, .post-cart h3 {
+        font-size: 1.125em;
+        padding-bottom: 15px;
+    }
+
+    .template-cart #cart .cart_item_content span:not(.price), 
+    #cart .cart_item_content span:not(.price) {
+        font-size: 1.00em;
+    }
+
+    #cart .cart-select-box {
+        width: 100% !important;
+    }
+
+    body.template-checkout select {
+        width: 100% !important;
+    }
+
+    #field-checkout-personal_data-email, 
+    #field-checkout-personal_data-woonplaats,
+    #field-checkout-personal_data-country,
+    #input-checkout-billing_address-country {
+        width: 100% !important;
+    }
+
+    body.template-checkout .tickets-checkout #form-checkout {
+        padding-top: 0px !important;
+    }
+
+    #form-checkout .field,
+    div.field input[type="text"] {
+        width: 100% !important;
+    }
+
+    body.template-checkout div.tickets-breadcrumbs.final-checkout {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    body.template-checkout .cart_item .price {
+        width: auto !important
+    }
+
+    #form-checkout div.field {
+        width: 100% !important;
+    }
+
+    span.price.original {
+        margin-right: 0px !important;
+    }
+
+    #form-checkout .field,
+    div.field input[type="text"] {
+        width: 100% !important;
+    }
+
+    #input-checkout-personal_data-gender {
+        width: auto !important;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    #cart.cart_tickets h4, #cart.cart_tickets h4 span {
+        font-size: 1.00em !important;
+    }
+
+    #cart select {
+        width: 100% !important;
+        text-align: right;
+    }
+
+    body.template-cart .documentFirstHeading {
+        padding-left: 100px !important;
+    }
+
+    body.template-cart .table-responsive,
+    body.template-checkout .table-responsive {
+        border: 0px !important;
+    }
+
+    body.template-cart #cart,
+    body.template-checkout div.tickets-breadcrumbs {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .subtotal-col, .subtotal-th {
+        display: none !important;
+    }
+
+    th.quantity-th {
+        text-align: right;
+    }
+
+    td.quantity-col {
+        padding-left: 20px !important;
+        padding-right: 0px !important;
+    }
+
+    .pre-cart p:not(:first-child):not(:last-child) {
+        padding-bottom: 50px;
+        font-size: 1.000em;
+    }
+
+    .pre-cart h2, .post-cart h2 {
+        font-size: 1.250em;
+        padding-bottom: 15px;
+    }
+
+    .pre-cart h3, .post-cart h3 {
+        font-size: 1.125em;
+        padding-bottom: 15px;
+    }
+
+    .template-cart #cart .cart_item_content span:not(.price), 
+    #cart .cart_item_content span:not(.price) {
+        font-size: 1.00em;
+    }
+
+    #cart .cart-select-box {
+        width: 100% !important;
+    }
+
+    #field-checkout-personal_data-email, 
+    #field-checkout-personal_data-woonplaats,
+    #field-checkout-personal_data-country,
+    #input-checkout-billing_address-country,
+    #input-checkout-billing_address-street {
+        width: 100% !important;
+    }
+
+    body.template-checkout .tickets-checkout #form-checkout {
+        padding-top: 0px !important;
+    }
+
+    #form-checkout .field {
+        width: 100% !important;
+    }
+
+    #form-checkout div.field {
+        width: 100% !important;
+    }
+
+    body.template-checkout div.tickets-breadcrumbs.final-checkout {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    body.template-checkout .cart_item .price {
+        width: auto !important
+    }
+
+    span.price.original {
+        margin-right: 0px !important;
+    }
+
+    #form-checkout .field,
+    div.field input[type="text"] {
+        width: 100% !important;
+    }
+
+    #input-checkout-personal_data-gender {
+        width: auto !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    body.template-cart #cart,
+    body.template-checkout div.tickets-breadcrumbs {
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
+
+    body.template-cart .documentFirstHeading {
+        padding-left: 100px !important;
+    }
+
+    #field-checkout-personal_data-email, 
+    #field-checkout-personal_data-woonplaats,
+    #field-checkout-personal_data-country,
+    #input-checkout-billing_address-street,
+    #input-checkout-billing_address-country {
+        width: 100% !important;
+    }
+
+    body.template-checkout .tickets-checkout #form-checkout {
+        padding-top: 0px !important;
+    }
+
+    #form-checkout .field {
+        width: 100% !important;
+    }
+
+    #cart .cart-select-box {
+        width: 100% !important;
+    }
+
+    body.template-checkout select {
+        width: 100% !important;
+    }
+
+    #form-checkout .field,
+    div.field input[type="text"] {
+        width: 100% !important;
+    }
+
+    #input-checkout-personal_data-gender {
+        width: auto !important;
+    }
+
+}
+
+
 
 
 

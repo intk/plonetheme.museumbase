@@ -47,6 +47,7 @@ $(document).ready(function() {
     }
   }
 
+  /* Search */
   var $default_res_container = $('#search-results');
   $default_res_container.delegate('.listingBar a', 'click', function (e) {
     $("body,html").scrollTop(0);
@@ -58,6 +59,14 @@ $(document).ready(function() {
       $(".actionMenu").addClass("activated");
     }
   }
+
+  $('#images-only-filter').change(function(){
+     if ($(this).attr('checked')){
+          $(this).val('True');
+    } else { 
+          $(this).val('False');
+    }
+  });
 
 
   if ($("body").hasClass('template-search')) {
