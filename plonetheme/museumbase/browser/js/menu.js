@@ -77,9 +77,6 @@ $(document).ready(function() {
     });
   }
  
-
-
-
   if (isMobile.any()) {
     var window_w = $(window).width();
     $(".navmenu, .navbar-offcanvas").css("width", window_w);

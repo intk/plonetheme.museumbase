@@ -109,7 +109,14 @@
       zcml:condition="installed bda.plone.shop"
     />
 
-    
+    <browser:viewlet
+      name="plonetheme.museumbase.languageselector"
+      template="languageselector/languageselector.pt"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class=".languageselector.LanguageSelector"
+      permission="zope2.View"
+      layer="plone.app.multilingual.interfaces.IPloneAppMultilingualInstalled"
+    />
 
     <!-- Pages -->
 

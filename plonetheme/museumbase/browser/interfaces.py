@@ -11,6 +11,13 @@ Base interfaces for further development and to adapt and extend theme
 for particular websites
 """
 
+"""class IThemeSpecific(IDefaultPloneLayer):
+    Marker interface that defines a Zope 3 browser layer.
+       If you need to register a viewlet only for the
+       "Something" theme, this interface must be its layer
+       (in theme/viewlets/configure.zcml).
+    """
+
 class IBrowserLayer(IDefaultBrowserLayer):
     """plone.app.event specific browser layer.
     """
