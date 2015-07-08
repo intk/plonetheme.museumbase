@@ -17,7 +17,7 @@ class LanguageSelector(LanguageSelectorViewlet):
 		extra_languages = []
 
 		path = "/%s/shared/lang" %(instance)
-		results = catalog(portal_type="Document", path=path)
+		results = catalog(portal_type="Document", path=path, sort_on="getObjPositionInParent")
 
 		if len(results) > 0:
 			for brain in results:
