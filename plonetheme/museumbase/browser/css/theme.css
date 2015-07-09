@@ -9177,10 +9177,10 @@ body.template-mollie_payment_success #portal-logo img {
 
 #portal-languageselector .dropdown-toggle {
     background: #D75745;
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
+    font-family: "Merriweather", serif;
+    font-weight: 400;
     color: #ffffff;
-    font-size: 1.000em;
+    font-size: 0.938em;
     border-style: solid;
     border-width: 1px;
     border-color: #D75745;
@@ -9205,10 +9205,10 @@ body.template-mollie_payment_success #portal-logo img {
 
 #portal-languageselector .dropdown-toggle:hover {
     background: #000000;
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
+    font-family: "Merriweather", serif;
+    font-weight: 400;
     color: #ffffff;
-    font-size: 1.000em;
+    font-size: 0.938em;
     border-style: solid;
     border-width: 1px;
     border-color: #000000;
