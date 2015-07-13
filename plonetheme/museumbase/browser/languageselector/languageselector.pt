@@ -37,7 +37,8 @@
         ></a>
     </li>
     </tal:language>
-    <li role="separator" class="divider"></li>
+    
+    <li role="separator" class="divider" tal:condition="extra_languages"></li>
     
     <tal:extra_languages repeat="extra_lang extra_languages">
       <li>

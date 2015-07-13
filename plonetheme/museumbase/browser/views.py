@@ -22,10 +22,13 @@ from zope.component import queryAdapter
 from plone.multilingual.interfaces import ITG
 from plone.multilingual.interfaces import NOTG
 from plone.app.multilingual.browser.selector import getPostPath, addQuery
+from plone.app.portlets.browser.manage import ManageContextualPortlets
+from collective.portletpage.browser.interfaces import IManagePortletPagePortletsView
 
 from zope.component import getUtility
 from plone.registry.interfaces import IRegistry
 from collective.leadmedia.interfaces import ICanContainMedia
+from zope.interface import implements
 
 SHOP_AVAILABLE = True
 
@@ -633,5 +636,14 @@ class get_image_resolution(BrowserView):
         
         jsonStr = json.dumps(result)
         return jsonStr
+
+class CustomManagePortlets(ManageContextualPortlets):
+    """View used for the edit screen
+    """
+    implements(IManagePortletPagePortletsView)
+
+    def __init__(self, context, request):
+        # Skip past the main parent constructor, since it sets disable_border
+        super(ManageContextualPortlets, self).__init__(context, request)
 
 

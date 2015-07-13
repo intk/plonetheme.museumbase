@@ -9,6 +9,7 @@
 
     <include package="plone.app.contentmenu" />
     <include package="z3c.jbot" file="meta.zcml" />
+    <include package="plone.app.portlets" />
     <include package="collective.portletpage" />
 
     <browser:resourceDirectory
@@ -32,7 +33,7 @@
 
     <browser:jbot directory="overrides" />
 
-    <include package="plone.app.portlets" />
+    
 
     <browser:page
         name="search"
@@ -52,8 +53,15 @@
         template="templates/updated_search.pt"
     />
 
-    <!-- Viewlets -->
+    <browser:page
+        for="*"
+        name="portlets"
+        class=".views.CustomManagePortlets"
+        template="templates/manage-portletpage-portlets.pt"
+        permission="zope2.View"
+    />
 
+    <!-- Viewlets -->
     <browser:viewlet
       name="plone.footer"
       manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
@@ -70,8 +78,6 @@
         layer=".interfaces.IThemeSpecific"
         permission="zope2.View"
     />
-
-
 
     <browser:viewlet
         name="plone.contentviews"

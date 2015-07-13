@@ -324,7 +324,7 @@ $(document).ready(function() {
 
   /* OVERLAY */
   var menu = document.querySelector('.menu_wrapper');
-  
+
   function toggleOverlay() {
     if (menu != undefined) {
       if (classie.has(menu, 'open')) {
