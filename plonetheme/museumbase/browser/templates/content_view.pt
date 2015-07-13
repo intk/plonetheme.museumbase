@@ -47,9 +47,8 @@
 <metal:content-core fill-slot="content-core">
     
     <metal:content-core define-macro="content-core">
-          <div id="parent-fieldname-text-dates" tal:condition="python: context.portal_type == 'Event'" tal:define="toLocalizedTime nocall:plone_view/toLocalizedTime;">
+          <div id="parent-fieldname-text-dates" tal:condition="python: context.portal_type in ['Event', 'Exhibition']" tal:define="toLocalizedTime nocall:plone_view/toLocalizedTime;">
             <!-- Event -->
-
             <p>
             
             <tal:differentday tal:condition="python:not context.start_date.date() == context.end_date.date()" i18n:translate="event_when_differentday">

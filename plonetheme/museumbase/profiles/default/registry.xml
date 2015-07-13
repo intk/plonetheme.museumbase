@@ -11,25 +11,15 @@
 	    </value>
 	</record>
 
-	<record name="searchfilters.folders2">
-	    <field type="plone.registry.field.Tuple">
-	        <title>Search folders 2</title>
-	        <description>List of folders in search filters 2</description>
-	        <value_type type="plone.registry.field.TextLine" />
-	    </field>
-	    <value>
-	        <element>UID 1</element>
-	    </value>
-	</record>
-
 	<records interface="plone.app.querystring.interfaces.IQueryField"
            prefix="plone.app.querystring.field.hasMedia">
 	    <value key="title">hasMedia</value>
 	    <value key="description">Has media field</value>
 	    <value key="enabled">True</value>
-	    <value key="sortable">False</value>
+	    <value key="sortable">True</value>
 	    <value key="operations">
 	        <element>plone.app.querystring.operation.boolean.isTrue</element>
+	        <element>plone.app.querystring.operation.boolean.isFalse</element>
 	    </value>
 	    <value key="group">Metadata</value>
   	</records>
