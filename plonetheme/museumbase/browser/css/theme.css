@@ -50,6 +50,10 @@ body.template-content_view .managePortletsLink {
     display: none;
 }
 
+body.template-full_view .managePortletsLink {
+    display: none;
+}
+
 .folder_contents_portlet_manager .managePortletsLink {
     display: none;
 }
@@ -4802,7 +4806,8 @@ body.template-double_view #portal-logo img {
 body.template-collection_view #slickslideshow,
 body.template-etickets_view #slickslideshow,
 .portletSlideshow #slickslideshow,
-body.template-content_view #slickslideshow {
+body.template-content_view #slickslideshow,
+body.template-full_view #slickslideshow {
     padding-top: 0px;
     padding-bottom: 0px;
 }
@@ -4811,7 +4816,8 @@ body.template-content_view #slickslideshow {
 body.template-collection_view .slideshowWrapper,
 body.template-etickets_view .slideshowWrapper,
 .portletSlideshow .slideshowWrapper,
-body.template-content_view .slideshowWrapper {
+body.template-content_view .slideshowWrapper,
+body.template-full_view .slideshowWrapper {
     height: 100%;   
 }
 
@@ -4819,7 +4825,8 @@ body.template-content_view .slideshowWrapper {
 body.template-collection_view #slickslideshow .slick-slide,
 body.template-etickets_view #slickslideshow .slick-slide,
 .portletSlideshow #slickslideshow .slick-slide,
-body.template-content_view #slickslideshow .slick-slide {
+body.template-content_view #slickslideshow .slick-slide,
+body.template-full_view #slickslideshow .slick-slide {
     max-width: 100%;
 }
 
@@ -4827,7 +4834,8 @@ body.template-content_view #slickslideshow .slick-slide {
 body.template-collection_view #slickslideshow .slick-slide img,
 body.template-etickets_view #slickslideshow .slick-slide img,
 .portletSlideshow #slickslideshow .slick-slide img,
-body.template-content_view #slickslideshow .slick-slide img {
+body.template-content_view #slickslideshow .slick-slide img,
+body.template-full_view #slickslideshow .slick-slide img {
     max-width: 100%;
 }
 
@@ -4866,7 +4874,8 @@ body.template-etickets_view #slickslideshow,
 
 .portaltype-object #slideshow-controls,
 body.portaltype-portlet-page #slideshow-controls,
-body.template-content_view #slideshow-controls {
+body.template-content_view #slideshow-controls,
+body.template-full_view #slideshow-controls {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -4878,19 +4887,22 @@ body.template-content_view #slideshow-controls {
 
 body.template-collection_view #slideshow-controls,
 body.template-etickets_view #slideshow-controls,
-body.template-content_view #slideshow-controls {
+body.template-content_view #slideshow-controls,
+body.template-full_view #slideshow-controls {
     display: none;
 }
 
 .portaltype-object #slideshow-controls > div,
 body.portaltype-portlet-page #slideshow-controls > div,
-body.template-content_view #slideshow-controls > div {
+body.template-content_view #slideshow-controls > div,
+body.template-full_view #slideshow-controls > div {
     height: 100%;
 }
 
 .portaltype-object #slideshow-controls > div p,
 body.portaltype-portlet-page #slideshow-controls > div p,
-body.template-content_view #slideshow-controls > div p {
+body.template-content_view #slideshow-controls > div p,
+body.template-full_view #slideshow-controls > div p {
     line-height: 33px;
     padding: 23.5px;
     margin:0;
@@ -4898,13 +4910,15 @@ body.template-content_view #slideshow-controls > div p {
 
 .portaltype-object #slideshow-controls .slide-description,
 body.portaltype-portlet-page #slideshow-controls .slide-description,
-body.template-content_view #slideshow-controls .slide-description {
+body.template-content_view #slideshow-controls .slide-description,
+body.template-full_view #slideshow-controls .slide-description {
     color: #ffffff !important;
 }
 
 .portaltype-object #slideshow-controls .slide-description span,
 body.portaltype-portlet-page #slideshow-controls .slide-description span,
-body.template-content_view #slideshow-controls .slide-description span {
+body.template-content_view #slideshow-controls .slide-description span,
+body.template-full_voew #slideshow-controls .slide-description span {
     padding-right: 20px;
 }
 
@@ -4916,7 +4930,8 @@ body.portaltype-portlet-page #slideshow-controls .actions-dev {
 
 .portaltype-object #slideshow-controls .actions-div,
 body.portaltype-portlet-page #slideshow-controls .actions-div,
-body.template-content_view #slideshow-controls .actions-div {
+body.template-content_view #slideshow-controls .actions-div,
+body.template-full_view #slideshow-controls .actions-div {
     padding-right: 0px;
     padding-left: 0px;
 }
@@ -4941,6 +4956,19 @@ body.template-content_view #slideshow-controls .btn.expand-btn .fa.fa-compress,
 body.template-content_view #slideshow-controls .btn.play-btn .fa.fa-play,
 body.template-content_view #slideshow-controls .btn.play-btn .fa.fa-pause,
 body.template-content_view #slideshow-controls .btn.share-btn .fa.fa-share-alt {
+    line-height: 60px;
+    color: #ffffff;
+    font-size: 1.250em;
+    opacity: 0.6;
+}
+
+body.template-full_view #slideshow-controls .actions-div a .fa.fa-info-circle, 
+body.template-full_view #slideshow-controls .actions-div a .fa.fa-times,
+body.template-full_view #slideshow-controls .btn.expand-btn .fa.fa-expand, 
+body.template-full_view #slideshow-controls .btn.expand-btn .fa.fa-compress, 
+body.template-full_view #slideshow-controls .btn.play-btn .fa.fa-play,
+body.template-full_view #slideshow-controls .btn.play-btn .fa.fa-pause,
+body.template-full_view #slideshow-controls .btn.share-btn .fa.fa-share-alt {
     line-height: 60px;
     color: #ffffff;
     font-size: 1.250em;
@@ -4975,7 +5003,8 @@ body.template-book_view #slideshow-controls .btn.zoom-btn .fa.fa-search-minus {
 
 .portaltype-object #slideshow-controls .btn,
 body.portaltype-portlet-page #slideshow-controls .btn,
-body.template-content_view #slideshow-controls .btn {
+body.template-content_view #slideshow-controls .btn,
+body.template-full_view #slideshow-controls .btn {
     display: none;
     height: 100%;
     background-color: #242424;
@@ -5033,7 +5062,9 @@ body.template-instruments_view #slideshow-controls .btn.pause-btn, {
 .portaltype-object #slideshow-controls .btn.expand-btn,
 body.portaltype-portlet-page #slideshow-controls .btn.expand-btn,
 body.template-content_view #slideshow-controls .btn.expand-btn,
-body.template-content_view #slideshow-controls .btn.share-btn {
+body.template-content_view #slideshow-controls .btn.share-btn,
+body.template-full_view #slideshow-controls .btn.expand-btn,
+body.template-full_view #slideshow-controls .btn.share-btn {
     display: block;
 }
 
@@ -5041,7 +5072,8 @@ body.template-content_view #slideshow-controls .btn.share-btn {
 body.template-collection_view header,
 body.template-etickets_view header,
 body.portaltype-portlet-page header,
-body.template-content_view header {
+body.template-content_view header,
+body.template-full_view header {
     position: absolute;
     top: 0;
     left: 0;
@@ -5076,6 +5108,12 @@ body.template-content_view  #slideshow-controls .btn.share-btn:hover .fa {
     opacity: 1;
 }
 
+body.template-full_view  #slideshow-controls .btn.expand-btn:hover .fa,
+body.template-full_view  #slideshow-controls .btn.play-btn:hover .fa,
+body.template-full_view  #slideshow-controls .btn.share-btn:hover .fa {
+    opacity: 1;
+}
+
 body.template-multiple_view.portaltype-object #slideshow-controls .btn.play-btn,
 body.template-multiple_view.portaltype-object #slideshow-controls .btn.pause-btn,
 body.template-instruments_view.portaltype-object #slideshow-controls .btn.play-btn,
@@ -5093,7 +5131,8 @@ body.template-instruments_view.portaltype-object #slideshow-controls .btn.pause-
         padding-left: 0px;
     }
 
-    body.template-content_view #slideshow-controls .slide-description {
+    body.template-content_view #slideshow-controls .slide-description,
+    body.template-full_view #slideshow-controls .slide-description {
         padding-left: 0px;
     }
 
@@ -5108,7 +5147,9 @@ body.template-instruments_view.portaltype-object #slideshow-controls .btn.pause-
     }
 
     body.template-content_view .slide-description #slide-description, 
-    body.template-content_view .slide-description #slide-count {
+    body.template-content_view .slide-description #slide-count,
+    body.template-full_view .slide-description #slide-description, 
+    body.template-full_view .slide-description #slide-count {
         font-size: 1.000em !important;
     }
 }
@@ -5121,7 +5162,9 @@ body.template-etickets_view .slick-track,
 .portletSlideshow .slick-list,
 .portletSlideshow .slick-track,
 body.template-content_view .slick-list,
-body.template-content_view .slick-track
+body.template-content_view .slick-track,
+body.template-full_view .slick-list,
+body.template-full_view .slick-track
  {
     height: 100% !important;
 } 
@@ -5130,7 +5173,8 @@ body.template-content_view .slick-track
 body.template-collection_view .slick-slideshow,
 body.template-etickets_view .slick-slideshow,
 .portletSlideshow .slick-slideshow,
-body.template-content_view .slick-slideshow {
+body.template-content_view .slick-slideshow,
+body.template-full_view .slick-slideshow {
     width: 100% !important;
 }
 
@@ -5143,7 +5187,8 @@ body.template-content_view .slick-slideshow {
 body.template-collection_view .slick-slide img,
 body.template-etickets_view .slick-slide img,
 .portletSlideshow .slick-slide img,
-body.template-content_view .slick-slide img {
+body.template-content_view .slick-slide img,
+body.template-full_view .slick-slide img {
     position: relative;
     top: 50%;
     width: 100%;
@@ -5185,13 +5230,15 @@ body.template-content_view .slick-slide img {
 
 .portaltype-object #slideshow-controls,
 body.portaltype-portlet-page #slideshow-controls,
-body.template-content_view #slideshow-controls {
+body.template-content_view #slideshow-controls,
+body.template-full_view #slideshow-controls {
     padding-left: 0px;
 }
 
 .portaltype-object #slideshow-controls > div p,
 body.portaltype-portlet-page #slideshow-controls > div p,
-body.template-content_view #slideshow-controls > div p {
+body.template-content_view #slideshow-controls > div p,
+body.template-full_view #slideshow-controls > div p {
     padding-left: 13.5px;
 }
 
@@ -5201,7 +5248,8 @@ body.template-content_view #slideshow-controls > div p {
 body.template-collection_view .inner-bg,
 body.template-etickets_view .inner-bg,
 .portletSlideshow .inner-bg,
-body.template-content_view .inner-bg
+body.template-content_view .inner-bg,
+body.template-full_view .inner-bg
  {
     height: 100%;
 }
@@ -5263,6 +5311,11 @@ header.fullscreen {
 
     body.portaltype-portlet-page #slideshow-controls .btn,
     body.template-content_view #slideshow-controls .btn {
+        width: 100%;
+        opacity: 1 !important;
+    }
+
+    body.template-full_view #slideshow-controls .btn {
         width: 100%;
         opacity: 1 !important;
     }
@@ -5339,13 +5392,15 @@ header.fullscreen {
 
 .portaltype-object .slide-description, .portaltype-object .slide-count,
 body.portaltype-portlet-page .slide-description, .portaltype-object .slide-count,
-body.template-content_view .slide-description, .portaltype-object .slide-count {
+body.template-content_view .slide-description, .portaltype-object .slide-count,
+body.template-full_view .slide-description, .portaltype-object .slide-count {
     opacity: 0.6;
 }
 
 .portaltype-object #slickslideshow.fullscreen #slideshow-controls,
 body.portaltype-portlet-page #slickslideshow.fullscreen #slideshow-controls,
-body.template-content_view #slickslideshow.fullscreen #slideshow-controls
+body.template-content_view #slickslideshow.fullscreen #slideshow-controls,
+body.template-full_view #slickslideshow.fullscreen #slideshow-controls
 {
     opacity: 0.8;
 }
@@ -5536,7 +5591,8 @@ body:not(.portaltype-portlet-page) .slick-slideshow.collection + #slideshow-cont
 body.template-collection_view #content .documentFirstHeading,
 body.template-etickets_view #content .documentFirstHeading,
 body.portaltype-portlet-page #content .documentFirstHeading,
-body.template-content_view #content .documentFirstHeading {
+body.template-content_view #content .documentFirstHeading,
+body.template-full_view #content .documentFirstHeading {
     background: transparent;
     /*position: absolute;*/
     /*top: 260px;*/
@@ -5585,6 +5641,18 @@ body.template-content_view #content .documentDescription {
     color: #ffffff;
 }
 
+body.template-full_view #content .documentDescription.description, 
+body.template-full_view #content .documentDescription {
+    /*position: absolute;*/
+    /*top: 330px;*/
+    width: 100%;
+    background: none;
+    z-index: 3;
+    margin-top: 0px !important;
+    padding-bottom: 0px !important;
+    color: #ffffff;
+}
+
 body.portaltype-portlet-page #portlet_bodytext {
     display: none;
 }
@@ -5592,7 +5660,8 @@ body.portaltype-portlet-page #portlet_bodytext {
 body.template-collection_view .slick-slideshow,
 body.template-etickets_view .slick-slideshow,
 .portletSlideshow .slick-slideshow,
-body.template-content_view .slick-slideshow {
+body.template-content_view .slick-slideshow,
+body.template-full_view .slick-slideshow  {
     height: 100%;
 }
 
@@ -5651,6 +5720,16 @@ body.template-portlets .documentFirstHeading {
         padding-left: 50px;
     }
 
+    body.template-full_view #content .documentFirstHeading {
+        padding-top: 70px !important;
+        padding-left: 50px;
+    }
+
+    body.template-full_view #content .documentDescription.description, body.template-full_view #content .documentDescription {
+        /*margin-top: 110px;*/
+        padding-left: 50px;
+    }
+
     body.portaltype-portlet-page #content .documentDescription.description,
     body.portaltype-portlet-page #content .documentDescription {
         /*position: absolute;*/
@@ -5668,6 +5747,10 @@ body.template-portlets .documentFirstHeading {
     body.template-etickets_view .slick-slideshow,
     .portletSlideshow .slick-slideshow,
     body.template-content_view .slick-slideshow {
+        height: auto;
+    }
+
+    body.template-full_view .slick-slideshow {
         height: auto;
     }
 
@@ -5708,6 +5791,16 @@ body.template-portlets .documentFirstHeading {
     }
 
     body.template-content_view #content .documentDescription.description, body.template-content_view #content .documentDescription {
+        /*top: 170px;*/
+        padding-left: 80px;
+    }
+
+    body.template-full_view #content .documentFirstHeading {
+        padding-top: 100px !important;
+        padding-left: 80px;
+    }
+
+    body.template-full_view #content .documentDescription.description, body.template-full_view #content .documentDescription {
         /*top: 170px;*/
         padding-left: 80px;
     }
@@ -5758,6 +5851,16 @@ body.template-portlets .documentFirstHeading {
         padding-left: 60px;
     }
 
+    body.template-full_view #content .documentFirstHeading {
+        padding-top: 100px !important;
+        padding-left: 60px;
+    }
+
+    body.template-full_view #content .documentDescription.description, body.template-full_view #content .documentDescription {
+        /*margin-top: 150px;*/
+        padding-left: 60px;
+    }
+
     body.portaltype-portlet-page #content .documentDescription.description,
     body.portaltype-portlet-page #content .documentDescription {
         /*position: absolute;
@@ -5802,6 +5905,17 @@ body.template-portlets .documentFirstHeading {
         margin-bottom: 20px !important;
         color: #ffffff !important;
     }
+
+    body.template-full_view #content .documentFirstHeading {
+        background: transparent;
+        /*position: absolute;*/
+        /*top: 260px;*/
+        width: 100%;
+        z-index: 3;
+        padding-top: 198px !important;
+        margin-bottom: 20px !important;
+        color: #ffffff !important;
+    }
 }
 
 body.portaltype-portlet-page #slideshow-controls {
@@ -5810,7 +5924,8 @@ body.portaltype-portlet-page #slideshow-controls {
 
 
 body.portaltype-portlet-page .wrap-next, body.portaltype-portlet-page .wrap-prev,
-body.template-content_view .wrap-next, body.template-content_view .wrap-prev {
+body.template-content_view .wrap-next, body.template-content_view .wrap-prev,
+body.template-full_view .wrap-next, body.template-full_view .wrap-prev {
     opacity: 0;
     transition: opacity 0.2s ease-in;
 }
@@ -5835,6 +5950,16 @@ body.template-content_view .documentDescription {
     pointer-events: none;
 }
 
+body.template-full_view .slideshow:hover .wrap-next, 
+body.template-full_view .slideshow:hover .wrap-prev {
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+}
+
+body.template-full_view .documentDescription {
+    pointer-events: none;
+}
+
 body.portaltype-portlet-page .actions-div {
     display: block;
 }
@@ -5856,24 +5981,28 @@ body.portaltype-portlet-page #slideshow-controls .btn.expand-btn {
 }
 
 
-body.template-content_view .slideshow {
+body.template-content_view .slideshow,
+body.template-full_view .slideshow {
     background-color: #f5f5f5;
 }
 
 body.portaltype-portlet-page .slideshow:not(.fullscreen),
-body.template-content_view .slideshow:not(.fullscreen) {
+body.template-content_view .slideshow:not(.fullscreen),
+body.template-full_view .slideshow:not(.fullscreen) {
     background-color: #242424; 
 }
 
 
 body.portaltype-portlet-page .slideshow:not(.fullscreen) .slideshowWrapper,
-body.template-content_view .slideshow:not(.fullscreen) .slideshowWrapper {
+body.template-content_view .slideshow:not(.fullscreen) .slideshowWrapper,
+body.template-full_view .slideshow:not(.fullscreen) .slideshowWrapper {
     padding-top: 80px;
     padding-bottom: 80px;
 }
 
 body.portaltype-portlet-page .slideshow:not(.fullscreen) .slick-slideshow,
-body.template-content_view .slideshow:not(.fullscreen) .slick-slideshow {
+body.template-content_view .slideshow:not(.fullscreen) .slick-slideshow,
+body.template-full_view .slideshow:not(.fullscreen) .slick-slideshow {
     height: auto;
     pointer-events: all;
 }
@@ -5882,11 +6011,13 @@ body.template-content_view .slideshow:not(.fullscreen) .slick-slideshow {
     display: none;
 }
 
-body.template-content_view .contentsListing {
+body.template-content_view .contentsListing,
+body.template-full_view .contentsListing {
     display: none;
 }
 
 body.template-content_view .slick-prev, body.template-content_view .slick-next,
+body.template-full_view .slick-prev, body.template-full_view .slick-next,
 body.template-book_view .slick-prev, body.template-book_view .slick-next,
 body.template-instruments_view .slick-prev, body.template-instruments_view .slick-next {
     opacity: 0.6;
@@ -5924,6 +6055,38 @@ body.template-content_view #content-core #parent-fieldname-text-dates > * {
     color: #D75745 !important;
 }
 
+body.template-full_view .slick-prev:hover, body.template-full_view .slick-next:hover {
+    opacity: 1;
+}
+
+body.template-full_view .documentFirstHeading {
+    pointer-events: none;
+}
+
+body.template-full_view #parent-fieldname-text-dates {
+    padding-bottom: 0px;
+}
+
+body.template-full_view #content-core #parent-fieldname-text-dates span, body.template-full_view #content-core #parent-fieldname-text-dates abbr {
+    font-family: 'Merriweather', serif !important;
+    font-weight: 700 !important;
+    color: #D75745 !important;
+    line-height: 40px;
+    margin-bottom: 0px;
+}
+
+body.template-full_view #content-core #parent-fieldname-text-dates p {
+    margin-bottom: 0px;
+}
+
+body.template-full_view #content-core #parent-fieldname-text-dates > * {
+    font-family: 'Merriweather', serif !important;
+    font-weight: 700 !important;
+    font-size: 1.875em;
+    line-height: 40px;
+    color: #D75745 !important;
+}
+
 .item-dates {
     color: #D75745 !important;
 }
@@ -5949,6 +6112,7 @@ body.template-content_view .slick-slideshow {
 }
 
 body.template-content_view .slick-slideshow:before,
+body.template-full_view .slick-slideshow:before,
 .portletSlideshow .slick-slideshow:before,
 body.template-collection_view .slick-slideshow:before,
 body.template-etickets_view .slick-slideshow:before {
@@ -5963,6 +6127,10 @@ body.template-etickets_view .slick-slideshow.slick-initialized,
 }
 
 body.template-content_view .slideshow {
+    height: 700px;
+}
+
+body.template-full_view .slideshow {
     height: 700px;
 }
 
@@ -7363,6 +7531,10 @@ body.template-content_view .slick-slideshow {
     height: 100% !important;
 }
 
+body.template-full_view .slick-slideshow {
+    height: 100% !important;
+}
+
 #search-results-bar .actionMenu .actionMenuContent {
     font-family: 'Merriweather', serif;
     font-weight: 400;
@@ -7379,6 +7551,10 @@ body.template-content_view .slick-slideshow {
     }
 
     body.template-content_view .slideshow {
+        height: 274px;
+    }
+
+    body.template-full_view .slideshow {
         height: 274px;
     }
 
@@ -7426,6 +7602,10 @@ body.template-content_view .slick-slideshow {
         height: 438px;
     }
 
+    body.template-full_view .slideshow {
+        height: 438px;
+    }
+
     body:not(.template-search):not(.portaltype-portlet-page) .documentDescription {
         display: none !important;
     }
@@ -7465,6 +7645,10 @@ body.template-content_view .slick-slideshow {
     body.template-content_view .slideshow {
         height: 565px;
     }
+
+    body.template-full_view .slideshow {
+        height: 565px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -7482,24 +7666,29 @@ body.template-content_view .slick-slideshow {
         opacity: 1 !important;
     }
 
-    body.template-content_view #slideshow-controls .btn {
+    body.template-content_view #slideshow-controls .btn,
+    body.template-full_view #slideshow-controls .btn {
         width: 33%;
         opacity: 1 !important;
     }
 
-    body.template-content_view .slick-slideshow {
+    body.template-content_view .slick-slideshow,
+    body.template-full_view .slick-slideshow {
         height: 100% !important;
     }
 
-    body.template-content_view #parent-fieldname-text-dates {
+    body.template-content_view #parent-fieldname-text-dates,
+    body.template-full_view #parent-fieldname-text-dates {
         padding-top: 35px;
     }
 
-    body.template-content_view #parent-fieldname-text {
+    body.template-content_view #parent-fieldname-text,
+    body.template-full_view #parent-fieldname-text {
         padding-top: 10px;
     }
 
-    body.template-content_view:not(.portaltype-event) #parent-fieldname-text {
+    body.template-content_view:not(.portaltype-event) #parent-fieldname-text,
+    body.template-full_view:not(.portaltype-event) #parent-fieldname-text {
         padding-top: 40px;
     }
     
@@ -7508,11 +7697,13 @@ body.template-content_view .slick-slideshow {
         opacity: 1 !important;
     }
 
-    body.template-content_view #slideshow-controls, body.portaltype-portlet-page #slideshow-controls {
+    body.template-content_view #slideshow-controls, body.portaltype-portlet-page #slideshow-controls,
+    body.template-full_view #slideshow-controls, {
         height: 50px;
     }
 
     body.template-content_view #slideshow-controls .actions-div a .fa,
+    body.template-full_view #slideshow-controls .actions-div a .fa,
     body.portaltype-portlet-page #slideshow-controls .actions-div a .fa  {
         font-size: 1.000em !important;
         line-height: 36px !important;
@@ -8040,6 +8231,23 @@ body.template-content_view #content-view-portlets a.managePortletsFallback {
 }
 
 body.template-content_view #content-view-portlets a.managePortletsFallback:hover {
+    width: 25%;
+    color: #D75745 !important;
+    font-size: 1.000em !important;
+    font-family: 'Merriweather', serif !important;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+body.template-full_view #content-view-portlets a.managePortletsFallback {
+    width: 25%;
+    color: #D75745 !important;
+    font-size: 1.000em !important;
+    font-family: 'Merriweather', serif !important;
+    font-weight: 400;
+}
+
+body.template-full_view #content-view-portlets a.managePortletsFallback:hover {
     width: 25%;
     color: #D75745 !important;
     font-size: 1.000em !important;
@@ -9113,5 +9321,7 @@ body.template-mollie_payment_success #portal-logo img {
 
 
 
-
+.object-fieldset form.enableFormTabbing a {
+    text-decoration: none !important;
+}
 

@@ -196,7 +196,6 @@
       layer="bda.plone.orders.interfaces.IOrdersExtensionLayer"
       zcml:condition="installed bda.plone.orders"/>
 
-
     <!-- orders data -->
     <browser:page
       for="zope.component.interfaces.ISite"
@@ -205,7 +204,6 @@
       permission="bda.plone.orders.ViewOrders"
       layer="bda.plone.orders.interfaces.IOrdersExtensionLayer"
       zcml:condition="installed bda.plone.orders"/>
-
 
     <!-- Views -->
 
@@ -218,6 +216,17 @@
       permission="zope2.View"
       menu="plone_displayviews"
       title="View Content"
+    />
+
+    <browser:page
+      name="full_view"
+      for="*"
+      layer=".interfaces.IThemeSpecific"
+      class=".generic_view.views.FullView"
+      template="generic_view/templates/full_view.pt"
+      permission="zope2.View"
+      menu="plone_displayviews"
+      title="Full View"
     />
 
     <browser:page
