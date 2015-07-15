@@ -8570,31 +8570,31 @@ body.template-checkout #visual-portal-wrapper > .row:first-child > div.col-md-12
 }
 
 .template-etickets * {
-    font-family: Georgia, serif !important;
+    font-family: "Merriweather", Georgia, serif !important;
     font-weight: 400 !important;
 }
 
 body.template-etickets {
-    font-family: Georgia, serif !important;
+    font-family: "Merriweather", Georgia, serif !important;
     font-weight: 400 !important;
 }
 
 .template-etickets h1 {
-    font-size: 90px !important;
+    font-size: 20px !important;
     color: #ffffff !important;
     line-height: 120px !important;
-    text-transform: none !important;
+    text-transform: uppercase !important;
     margin-top: 120px !important;
     color: #ffffff !important;
 }
 
 .template-etickets p,
 .template-etickets span {
-    color: #333333 !important;
+    color: #666666 !important;
 }
 
 .template-etickets span {
-    font-size: 11px !important;
+    font-size: 9px !important;
 }
 
 .template-etickets .logo-container {
@@ -8602,12 +8602,12 @@ body.template-etickets {
 }
 
 .template-etickets .tickets-title {
-    height: 100px !important;
+    height: 80px !important;
 }
 
 .template-etickets h3 {
     font-size: 13px !important;
-    color: #333333 !important;
+    color: #d75745 !important;
     font-weight: 800 !important;
 }
 
@@ -8618,7 +8618,7 @@ body.template-etickets {
 
 .template-etickets td.ticket-info {
     width: 50%;
-    font-size: 10px !important;
+    font-size: 9px !important;
 }
 
 .template-etickets .cart_item tr {
@@ -8630,23 +8630,23 @@ body.template-etickets {
 }
 
 .template-etickets .ticket-item #ticket-header {
-    padding: 40px !important;
+    padding: 20px !important;
     background-color: #d75745 !important; 
 }
 
 
 .template-etickets .ticket-item:first-child #ticket-header {
-    margin-top: 60px !important;
+    margin-top: 55px !important;
 }
 
 .template-etickets .ticket-item:not(:first-child) #ticket-header {
-    margin-top: 80px !important;
+    margin-top: 75px !important;
 }
 
 .template-etickets #cart {
     width: 100% !important;
-    padding-left: 60px !important;
-    padding-right: 60px !important;
+    padding-left: 55px !important;
+    padding-right: 55px !important;
     padding-top: 0px !important; 
 }
 
@@ -8678,7 +8678,7 @@ body.template-etickets {
 }
 
 .template-etickets #ticket-footer p {
-    font-size: 12px !important;
+    font-size: 9px !important;
     line-height: 17px !important;
     letter-spacing: 0.07em !important;
 }
@@ -8689,7 +8689,7 @@ body.template-etickets {
 
 
 .template-etickets h4 {
-    color: #333333 !important;
+    color: #d75745 !important;
     font-weight: 800 !important;
 }
 
@@ -8707,133 +8707,26 @@ body.template-etickets {
     letter-spacing: 0.06em !important;
 }
 
+body.template-etickets #ticket-header {
+    border-radius: 10px !important;
+}
+
+body.template-etickets .tickets-title h1 {
+    font-family: sans-serif !important;
+    margin-left: 3px;
+}
+
+body.template-etickets .title-aux {
+    font-family: sans-serif !important; 
+    text-transform: uppercase;
+    margin-bottom: 0px !important;
+    font-size: 50px;
+    color: #ffffff !important;
+}
+
 /* PRINT CSS */
 @media print {
-    .template-etickets  .documentFirstHeading {
-        display: none !important;
-    }
-
-    .template-etickets header {
-        display: none !important;
-    }
-
-    .template-etickets .documentFirstHeading {
-        display: none !important;
-    }
-
-    .template-etickets * {
-        font-family: Georgia, serif !important;
-        font-weight: 400 !important;
-    }
-
-    body.template-etickets {
-        font-family: Georgia, serif !important;
-        font-weight: 400 !important;
-    }
-
-    .template-etickets h1 {
-        font-size: 90px !important;
-        color: #ffffff !important;
-        line-height: 120px !important;
-        text-transform: none !important;
-        margin-top: 120px !important;
-        color: #ffffff !important;
-    }
-
-    .template-etickets p,
-    .template-etickets span {
-        color: #333333 !important;
-    }
-
-    .template-etickets span {
-        font-size: 11px !important;
-    }
-
-    .template-etickets .logo-container {
-        height: 50px !important;
-    }
-
-    .template-etickets .tickets-title {
-        height: 100px !important;
-    }
-
-    .template-etickets h3 {
-        font-size: 13px !important;
-        color: #333333 !important;
-        font-weight: 800 !important;
-    }
-
-    .template-etickets .cart_item {
-        width: 70% !important;
-        border-bottom: 0px !important;  
-    }
-
-    .template-etickets .cart_item tr {
-        height: 40px !important;
-    }
-
-    .template-etickets img.logo {
-        float: right !important;
-    }
-
-    .template-etickets #ticket-header {
-        padding: 40px !important;
-        background-color: #d75745 !important; 
-    }
-
-    .template-etickets #ticket-header {
-        margin-top: 40px !important;
-    }
-
-    .template-etickets #cart {
-        width: 100% !important;
-        padding-left: 60px !important;
-        padding-right: 60px !important;
-        padding-top: 0px !important; 
-    }
-
-    body.template-etickets {
-        color: #ffffff !important;
-    }
-
-    .template-etickets .cart_item {
-        padding-top: 50px !important;
-    }
-
-    .template-etickets #ticket-footer {
-        padding-top: 20px !important;
-        height: 300px !important;
-        padding-right:100px !important;
-    }
-
-    .template-etickets #cart .ticket-item {
-        page-break-after: always !important;
-    }
-
-    .template-etickets #cart .ticket-item:last-child {
-        page-break-after: auto !important;
-    }
-
-    .template-etickets #ticket-footer div {
-        padding-left: 20px !important;
-        padding-top: 5px !important;
-    }
-
-    .template-etickets #ticket-footer p {
-        font-size: 12px !important;
-        line-height: 17px !important;
-        letter-spacing: 0.07em !important;
-    }
-
-    .template-etickets #ticket-footer div.accessibility p {
-        line-height: 17px !important;
-    }
-
-
-    .template-etickets h4 {
-        color: #333333 !important;
-        font-weight: 800 !important;
-    }
+    
 }
 
 .slick-active.embed-responsive-item {
