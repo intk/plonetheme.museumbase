@@ -10,6 +10,13 @@ class FullView(DefaultView, ContentView):
 			value = "Ja"
 		return value
 
+
+	def show_fieldset(self, fieldset):
+		for widget in fieldset.widgets.values():
+			if widget.value:
+				return True
+		return False
+
 	def append_value(self, _list, value):
 		if value != "" and value != None:
 			_list.append(value)
@@ -33,9 +40,7 @@ class FullView(DefaultView, ContentView):
 					
 					result.append(line)
 				result = '<p>'.join(result)
-				final_result = RichTextValue(result, 'text/html', 'text/html')
-
-				return final_result.output_relative_to(self.context)
+				return result
 			except:
 				raise
 				return value

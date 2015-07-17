@@ -9325,3 +9325,16 @@ body.template-mollie_payment_success #portal-logo img {
     text-decoration: none !important;
 }
 
+.object-fieldset form.enableFormTabbing ul.nav.nav-tabs {
+    margin-left: 0px !important;
+}
+
+#content-core div[id*='parent-fieldname-text'] .object-fieldset  form.enableFormTabbing ul > li {
+  padding-left: 0px;
+}
+
+td.datagridwidget-manipulator.move-up img, td.datagridwidget-manipulator.move-down img {
+    padding-bottom: 9px !important;
+}
+
+

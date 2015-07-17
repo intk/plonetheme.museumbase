@@ -55,33 +55,37 @@
                       <form class="enableFormTabbing">
                       <fieldset tal:repeat="group view/groups"
                                 tal:attributes="id python:''.join((group.prefix, 'groups.', group.__name__)).replace('.', '-')">
+
                           
-                          <legend 
-                                      tal:attributes="id python:''.join((group.prefix, 'groups.', group.__name__)).replace('.', '-')"
-                                      tal:content="group/label">Form name</legend>
+                          <tal:showfieldset tal:condition="python: view.show_fieldset(group)">
+                          
+                            <legend 
+                                        tal:attributes="id python:''.join((group.prefix, 'groups.', group.__name__)).replace('.', '-')"
+                                        tal:content="group/label">Form name</legend>
 
-                          <tal:block tal:repeat="widget group/widgets/values">
-                              <tal:norelated tal:condition="python: '_relatedObjects' not in widget.__name__">
+                            <tal:block tal:repeat="widget group/widgets/values">
+                                <tal:norelated tal:condition="python: '_relatedObjects' not in widget.__name__">
 
-                                <tal:contentfield tal:condition="widget/value"
-                                  tal:define="widget_value widget/value;
-                                              widget_label widget/label;">
-                                    
-                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 object-label" style="padding-left:0px;">
-                                      <span tal:content="widget_label"></span>
-                                    </div>
-                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 object-value"
-                                      tal:define="widget_converted_value python: view.get_field_value(widget_value, widget)">
-                                      <p tal:content="structure widget_converted_value"></p>
-                                    </div>
-                                
-                                </tal:contentfield>
-                              </tal:norelated>
+                                  <tal:contentfield tal:condition="widget/value"
+                                    tal:define="widget_value widget/value;
+                                                widget_label widget/label;">
+                                      
+                                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 object-label" style="padding-left:0px;">
+                                        <span tal:content="widget_label"></span>
+                                      </div>
+                                      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 object-value"
+                                        tal:define="widget_converted_value python: view.get_field_value(widget_value, widget)">
+                                        <p tal:content="structure widget_converted_value"></p>
+                                      </div>
+                                  
+                                  </tal:contentfield>
+                                </tal:norelated>
+                              </tal:block>
 
-                          </tal:block>
+                            </tal:showfieldset>
                       </fieldset>
                       </form>
-                      
+
                     </div>
                   </div>
                 </div>
