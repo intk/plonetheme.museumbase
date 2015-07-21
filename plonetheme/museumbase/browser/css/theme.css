@@ -9474,3 +9474,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.labe
 body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.select2-input) {
     width: 70% !important;
 }
+
+.datagridwidget-body td.datagridwidget-cell select {
+    width: 100% !important;
+}
