@@ -9422,7 +9422,10 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.labe
 
 #formfield-form-widgets-identification_objectName_objectname label,
 #formfield-form-widgets-productionDating_productionDating label[for="form-widgets-productionDating_productionDating"],
-#formfield-form-widgets-productionDating_production_schoolstyle label[for="form-widgets-productionDating_production_schoolstyle"] {
+#formfield-form-widgets-productionDating_production_schoolstyle label[for="form-widgets-productionDating_production_schoolstyle"],
+#formfield-form-widgets-physicalCharacteristics_technique label[for="form-widgets-physicalCharacteristics_technique"],
+#formfield-form-widgets-physicalCharacteristics_material label[for="form-widgets-physicalCharacteristics_material"],
+#formfield-form-widgets-physicalCharacteristics_dimension label[for="form-widgets-physicalCharacteristics_dimension"] {
     display: none !important;
 }
 
@@ -9449,13 +9452,25 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.labe
 
 #formfield-form-widgets-productionDating_production_schoolstyle div.label, 
 #formfield-form-widgets-productionDating_production_schoolstyle label {
-    width: 27.8% !important;
+    width: 26.8% !important;
 }
 
 #fieldset-production_dating label[for="form-widgets-productionDating_production_productionReason"].control-label.col-sm-3 {
-    width: 26% !important;
+    width: 23.4% !important;
 }
 
 #formfield-form-widgets-productionDating_production_productionReason .col-sm-9.fieldset-input {
+    width: 70% !important;
+}
+
+#content .datagridwidget-body .select2-container.pat-select2 {
+    min-width: 200px !important;
+}
+
+#content .datagridwidget-body input.select2-input {
+    width: 100px !important;
+}
+
+body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.select2-input) {
     width: 70% !important;
 }
