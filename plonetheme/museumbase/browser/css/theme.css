@@ -9335,9 +9335,15 @@ td.datagridwidget-manipulator.move-up img, td.datagridwidget-manipulator.move-do
     padding-bottom: 9px !important;
 }
 
+.datagridwidget-table-view-block td.datagridwidget-manipulator.move-up img, 
+.datagridwidget-table-view-block td.datagridwidget-manipulator.move-down img {
+    padding-top: 21px !important;
+}
+
+
 /* Object backend */
 
-.gridfield:not(.show-label) label {
+.gridfield:not(.show-label) table:not(.datagridwidget-table-view-block) label {
     display: none !important;
 }
 
@@ -9404,4 +9410,52 @@ select.formTabs {
     display: none !important;
 }
 
+body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
+    font-family: 'Merriweather', serif !important;
+    font-weight: 400 !important;
+    font-size: 0.875em !important;
+}
 
+#fieldset-production_dating .control-label.col-sm-3 {
+    width: 24.2% !important;
+}
+
+#formfield-form-widgets-identification_objectName_objectname label,
+#formfield-form-widgets-productionDating_productionDating label[for="form-widgets-productionDating_productionDating"],
+#formfield-form-widgets-productionDating_production_schoolstyle label[for="form-widgets-productionDating_production_schoolstyle"] {
+    display: none !important;
+}
+
+#formfield-form-widgets-productionDating_production_schoolstyle table div.label:not(:first-child) {
+    display: none !important;
+}
+
+body.template-edit .datagridwidget-table-view th {
+    font-size: 0.875em !important;
+}
+
+.datagridwidget-table-view-block .select2-container {
+    width: 69.8% !important;
+}
+
+body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label,
+body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
+    width: 27.3% !important;
+}
+
+#formfield-form-widgets-productionDating_productionDating label {
+    width: 28.4% !important;
+}
+
+#formfield-form-widgets-productionDating_production_schoolstyle div.label, 
+#formfield-form-widgets-productionDating_production_schoolstyle label {
+    width: 27.8% !important;
+}
+
+#fieldset-production_dating label[for="form-widgets-productionDating_production_productionReason"].control-label.col-sm-3 {
+    width: 26% !important;
+}
+
+#formfield-form-widgets-productionDating_production_productionReason .col-sm-9.fieldset-input {
+    width: 70% !important;
+}
