@@ -9479,7 +9479,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:no
     width: 100% !important;
 }
 
-/*#formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role input {
+#formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role input {
     width: 54% !important;
     float: left !important;
 }
@@ -9519,11 +9519,130 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:no
     width: 20% !important;
 }
 
-#content .datagridwidget-body div.datagridwidget-block-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings-0-widgets-role div.select2-container.pat-select2 {
+#content .datagridwidget-body .datagridwidget-widget-role div.select2-container.pat-select2 {
     min-width: 20px !important;
 }
 
 #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-content {
     clear: both;
-}*/
+}
 
+#content .datagridwidget-body .datagridwidget-widget-role input.select2-input {
+  width: 46px !important;
+}
+
+div.datagridwidget-widget-nameType select.select-widget {
+    width: 51% !important;
+}
+
+#formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-name label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType div.label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-name div.label {
+  width: 48.5% !important;
+  float: left;
+}
+
+
+/* Backend media queries */
+@media (max-width: 767px) {
+    .datagridwidget-table-view-block .select2-container {
+    width: 100% !important;
+    }
+
+    body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label,
+    body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
+        width: 100% !important;
+    }
+
+    #formfield-form-widgets-productionDating_productionDating label {
+        width: 100% !important;
+    }
+
+    #formfield-form-widgets-productionDating_production_schoolstyle div.label, 
+    #formfield-form-widgets-productionDating_production_schoolstyle label {
+        width: 100% !important;
+    }
+
+    #fieldset-production_dating label[for="form-widgets-productionDating_production_productionReason"].control-label.col-sm-3 {
+        width: 100% !important;
+    }
+
+    #formfield-form-widgets-productionDating_production_productionReason .col-sm-9.fieldset-input {
+        width: 100% !important;
+    }
+
+    #content .datagridwidget-body .select2-container.pat-select2 {
+        min-width: 200px !important;
+    }
+
+    #content .datagridwidget-body input.select2-input {
+        width: 100px !important;
+    }
+
+    body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.select2-input) {
+        width: 100% !important;
+    }
+
+    .datagridwidget-body td.datagridwidget-cell select {
+        width: 100% !important;
+    }
+
+    #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role input {
+        width: 100% !important;
+        float: left !important;
+    }
+
+    #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-creator label, #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role label, #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-creator div.label, #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role div.label {
+        width: 100% !important;
+    }
+
+    #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-creator input {
+        width: 100% !important;
+    }
+
+    #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role input {
+        width: 100% !important;
+        float: left !important;
+    }
+
+    #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-creator label, #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role label, #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-creator div.label, #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role div.label {
+        width: 100% !important;
+    }
+
+    #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-creator input {
+        width: 100% !important;
+    }
+
+    #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-creator {
+        width: 100% !important;
+        float: none;
+    }
+
+    #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role {
+        width: 100% !important;
+        float: none;
+    }
+
+    #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role label {
+        width: 100% !important;
+    }
+
+    #content .datagridwidget-body .datagridwidget-widget-role div.select2-container.pat-select2 {
+        min-width: 20px !important;
+    }
+
+    #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-content {
+        clear: both;
+    }
+
+    #content .datagridwidget-body .datagridwidget-widget-role input.select2-input {
+      width: 100px !important;
+    }
+
+    div.datagridwidget-widget-nameType select.select-widget {
+        width: 100% !important;
+    }
+
+    #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-name label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType div.label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-name div.label {
+      width: 100% !important;
+      float: left;
+    }
+}
