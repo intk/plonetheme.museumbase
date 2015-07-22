@@ -9471,7 +9471,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.labe
     width: 100px !important;
 }
 
-body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.select2-input) {
+body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.select2-input):not(.searchButton) {
     width: 70% !important;
 }
 
@@ -9538,6 +9538,133 @@ div.datagridwidget-widget-nameType select.select-widget {
 #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-name label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType div.label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-name div.label {
   width: 48.5% !important;
   float: left;
+}
+
+#fieldset-numbers_relationships div.querySelectSearch label {
+    display: none !important;
+}
+
+
+#fieldset-numbers_relationships div.querySelectSearch input.text-widget {
+    width: 100% !important;
+}
+
+#fieldset-numbers_relationships div.querySelectSearch div.field {
+    width: 80% !important;
+    float: left;
+}
+
+#fieldset-numbers_relationships div.querySelectSearch div.formControls {
+    width: 20% !important;
+    float: left;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+#fieldset-numbers_relationships div.querySelectSearch div.formControls button {
+    width: 100% !important;
+}
+
+#fieldset-numbers_relationships div.querySelectSearch div.formControls button {
+    background: #0095da;
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 0.875em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #0095da;
+    text-transform: none !important;
+    letter-spacing: 0.05em;
+    border-radius: 30px;
+    padding: 10px 17px !important;
+    margin-left: 10px;
+}
+
+#fieldset-numbers_relationships div.querySelectSearch div.formControls button:hover {
+    background: #000000;
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 0.875em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+    text-transform: none !important;
+    letter-spacing: 0.05em;
+    border-radius: 30px;
+    padding: 10px 17px !important;
+    margin-left: 10px;
+}
+
+#formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_parts {
+    padding-top: 50px;
+}
+
+#fieldset-numbers_relationships .datagridwidget-body .datagridwidget-block-edit-cell div.label, #fieldset-numbers_relationships .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
+    float:left;
+}
+
+#fieldset-numbers_relationships .datagridwidget-body .datagridwidget-block-edit-cell div.label {
+    padding-top: 11px;
+}
+
+#fieldset-numbers_relationships .datagridwidget-widget-notes,
+#fieldset-numbers_relationships .datagridwidget-widget-association {
+    clear: both;
+}
+
+#fieldset-numbers_relationships .datagridwidget-widget-notes {
+    padding-bottom: 40px;
+}
+
+#fieldset-numbers_relationships .datagridwidget-widget-notes div.label,
+#fieldset-numbers_relationships .datagridwidget-widget-notes div.label label,
+#fieldset-numbers_relationships .datagridwidget-widget-association div.label,
+#fieldset-numbers_relationships .datagridwidget-widget-association div.label label {
+    float: none !important;
+}
+
+#formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_partOf-widgets-query {
+    margin-bottom: 0px !important;
+}
+
+.datagridwidget-block-edit-cell .querySelectSearch {
+    width: 70% !important;
+    float: left;
+}
+
+.querySelectSearch input.searchButton {
+    border: 0px;
+    background-color: transparent !important;
+    font-size: 0.875em !important;
+    padding-top: 5px !important;
+    color: #333333;
+    font-family: "Merriweather", serif !important;
+    font-weight: 400;
+}
+
+.datagridwidget-block-edit-cell .querySelectSearch input.searchButton {
+    border: 0px !important;
+    background-color: transparent !important;
+    width: auto !important;
+    font-size: 0.875em !important;
+    padding-top: 7px !important;
+    color: #333333;
+}
+
+#fieldset-numbers_relationships .datagridwidget-widget-notes div.label, 
+#fieldset-numbers_relationships .datagridwidget-widget-notes div.label label {
+    width: 26.8% !important;
+}
+
+#fieldset-numbers_relationships .datagridwidget-widget-association div.label, 
+#fieldset-numbers_relationships .datagridwidget-widget-association div.label label {
+    width: 26.8% !important;
+}
+
+#fieldset-numbers_relationships input.contenttree-widget.relationlist-field {
+    width: 10px !important;
 }
 
 
