@@ -9667,11 +9667,142 @@ div.datagridwidget-widget-nameType select.select-widget {
     width: 10px !important;
 }
 
+#fieldset-value_insurance .datagridwidget-widget-value,
+#fieldset-value_insurance .datagridwidget-widget-curr {
+    width: 50% !important;
+    float: left;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-valuer {
+    clear: both;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-value div.label,
+#fieldset-value_insurance .datagridwidget-widget-value div.label label {
+    width: 54.4% !important;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-value input {
+    width: 44% !important;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-curr div.label,
+#fieldset-value_insurance .datagridwidget-widget-curr div.label label {
+    width: 35% !important;
+    text-align: right;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-curr div.label label {
+    padding-right: 30px;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-curr .select2-container {
+    width: 59.8% !important;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-valuer,
+#fieldset-value_insurance .datagridwidget-widget-date {
+    width: 50% !important;
+    float: left;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-valuer,
+#fieldset-value_insurance .datagridwidget-widget-reference {
+    clear: both;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-valuer div.label,
+#fieldset-value_insurance .datagridwidget-widget-valuer div.label label {
+    width: 54.4% !important;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-valuer input {
+    width: 44% !important;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-date div.label,
+#fieldset-value_insurance .datagridwidget-widget-date div.label label {
+    width: 35% !important;
+    text-align: right;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-date div.label label {
+    padding-right: 30px;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-date input {
+    width: 59.8% !important;
+}
+
+/* Confirmation date / renewal date */
+#fieldset-value_insurance .datagridwidget-widget-confirmation_date,
+#fieldset-value_insurance .datagridwidget-widget-renewal_date {
+    width: 50% !important;
+    float: left;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-confirmation_date,
+#fieldset-value_insurance .datagridwidget-widget-reference {
+    clear: both;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-confirmation_date div.label,
+#fieldset-value_insurance .datagridwidget-widget-confirmation_date div.label label {
+    width: 56% !important;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-confirmation_date input {
+    width: 44% !important;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-renewal_date div.label,
+#fieldset-value_insurance .datagridwidget-widget-renewal_date div.label label {
+    width: 35% !important;
+    text-align: right;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-renewal_date div.label label {
+    padding-right: 30px;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-renewal_date input {
+    width: 59.8% !important;
+}
 
 /* Backend media queries */
 @media (max-width: 767px) {
+
+    #fieldset-value_insurance .datagridwidget-widget-value,
+    #fieldset-value_insurance .datagridwidget-widget-curr {
+        width: 100% !important;
+        float: none;
+    }
+
+    #fieldset-value_insurance .datagridwidget-widget-value div.label,
+    #fieldset-value_insurance .datagridwidget-widget-value div.label label {
+        width: 100% !important;
+    }
+
+    #fieldset-value_insurance .datagridwidget-widget-value input {
+        width: 100% !important;
+    }
+
     .datagridwidget-table-view-block .select2-container {
     width: 100% !important;
+    }
+
+    #fieldset-value_insurance .datagridwidget-widget-curr div.label,
+    #fieldset-value_insurance .datagridwidget-widget-curr div.label label {
+        width: 100% !important;
+        text-align: left;
+    }
+
+    #fieldset-value_insurance .datagridwidget-widget-curr div.label label {
+        padding-right: 0px;
+    }
+
+    #fieldset-value_insurance .datagridwidget-widget-curr select {
+        width: 100% !important;
     }
 
     body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label,
