@@ -9773,8 +9773,93 @@ div.datagridwidget-widget-nameType select.select-widget {
     width: 46px !important;
 }
 
+#formfield-form-widgets-acquisition_methods label {
+    float:left;
+    width: 25% !important;
+    padding-top: 11px;
+}
+
+#formfield-form-widgets-acquisition_methods div.select2-container {
+    width: 75% !important;
+    float: left;
+    margin-bottom: 15px;
+}
+
+#form-widgets-acquisition_accession_date {
+    width: 50% !important;
+}
+
+#formfield-form-widgets-acquisition_places label {
+    float:left;
+    width: 25% !important;
+    padding-top: 11px;
+}
+
+#formfield-form-widgets-acquisition_places div.select2-container {
+    width: 75% !important;
+    float: left;
+    margin-bottom: 15px;
+}
+
+#form-widgets-acquisition_accession_date {
+    width: 50% !important;
+}
+
+#formfield-form-widgets-acquisition_costs_offer_price_currency label,
+#formfield-form-widgets-acquisition_costs_purchase_price_currency label {
+    float: left;
+    width: 20% !important;
+    padding-top: 11px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+#formfield-form-widgets-acquisition_costs_offer_price_currency div.select2-container,
+#formfield-form-widgets-acquisition_costs_purchase_price_currency div.select2-container {
+    float: left;
+    width: 80% !important;
+    min-width: auto !important;
+}
+
+#formfield-form-widgets-acquisition_costs_purchase_price {
+    clear: both;
+}
+
+#formfield-form-widgets-acquisition_costs_notes {
+    clear: both;
+}
+
 /* Backend media queries */
 @media (max-width: 767px) {
+
+    #form-widgets-acquisition_accession_date {
+        width: 100% !important;
+    }
+
+    #formfield-form-widgets-acquisition_methods label {
+        float:none;
+        width: 100% !important;
+        padding-top: 0px;
+    }
+
+    #formfield-form-widgets-acquisition_methods div.select2-container {
+        width: 100% !important;
+        float: none;
+        margin-bottom: 0px;
+    }
+
+    #formfield-form-widgets-acquisition_places label {
+        float:none;
+        width: 100% !important;
+        padding-top: 0px;
+    }
+
+    #formfield-form-widgets-acquisition_places div.select2-container {
+        width: 100% !important;
+        float: none;
+        margin-bottom: 0px;
+    }
+
 
     #fieldset-value_insurance .datagridwidget-widget-value,
     #fieldset-value_insurance .datagridwidget-widget-curr {
