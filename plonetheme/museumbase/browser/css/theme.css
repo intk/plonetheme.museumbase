@@ -9769,6 +9769,10 @@ div.datagridwidget-widget-nameType select.select-widget {
     width: 59.8% !important;
 }
 
+#fieldset-condition_conservation #formfield-form-widgets-conditionConservation_conditions input.select2-input.form-control {
+    width: 46px !important;
+}
+
 /* Backend media queries */
 @media (max-width: 767px) {
 
