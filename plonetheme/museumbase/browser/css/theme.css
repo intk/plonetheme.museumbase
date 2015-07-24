@@ -9851,8 +9851,174 @@ span.option span {
 }
 
 
+/* begindatum date / begindatum date */
+#fieldset-location .datagridwidget-widget-start_date,
+#fieldset-location .datagridwidget-widget-end_date {
+    width: 50% !important;
+    float: left;
+}
+
+#fieldset-location .datagridwidget-widget-location_type {
+    clear: both;
+}
+
+#fieldset-location .datagridwidget-widget-start_date div.label,
+#fieldset-location .datagridwidget-widget-start_date div.label label {
+    width: 54.5% !important;
+}
+
+#fieldset-location .datagridwidget-widget-start_date input {
+    width: 44% !important;
+}
+
+#fieldset-location .datagridwidget-widget-end_date div.label,
+#fieldset-location .datagridwidget-widget-end_date div.label label {
+    width: 35% !important;
+    text-align: right;
+}
+
+#fieldset-location .datagridwidget-widget-end_date div.label label {
+    padding-right: 30px;
+}
+
+#fieldset-location .datagridwidget-widget-end_date input {
+    width: 59.8% !important;
+}
+
+#fieldset-location .datagridwidget-widget-start_date,
+#fieldset-location .datagridwidget-widget-end_date {
+    width: 50% !important;
+    float: left;
+}
+
+#fieldset-location .datagridwidget-widget-location_type {
+    clear: both;
+}
+
+/* location type / sort plaats */
+#fieldset-location .datagridwidget-widget-location_type,
+#fieldset-location .datagridwidget-widget-location {
+    width: 50% !important;
+    float: left;
+}
+
+#fieldset-location .datagridwidget-widget-location_type {
+    clear: both;
+}
+
+#fieldset-location .datagridwidget-widget-location_type div.label,
+#fieldset-location .datagridwidget-widget-location_type div.label label {
+    width: 54.5% !important;
+}
+
+#fieldset-location .datagridwidget-widget-location_type input {
+    width: 44% !important;
+}
+
+#fieldset-location .datagridwidget-widget-location div.label,
+#fieldset-location .datagridwidget-widget-location div.label label {
+    width: 35% !important;
+    text-align: right;
+}
+
+#fieldset-location .datagridwidget-widget-location div.label label {
+    padding-right: 30px;
+}
+
+#fieldset-location .datagridwidget-widget-location div.select2-container {
+    width: 59.8% !important;
+}
+
+#fieldset-location .datagridwidget-widget-location_type,
+#fieldset-location .datagridwidget-widget-location {
+    width: 50% !important;
+    float: left;
+}
+
+#fieldset-location .datagridwidget-widget-fitness {
+    clear: both;
+}
+
+
 /* Backend media queries */
 @media (max-width: 767px) {
+
+    /* begindatum date / begindatum date */
+    #fieldset-location .datagridwidget-widget-start_date,
+    #fieldset-location .datagridwidget-widget-end_date {
+        width: 100% !important;
+        float: none;
+    }
+
+
+    #fieldset-location .datagridwidget-widget-start_date div.label,
+    #fieldset-location .datagridwidget-widget-start_date div.label label {
+        width: 100% !important;
+    }
+
+    #fieldset-location .datagridwidget-widget-start_date input {
+        width: 100% !important;
+    }
+
+    #fieldset-location .datagridwidget-widget-end_date div.label,
+    #fieldset-location .datagridwidget-widget-end_date div.label label {
+        width: 100% !important;
+        text-align: left;
+    }
+
+    #fieldset-location .datagridwidget-widget-end_date div.label label {
+        padding-right: 0px;
+    }
+
+    #fieldset-location .datagridwidget-widget-end_date input {
+        width: 100% !important;
+    }
+
+    #fieldset-location .datagridwidget-widget-start_date,
+    #fieldset-location .datagridwidget-widget-end_date {
+        width: 100% !important;
+        float: none;
+    }
+
+    #fieldset-location .datagridwidget-widget-location_type {
+        clear: both;
+    }
+
+    /* location type / sort plaats */
+    #fieldset-location .datagridwidget-widget-location_type,
+    #fieldset-location .datagridwidget-widget-location {
+        width: 100% !important;
+        float: none;
+    }
+
+    #fieldset-location .datagridwidget-widget-location_type div.label,
+    #fieldset-location .datagridwidget-widget-location_type div.label label {
+        width: 100% !important;
+    }
+
+    #fieldset-location .datagridwidget-widget-location_type input {
+        width: 100% !important;
+    }
+
+    #fieldset-location .datagridwidget-widget-location div.label,
+    #fieldset-location .datagridwidget-widget-location div.label label {
+        width: 100% !important;
+        text-align: left;
+    }
+
+    #fieldset-location .datagridwidget-widget-location div.label label {
+        padding-right: 0px;
+    }
+
+    #fieldset-location .datagridwidget-widget-location div.select2-container {
+        width: 100% !important;
+    }
+
+    #fieldset-location .datagridwidget-widget-location_type,
+    #fieldset-location .datagridwidget-widget-location {
+        width: 100% !important;
+        float: none;
+    }
 
     #form-widgets-acquisition_accession_date {
         width: 100% !important;
@@ -9899,7 +10065,7 @@ span.option span {
     }
 
     .datagridwidget-table-view-block .select2-container {
-    width: 100% !important;
+        width: 100% !important;
     }
 
     #fieldset-value_insurance .datagridwidget-widget-curr div.label,
