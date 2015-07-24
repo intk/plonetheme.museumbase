@@ -9552,7 +9552,7 @@ div.datagridwidget-widget-nameType select.select-widget {
 #fieldset-numbers_relationships div.querySelectSearch input.text-widget,
 #fieldset-disposal div.querySelectSearch input.text-widget,
 #fieldset-ownership_history div.querySelectSearch input.text-widget,
-#fieldset-exhibitions div.querySelectSearch input.text-widget
+#fieldset-exhibitions div.querySelectSearch input.text-widget,
 #fieldset-loans div.querySelectSearch input.text-widget {
     width: 100% !important;
 }
@@ -10068,6 +10068,20 @@ label[for="form-widgets-fieldCollection_fieldCollection_dateEarly"] {
 
 #fieldset-field_collection .div-50 .control-label {
     width: 47.5% !important;
+}
+
+#form-widgets-notes_free_fields .option label {
+    display: block !important;
+}
+
+#form-widgets-notes_free_fields .option .single-checkbox-widget {
+    margin-right: 80px;
+    margin-left: 80px;
+    margin-top: 15px;
+}
+
+#form-widgets-notes_free_fields .option label span {
+    display: none !important;
 }
 
 
