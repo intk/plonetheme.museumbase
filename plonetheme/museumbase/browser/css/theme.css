@@ -9543,7 +9543,8 @@ div.datagridwidget-widget-nameType select.select-widget {
 #fieldset-numbers_relationships div.querySelectSearch label,
 #fieldset-disposal div.querySelectSearch label,
 #fieldset-ownership_history div.querySelectSearch label,
-#fieldset-exhibitions div.querySelectSearch label {
+#fieldset-exhibitions div.querySelectSearch label,
+#fieldset-loans div.querySelectSearch label {
     display: none !important;
 }
 
@@ -9551,14 +9552,16 @@ div.datagridwidget-widget-nameType select.select-widget {
 #fieldset-numbers_relationships div.querySelectSearch input.text-widget,
 #fieldset-disposal div.querySelectSearch input.text-widget,
 #fieldset-ownership_history div.querySelectSearch input.text-widget,
-#fieldset-exhibitions div.querySelectSearch input.text-widget {
+#fieldset-exhibitions div.querySelectSearch input.text-widget
+#fieldset-loans div.querySelectSearch input.text-widget {
     width: 100% !important;
 }
 
 #fieldset-numbers_relationships div.querySelectSearch div.field,
 #fieldset-disposal div.querySelectSearch div.field,
 #fieldset-ownership_history div.querySelectSearch div.field,
-#fieldset-exhibitions div.querySelectSearch div.field {
+#fieldset-exhibitions div.querySelectSearch div.field,
+#fieldset-loans div.querySelectSearch div.field {
     width: 80% !important;
     float: left;
 }
@@ -9566,7 +9569,8 @@ div.datagridwidget-widget-nameType select.select-widget {
 #fieldset-numbers_relationships div.querySelectSearch div.formControls,
 #fieldset-disposal div.querySelectSearch div.formControls,
 #fieldset-ownership_history div.querySelectSearch div.formControls,
-#fieldset-exhibitions div.querySelectSearch div.formControls {
+#fieldset-exhibitions div.querySelectSearch div.formControls,
+#fieldset-loans div.querySelectSearch div.formControls {
     width: 20% !important;
     float: left;
     margin-top: 0px !important;
@@ -9576,14 +9580,16 @@ div.datagridwidget-widget-nameType select.select-widget {
 #fieldset-numbers_relationships div.querySelectSearch div.formControls button,
 #fieldset-disposal div.querySelectSearch div.formControls button,
 #fieldset-ownership_history div.querySelectSearch div.formControls button,
-#fieldset-exhibitions div.querySelectSearch div.formControls button {
+#fieldset-exhibitions div.querySelectSearch div.formControls button,
+#fieldset-loans div.querySelectSearch div.formControls button {
     width: 100% !important;
 }
 
 #fieldset-numbers_relationships div.querySelectSearch div.formControls button,
 #fieldset-disposal div.querySelectSearch div.formControls button,
 #fieldset-ownership_history div.querySelectSearch div.formControls button,
-#fieldset-exhibitions div.querySelectSearch div.formControls button {
+#fieldset-exhibitions div.querySelectSearch div.formControls button,
+#fieldset-loans div.querySelectSearch div.formControls button {
     background: #0095da;
     font-family: "Merriweather", serif;
     font-weight: 400;
@@ -9602,7 +9608,8 @@ div.datagridwidget-widget-nameType select.select-widget {
 #fieldset-numbers_relationships div.querySelectSearch div.formControls button:hover,
 #fieldset-disposal div.querySelectSearch div.formControls button:hover,
 #fieldset-ownership_history div.querySelectSearch div.formControls button:hover,
-#fieldset-exhibitions div.querySelectSearch div.formControls button:hover {
+#fieldset-exhibitions div.querySelectSearch div.formControls button:hover,
+#fieldset-loans div.querySelectSearch div.formControls button:hover {
     background: #000000;
     font-family: "Merriweather", serif;
     font-weight: 400;

@@ -33,8 +33,6 @@
 
     <browser:jbot directory="overrides" />
 
-    
-
     <browser:page
         name="search"
         class=".views.SearchView"
