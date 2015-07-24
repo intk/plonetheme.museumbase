@@ -9540,32 +9540,38 @@ div.datagridwidget-widget-nameType select.select-widget {
   float: left;
 }
 
-#fieldset-numbers_relationships div.querySelectSearch label {
+#fieldset-numbers_relationships div.querySelectSearch label,
+#fieldset-disposal div.querySelectSearch label {
     display: none !important;
 }
 
 
-#fieldset-numbers_relationships div.querySelectSearch input.text-widget {
+#fieldset-numbers_relationships div.querySelectSearch input.text-widget,
+#fieldset-disposal div.querySelectSearch input.text-widget {
     width: 100% !important;
 }
 
-#fieldset-numbers_relationships div.querySelectSearch div.field {
+#fieldset-numbers_relationships div.querySelectSearch div.field,
+#fieldset-disposal div.querySelectSearch div.field {
     width: 80% !important;
     float: left;
 }
 
-#fieldset-numbers_relationships div.querySelectSearch div.formControls {
+#fieldset-numbers_relationships div.querySelectSearch div.formControls,
+#fieldset-disposal div.querySelectSearch div.formControls {
     width: 20% !important;
     float: left;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
 }
 
-#fieldset-numbers_relationships div.querySelectSearch div.formControls button {
+#fieldset-numbers_relationships div.querySelectSearch div.formControls button,
+#fieldset-disposal div.querySelectSearch div.formControls button {
     width: 100% !important;
 }
 
-#fieldset-numbers_relationships div.querySelectSearch div.formControls button {
+#fieldset-numbers_relationships div.querySelectSearch div.formControls button,
+#fieldset-disposal div.querySelectSearch div.formControls button {
     background: #0095da;
     font-family: "Merriweather", serif;
     font-weight: 400;
@@ -9581,7 +9587,8 @@ div.datagridwidget-widget-nameType select.select-widget {
     margin-left: 10px;
 }
 
-#fieldset-numbers_relationships div.querySelectSearch div.formControls button:hover {
+#fieldset-numbers_relationships div.querySelectSearch div.formControls button:hover,
+#fieldset-disposal div.querySelectSearch div.formControls button:hover {
     background: #000000;
     font-family: "Merriweather", serif;
     font-weight: 400;
@@ -9663,7 +9670,8 @@ div.datagridwidget-widget-nameType select.select-widget {
     width: 26.8% !important;
 }
 
-#fieldset-numbers_relationships input.contenttree-widget.relationlist-field {
+#fieldset-numbers_relationships input.contenttree-widget.relationlist-field,
+#fieldset-disposal input.contenttree-widget.relationlist-field {
     width: 10px !important;
 }
 
@@ -9806,7 +9814,8 @@ div.datagridwidget-widget-nameType select.select-widget {
 }
 
 #formfield-form-widgets-acquisition_costs_offer_price_currency label,
-#formfield-form-widgets-acquisition_costs_purchase_price_currency label {
+#formfield-form-widgets-acquisition_costs_purchase_price_currency label,
+#formfield-form-widgets-disposal_finance_currency label {
     float: left;
     width: 20% !important;
     padding-top: 11px;
@@ -9815,7 +9824,8 @@ div.datagridwidget-widget-nameType select.select-widget {
 }
 
 #formfield-form-widgets-acquisition_costs_offer_price_currency div.select2-container,
-#formfield-form-widgets-acquisition_costs_purchase_price_currency div.select2-container {
+#formfield-form-widgets-acquisition_costs_purchase_price_currency div.select2-container,
+#formfield-form-widgets-disposal_finance_currency div.select2-container {
     float: left;
     width: 80% !important;
     min-width: auto !important;
@@ -9828,6 +9838,7 @@ div.datagridwidget-widget-nameType select.select-widget {
 #formfield-form-widgets-acquisition_costs_notes {
     clear: both;
 }
+
 
 /* Backend media queries */
 @media (max-width: 767px) {
