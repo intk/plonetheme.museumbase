@@ -9939,9 +9939,185 @@ span.option span {
     clear: both;
 }
 
+/* name / role */
+#fieldset-field_collection .datagridwidget-widget-name,
+#fieldset-field_collection .datagridwidget-widget-role {
+    width: 50% !important;
+    float: left;
+}
+
+#fieldset-field_collection .datagridwidget-widget-name {
+    clear: both;
+}
+
+#fieldset-field_collection .datagridwidget-widget-name div.label,
+#fieldset-field_collection .datagridwidget-widget-name div.label label {
+    width: 54.5% !important;
+}
+
+#fieldset-field_collection .datagridwidget-widget-name input {
+    width: 44% !important;
+}
+
+#fieldset-field_collection .datagridwidget-widget-role div.label,
+#fieldset-field_collection .datagridwidget-widget-role div.label label {
+    width: 35% !important;
+    text-align: right;
+}
+
+#fieldset-field_collection .datagridwidget-widget-role div.label label {
+    padding-right: 30px;
+}
+
+#fieldset-field_collection .datagridwidget-widget-role div.select2-container {
+    width: 59.8% !important;
+}
+
+#fieldset-field_collection .datagridwidget-widget-name,
+#fieldset-field_collection .datagridwidget-widget-role {
+    width: 50% !important;
+    float: left;
+}
+
+#fieldset-field_collection .datagridwidget-widget-fitness {
+    clear: both;
+}
+
+/* vindplaats / code type */
+#fieldset-field_collection .datagridwidget-widget-code,
+#fieldset-field_collection .datagridwidget-widget-role {
+    width: 50% !important;
+    float: left;
+}
+
+#fieldset-field_collection .datagridwidget-widget-code {
+    clear: both;
+}
+
+#fieldset-field_collection .datagridwidget-widget-code div.label,
+#fieldset-field_collection .datagridwidget-widget-code div.label label {
+    width: 51.8% !important;
+}
+
+#fieldset-field_collection .datagridwidget-widget-code input {
+    width: 44% !important;
+}
+
+#fieldset-field_collection .datagridwidget-widget-codeType div.label,
+#fieldset-field_collection .datagridwidget-widget-codeType div.label label {
+    width: 35% !important;
+    text-align: right;
+}
+
+#fieldset-field_collection .datagridwidget-widget-codeType div.label label {
+    padding-right: 30px;
+}
+
+#fieldset-field_collection .datagridwidget-widget-codeType input {
+    width: 59.8% !important;
+}
+
+#fieldset-field_collection .datagridwidget-widget-code,
+#fieldset-field_collection .datagridwidget-widget-codeType {
+    width: 50% !important;
+    float: left;
+}
+
+#fieldset-field_collection .datagridwidget-widget-term {
+    clear: both;
+}
+
+
+#formfield-form-widgets-fieldCollection_fieldCollection_fieldCollNumber tr:not(:first-child) label,
+#formfield-form-widgets-fieldCollection_fieldCollection_event tr:not(:first-child) label {
+    display: none !important;
+}
+
+#formfield-form-widgets-fieldCollection_fieldCollection_fieldCollNumber tr:not(:first-child) input,
+#formfield-form-widgets-fieldCollection_fieldCollection_event tr:not(:first-child) input {
+    margin-left: 28% !important;
+}
+
+label[for="form-widgets-fieldCollection_fieldCollection_dateEarly"] {
+    width: 47.8% !important;
+}
+
+#fieldset-field_collection .form-horizontal .control-label {
+    width: 22.8% !important;
+}
+
+#fieldset-field_collection .div-50 .control-label {
+    width: 47.5% !important;
+}
+
+
 
 /* Backend media queries */
 @media (max-width: 767px) {
+
+    label[for="form-widgets-fieldCollection_fieldCollection_dateEarly"] {
+        width: 100% !important;
+    }
+
+    #fieldset-field_collection .form-horizontal .control-label {
+        width: 100% !important;
+    }
+
+    #fieldset-field_collection .div-50 .control-label {
+        width: 100% !important;
+    }
+
+    /* vindplaats / code type */
+    #fieldset-field_collection .datagridwidget-widget-code,
+    #fieldset-field_collection .datagridwidget-widget-role {
+        width: 100% !important;
+        float: none;
+    }
+
+    #fieldset-field_collection .datagridwidget-widget-code {
+        clear: both;
+    }
+
+    #fieldset-field_collection .datagridwidget-widget-code div.label,
+    #fieldset-field_collection .datagridwidget-widget-code div.label label {
+        width: 100% !important;
+    }
+
+    #fieldset-field_collection .datagridwidget-widget-code input {
+        width: 100% !important;
+    }
+
+    #fieldset-field_collection .datagridwidget-widget-codeType div.label,
+    #fieldset-field_collection .datagridwidget-widget-codeType div.label label {
+        width: 100% !important;
+        text-align: left;
+    }
+
+    #fieldset-field_collection .datagridwidget-widget-codeType div.label label {
+        padding-right: 0px;
+    }
+
+    #fieldset-field_collection .datagridwidget-widget-codeType input {
+        width: 100% !important;
+    }
+
+    #fieldset-field_collection .datagridwidget-widget-code,
+    #fieldset-field_collection .datagridwidget-widget-codeType {
+        width: 100% !important;
+        float: none;
+    }
+
+    #fieldset-field_collection .datagridwidget-widget-term {
+        clear: both;
+    }
+
+    #formfield-form-widgets-fieldCollection_fieldCollection_fieldCollNumber tr:not(:first-child) label {
+        display: block !important;
+    }
+
+    #formfield-form-widgets-fieldCollection_fieldCollection_fieldCollNumber tr:not(:first-child) input {
+        margin-left: auto !important;
+    }
 
     /* begindatum date / begindatum date */
     #fieldset-location .datagridwidget-widget-start_date,
