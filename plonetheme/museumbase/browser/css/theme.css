@@ -9479,50 +9479,6 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:no
     width: 100% !important;
 }
 
-#formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role input {
-    width: 54% !important;
-    float: left !important;
-}
-
-#formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-creator label, #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role label, #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-creator div.label, #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role div.label {
-    width: 41.5% !important;
-}
-
-#formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-creator input {
-    width: 51.6% !important;
-}
-
-#formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role input {
-    width: 54% !important;
-    float: left !important;
-}
-
-#formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-creator label, #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role label, #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-creator div.label, #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role div.label {
-    width: 38.9% !important;
-}
-
-#formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-creator input {
-    width: 51.6% !important;
-}
-
-#formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-creator {
-    width: 70% !important;
-    float: left;
-}
-
-#formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role {
-    width: 30% !important;
-    float: left;
-}
-
-#formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-role label {
-    width: 20% !important;
-}
-
-#content .datagridwidget-body .datagridwidget-widget-role div.select2-container.pat-select2 {
-    min-width: 20px !important;
-}
-
 #formfield-form-widgets-inscriptionsMarkings_inscriptionsAndMarkings .datagridwidget-widget-content {
     clear: both;
 }
