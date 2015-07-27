@@ -9452,11 +9452,11 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.labe
 
 #formfield-form-widgets-productionDating_production_schoolstyle div.label, 
 #formfield-form-widgets-productionDating_production_schoolstyle label {
-    width: 26.8% !important;
+    width: 27.5% !important;
 }
 
 #fieldset-production_dating label[for="form-widgets-productionDating_production_productionReason"].control-label.col-sm-3 {
-    width: 23.4% !important;
+    width: 22.2% !important;
 }
 
 #formfield-form-widgets-productionDating_production_productionReason .col-sm-9.fieldset-input {
@@ -9471,7 +9471,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.labe
     width: 100px !important;
 }
 
-body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.select2-input):not(.searchButton) {
+body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.select2-input):not(.searchButton):not(.text-widget):not(.contenttree-widget) {
     width: 70% !important;
 }
 
@@ -9640,12 +9640,17 @@ fieldset.formPanel div.querySelectSearch div.formControls button:hover {
     float:left;
 }
 
+fieldset.formPanel .datagridwidget-body .datagridwidget-block-edit-cell div.label, fieldset.formPanel .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
+    float:left;
+}
+
 #fieldset-exhibitions .datagridwidget-body .datagridwidget-block-edit-cell div.label, #fieldset-exhibitions .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
     float:left;
 }
 
 #fieldset-numbers_relationships .datagridwidget-body .datagridwidget-block-edit-cell div.label,
-#fieldset-exhibitions .datagridwidget-body .datagridwidget-block-edit-cell div.label {
+#fieldset-exhibitions .datagridwidget-body .datagridwidget-block-edit-cell div.label,
+fieldset.formPanel .datagridwidget-body .datagridwidget-block-edit-cell div.label {
     padding-top: 11px;
 }
 
@@ -9705,7 +9710,8 @@ fieldset.formPanel div.querySelectSearch div.formControls button:hover {
 
 #fieldset-numbers_relationships input.contenttree-widget.relationlist-field,
 #fieldset-disposal input.contenttree-widget.relationlist-field,
-#fieldset-exhibitions input.contenttree-widget.relationlist-field {
+#fieldset-exhibitions input.contenttree-widget.relationlist-field,
+fieldset.formPanel input.contenttree-widget.relationlist-field {
     width: 10px !important;
 }
 
