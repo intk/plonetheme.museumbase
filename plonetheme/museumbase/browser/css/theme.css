@@ -9488,11 +9488,11 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:no
 }
 
 div.datagridwidget-widget-nameType select.select-widget {
-    width: 51% !important;
+    width: 70% !important;
 }
 
 #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-name label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType div.label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-name div.label {
-  width: 47.5% !important;
+  width: 27.4% !important;
   float: left;
 }
 
@@ -10067,6 +10067,10 @@ label[for="form-widgets-fieldCollection_fieldCollection_dateEarly"] {
 
 #form-widgets-physicalCharacteristics_dimension input.select2-input {
     width: 46px !important;
+}
+
+.datagridwidget-widget-nameType {
+    clear: both;
 }
 
 /* Backend media queries */
