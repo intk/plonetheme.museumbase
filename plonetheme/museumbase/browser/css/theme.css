@@ -9989,6 +9989,10 @@ label[for="form-widgets-fieldCollection_fieldCollection_dateEarly"] {
     clear: both;
 }
 
+span.required {
+    display: none;
+}
+
 /* Backend media queries */
 @media (max-width: 767px) {
 
