@@ -9463,11 +9463,11 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.labe
     width: 70% !important;
 }
 
-#content .datagridwidget-body .select2-container.pat-select2 {
+.datagridwidget-body .select2-container.pat-select2 {
     min-width: 200px !important;
 }
 
-#content .datagridwidget-body input.select2-input {
+.datagridwidget-body input.select2-input {
     width: 100px !important;
 }
 
@@ -9488,12 +9488,20 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:no
 }
 
 div.datagridwidget-widget-nameType select.select-widget {
-    width: 70% !important;
+    width: 51% !important;
 }
 
 #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-name label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType div.label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-name div.label {
-  width: 48.5% !important;
+  width: 47.5% !important;
   float: left;
+}
+
+#form-widgets-physicalCharacteristics_dimension select.select-widget {
+    width: 100px !important;
+}
+
+#formfield-form-widgets-identification_taxonomy_objectstatus .control-label {
+    width: 23.5% !important;
 }
 
 #fieldset-numbers_relationships div.querySelectSearch label,
@@ -10053,7 +10061,13 @@ label[for="form-widgets-fieldCollection_fieldCollection_dateEarly"] {
     display: none !important;
 }
 
+#form-widgets-physicalCharacteristics_dimension .select2-container.pat-select2 {
+    min-width: 100px !important;
+}
 
+#form-widgets-physicalCharacteristics_dimension input.select2-input {
+    width: 46px !important;
+}
 
 /* Backend media queries */
 @media (max-width: 767px) {
