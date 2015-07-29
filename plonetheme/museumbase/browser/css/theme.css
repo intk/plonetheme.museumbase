@@ -9392,7 +9392,7 @@ div.field select {
 }
 
 #formfield-form-widgets-identification_taxonomy_objectstatus div.fieldset-input {
-    width: 55.8% !important;
+    width: 57.7% !important
 }
 
 div.field textarea {
@@ -9993,8 +9993,37 @@ span.required {
     display: none;
 }
 
+/* ADD PAGE */
+
+body.template-collective-object-object #formfield-form-widgets-productionDating_production_productionReason .control-label {
+    width: 23.9% !important;
+}
+
+body.template-collective-object-object #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType div.label {
+    width: 28.3% !important;
+}
+
+body.template-collective-object-object #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-confirmation_date div.label {
+    width: 47.2% !important;
+}
+
+
+body.template-collective-object-object #formfield-form-widgets-fieldCollection_fieldCollection_fieldCollNumber tr:not(:first-child) input, 
+body.template-collective-object-object#formfield-form-widgets-fieldCollection_fieldCollection_event tr:not(:first-child) input {
+    margin-left: 28.4% !important;
+}
+
+body.template-collective-object-object #formfield-form-widgets-location_normalLocation_normalLocation .control-label {
+    width: 24% !important;
+}
+
+
 /* Backend media queries */
 @media (max-width: 767px) {
+
+    body.collective-object-object #formfield-form-widgets-productionDating_production_productionReason .control-label {
+        width: 100% !important;
+    }
 
     label[for="form-widgets-fieldCollection_fieldCollection_dateEarly"] {
         width: 100% !important;
