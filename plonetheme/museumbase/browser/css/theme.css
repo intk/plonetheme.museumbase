@@ -10077,6 +10077,10 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 77.3% !important;
 }
 
+#form-widgets-IBasic-description {
+    height: 75px;
+}
+
 /* Option 2 
 
 .fieldset-input select {
@@ -10084,6 +10088,8 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     outline: 1px solid #CCC;
     background-color: white;
 }
+
+
 
 */
 
