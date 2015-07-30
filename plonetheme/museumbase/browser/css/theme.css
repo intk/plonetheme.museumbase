@@ -9447,7 +9447,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.labe
 }
 
 #formfield-form-widgets-productionDating_productionDating label {
-    width: 28.4% !important;
+    width: 28.4%;
 }
 
 #formfield-form-widgets-productionDating_production_schoolstyle div.label, 
@@ -9639,9 +9639,10 @@ fieldset.formPanel .datagridwidget-body .datagridwidget-block-edit-cell div.labe
 }
 
 .datagridwidget-block-edit-cell .querySelectSearch {
-    width: 70% !important;
+    width: 100% !important;
     float: left;
 }
+
 
 .querySelectSearch input.searchButton {
     border: 0px;
@@ -9993,6 +9994,15 @@ span.required {
     display: none;
 }
 
+.datagridwidget-block-edit-cell div[id$='autocomplete'] {
+    width: 70% !important;
+    float: left;
+}
+
+.datagridwidget-block-edit-cell div[id$='autocomplete'] label {
+    width: 100% !important;
+}
+
 /* ADD PAGE */
 
 body.template-collective-object-object #formfield-form-widgets-productionDating_production_productionReason .control-label {
@@ -10017,6 +10027,13 @@ body.template-collective-object-object #formfield-form-widgets-location_normalLo
     width: 24% !important;
 }
 
+div.autocompleteInputWidget {
+    padding-top: 11px !important;
+}
+
+div.contenttree-widget + div.text-widget {
+    clear: both;
+}
 
 /* Backend media queries */
 @media (max-width: 767px) {
