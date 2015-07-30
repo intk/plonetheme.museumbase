@@ -10063,6 +10063,10 @@ div.contenttree-widget + div.text-widget {
     height: 43px !important;
 }
 
+body.template-edit input.text-widget {
+    height: 43px !important;
+}
+
 /* Option 2 
 
 .fieldset-input select {
