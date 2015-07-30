@@ -7406,7 +7406,7 @@ body.template-sharing  #content .documentDescription {
 
 body.template-edit textarea.form-control,
 body.template-sharing textarea.form-control {
-    height: 75px;
+    height: 43px;
 }
 
 .field select {
@@ -9398,7 +9398,7 @@ div.field select {
 div.field textarea {
     font-family: 'Merriweather', serif !important;
     font-size: 0.875em !important;
-    padding: 1.2em !important;
+    padding: 10px !important;
 }
 
 select.formTabs {
@@ -9417,7 +9417,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.labe
 }
 
 #fieldset-production_dating .control-label.col-sm-3 {
-    width: 24.2% !important;
+    width: 22.5% !important;
 }
 
 #formfield-form-widgets-identification_objectName_objectname label,
@@ -9456,11 +9456,12 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.labe
 }
 
 #fieldset-production_dating label[for="form-widgets-productionDating_production_productionReason"].control-label.col-sm-3 {
-    width: 22.2% !important;
+    width: 100% !important;
+    padding-bottom: 8px;
 }
 
 #formfield-form-widgets-productionDating_production_productionReason .col-sm-9.fieldset-input {
-    width: 70% !important;
+    width: 100% !important;
 }
 
 .datagridwidget-body .select2-container.pat-select2 {
@@ -10041,7 +10042,6 @@ div.contenttree-widget + div.text-widget {
     line-height: 24px !important;
 }
 
-
 .form-control {
     height: 40px;
     padding: 7px 18px;
@@ -10065,6 +10065,16 @@ div.contenttree-widget + div.text-widget {
 
 body.template-edit input.text-widget {
     height: 43px !important;
+}
+
+body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea {
+    width: 70% !important;
+    /*min-height: 419px !important;*/
+}
+
+
+#formfield-form-widgets-productionDating_production_schoolStyles div.col-sm-9.fieldset-input {
+    width: 77.3% !important;
 }
 
 /* Option 2 
