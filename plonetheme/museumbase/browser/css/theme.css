@@ -9497,7 +9497,7 @@ div.datagridwidget-widget-nameType select.select-widget {
 }
 
 #form-widgets-physicalCharacteristics_dimension select.select-widget {
-    width: 100px !important;
+    width: 100% !important;
 }
 
 #formfield-form-widgets-identification_taxonomy_objectstatus .control-label {
@@ -10051,8 +10051,9 @@ div.contenttree-widget + div.text-widget {
     padding-top: 8px !important;
 }
 
-.datagridwidget-block-edit-cell {
-    padding-bottom: 40px;
+
+.datagridwidget-body tr:not(:first-child) .datagridwidget-block-edit-cell {
+    padding-top: 40px !important;
 }
 
 .select2-container-multi {
@@ -10079,6 +10080,19 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 
 #form-widgets-IBasic-description {
     height: 75px;
+}
+
+#formfield-form-widgets-physicalCharacteristics_frame th.header.cell-1 {
+    width: 16% !important;
+}
+
+#form-widgets-physicalCharacteristics_dimension th.header.cell-3,
+#form-widgets-physicalCharacteristics_dimension th.header.cell-5 {
+    width: 80px;
+}
+
+#form-widgets-physicalCharacteristics_dimension th.header.cell-1 {
+    width: 120px;
 }
 
 /* Option 2 
