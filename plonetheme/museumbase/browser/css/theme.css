@@ -10104,6 +10104,15 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 77.5%;
 }
 
+#formfield-form-widgets-physicalCharacteristics_technique td.cell-2,
+#formfield-form-widgets-physicalCharacteristics_material td.cell-2 {
+    width: 250px;
+}
+
+#formfield-form-widgets-physicalCharacteristics_dimension td.cell-2 {
+    width: 150px;
+}
+
 
 /* Option 2 
 
