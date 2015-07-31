@@ -9850,8 +9850,10 @@ span.option span {
 }
 
 
+
+
 /* begindatum date / begindatum date */
-#fieldset-location .datagridwidget-widget-start_date,
+/*#fieldset-location .datagridwidget-widget-start_date,
 #fieldset-location .datagridwidget-widget-end_date {
     width: 50% !important;
     float: left;
@@ -9896,10 +9898,10 @@ span.option span {
 
 #fieldset-location .datagridwidget-widget-location_type {
     clear: both;
-}
+}*/
 
 /* location type / sort plaats */
-#fieldset-location .datagridwidget-widget-location_type,
+/* #fieldset-location .datagridwidget-widget-location_type,
 #fieldset-location .datagridwidget-widget-location {
     width: 50% !important;
     float: left;
@@ -9944,7 +9946,7 @@ span.option span {
 
 #fieldset-location .datagridwidget-widget-fitness {
     clear: both;
-}
+}*/
 
 
 #fieldset-field_collection .col-sm-9 {
@@ -10129,9 +10131,9 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 100%;
 }
 
-#fieldset-location .datagridwidget-widget-fitness input {
+/*#fieldset-location .datagridwidget-widget-fitness input {
     width: 22% !important;
-}
+}*/
 
 
 
@@ -10149,6 +10151,32 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 
 #formfield-form-widgets-location_normalLocation_normalLocation .fieldset-input {
     width: 76% !important;
+}
+
+
+/* Standplaats */
+
+#formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) {
+    width: 20% !important;
+    float:left;
+}
+
+#formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) label,
+#formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) div.label {
+    width: 100% !important;
+}
+
+#formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) div.select2-container {
+    min-width: 50px !important;
+}
+
+#formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) input:not(.select2-input),
+#formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) div.select2-container {
+    width: 90% !important;
+}
+
+#formfield-form-widgets-location_currentLocation textarea {
+    width: 70.6% !important;
 }
 
 /* Option 2 
