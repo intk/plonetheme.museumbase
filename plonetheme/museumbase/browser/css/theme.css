@@ -10134,9 +10134,13 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 }
 
 
-#formfield-form-widgets-location_checks th.header.cell-1,
+
 #formfield-form-widgets-location_checks th.header.cell-2 {
     width: 210px;
+}
+
+#formfield-form-widgets-location_checks th.header.cell-1 {
+    width: 175px;
 }
 
 #formfield-form-widgets-location_normalLocation_normalLocation .control-label {
