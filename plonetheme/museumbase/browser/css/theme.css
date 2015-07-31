@@ -7406,7 +7406,7 @@ body.template-sharing  #content .documentDescription {
 
 body.template-edit textarea.form-control,
 body.template-sharing textarea.form-control {
-    height: 43px;
+    height: 37px;
 }
 
 .field select {
@@ -9357,7 +9357,7 @@ td.datagridwidget-manipulator.move-up img, td.datagridwidget-manipulator.move-do
 }
 
 .select2-container-multi .select2-choices .select2-search-choice {
-    margin: 9px 0 3px 5px !important;
+    margin: 6px 0 3px 5px !important;
 }
 
 div.field label {
@@ -9573,7 +9573,7 @@ fieldset.formPanel div.querySelectSearch div.formControls button {
     border-radius: 0;
     padding: 6px 17px !important;
     margin-left: 0px;
-    height: 43px;
+    height: 37px;
 }
 
 #fieldset-numbers_relationships div.querySelectSearch div.formControls button:hover,
@@ -9595,7 +9595,7 @@ fieldset.formPanel div.querySelectSearch div.formControls button:hover {
     border-radius: 0;
     padding: 6px 17px !important;
     margin-left: 0px;
-    height: 43px;
+    height: 37px;
 }
 
 #formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_parts {
@@ -9617,7 +9617,7 @@ fieldset.formPanel .datagridwidget-body .datagridwidget-block-edit-cell div.labe
 #fieldset-numbers_relationships .datagridwidget-body .datagridwidget-block-edit-cell div.label,
 #fieldset-exhibitions .datagridwidget-body .datagridwidget-block-edit-cell div.label,
 fieldset.formPanel .datagridwidget-body .datagridwidget-block-edit-cell div.label {
-    padding-top: 6px;
+    padding-top: 11px;
 }
 
 #fieldset-numbers_relationships .datagridwidget-widget-notes,
@@ -10043,12 +10043,12 @@ div.contenttree-widget + div.text-widget {
 }
 
 .form-control {
-    height: 40px;
+    height: 33px;
     padding: 7px 18px;
 }
 
 .form-horizontal .control-label {
-    padding-top: 8px !important;
+    padding-top: 7px !important;
 }
 
 
@@ -10061,11 +10061,11 @@ div.contenttree-widget + div.text-widget {
 }
 
 .datagridwidget-body input.text-widget {
-    height: 43px !important;
+    height: 37px !important;
 }
 
 body.template-edit input.text-widget {
-    height: 43px !important;
+    height: 37px !important;
 }
 
 body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea {
