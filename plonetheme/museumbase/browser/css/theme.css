@@ -9417,7 +9417,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.labe
 }
 
 #fieldset-production_dating .control-label.col-sm-3 {
-    width: 22.5% !important;
+    width: 22.6% !important;
 }
 
 #formfield-form-widgets-identification_objectName_objectname label,
@@ -9456,12 +9456,16 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.labe
 }
 
 #fieldset-production_dating label[for="form-widgets-productionDating_production_productionReason"].control-label.col-sm-3 {
-    width: 100% !important;
-    padding-bottom: 8px;
+    /*width: 100% !important;
+    padding-bottom: 8px;*/
 }
 
 #formfield-form-widgets-productionDating_production_productionReason .col-sm-9.fieldset-input {
-    width: 100% !important;
+    /*width: 100% !important;*/
+}
+
+#formfield-form-widgets-productionDating_production_productionReason {
+    padding-top: 30px;
 }
 
 .datagridwidget-body .select2-container.pat-select2 {
@@ -10083,7 +10087,7 @@ body.template-edit input.text-widget {
 }
 
 body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea {
-    width: 70% !important;
+    width: 69.7% !important;
     /*min-height: 419px !important;*/
 }
 
@@ -10115,7 +10119,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 }
 
 #formfield-form-widgets-productionDating_production_periods div.fieldset-input.col-sm-9 {
-    width: 77.5%;
+    width: 100%;
 }
 
 #formfield-form-widgets-physicalCharacteristics_technique td.cell-2,
@@ -10179,17 +10183,23 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 70.6% !important;
 }
 
-/* Option 2 
+#formfield-form-widgets-productionDating_production_productionReason div.fieldset-input,
+#formfield-form-widgets-productionDating_dating_notes div.fieldset-input {
+    width: 77.4% !important;
+}
 
+/* Option 2 
 .fieldset-input select {
     border: 0;
     outline: 1px solid #CCC;
     background-color: white;
 }
-
-
-
 */
+
+
+.datagridwidget-widget-location input.select2-input {
+    width: 25px;
+}
 
 /* Backend media queries */
 @media (max-width: 767px) {
