@@ -9870,9 +9870,13 @@ span.option span {
     width: 44% !important;
 }
 
-#fieldset-location .datagridwidget-widget-end_date div.label,
-#fieldset-location .datagridwidget-widget-end_date div.label label {
+#fieldset-location .datagridwidget-widget-end_date div.label {
     width: 35% !important;
+    text-align: right;
+}
+
+#fieldset-location .datagridwidget-widget-end_date div.label label {
+    width:  100% !important;
     text-align: right;
 }
 
@@ -9914,9 +9918,13 @@ span.option span {
     width: 44% !important;
 }
 
-#fieldset-location .datagridwidget-widget-location div.label,
-#fieldset-location .datagridwidget-widget-location div.label label {
+#fieldset-location .datagridwidget-widget-location div.label {
     width: 35% !important;
+    text-align: right;
+}
+
+#fieldset-location .datagridwidget-widget-location div.label label {
+    width: 100% !important;
     text-align: right;
 }
 
@@ -10121,6 +10129,24 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 100%;
 }
 
+#fieldset-location .datagridwidget-widget-fitness input {
+    width: 22% !important;
+}
+
+
+#formfield-form-widgets-location_checks th.header.cell-1,
+#formfield-form-widgets-location_checks th.header.cell-2 {
+    width: 210px;
+}
+
+#formfield-form-widgets-location_normalLocation_normalLocation .control-label {
+    width: 23.9% !important;
+}
+
+#formfield-form-widgets-location_normalLocation_normalLocation .fieldset-input {
+    width: 76% !important;
+}
+
 /* Option 2 
 
 .fieldset-input select {
@@ -10136,7 +10162,20 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 /* Backend media queries */
 @media (max-width: 767px) {
 
+    #formfield-form-widgets-location_normalLocation_normalLocation .control-label {
+        width: 100% !important;
+    }
+
+    #formfield-form-widgets-location_normalLocation_normalLocation .fieldset-input {
+        width: 100% !important;
+    }
+
+
     body.collective-object-object #formfield-form-widgets-productionDating_production_productionReason .control-label {
+        width: 100% !important;
+    }
+    
+    #fieldset-location .datagridwidget-widget-fitness input {
         width: 100% !important;
     }
 
