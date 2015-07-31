@@ -10047,6 +10047,10 @@ div.contenttree-widget + div.text-widget {
     padding: 7px 18px;
 }
 
+input.select2-input {
+    height: 33px;
+}
+
 .form-horizontal .control-label {
     padding-top: 7px !important;
 }
@@ -10113,6 +10117,9 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 150px;
 }
 
+.select2-container {
+    width: 100%;
+}
 
 /* Option 2 
 
