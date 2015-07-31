@@ -10095,6 +10095,16 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 120px;
 }
 
+#form-widgets-productionDating_dating_period th.header.cell-5,
+#form-widgets-productionDating_dating_period td.cell-5 {
+    display: none;
+}
+
+#formfield-form-widgets-productionDating_production_periods div.fieldset-input.col-sm-9 {
+    width: 77.5%;
+}
+
+
 /* Option 2 
 
 .fieldset-input select {
