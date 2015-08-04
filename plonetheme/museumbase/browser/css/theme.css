@@ -9379,7 +9379,7 @@ div.field label {
 }
 
 #formfield-form-widgets-identification_objectName_category {
-    width: 59.4% !important;
+    width: 100% !important;
 }
 
 #formfield-form-widgets-identification_objectName_otherName td.cell-1 {
@@ -9505,7 +9505,7 @@ div.datagridwidget-widget-nameType select.select-widget {
 }
 
 #formfield-form-widgets-identification_taxonomy_objectstatus .control-label {
-    width: 23.5% !important;
+    width: 22.5% !important;
 }
 
 #fieldset-numbers_relationships div.querySelectSearch label,
@@ -9746,6 +9746,11 @@ fieldset.formPanel input.contenttree-widget.relationlist-field {
 }
 
 #fieldset-value_insurance .datagridwidget-widget-date div.label label {
+    width: 100% !important;
+    text-align: right;
+}
+
+#fieldset-value_insurance .datagridwidget-widget-date div.label label {
     padding-right: 30px;
 }
 
@@ -9951,6 +9956,56 @@ span.option span {
 #fieldset-location .datagridwidget-widget-fitness {
     clear: both;
 }*/
+
+#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title,
+#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type {
+    width: 50% !important;
+    float: left;
+}
+
+#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title {
+    clear: both;
+}
+
+#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label,
+#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label label {
+    width: 54.5% !important;
+}
+
+#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title input {
+    width: 44% !important;
+}
+
+#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label {
+    width: 35% !important;
+    text-align: right;
+}
+#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label label {
+    width: 100% !important;
+    text-align: right;
+}
+
+#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label label {
+    padding-right: 30px;
+}
+
+#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type input {
+    width: 59.8% !important;
+}
+
+#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title,
+#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type {
+    width: 50% !important;
+    float: left;
+}
+
+#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-notes {
+    clear: both;
+}
+
+
+
+/****/
 
 
 #fieldset-field_collection .col-sm-9 {
@@ -10233,6 +10288,44 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 
 #formfield-form-widgets-exhibitions_exhibition ..datagridwidget-block-edit-cell div.field:not(.relationlist-field) {
     display: none !important;
+}
+
+#formfield-form-widgets-identification_objectName_objectname .datagridwidget-body tr td.cell-1 {
+    width: 150px !important;
+}
+
+#formfield-form-widgets-identification_objectName_objectname .datagridwidget-body tr td.cell-2 {
+    width: 120px !important;
+}
+
+#content-core #formfield-form-widgets-identification_titleDescription_translatedTitle tr:not(:first-child) td.datagridwidget-block-edit-cell {
+    padding-top: 10px !important;
+}
+
+#content-core #formfield-form-widgets-identification_titleDescription_translatedTitle tr:not(:first-child) td.datagridwidget-manipulator {
+    padding-top: 10px !important;
+}
+
+#content-core #fieldset-identification #formfield-form-widgets-identification_titleDescription_translatedTitle .datagridwidget-widget-title,
+#content-core #fiendset-identification #formfield-form-widgets-identification_titleDescription_translatedTitle .datagridwidget-widget-title input {
+    width: 100% !important;
+}
+
+#formfield-form-widgets-identification_titleDescription_translatedTitle tr:not(:first-child) label span {
+    display: none;
+}
+
+#formfield-form-widgets-identification_titleDescription_language .control-label {
+    width: 22.6% !important;
+}
+
+#formfield-form-widgets-identification_titleDescription_language .fieldset-input {
+    width: 77.4% !important;
+}
+
+
+#formfield-form-widgets-identification_titleDescription_describer .control-label {
+    width: 47% !important;
 }
 
 /* Backend media queries */
