@@ -10215,6 +10215,26 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     text-align: right;
 }
 
+#content .field input[type="text"][name$=".title"] {
+    font-weight: 400 !important;
+    color: #333333 !important;
+    letter-spacing: 0.00em;
+}
+
+.datagridwidget-widget-dateBirth,
+.datagridwidget-widget-dateDeath {
+    display: none;
+}
+
+#formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_partOf label.control-label,
+#formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_notes label.control-label {
+    width: 22.5% !important;
+}
+
+#formfield-form-widgets-exhibitions_exhibition ..datagridwidget-block-edit-cell div.field:not(.relationlist-field) {
+    display: none !important;
+}
+
 /* Backend media queries */
 @media (max-width: 767px) {
 
