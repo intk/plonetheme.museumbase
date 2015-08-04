@@ -9754,7 +9754,7 @@ fieldset.formPanel input.contenttree-widget.relationlist-field {
 }
 
 /* Confirmation date / renewal date */
-#fieldset-value_insurance .datagridwidget-widget-confirmation_date,
+/*#fieldset-value_insurance .datagridwidget-widget-confirmation_date,
 #fieldset-value_insurance .datagridwidget-widget-renewal_date {
     width: 50% !important;
     float: left;
@@ -9789,7 +9789,7 @@ fieldset.formPanel input.contenttree-widget.relationlist-field {
 }
 
 #fieldset-condition_conservation #formfield-form-widgets-conditionConservation_conditions input.select2-input.form-control {
-}
+}*/
 
 #formfield-form-widgets-acquisition_methods label {
     float:left;
@@ -10197,8 +10197,22 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 */
 
 
+#fieldset-value_insurance .datagridwidget-widget-curr div.label label {
+    width: 100% !important;
+}
+
+#formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-curr div.label {
+    width: 30% !important;
+}
+
+#formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-curr div.label label {
+    width: 100% !important;
+    text-align: right;
+}
+
 .datagridwidget-widget-location input.select2-input {
     width: 25px;
+    text-align: right;
 }
 
 /* Backend media queries */
