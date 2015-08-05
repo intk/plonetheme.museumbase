@@ -10362,6 +10362,10 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     display: none;
 }
 
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-block-edit-cell .datagridwidget-block:not(.relationlist-field) {
+    display: none;
+}
+
 
 #content-core #formfield-form-widgets-transport_entry_number .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-block-edit-cell,
 #content-core #formfield-form-widgets-transport_entry_number .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-manipulator {
@@ -10416,6 +10420,8 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 #formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-destination {
     clear: both;
 }
+
+
 
 
 /* Backend media queries */
