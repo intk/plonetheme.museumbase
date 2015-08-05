@@ -10524,6 +10524,10 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 71.4% !important;
 }
 
+#form-widgets-ownershipHistory_price {
+    width: 33.3% !important;
+}
+
 
 #formfield-form-widgets-exhibitions_exhibition .datagridwidget-block-edit-cell .datagridwidget-block:not(.relationlist-field):not(.datagridwidget-widget-notes):not(.datagridwidget-widget-catObject) {
     display: none;
