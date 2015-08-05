@@ -10341,6 +10341,10 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 250px;
 }
 
+#formfield-form-widgets-notes_free_fields th.header.cell-3 {
+    text-align: center;
+}
+
 
 
 /* Backend media queries */
