@@ -10345,6 +10345,18 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     text-align: center;
 }
 
+#formfield-form-widgets-labels .datagridwidget-widget-type {
+    display: none;
+}
+
+#formfield-form-widgets-labels th.cell-3,
+#formfield-form-widgets-labels td.cell-3 {
+    display: none;
+}
+
+#formfield-form-widgets-labels td.cell-2 {
+    width: 65%;
+}
 
 
 /* Backend media queries */
