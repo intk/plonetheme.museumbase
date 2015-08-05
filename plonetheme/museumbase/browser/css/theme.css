@@ -10366,6 +10366,13 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     display: none;
 }
 
+#formfield-form-widgets-loans_incomingLoans .datagridwidget-block-edit-cell .datagridwidget-block:not(.relationlist-field) {
+    display: none;
+}
+
+#formfield-form-widgets-loans_outgoingLoans .datagridwidget-block-edit-cell .datagridwidget-block:not(.relationlist-field) {
+    display: none;
+}
 
 #content-core #formfield-form-widgets-transport_entry_number .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-block-edit-cell,
 #content-core #formfield-form-widgets-transport_entry_number .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-manipulator {
@@ -10373,8 +10380,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 }
 
 
-
-
+/* *** */
 #formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-despatch_date,
 #formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-delivery_date {
     width: 50% !important;
@@ -10420,6 +10426,8 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 #formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-destination {
     clear: both;
 }
+/* *** */
+
 
 
 
