@@ -10546,6 +10546,10 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     display: none;
 }
 
+#formfield-form-widgets-conditionConservation_conservationTreatments .datagridwidget-block-edit-cell .datagridwidget-block:not(.relationlist-field) {
+    display:none;
+}
+
 #formfield-form-widgets-disposal_number label {
     width: 44.5% !important;
 }
