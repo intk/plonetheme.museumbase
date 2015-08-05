@@ -10358,6 +10358,65 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 65%;
 }
 
+#formfield-form-widgets-transport_entry_number .datagridwidget-block-edit-cell .datagridwidget-block:not(.relationlist-field) {
+    display: none;
+}
+
+
+#content-core #formfield-form-widgets-transport_entry_number .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-block-edit-cell,
+#content-core #formfield-form-widgets-transport_entry_number .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-manipulator {
+    padding-top: 10px !important;
+}
+
+
+
+
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-despatch_date,
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-delivery_date {
+    width: 50% !important;
+    float: left;
+}
+
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-despatch_date {
+    clear: both;
+}
+
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-despatch_date div.label,
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-despatch_date div.label label {
+    width: 54.5% !important;
+}
+
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-despatch_date input {
+    width: 44% !important;
+}
+
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-delivery_date div.label {
+    width: 35% !important;
+    text-align: right;
+}
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-delivery_date div.label label {
+    width: 100% !important;
+    text-align: right;
+}
+
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-delivery_date div.label label {
+    padding-right: 10px;
+}
+
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-delivery_date input {
+    width: 59.8% !important;
+}
+
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-despatch_date,
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-delivery_date {
+    width: 50% !important;
+    float: left;
+}
+
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-destination {
+    clear: both;
+}
+
 
 /* Backend media queries */
 @media (max-width: 767px) {
