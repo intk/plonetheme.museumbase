@@ -10003,23 +10003,16 @@ span.option span {
     clear: both;
 }
 
-
-
+#fieldset-field_collection .datagridwidget-body .datagridwidget-block-edit-cell div.label, 
+#fieldset-field_collection .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
+    width: 26.7% !important;
+}
 /****/
+
 
 
 #fieldset-field_collection .col-sm-9 {
     width: 76.6%;
-}
-
-#formfield-form-widgets-fieldCollection_fieldCollection_fieldCollNumber tr:not(:first-child) label,
-#formfield-form-widgets-fieldCollection_fieldCollection_event tr:not(:first-child) label {
-    display: none !important;
-}
-
-#formfield-form-widgets-fieldCollection_fieldCollection_fieldCollNumber tr:not(:first-child) input,
-#formfield-form-widgets-fieldCollection_fieldCollection_event tr:not(:first-child) input {
-    margin-left: 27.4% !important;
 }
 
 label[for="form-widgets-fieldCollection_fieldCollection_dateEarly"] {
@@ -10031,7 +10024,7 @@ label[for="form-widgets-fieldCollection_fieldCollection_dateEarly"] {
 }
 
 #fieldset-field_collection .div-50 .control-label {
-    width: 46.4% !important;
+    width: 46% !important;
 }
 
 #form-widgets-notes_free_fields .option label {
@@ -10381,6 +10374,10 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     padding-top: 10px !important;
 }
 
+#content-core #formfield-form-widgets-fieldCollection_fieldCollection_fieldCollNumber .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-block-edit-cell,
+#content-core #formfield-form-widgets-fieldCollection_fieldCollection_fieldCollNumber .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-manipulator {
+    padding-top: 10px !important;
+}
 
 /* *** */
 #formfield-form-widgets-transport_despatchNumber .datagridwidget-widget-despatch_date,
@@ -10429,6 +10426,103 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     clear: both;
 }
 /* *** */
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-code,
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-codeType {
+    width: 50% !important;
+    float: left;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-code {
+    clear: both;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-code div.label,
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-code div.label label {
+    width: 53.5% !important;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-code div.select2-container {
+    width: 42% !important;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-code div.select2-container {
+    min-width: 0px !important;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-codeType div.label {
+    width: 35% !important;
+    text-align: right;
+}
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-codeType div.label label {
+    width: 100% !important;
+    text-align: right;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-codeType div.label label {
+    padding-right: 30px;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-codeType div.select2-container {
+    width: 59.8% !important;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-code,
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-codeType {
+    width: 50% !important;
+    float: left;
+}
+
+/* *** */
+
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-unit {
+    clear: both;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-unit div.label,
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-unit div.label label {
+    width: 44.5% !important;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-unit div.select2-container {
+    width: 42% !important;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-unit div.select2-container {
+    min-width: 0px !important;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-type div.label {
+    width: 35% !important;
+    text-align: right;
+}
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-type div.label label {
+    width: 100% !important;
+    text-align: right;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-type div.label label {
+    padding-right: 30px;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-type input {
+    width: 59.8% !important;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-unit {
+    width: 60% !important;
+    float: left;
+}
+
+#fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-type {
+    width: 40% !important;
+    float:left;
+}
+
+#formfield-form-widgets-fieldCollection_habitatStratigraphy_habitat #form-widgets-fieldCollection_habitatStratigraphy_habitat-AA-widgets-term input {
+    width: 71.4% !important;
+}
 
 
 #formfield-form-widgets-exhibitions_exhibition .datagridwidget-block-edit-cell .datagridwidget-block:not(.relationlist-field):not(.datagridwidget-widget-notes):not(.datagridwidget-widget-catObject) {
