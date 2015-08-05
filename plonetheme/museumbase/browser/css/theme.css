@@ -10431,7 +10431,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 /* *** */
 
 
-#formfield-form-widgets-exhibitions_exhibition .datagridwidget-block-edit-cell .datagridwidget-block:not(.relationlist-field) {
+#formfield-form-widgets-exhibitions_exhibition .datagridwidget-block-edit-cell .datagridwidget-block:not(.relationlist-field):not(.datagridwidget-widget-notes):not(.datagridwidget-widget-catObject) {
     display: none;
 }
 
