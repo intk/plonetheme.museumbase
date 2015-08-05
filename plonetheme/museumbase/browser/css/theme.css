@@ -10251,7 +10251,6 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 }
 */
 
-
 #fieldset-value_insurance .datagridwidget-widget-curr div.label label {
     width: 100% !important;
 }
@@ -10286,7 +10285,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 22.5% !important;
 }
 
-#formfield-form-widgets-exhibitions_exhibition ..datagridwidget-block-edit-cell div.field:not(.relationlist-field) {
+#formfield-form-widgets-exhibitions_exhibition td.datagridwidget-block-edit-cell div.field:not(.relationlist-field) {
     display: none !important;
 }
 
@@ -10327,6 +10326,22 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 #formfield-form-widgets-identification_titleDescription_describer .control-label {
     width: 47% !important;
 }
+
+.datagridwidget-manipulator {
+    width: 41px !important;
+}
+
+#formfield-form-widgets-managementDetails_edit .cell-4,
+#formfield-form-widgets-managementDetails_input .cell-4 {
+    width: 170px;
+}
+
+#formfield-form-widgets-managementDetails_edit .cell-5,
+#formfield-form-widgets-managementDetails_input .cell-5 {
+    width: 250px;
+}
+
+
 
 /* Backend media queries */
 @media (max-width: 767px) {
