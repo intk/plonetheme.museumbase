@@ -10135,8 +10135,21 @@ body.template-edit input.text-widget {
 }
 
 body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea {
-    width: 69.7% !important;
+    width: 70.1% !important;
     /*min-height: 419px !important;*/
+}
+
+#formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-policy_number input,
+#formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-insurance_company input,
+#formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-renewal_date input,
+#formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-reference input,
+#formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-conditions input,
+#formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-notes textarea {
+    width: 72.3% !important;
+}
+
+#formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-date div.label label {
+    padding-right: 10px;
 }
 
 
@@ -10539,6 +10552,10 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 
 #form-widgets-disposal_deaccession {
     width: 35.2% !important;
+}
+
+#form-widgets-recommendationsRequirements_legalLicenceRequirements_requirementsHeld td.cell-1 {
+    width: 323px;
 }
 
 /* Backend media queries */
