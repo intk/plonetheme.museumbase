@@ -10368,7 +10368,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     display: none;
 }
 
-#formfield-form-widgets-transport_despatchNumber .datagridwidget-block-edit-cell .datagridwidget-block:not(.relationlist-field) {
+#formfield-form-widgets-transport_despatchNumber .datagridwidget-block-edit-cell .datagridwidget-block:not(.datagridwidget-widget-transport_number) {
     display: none;
 }
 
