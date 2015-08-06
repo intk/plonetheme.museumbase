@@ -10861,6 +10861,14 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 70% !important;
 }
 
+#formfield-form-widgets-physicalCharacteristics_technique .cell-3 {
+    width: 360px;
+}
+
+#formfield-form-widgets-physicalCharacteristics_material .cell-1 {
+    width: 206px;
+}
+
 /* *** */
 
 /* Backend media queries */
