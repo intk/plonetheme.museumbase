@@ -9392,7 +9392,7 @@ div.field select {
 }
 
 #formfield-form-widgets-identification_taxonomy_objectstatus div.fieldset-input {
-    width: 57.7% !important
+    width: 58.1% !important
 }
 
 div.field textarea {
@@ -10877,6 +10877,27 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 70% !important;
 }
 
+
+#formfield-form-widgets-identification_titleDescription_description .control-label {
+    width: 22.5% !important;
+}
+
+#formfield-form-widgets-identification_titleDescription_description .col-sm-9 {
+    width: 77.5% !important;
+}
+
+#form-widgets-identification_taxonomy .cell-3 {
+    display: none;
+}
+
+#formfield-form-widgets-identification_taxonomy_notes .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-block-edit-cell,
+#formfield-form-widgets-identification_taxonomy_notes .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-manipulator {
+    padding-top: 10px !important;
+}
+
+#formfield-form-widgets-identification_taxonomy_notes textarea {
+    width: 70% !important;
+}
 
 
 /* *** */
