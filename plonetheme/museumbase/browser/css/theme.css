@@ -10801,7 +10801,67 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     clear: both;
 }
 
+#fieldset-documentation .datagridwidget-body .datagridwidget-block-edit-cell textarea {
+    width: 70% !important;
+}
 /* **** */
+
+/* **** */
+
+
+#fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-startDate {
+    clear: both;
+}
+
+#fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-startDate div.label,
+#fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-startDate div.label label {
+    width: 45.5% !important;
+}
+
+#fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-startDate input {
+    width: 42% !important;
+}
+
+#fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-endDate div.label {
+    width: 35% !important;
+    text-align: right;
+}
+#fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-endDate div.label label {
+    width: 100% !important;
+    text-align: right;
+}
+
+#fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-endDate div.label label {
+    padding-right: 30px;
+}
+
+#fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-endDate input {
+    width: 58.3% !important;
+}
+
+#fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-startDate {
+    width: 60% !important;
+    float: left;
+}
+
+#fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-endDate {
+    width: 40% !important;
+    float:left;
+}
+
+#fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-notes {
+    clear: both;
+}
+
+#fieldset-iconography .control-label {
+    width: 22.5% !important;
+}
+
+#fieldset-iconography .datagridwidget-body .datagridwidget-block-edit-cell textarea {
+    width: 70% !important;
+}
+
+/* *** */
 
 /* Backend media queries */
 @media (max-width: 767px) {
