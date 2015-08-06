@@ -10590,6 +10590,219 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 60.7%;
 }
 
+#formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-startDate div.label {
+    width: 57.5% !important;
+}
+
+#formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-startDate input {
+    width: 38% !important;
+}
+
+#formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-endDate input {
+    width: 64.6% !important;
+}
+
+#fieldset-associations textarea {
+    width: 70% !important;
+}
+
+/* **** */
+
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subjectType {
+    clear: both;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subjectType div.label,
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subjectType div.label label {
+    width: 45.5% !important;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subjectType select {
+    width: 42% !important;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subject div.label {
+    width: 35% !important;
+    text-align: right;
+}
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subject div.label label {
+    width: 100% !important;
+    text-align: right;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subject div.label label {
+    padding-right: 30px;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subject div.select2-container {
+    width: 58.3% !important;
+    min-width: 0px !important;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subjectType {
+    width: 60% !important;
+    float: left;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subject {
+    width: 40% !important;
+    float:left;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank {
+    clear: both;
+}
+
+/* **** */
+
+/* **** */
+
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank {
+    clear: both;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank div.label,
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank div.label label {
+    width: 45.5% !important;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank select {
+    width: 42% !important;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName div.label {
+    width: 35% !important;
+    text-align: right;
+}
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName div.label label {
+    width: 100% !important;
+    text-align: right;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName div.label label {
+    padding-right: 30px;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName input {
+    width: 58.3% !important;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank {
+    width: 60% !important;
+    float: left;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName {
+    width: 40% !important;
+    float:left;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-startDate {
+    clear: both;
+}
+
+/* **** */
+
+/* **** */
+
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-startDate {
+    clear: both;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-startDate div.label,
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-startDate div.label label {
+    width: 45.5% !important;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-startDate input {
+    width: 42% !important;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-endDate div.label {
+    width: 35% !important;
+    text-align: right;
+}
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-endDate div.label label {
+    width: 100% !important;
+    text-align: right;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-endDate div.label label {
+    padding-right: 30px;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-endDate input {
+    width: 58.3% !important;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-startDate {
+    width: 60% !important;
+    float: left;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-endDate {
+    width: 40% !important;
+    float:left;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-notes {
+    clear: both;
+}
+
+/* **** */
+
+/* **** */
+
+
+#fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-startDate {
+    clear: both;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-startDate div.label,
+#fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-startDate div.label label {
+    width: 45.5% !important;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-startDate input {
+    width: 42% !important;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-endDate div.label {
+    width: 35% !important;
+    text-align: right;
+}
+#fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-endDate div.label label {
+    width: 100% !important;
+    text-align: right;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-endDate div.label label {
+    padding-right: 30px;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-endDate input {
+    width: 58.3% !important;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-startDate {
+    width: 60% !important;
+    float: left;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-endDate {
+    width: 40% !important;
+    float:left;
+}
+
+#fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-notes {
+    clear: both;
+}
+
+/* **** */
+
 /* Backend media queries */
 @media (max-width: 767px) {
 
