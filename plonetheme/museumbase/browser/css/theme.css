@@ -10890,8 +10890,8 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     display: none;
 }
 
-#formfield-form-widgets-identification_taxonomy_notes .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-block-edit-cell,
-#formfield-form-widgets-identification_taxonomy_notes .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-manipulator {
+#content-core #formfield-form-widgets-identification_taxonomy_notes .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-block-edit-cell,
+#content-core #formfield-form-widgets-identification_taxonomy_notes .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-manipulator {
     padding-top: 10px !important;
 }
 
