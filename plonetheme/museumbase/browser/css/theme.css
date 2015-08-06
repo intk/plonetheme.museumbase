@@ -10908,6 +10908,22 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 69% !important;
 }
 
+#formfield-form-widgets-ownershipHistory_auctions div.label,
+#formfield-form-widgets-ownershipHistory_auctions div.label label {
+    width: 25.3% !important;
+}
+
+#formfield-form-widgets-ownershipHistory_auctions .datagridwidget-block-edit-cell div[id$='autocomplete'] {
+    width: 74.7% !important;
+}
+
+#formfield-form-widgets-ownershipHistory_auctions .datagridwidget-manipulator {
+    display: none;
+}
+
+#formfield-form-widgets-ownershipHistory_auctions .datagridwidget-block-edit-cell {
+    padding-right: 0px !important;
+}
 
 /* *** */
 
