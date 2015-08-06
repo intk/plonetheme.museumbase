@@ -10135,7 +10135,7 @@ body.template-edit input.text-widget {
 }
 
 body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea {
-    width: 70.1% !important;
+    width: 70% !important;
     /*min-height: 419px !important;*/
 }
 
@@ -10897,6 +10897,15 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 
 #formfield-form-widgets-identification_taxonomy_notes textarea {
     width: 70% !important;
+}
+
+#formfield-form-widgets-acquisition_acquisition_acquisitionFrom div.label,
+#formfield-form-widgets-acquisition_acquisition_acquisitionFrom div.label label {
+    width: 30.3% !important;
+}
+
+#formfield-form-widgets-acquisition_acquisition_acquisitionFrom .datagridwidget-block-edit-cell div[id$='autocomplete'] {
+    width: 69% !important;
 }
 
 
