@@ -10869,6 +10869,16 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 206px;
 }
 
+#fieldset-production_dating textarea.form-control {
+    width:  99.9% !important;
+}
+
+#fieldset-prouction_dating .datagridwidget-body .datagridwidget-block-edit-cell textarea {
+    width: 70% !important;
+}
+
+
+
 /* *** */
 
 /* Backend media queries */
