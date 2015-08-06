@@ -10562,6 +10562,14 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 323px;
 }
 
+#formfield-form-widgets-reproductions_reproduction .datagridwidget-widget-type,
+#formfield-form-widgets-reproductions_reproduction .datagridwidget-widget-format,
+#formfield-form-widgets-reproductions_reproduction .datagridwidget-widget-date,
+#formfield-form-widgets-reproductions_reproduction .datagridwidget-widget-creator {
+    display: none;
+}
+
+
 /* Backend media queries */
 @media (max-width: 767px) {
 
