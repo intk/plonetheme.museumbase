@@ -10573,13 +10573,21 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     display: none;
 }
 
-#formfield-form-widgets-documentationFreeArchive_archiveNumber .autocompleteInputWidget label span {
-    display: inline-block !important;
+#formfield-form-widgets-documentationFreeArchive_archiveNumber .autocompleteInputWidget span {
+    display: block !important;
 }
 
-#content-core #formfield-form-widgets-documentationFreeArchive_archiveNumber .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-block-edit-cell,
-#content-core #formfield-form-widgets-documentationFreeArchive_archiveNumber .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-manipulator {
-    padding-top: 10px !important;
+
+#form-widgets-ownershipHistory_price {
+    width: 29.4% !important;
+}
+
+#formfield-form-widgets-numbersRelationships_numbers .cell-3 {
+    width: 320px;
+}
+
+#formfield-form-widgets-numbersRelationships_digitalReferences .cell-2 {
+    width: 60.7%;
 }
 
 /* Backend media queries */
