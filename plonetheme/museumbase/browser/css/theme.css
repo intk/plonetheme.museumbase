@@ -10577,6 +10577,11 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     display: inline-block !important;
 }
 
+#content-core #formfield-form-widgets-documentationFreeArchive_archiveNumber .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-block-edit-cell,
+#content-core #formfield-form-widgets-documentationFreeArchive_archiveNumber .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-manipulator {
+    padding-top: 10px !important;
+}
+
 /* Backend media queries */
 @media (max-width: 767px) {
 
