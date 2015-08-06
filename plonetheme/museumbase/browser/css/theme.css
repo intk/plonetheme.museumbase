@@ -10869,7 +10869,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 206px;
 }
 
-#fieldset-production_dating textarea.form-control {
+#formfield-form-widgets-productionDating_production_productionReason textarea.form-control {
     width:  99.9% !important;
 }
 
