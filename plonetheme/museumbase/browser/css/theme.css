@@ -10569,6 +10569,10 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     display: none;
 }
 
+#formfield-form-widgets-documentationFreeArchive_archiveNumber .datagridwidget-row:not(:first-child) label span {
+    display: none;
+}
+
 
 /* Backend media queries */
 @media (max-width: 767px) {
