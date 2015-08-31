@@ -7405,7 +7405,8 @@ body.template-sharing  #content .documentDescription {
 }
 
 body.template-edit textarea.form-control,
-body.template-sharing textarea.form-control {
+body.template-sharing textarea.form-control,
+body.template-collective-object-object textarea.form-control {
     height: 37px;
 }
 
@@ -9438,12 +9439,22 @@ body.template-edit .datagridwidget-table-view th {
 }
 
 .datagridwidget-table-view-block .select2-container {
-    width: 69.8% !important;
+    width: 70% !important;
 }
 
 body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label,
 body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
     width: 27.3% !important;
+}
+
+body.template-collective-object-object .datagridwidget-body .datagridwidget-block-edit-cell div.label,
+body.template-collective-object-object .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
+    width: 27.3% !important;
+}
+
+#formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_parts .datagridwidget-widget-notes,
+#formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_parts .datagridwidget-widget-association {
+    clear: both;
 }
 
 #formfield-form-widgets-productionDating_productionDating label {
@@ -9452,7 +9463,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.labe
 
 #formfield-form-widgets-productionDating_production_schoolstyle div.label, 
 #formfield-form-widgets-productionDating_production_schoolstyle label {
-    width: 27.5% !important;
+    width: 28.4% !important;
 }
 
 #fieldset-production_dating label[for="form-widgets-productionDating_production_productionReason"].control-label.col-sm-3 {
@@ -10068,10 +10079,6 @@ span.required {
 
 /* ADD PAGE */
 
-body.template-collective-object-object #formfield-form-widgets-productionDating_production_productionReason .control-label {
-    width: 23.9% !important;
-}
-
 body.template-collective-object-object #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType div.label {
     width: 28.3% !important;
 }
@@ -10134,8 +10141,17 @@ body.template-edit input.text-widget {
     height: 37px !important;
 }
 
+body.template-collective-object-object input.text-widget {
+    height: 37px !important;
+}
+
 body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea {
     width: 70% !important;
+    /*min-height: 419px !important;*/
+}
+
+body.template-collective-object-object .datagridwidget-body .datagridwidget-block-edit-cell textarea {
+    width: 69.9% !important;
     /*min-height: 419px !important;*/
 }
 
@@ -10291,7 +10307,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     width: 22.5% !important;
 }
 
-#formfield-form-widgets-exhibitions_exhibition td.datagridwidget-block-edit-cell div.field:not(.relationlist-field) {
+#formfield-form-widgets-exhibitions_exhibition td.datagridwidget-block-edit-cell div.field:not(.relationlist-field):not(.z3cformInlineValidation) {
     display: none !important;
 }
 
@@ -10923,6 +10939,20 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
 
 #formfield-form-widgets-ownershipHistory_auctions .datagridwidget-block-edit-cell {
     padding-right: 0px !important;
+}
+
+
+
+
+
+
+body.template-collective-object-object #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label, 
+body.template-collective-object-object #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label label {
+    width: 54.5% !important;
+}
+
+body.template-collective-object-object #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type input {
+    width: 59.8% !important;
 }
 
 /* *** */
