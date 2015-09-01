@@ -10959,6 +10959,10 @@ body.template-collective-object-object #formfield-form-widgets-identification_ti
     clear: both;
 }
 
+div.images-only-filter label {
+    font-size: 0.875em !important;
+}
+
 /* *** */
 
 /* Backend media queries */

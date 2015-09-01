@@ -5,6 +5,7 @@ from plone.app.layout.viewlets.common import ViewletBase
 from Products.Five import BrowserView
 from AccessControl import getSecurityManager
 from Products.CMFPlone.PloneBatch import Batch
+from Products.CMFCore.permissions import ModifyPortalContent
 
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -428,6 +429,27 @@ class SearchView(CommonBrowserView, Search):
     """
     Adding to Search view
     """
+
+    def getItemTitle(self, item):
+        title = item.Title()
+        brain = item._brain
+
+        sm = getSecurityManager()
+        if not sm.checkPermission(ModifyPortalContent, self.context):
+            return title
+
+        if brain.portal_type == "Object":
+            obj = brain.getObject()
+            if obj.identification_identification_objectNumber:
+                title = "%s - %s" %(obj.identification_identification_objectNumber, title)
+
+        return title
+
+    def checkUserPermission(self):
+        sm = getSecurityManager()
+        if sm.checkPermission(ModifyPortalContent, self.context):
+            return True
+        return False
 
     def getSearchFilters(self):
         searchFilters = []

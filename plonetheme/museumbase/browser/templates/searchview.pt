@@ -246,7 +246,7 @@
                            tal:define="navigation_root_url context/@@plone_portal_state/navigation_root_url;">
 
                            <metal:noresults tal:condition="not: batch">
-                            <p i18n:domain="plone"><strong i18n:translate="description_no_results_found" class="no-results">No results were found.</strong></p>
+                            <p i18n:domain="plone" class="no-results"><strong i18n:translate="description_no_results_found" class="no-results">No results were found.</strong></p>
                           </metal:noresults>
 
                           <metal:results tal:condition="batch"
@@ -264,25 +264,32 @@
                                  normalizeString nocall:context/@@plone/normalizeString;
                                  item_description item/Description;
                                  item_type item/Type;
+                                 item_title python: view.getItemTitle(item);
                                  item_url python:item_type == 'Media Event' and '%s'%item.getURL() or item.getURL();
+                                 item_absoluteUrl python: item.getURL();
+
                                  item_modified item/ModificationDate;
                                  item_created item/CreationDate;
                                  item_icon item/getIcon;
+                                 user_admin python:view.checkUserPermission();
                                  item_wf_state_class python:'state-' + normalizeString(item.review_state);
                                  item_creator item/Creator;
                                  item_modified item/ModificationDate;
+                                 hide_book python: 'bibliotheek' in item_absoluteUrl and user_admin == False;
                                  item_link python: (item_type == 'Press Kit' and not view.checkPermission(item, 'Add portal content')) and item_url + '/download_zip' or (item_type in use_view_action and item_url+'/view' or item_url);">
-                                 <metal:block define-slot="entry">
+                                 
+                                 <metal:block define-slot="entry" tal:condition="not:hide_book">
 
                                   <div class="col-lg-4 col-md-4 col-sm-5">
                                     <a class="imagelink" tal:condition="item/hasMedia" href="" tal:attributes="href item_link"><tal:image replace="structure python:view.getLeadMediaTag(item, scale='mini')"></tal:image></a>
                                   </div>
 
                                   <div class="res-info col-lg-8 col-md-8 col-sm-7">
+
                                     <h2 class="summary"  tal:attributes="class python: 'summary %s'%item_wf_state_class">
                                       <a href="#"
                                        tal:attributes="href item_link"
-                                       tal:content="python:item_type != 'Press Kit' and item.Title() or item.Title() + ' (Download)'">
+                                       tal:content="item_title">
                                        Item Title
                                      </a>
                                    </h2>
