@@ -10681,15 +10681,15 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 
 #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank div.label,
 #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank div.label label {
-    width: 45.5% !important;
+    width: 50.5% !important;
 }
 
 #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank select {
-    width: 42% !important;
+    width: 46.5% !important;
 }
 
 #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName div.label {
-    width: 35% !important;
+    width: 49% !important;
     text-align: right;
 }
 #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName div.label label {
@@ -10702,16 +10702,16 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 }
 
 #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName input {
-    width: 58.3% !important;
+    width: 45.3% !important;
 }
 
 #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank {
-    width: 60% !important;
+    width: 54% !important;
     float: left;
 }
 
 #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName {
-    width: 40% !important;
+    width: 46% !important;
     float:left;
 }
 
@@ -10953,6 +10953,10 @@ body.template-collective-object-object #formfield-form-widgets-identification_ti
 
 body.template-collective-object-object #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type input {
     width: 59.8% !important;
+}
+
+#formfield-form-widgets-associations_associatedSubjects div..datagridwidget-widget-properName {
+    clear: both;
 }
 
 /* *** */
