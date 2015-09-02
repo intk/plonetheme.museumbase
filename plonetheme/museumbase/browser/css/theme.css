@@ -10973,6 +10973,16 @@ div.object-fieldsets h3.fieldset-header {
     clear:both;
 }
 
+body.template-edit table a:not(.btn),
+body.template-edit table a:not(.btn) {
+    text-decoration: none;
+}
+
+body.template-edit table a:not(.btn):hover,
+body.template-edit table a:not(.btn):hover {
+    text-decoration: underline;
+}
+
 
 /* Backend media queries */
 @media (max-width: 767px) {
