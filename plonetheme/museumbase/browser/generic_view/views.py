@@ -18,7 +18,7 @@ class FullView(DefaultView, ContentView):
 		return False
 
 	def append_value(self, _list, value):
-		if value != "" and value != None:
+		if value != "" and value != None and value != " ":
 			_list.append(value)
 
 	def generate_value_from_item(self, item, line):
@@ -42,6 +42,6 @@ class FullView(DefaultView, ContentView):
 				result = '<p>'.join(result)
 				return result
 			except:
-				raise
+				pass
 				return value
 		return value

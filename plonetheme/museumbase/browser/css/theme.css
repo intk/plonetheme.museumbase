@@ -10965,6 +10965,15 @@ div.images-only-filter label {
 
 /* *** */
 
+div.object-fieldsets h3.fieldset-header:not(:first-child) {
+    padding-top: 40px;
+}
+
+div.object-fieldsets h3.fieldset-header {
+    clear:both;
+}
+
+
 /* Backend media queries */
 @media (max-width: 767px) {
 
@@ -11287,3 +11296,5 @@ div.images-only-filter label {
       float: left;
     }
 }
+
+
