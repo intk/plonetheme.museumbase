@@ -70,6 +70,7 @@
 
                         <h3 i18n:translate="heading_not_found_suggestions">You might have been looking for&hellip;</h3>
                         
+                        <tal:verification tal:condition="first_parent">
                         <tal:firstparent condition="first_parent/absolute_url | nothing">
                             <tal:entry define="result_url first_parent/absolute_url;
                                                result_type python:hasattr(first_parent, 'getTypeInfo') and first_parent.getTypeInfo().getId();
@@ -100,6 +101,7 @@
 
                             </tal:entry>
                         </tal:firstparent>
+                        </tal:verification>
 
                         <div class="container-fluid similar-items">
                           <div class="row-fluid">
