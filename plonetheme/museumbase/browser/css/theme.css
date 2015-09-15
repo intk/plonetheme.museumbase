@@ -11115,19 +11115,27 @@ body.portaltype-object:not(.template-edit) #formfield-form-widgets-identificatio
 }
 
 body.portaltype-object:not(.template-edit) select {
-    background-color: #ffffff;
+    background-color: #f4f4f4;
+    border-bottom-color: #f4f4f4;
     color: #333333;
+    border-right-color: #f4f4f4;
+    border-left-color: #f4f4f4;
+    border-top-color: #f4f4f4;
+    padding-left: 18px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
 body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy_objectstatus {
-    -webkit-appearance: menulist-button;
     -webkit-font-smoothing: antialiased;
     -webkit-rtl-ordering: logical;
     align-items: center;
-    background-color: #ffffff;
-    border-bottom-color: rgb(204, 204, 204);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    background-color: #f4f4f4;
+    border-bottom-color: #f4f4f4;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-collapse: collapse;
@@ -11136,15 +11144,15 @@ body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy
     border-image-slice: 100%;
     border-image-source: none;
     border-image-width: 1;
-    border-left-color: rgb(204, 204, 204);
+    border-left-color: #f4f4f4;
     border-left-style: solid;
     border-left-width: 1px;
-    border-right-color: rgb(204, 204, 204);
+    border-right-color: #f4f4f4;
     border-right-style: solid;
     border-right-width: 1px;
-    border-top-color: rgb(204, 204, 204);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-color: #f4f4f4;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
     border-top-style: solid;
     border-top-width: 1px;
     box-sizing: border-box;
@@ -11167,7 +11175,7 @@ body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy
     overflow-x: visible;
     overflow-y: visible;
     padding-bottom: 0px;
-    padding-left: 0px;
+    padding-left: 18px;
     padding-right: 0px;
     padding-top: 0px;
     text-align: start;
@@ -11197,7 +11205,7 @@ body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy
 }
 
 body.portaltype-object:not(.template-edit) .select2-container-multi .select2-choices .select2-search-choice {
-    margin: 5px 0 3px 5px !important;
+    margin: 5px 0 3px 2px !important;
 }
 
 body.portaltype-object:not(.template-edit) .pattern-relateditems-tree-select,
@@ -11206,6 +11214,49 @@ body.portaltype-object:not(.template-edit) .datagridwidget-manipulator,
 body.portaltype-object:not(.template-edit) .searchButton {
     pointer-events: none !important;
 }
+
+body.portaltype-object:not(.template-edit) .pattern-relateditems-container span.pattern-relateditems-path,
+body.portaltype-object:not(.template-edit) span.pattern-relateditems-item-path {
+    display: none;
+}
+
+body.portaltype-object:not(.template-edit) input[type="text"],
+body.portaltype-object:not(.template-edit) textarea,
+body.portaltype-object:not(.template-edit) .select2-container-multi.select2-container-disabled .select2-choices {
+    border: 0px !important;
+    background-color: #f4f4f4 !important;
+    box-shadow: none !important;
+}
+
+body.portaltype-object:not(.template-edit) .select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice {
+    border: 0px!important;
+    background-image: none;
+    background-color: #f4f4f4;
+    box-shadow: none !important;
+}
+
+body.portaltype-object:not(.template-edit) .searchButton {
+    box-shadow: none !important;
+}
+
+body.portaltype-object:not(.template-edit) select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+body.portaltype-object:not(.template-edit) textarea {
+    padding-left: 20px !important;
+}
+
+div.template-edit {
+    padding-bottom: 90px;
+}
+
+.header-padding {
+    padding-top: 50px;
+}
+
+
 
 /* Backend media queries */
 @media (max-width: 767px) {
