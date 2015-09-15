@@ -11339,7 +11339,7 @@ body.portaltype-object:not(.template-edit) .template-edit .datagridwidget-body .
     width: 77.3% !important;
 }
 
-body.portaltype-object:not(.template-edit) .template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.searchButton):not(.ac_input) {
+body.portaltype-object:not(.template-edit) .template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.searchButton):not(.ac_input):not(.relationlist-field) {
     width: 77.3% !important;
 }
 
@@ -11386,6 +11386,10 @@ body.portaltype-object:not(.template-edit) #form-widgets-identification_objectNa
 body.portaltype-object:not(.template-edit) #form-widgets-identification_objectName_otherName .cell-2,
 body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy .cell-2 {
     padding-right: 0px !important;
+}
+
+body.portaltype-object:not(.template-edit) .autocompleteInputWidget span {
+    color: #000000 !important;
 }
 
 /* Backend media queries */
