@@ -11103,7 +11103,7 @@ ul.jqtree_common.jqtree-tree {
 .datagridwidget-row input,
 .datagridwidget-row textarea {
     line-height: 1.42857143;
-    color: #333333;
+    color: #000000;
     border-radius: 0;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -11117,7 +11117,7 @@ body.portaltype-object:not(.template-edit) #formfield-form-widgets-identificatio
 body.portaltype-object:not(.template-edit) select {
     background-color: #f4f4f4;
     border-bottom-color: #f4f4f4;
-    color: #333333;
+    color: #000000;
     border-right-color: #f4f4f4;
     border-left-color: #f4f4f4;
     border-top-color: #f4f4f4;
@@ -11156,7 +11156,7 @@ body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy
     border-top-style: solid;
     border-top-width: 1px;
     box-sizing: border-box;
-    color: #333333;
+    color: #000000;
     cursor: default;
     display: inline-block;
     font-family: Merriweather, serif;
@@ -11188,6 +11188,7 @@ body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy
     word-spacing: 0px;
     writing-mode: lr-tb;
     -webkit-writing-mode: horizontal-tb;
+    box-shadow: none;
 }
 
 .select2-container-multi.select2-container-disabled .select2-choices {
@@ -11195,6 +11196,7 @@ body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy
     background-image: none;
     border: 1px solid #aaa !important;
     cursor: default;
+    color: #000000 !important;
 }
 
 .select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice {
@@ -11226,6 +11228,7 @@ body.portaltype-object:not(.template-edit) .select2-container-multi.select2-cont
     border: 0px !important;
     background-color: #f4f4f4 !important;
     box-shadow: none !important;
+    color: #000000 !important;
 }
 
 body.portaltype-object:not(.template-edit) .select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice {
@@ -11245,7 +11248,7 @@ body.portaltype-object:not(.template-edit) select {
 }
 
 body.portaltype-object:not(.template-edit) textarea {
-    padding-left: 20px !important;
+    padding-left: 18px !important;
 }
 
 div.template-edit {
@@ -11256,7 +11259,134 @@ div.template-edit {
     padding-top: 50px;
 }
 
+body.portaltype-object.userrole-authenticated:not(.template-edit) {
+    background-color: #ffffff !important;
+}
 
+body.portaltype-object:not(.template-edit) .select2-container-multi.pat-relateditems .select2-choices .select2-search-choice {
+    margin: 7px 0 3px 2px !important;
+}
+
+
+body.portaltype-object:not(.template-edit) .select2-search-choice {
+    pointer-events: none;
+}
+
+
+body.portaltype-object:not(.template-edit) .datagridwidget-row div.select2-container {
+    height: 37px !important;
+}
+
+body.portaltype-object:not(.template-edit) .datagridwidget-row .select2-container-multi .select2-choices .select2-search-choice {
+    margin: 6px 0 3px 2px !important;
+}
+
+body.portaltype-object:not(.template-edit) .pattern-relateditems-container,
+body.portaltype-object:not(.template-edit) .select2-container.pat-relateditems {
+    width: 100% !important;
+}
+
+body.portaltype-object:not(.template-edit) .datagridwidget-row .pattern-relateditems-container,
+body.portaltype-object:not(.template-edit) .datagridwidget-row .select2-container.pat-relateditems {
+    width: auto !important;
+}
+
+body.portaltype-object:not(.template-edit) li.select2-search-choice {
+    color: #000000 !important;
+}
+
+body.portaltype-object:not(.template-edit) #content .field input[type="text"][name$=".title"] {
+    color: #000000 !important;
+}
+
+body.portaltype-object:not(.template-edit) label {
+    color: #000000 !important;
+}
+
+body.portaltype-object:not(.template-edit) th.header span {
+    color: #000000 !important;
+}
+body.portaltype-object:not(.template-edit) .searchButton {
+    color: #000000 !important;
+}
+
+body.portaltype-object:not(.template-edit) select.formTabs,
+body.portaltype-object:not(.template-edit) select.formTabs:focus {
+    box-shadow: none !important;
+}
+
+body.portaltype-object:not(.template-edit) .datagridwidget-manipulator {
+    display: none;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label {
+    width: 45.5% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title input {
+    width: 54% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type input {
+    width: 65% !important;
+}
+
+body.portaltype-object:not(.template-edit) div.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label {
+    width: 22.7% !important;
+}
+
+body.portaltype-object:not(.template-edit) .template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea {
+    width: 77.3% !important;
+}
+
+body.portaltype-object:not(.template-edit) .template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.searchButton):not(.ac_input) {
+    width: 77.3% !important;
+}
+
+body.portaltype-object:not(.template-edit) .datagridwidget-table-view thead th {
+    padding: 0px !important;
+}
+
+body.portaltype-object:not(.template-edit) tr.datagridwidget-row td.datagridwidget-cell:last-child {
+    padding-right: 0px !important;
+}
+
+body.portaltype-object:not(.template-edit) div.slick-slideshow:not(.slick-initialized) {
+    display: none !important;
+}
+
+body.portaltype-object:not(.template-edit) div.slideshowWrapper:not(.slick-init) {
+    display: none !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_taxonomy_notes textarea {
+    width: 77.3% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_taxonomy_objectstatus div.fieldset-input {
+    width: 77.4% !important;
+}
+
+body.portaltype-object:not(.template-edit) .datagridwidget-block-edit-cell div[id$='autocomplete'] {
+    width: 77.1% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_titleDescription_translatedTitle .datagridwidget-block-edit-cell {
+    padding-right: 0px !important;
+}
+
+body.portaltype-object:not(.template-edit) #content .datagridwidget-block-edit-cell {
+    padding-right: 0px !important;
+}
+
+body.portaltype-object:not(.template-edit) #form-widgets-identification_objectName_objectname .cell-3 {
+    padding-right: 0px !important;
+}
+
+body.portaltype-object:not(.template-edit) #form-widgets-identification_objectName_otherName .cell-2,
+body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy .cell-2 {
+    padding-right: 0px !important;
+}
 
 /* Backend media queries */
 @media (max-width: 767px) {
