@@ -11111,7 +11111,7 @@ ul.jqtree_common.jqtree-tree {
 }
 
 body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label label {
-    width: 35% !important;
+    width: 100% !important;
 }
 
 body.portaltype-object:not(.template-edit) select {
