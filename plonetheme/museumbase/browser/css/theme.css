@@ -5693,7 +5693,7 @@ body.template-full_view .slick-slideshow  {
 @-webkit-keyframes uil-default-anim { 0% { opacity: 1} 100% {opacity: 0} }@keyframes uil-default-anim { 0% { opacity: 1} 100% {opacity: 0} }.uil-default-css > div:nth-of-type(1){-webkit-animation: uil-default-anim 1s linear infinite;animation: uil-default-anim 1s linear infinite;-webkit-animation-delay: -0.5s;animation-delay: -0.5s;}.uil-default-css > div:nth-of-type(2){-webkit-animation: uil-default-anim 1s linear infinite;animation: uil-default-anim 1s linear infinite;-webkit-animation-delay: -0.4166666666666667s;animation-delay: -0.4166666666666667s;}.uil-default-css > div:nth-of-type(3){-webkit-animation: uil-default-anim 1s linear infinite;animation: uil-default-anim 1s linear infinite;-webkit-animation-delay: -0.33333333333333337s;animation-delay: -0.33333333333333337s;}.uil-default-css > div:nth-of-type(4){-webkit-animation: uil-default-anim 1s linear infinite;animation: uil-default-anim 1s linear infinite;-webkit-animation-delay: -0.25s;animation-delay: -0.25s;}.uil-default-css > div:nth-of-type(5){-webkit-animation: uil-default-anim 1s linear infinite;animation: uil-default-anim 1s linear infinite;-webkit-animation-delay: -0.16666666666666669s;animation-delay: -0.16666666666666669s;}.uil-default-css > div:nth-of-type(6){-webkit-animation: uil-default-anim 1s linear infinite;animation: uil-default-anim 1s linear infinite;-webkit-animation-delay: -0.08333333333333331s;animation-delay: -0.08333333333333331s;}.uil-default-css > div:nth-of-type(7){-webkit-animation: uil-default-anim 1s linear infinite;animation: uil-default-anim 1s linear infinite;-webkit-animation-delay: 0s;animation-delay: 0s;}.uil-default-css > div:nth-of-type(8){-webkit-animation: uil-default-anim 1s linear infinite;animation: uil-default-anim 1s linear infinite;-webkit-animation-delay: 0.08333333333333337s;animation-delay: 0.08333333333333337s;}.uil-default-css > div:nth-of-type(9){-webkit-animation: uil-default-anim 1s linear infinite;animation: uil-default-anim 1s linear infinite;-webkit-animation-delay: 0.16666666666666663s;animation-delay: 0.16666666666666663s;}.uil-default-css > div:nth-of-type(10){-webkit-animation: uil-default-anim 1s linear infinite;animation: uil-default-anim 1s linear infinite;-webkit-animation-delay: 0.25s;animation-delay: 0.25s;}.uil-default-css > div:nth-of-type(11){-webkit-animation: uil-default-anim 1s linear infinite;animation: uil-default-anim 1s linear infinite;-webkit-animation-delay: 0.33333333333333337s;animation-delay: 0.33333333333333337s;}.uil-default-css > div:nth-of-type(12){-webkit-animation: uil-default-anim 1s linear infinite;animation: uil-default-anim 1s linear infinite;-webkit-animation-delay: 0.41666666666666663s;animation-delay: 0.41666666666666663s;}
 
 
-body.template-edit.portaltype-portlet-page .documentFirstHeading {
+.template-edit.portaltype-portlet-page .documentFirstHeading {
     z-index: -1000 !important;
 }
 body.template-portlets .documentFirstHeading {
@@ -7372,23 +7372,23 @@ body.portaltype-portlet-page.userrole-authenticated #portal-logo img {
 
 /* EDIT PAGE */
 
-body.template-edit #content-core {
+.template-edit #content-core {
     padding-top: 50px;
     width: 650px;
     margin: 0 auto;
 }
 
-body.template-edit,
+.template-edit,
 body.template-sharing {
     background-color: #ffffff !important;
 }
 
-body.template-edit #visual-portal-wrapper > .row:first-child,
+.template-edit #visual-portal-wrapper > .row:first-child,
 body.template-sharing #visual-portal-wrapper > .row:first-child {
     background-color: #f5f5f5;
 }
 
-body.template-edit .documentFirstHeading {
+.template-edit .documentFirstHeading {
     margin-bottom: 0px !important;
     padding-bottom: 300px !important;
     background-color: #f5f5f5;
@@ -7404,9 +7404,9 @@ body.template-sharing  #content .documentDescription {
     background-color: #f5f5f5;
 }
 
-body.template-edit textarea.form-control,
-body.template-sharing textarea.form-control,
-body.template-collective-object-object textarea.form-control {
+.template-edit textarea.text-field,
+body.template-sharing textarea.text-field,
+body.template-collective-object-object textarea.text-field {
     height: 37px;
 }
 
@@ -7493,19 +7493,19 @@ body.mobile .overlay-image {
     text-align: left;
 }
 
-body.template-edit.portaltype-object .kssattr-fieldname-form.widgets.text textarea.form-control {
+.template-edit.portaltype-object .kssattr-fieldname-form.widgets.text textarea.text-field {
     height: 800px !important;
 }
 
-body.template-edit.portaltype-object #portal-header {
+.template-edit.portaltype-object #portal-header {
     background-color: #ffffff;
 }
 
-body.template-edit.portaltype-object #content-core {
+.template-edit.portaltype-object #content-core {
     padding-top: 150px;
 }
 
-body.template-edit.portaltype-object #portal-logo img {
+.template-edit.portaltype-object #portal-logo img {
     content: url('++resource++plonetheme.museumbase.css/teylers_black.png');
 }
 
@@ -9411,7 +9411,7 @@ select.formTabs {
     display: none !important;
 }
 
-body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
+.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
     font-family: 'Merriweather', serif !important;
     font-weight: 400 !important;
     font-size: 0.875em !important;
@@ -9434,7 +9434,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.labe
     display: none !important;
 }
 
-body.template-edit .datagridwidget-table-view th {
+.template-edit .datagridwidget-table-view th {
     font-size: 0.875em !important;
 }
 
@@ -9442,8 +9442,8 @@ body.template-edit .datagridwidget-table-view th {
     width: 70% !important;
 }
 
-body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label,
-body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
+.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label,
+.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
     width: 27.3% !important;
 }
 
@@ -9486,7 +9486,7 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 .datagridwidget-body input.select2-input {
 }
 
-body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.select2-input):not(.searchButton):not(.text-widget):not(.contenttree-widget) {
+.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.select2-input):not(.searchButton):not(.text-widget):not(.contenttree-widget) {
     width: 70% !important;
 }
 
@@ -10137,7 +10137,7 @@ input.select2-input {
     height: 37px !important;
 }
 
-body.template-edit input.text-widget {
+.template-edit input.text-widget {
     height: 37px !important;
 }
 
@@ -10145,7 +10145,7 @@ body.template-collective-object-object input.text-widget {
     height: 37px !important;
 }
 
-body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea {
+.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea {
     width: 70% !important;
     /*min-height: 419px !important;*/
 }
@@ -10885,7 +10885,7 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
     width: 206px;
 }
 
-#formfield-form-widgets-productionDating_production_productionReason textarea.form-control {
+#formfield-form-widgets-productionDating_production_productionReason textarea.text-field {
     width:  99.9% !important;
 }
 
@@ -10973,13 +10973,13 @@ div.object-fieldsets h3.fieldset-header {
     clear:both;
 }
 
-body.template-edit table a:not(.btn),
-body.template-edit table a:not(.btn) {
+.template-edit table a:not(.btn),
+.template-edit table a:not(.btn) {
     text-decoration: none;
 }
 
-body.template-edit table a:not(.btn):hover,
-body.template-edit table a:not(.btn):hover {
+.template-edit table a:not(.btn):hover,
+.template-edit table a:not(.btn):hover {
     text-decoration: underline;
 }
 
@@ -11098,6 +11098,113 @@ ul.jqtree_common.jqtree-tree {
 
 #content .pat-select2, #content .pat-relateditems {
     min-width: 500px;
+}
+
+.datagridwidget-row input,
+.datagridwidget-row textarea {
+    line-height: 1.42857143;
+    color: #333333;
+    border-radius: 0;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    display: inline-block;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label label {
+    width: 35% !important;
+}
+
+body.portaltype-object:not(.template-edit) select {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy_objectstatus {
+    -webkit-appearance: menulist-button;
+    -webkit-font-smoothing: antialiased;
+    -webkit-rtl-ordering: logical;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom-color: rgb(204, 204, 204);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-collapse: collapse;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(204, 204, 204);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgb(204, 204, 204);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(204, 204, 204);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-sizing: border-box;
+    color: #333333;
+    cursor: default;
+    display: inline-block;
+    font-family: Merriweather, serif;
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    height: 37px;
+    letter-spacing: normal;
+    line-height: normal;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    overflow-x: visible;
+    overflow-y: visible;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    text-align: start;
+    text-indent: 0px;
+    text-rendering: auto;
+    text-shadow: none;
+    text-transform: none;
+    vertical-align: middle;
+    white-space: pre;
+    word-spacing: 0px;
+    writing-mode: lr-tb;
+    -webkit-writing-mode: horizontal-tb;
+}
+
+.select2-container-multi.select2-container-disabled .select2-choices {
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #aaa !important;
+    cursor: default;
+}
+
+.select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice {
+    padding: 3px 5px 3px 5px;
+    border: 1px solid #aaa !important;
+    background-image: none;
+    background-color: #f4f4f4;
+}
+
+body.portaltype-object:not(.template-edit) .select2-container-multi .select2-choices .select2-search-choice {
+    margin: 5px 0 3px 5px !important;
+}
+
+body.portaltype-object:not(.template-edit) .pattern-relateditems-tree-select,
+body.portaltype-object:not(.template-edit) .pattern-relateditems-path-label,
+body.portaltype-object:not(.template-edit) .datagridwidget-manipulator,
+body.portaltype-object:not(.template-edit) .searchButton {
+    pointer-events: none !important;
 }
 
 /* Backend media queries */
@@ -11323,8 +11430,8 @@ ul.jqtree_common.jqtree-tree {
         width: 100% !important;
     }
 
-    body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label,
-    body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
+    .template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label,
+    .template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
         width: 100% !important;
     }
 
@@ -11353,7 +11460,7 @@ ul.jqtree_common.jqtree-tree {
         width: 100px !important;
     }
 
-    body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.select2-input) {
+    .template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.select2-input) {
         width: 100% !important;
     }
 
