@@ -11416,13 +11416,6 @@ body.portaltype-object:not(.template-edit) tr.datagridwidget-row td.datagridwidg
     padding-right: 0px !important;
 }
 
-body.portaltype-object:not(.template-edit) div.slick-slideshow:not(.slick-initialized) {
-    display: none !important;
-}
-
-body.portaltype-object:not(.template-edit) div.slideshowWrapper:not(.slick-init) {
-    display: none !important;
-}
 
 body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_taxonomy_notes textarea {
     width: 77.3% !important;
@@ -11459,6 +11452,10 @@ body.portaltype-object:not(.template-edit) .autocompleteInputWidget span {
 
 body.portaltype-object.template-edit #formfield-form-widgets-identification_taxonomy_objectstatus select {
     width: 100% !important;
+}
+
+body.portaltype-object.userrole-authenticated #viewlet-above-content-body {
+    display: none;
 }
 
 /* Backend media queries */
