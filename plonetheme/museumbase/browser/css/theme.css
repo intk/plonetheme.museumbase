@@ -11100,8 +11100,8 @@ ul.jqtree_common.jqtree-tree {
     min-width: 500px;
 }
 
-.datagridwidget-row input,
-.datagridwidget-row textarea {
+body.portaltype-object:not(.template-edit) .datagridwidget-row input,
+body.portaltype-object:not(.template-edit) .datagridwidget-row textarea {
     line-height: 1.42857143;
     color: #000000;
     border-radius: 0;
