@@ -11477,6 +11477,12 @@ body.template-edit #content .field textarea {
     display: none !important;
 }
 
+ul.jqtree-tree .jqtree-toggler {
+    line-height: 12px !important;    
+}
+
+
+
 /* Backend media queries */
 @media (max-width: 767px) {
 
