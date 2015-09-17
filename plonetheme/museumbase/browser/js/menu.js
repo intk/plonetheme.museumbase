@@ -163,7 +163,6 @@ $(document).ready(function() {
       formPath += document.location.href;
       document.location.href = formPath;
     }
-
   });
   
 
