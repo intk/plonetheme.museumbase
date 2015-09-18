@@ -9358,7 +9358,7 @@ td.datagridwidget-manipulator.move-up img, td.datagridwidget-manipulator.move-do
 }
 
 .select2-container-multi .select2-choices .select2-search-choice {
-    margin: 6px 0 3px 5px !important;
+    margin: 4.5px 0 3px 5px !important;
 }
 
 div.field label {
@@ -11191,14 +11191,12 @@ body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy
     box-shadow: none;
 }
 
-body.template-edit #form-widgets-identification_taxonomy_objectstatus,
-body.template-edit .select-widget.choice-field {
+body.template-edit .select-widget.choice-field select,
+body.template-edit select.choice-field.select-widget {
     -webkit-appearance: menulist-button;
     -webkit-font-smoothing: antialiased;
     -webkit-rtl-ordering: logical;
-    align-items: center;
-    background-color: #ffffff;
-    border-bottom-color: rgb(204, 204, 204);
+    border-bottom-color: #AAA;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border-bottom-style: solid;
@@ -11209,13 +11207,45 @@ body.template-edit .select-widget.choice-field {
     border-image-slice: 100%;
     border-image-source: none;
     border-image-width: 1;
-    border-left-color: rgb(204, 204, 204);
+    border-left-color: #AAA;
     border-left-style: solid;
     border-left-width: 1px;
-    border-right-color: rgb(204, 204, 204);
+    border-right-color: #AAA;
     border-right-style: solid;
     border-right-width: 1px;
-    border-top-color: rgb(204, 204, 204);
+    border-top-color: #AAA;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+body.template-edit #form-widgets-identification_taxonomy_objectstatus {
+    -webkit-appearance: menulist-button;
+    -webkit-font-smoothing: antialiased;
+    -webkit-rtl-ordering: logical;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom-color: #AAA;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-collapse: collapse;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: #AAA;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #AAA;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #AAA;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-top-style: solid;
@@ -11481,6 +11511,57 @@ ul.jqtree-tree .jqtree-toggler {
     line-height: 12px !important;    
 }
 
+.pattern-relateditems-path {
+    z-index: initial !important;
+}
+
+.pattern-relateditems-container {
+    width: 400px !important;
+}
+
+.pattern-relateditems-container {
+    width: 100% !important;
+}
+
+span.pattern-relateditems-path {
+    width: 400px !important;
+}
+
+#content .pat-relateditems {
+    min-width: 100% !important;
+    width: 100% !important;
+}
+
+.datagridwidget-block-edit-cell .pattern-relateditems-container {
+    width: 70% !important;
+}
+
+#formfield-form-widgets-acquisition_acquisition_acquisitionFrom .datagridwidget-block-edit-cell .pattern-relateditems-container {
+    width: 69% !important;
+}
+
+#formfield-form-widgets-ownershipHistory_ownership_currentOwner .control-label {
+    width: 22.5% !important;
+}
+
+#formfield-form-widgets-ownershipHistory_ownership_currentOwner .fieldset-input {
+    width: 77.5% !important;
+}
+
+#formfield-form-widgets-acquisition_costs_offer_price_currency .pat-select2, 
+#formfield-form-widgets-acquisition_costs_offer_price_currency .pat-relateditems {
+    min-width: 0px !important;
+}
+
+#formfield-form-widgets-acquisition_costs_purchase_price_currency .pat-select2, 
+#formfield-form-widgets-acquisition_costs_purchase_price_currency .pat-relateditems {
+    min-width: 0px !important;
+}
+
+#formfield-form-widgets-disposal_finance_currency .pat-select2, 
+#formfield-form-widgets-disposal_finance_currency .pat-relateditems {
+    min-width: 0px !important;
+}
 
 
 /* Backend media queries */
