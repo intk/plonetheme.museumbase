@@ -11114,18 +11114,140 @@ body.portaltype-object:not(.template-edit) #formfield-form-widgets-identificatio
     width: 100% !important;
 }
 
+body.portaltype-object:not(.template-edit) .form-control[disabled] {
+    background-color: #f4f4f4 !important;
+    border: 1px solid #f4f4f4 !important;
+    color: #000000;
+}
+
 body.portaltype-object:not(.template-edit) select {
+    -webkit-font-smoothing: antialiased;
+    -webkit-rtl-ordering: logical;
+    align-items: center;
     background-color: #f4f4f4;
     border-bottom-color: #f4f4f4;
-    color: #000000;
-    border-right-color: #f4f4f4;
-    border-left-color: #f4f4f4;
-    border-top-color: #f4f4f4;
-    padding-left: 18px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-collapse: collapse;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: #f4f4f4;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #f4f4f4;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #f4f4f4;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: default;
+    display: inline-block;
+    font-family: Merriweather, serif;
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    height: 37px;
+    letter-spacing: normal;
+    line-height: normal;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    overflow-x: visible;
+    overflow-y: visible;
+    padding-bottom: 0px;
+    padding-left: 18px;
+    padding-right: 0px;
+    padding-top: 0px;
+    text-align: start;
+    text-indent: 0px;
+    text-rendering: auto;
+    text-shadow: none;
+    text-transform: none;
+    vertical-align: middle;
+    white-space: pre;
+    word-spacing: 0px;
+    writing-mode: lr-tb;
+    -webkit-writing-mode: horizontal-tb;
+    box-shadow: none;
+}
+
+body.portaltype-object:not(.template-edit) select.formTabs[disabled] {
+}
+
+body.portaltype-object:not(.template-edit) select.formTabs {
+    -webkit-appearance: menulist-button;
+    -webkit-font-smoothing: antialiased;
+    -webkit-rtl-ordering: logical;
+    align-items: center;
+    background-color: #ffffff !important;
+    border-bottom-color: #AAA !important;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-collapse: collapse;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: #AAA !important;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #AAA !important;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #AAA !important;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: default;
+    display: inline-block;
+    font-family: Merriweather, serif;
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    height: 37px;
+    letter-spacing: normal;
+    line-height: normal;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    overflow-x: visible;
+    overflow-y: visible;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    text-align: start;
+    text-indent: 0px;
+    text-rendering: auto;
+    text-shadow: none;
+    text-transform: none;
+    vertical-align: middle;
+    white-space: pre;
+    width: 100%;
+    word-spacing: 0px;
+    writing-mode: lr-tb;
+    -webkit-writing-mode: horizontal-tb;
 }
 
 body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy_objectstatus {
@@ -11302,7 +11424,7 @@ body.template-edit #form-widgets-identification_taxonomy_objectstatus {
 }
 
 body.portaltype-object:not(.template-edit) .select2-container-multi .select2-choices .select2-search-choice {
-    margin: 5px 0 3px 2px !important;
+    margin: 6px 0 3px 2px !important;
 }
 
 body.portaltype-object:not(.template-edit) .pattern-relateditems-tree-select,
@@ -11359,7 +11481,7 @@ body.portaltype-object.userrole-authenticated:not(.template-edit) {
 }
 
 body.portaltype-object:not(.template-edit) .select2-container-multi.pat-relateditems .select2-choices .select2-search-choice {
-    margin: 7px 0 3px 2px !important;
+    margin: 6px 0 3px 2px !important;
 }
 
 
@@ -11383,7 +11505,15 @@ body.portaltype-object:not(.template-edit) .select2-container.pat-relateditems {
 
 body.portaltype-object:not(.template-edit) .datagridwidget-row .pattern-relateditems-container,
 body.portaltype-object:not(.template-edit) .datagridwidget-row .select2-container.pat-relateditems {
-    width: auto !important;
+    width: 77.3% !important;
+}
+
+body.portaltype-object:not(.template-edit) .datagridwidget-table-view-block .select2-container {
+    width: 77.3% !important;
+}
+
+body.portaltype-object:not(.template-edit) select.select-widget {
+    width: 100% !important;
 }
 
 body.portaltype-object:not(.template-edit) li.select2-search-choice {
@@ -11430,7 +11560,7 @@ body.portaltype-object:not(.template-edit) div.template-edit .datagridwidget-bod
     width: 22.7% !important;
 }
 
-body.portaltype-object:not(.template-edit) .template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea {
+body.portaltype-object:not(.template-edit) .template-edit #content-core .datagridwidget-body .datagridwidget-block-edit-cell textarea {
     width: 77.3% !important;
 }
 
@@ -11536,6 +11666,8 @@ span.pattern-relateditems-path {
     width: 70% !important;
 }
 
+
+
 #formfield-form-widgets-acquisition_acquisition_acquisitionFrom .datagridwidget-block-edit-cell .pattern-relateditems-container {
     width: 69% !important;
 }
@@ -11561,6 +11693,209 @@ span.pattern-relateditems-path {
 #formfield-form-widgets-disposal_finance_currency .pat-select2, 
 #formfield-form-widgets-disposal_finance_currency .pat-relateditems {
     min-width: 0px !important;
+}
+
+body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy_objectstatus {
+    width: 100% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-iconography_generalSearchCriteria_generalthemes .fieldset-input {
+    width: 77.5% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-iconography_generalSearchCriteria_specificthemes .fieldset-input {
+    width: 77.5% !important;
+}
+
+body.portaltype-object:not(.template-edit) .datagridwidget-row select.select-widget {
+    width: 77.3% !important;
+}
+
+body.portaltyoe-object:not(.template-edit) .datagridwidget-row textarea {
+    width: 77.3% !important;
+}
+body.portaltype-object:not(.template-edit) .datagridwidget-row .datagridwidget-cell select.select-widget {
+    width: 100% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-startDate div.label, 
+body.portaltype-object:not(.template-edit) #fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-startDate div.label label {
+    width: 37.6% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-endDate input {
+    width: 65% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-iconography_iconographySource_sourceGeneral .fieldset-input,
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-iconography_iconographySource_sourceSpecific .fieldset-input,
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-iconography_iconographySource_sourceObjectNumber .fieldset-input {
+    width: 77.5% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-associations_associatedPersonInstitutions .datagridwidget-widget-startDate div.label {
+    width: 47.4% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-associations_associatedPersonInstitutions .datagridwidget-widget-endDate input {
+    width: 69.8% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-associations .datagridwidget-table-view-block .select2-container {
+    width: 77.3% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subjectType div.label, 
+body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subjectType div.label label {
+    width: 37.8% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subject div.select2-container {
+    width: 64.7% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank div.label, 
+body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank div.label label {
+    width: 42% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-properName {
+    clear: both;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName input {
+    width: 50.6% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-startDate div.label, 
+body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-startDate div.label label {
+    width: 37.8% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-endDate input {
+    width: 64.7% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-startDate div.label, 
+body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-startDate div.label label {
+    width: 37.8% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-endDate input {
+    width: 64.7% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-numbers_relationships .datagridwidget-widget-notes div.label, #fieldset-numbers_relationships .datagridwidget-widget-notes div.label label {
+    width: 22.2% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-value_insurance .datagridwidget-widget-value div.label, 
+body.portaltype-object:not(.template-edit) #fieldset-value_insurance .datagridwidget-widget-value div.label label {
+    width: 45.4% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-value_insurance .datagridwidget-widget-curr .select2-container {
+    width: 65% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-value_insurance .datagridwidget-widget-valuer div.label, 
+body.portaltype-object:not(.template-edit) #fieldset-value_insurance .datagridwidget-widget-valuer div.label label {
+    width: 45.4% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-value_insurance .datagridwidget-widget-date input {
+    width: 65% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-policy_number input.text-widget,
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-insurance_company input.text-widget,
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-renewal_date input.text-widget,
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-reference input.text-widget,
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-conditions input.text-widget {
+    width: 77.3% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_partOf .fieldset-input {
+    width: 77.5% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-date input {
+    width: 70% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_notes .fieldset-input {
+    width: 77.5% !important;
+}
+
+body.portaltype-object:not(.template-edit) #form-widgets-acquisition_accession_date {
+    width: 100% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-acquisition_acquisition_acquisitionFrom div.label, 
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-acquisition_acquisition_acquisitionFrom div.label label {
+    width: 25% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-acquisition_acquisition_acquisitionFrom .datagridwidget-block-edit-cell .pattern-relateditems-container {
+    width: 75% !important;
+}
+
+body.portaltype-object:not(.template-edit) #form-widgets-disposal_deaccession {
+    width: 100% !important;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) input:not(.select2-input), 
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) div.select2-container {
+    width: 99% !important;
+}
+
+body.portaltype-object:not(.template-edit) .template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.searchButton):not(.ac_input):not(.relationlist-field) {
+    width: 77.3% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-field_collection .datagridwidget-body .datagridwidget-block-edit-cell div.label, 
+body.portaltype-object:not(.template-edit) #fieldset-field_collection .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
+    width: 22% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-field_collection .div-20-80 .fieldset-input {
+    width: 76.1% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-code div.label, 
+body.portaltype-object:not(.template-edit) #fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-code div.label label {
+    width: 44.4% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-codeType div.select2-container {
+    width: 63.2% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-unit div.label, 
+body.portaltype-object:not(.template-edit) #fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-unit div.label label {
+    width: 36.7% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-type input {
+    width: 63.2% !important;
+}
+
+body.portaltype-object:not(.template-edit) #form-widgets-notes_free_fields .option .single-checkbox-widget {
+    margin-right: 40px;
+    margin-left: 80px;
+    margin-top: 15px;
+}
+
+body.portaltype-object:not(.template-edit) #formfield-form-widgets-fieldCollection_fieldCollection_events .fieldset-input {
+    width: 77.1% !important;
+}
+
+body.portaltype-object:not(.template-edit) #fieldset-field_collection .col-sm-9 {
+    width: 77.1%;
+}
+
+.form-control {
+    font-size: 1em;
 }
 
 
