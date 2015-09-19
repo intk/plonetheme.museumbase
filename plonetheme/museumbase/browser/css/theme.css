@@ -10056,9 +10056,9 @@ label[for="form-widgets-fieldCollection_fieldCollection_dateEarly"] {
     min-width: 100px !important;
 }
 
-#form-widgets-physicalCharacteristics_dimension input.select2-input {
+/*#form-widgets-physicalCharacteristics_dimension input.select2-input {
     width: 46px !important;
-}
+}*/
 
 .datagridwidget-widget-nameType {
     clear: both;
@@ -11897,6 +11897,19 @@ body.portaltype-object:not(.template-edit) #fieldset-field_collection .col-sm-9 
 
 .form-control {
     font-size: 1em;
+}
+
+body.template-edit .suppressVisualEditor {
+    display: none;
+}
+
+.template-edit #form-widgets-identification_objectName_objectname th.cell-2,
+.template-edit #form-widgets-identification_objectName_objectname td.cell-2 {
+    display: none;
+}
+
+.template-edit #form-widgets-identification_objectName_objectname td.cell-3 {
+    width: 200px !important;
 }
 
 
