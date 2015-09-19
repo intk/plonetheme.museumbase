@@ -11486,7 +11486,7 @@ body.portaltype-object:not(.template-edit) .select2-container-multi.pat-relatedi
 }
 
 
-body.portaltype-object:not(.template-edit) .select2-search-choice {
+body.portaltype-object:not(.template-edit) .select2-container:not(.pat-relateditems) .select2-search-choice {
     pointer-events: none;
 }
 
@@ -11910,6 +11910,15 @@ body.template-edit .suppressVisualEditor {
 
 .template-edit #form-widgets-identification_objectName_objectname td.cell-3 {
     width: 200px !important;
+}
+
+body.portaltype-object:not(.template-edit) .template-edit span.pattern-relateditems-item-title a {
+    line-height: 12px !important;
+    text-decoration: underline;
+}
+
+body.portaltype-object:not(.template-edit) .template-edit span.pattern-relateditems-item-title {
+    text-decoration: underline;
 }
 
 
