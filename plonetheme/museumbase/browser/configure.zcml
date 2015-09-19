@@ -135,6 +135,16 @@
         permission="zope2.View"
     />
 
+    <browser:page
+        name="detailed_tabular_view"
+        menu="plone_displayviews"
+        title="Detailed Tabular view"
+        for="*"
+        class=".views.TableView"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
     <!-- Tickets view - Deprecated -->
     <browser:page
         name="tickets_view"

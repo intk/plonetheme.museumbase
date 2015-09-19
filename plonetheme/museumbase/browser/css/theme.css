@@ -4804,6 +4804,7 @@ body.template-double_view #portal-logo img {
 
 .portaltype-object #slickslideshow,
 body.template-collection_view #slickslideshow,
+body.template-detailed_tabular_view #slickslideshow,
 body.template-etickets_view #slickslideshow,
 .portletSlideshow #slickslideshow,
 body.template-content_view #slickslideshow,
@@ -4815,6 +4816,7 @@ body.template-full_view #slickslideshow {
 .portaltype-object .slideshowWrapper,
 body.template-collection_view .slideshowWrapper,
 body.template-etickets_view .slideshowWrapper,
+body.template-detailed_tabular_view .slideshowWrapper,
 .portletSlideshow .slideshowWrapper,
 body.template-content_view .slideshowWrapper,
 body.template-full_view .slideshowWrapper {
@@ -4824,6 +4826,7 @@ body.template-full_view .slideshowWrapper {
 .portaltype-object #slickslideshow .slick-slide,
 body.template-collection_view #slickslideshow .slick-slide,
 body.template-etickets_view #slickslideshow .slick-slide,
+body.template-detailed_tabular_view #slickslideshow .slick-slide,
 .portletSlideshow #slickslideshow .slick-slide,
 body.template-content_view #slickslideshow .slick-slide,
 body.template-full_view #slickslideshow .slick-slide {
@@ -4832,6 +4835,7 @@ body.template-full_view #slickslideshow .slick-slide {
 
 .portaltype-object #slickslideshow .slick-slide img, .slideshowContent .slick-slide iframe,
 body.template-collection_view #slickslideshow .slick-slide img,
+body.template-detailed_tabular_view #slickslideshow .slick-slide img,
 body.template-etickets_view #slickslideshow .slick-slide img,
 .portletSlideshow #slickslideshow .slick-slide img,
 body.template-content_view #slickslideshow .slick-slide img,
@@ -4866,6 +4870,7 @@ body.template-content_view #portal-logo img {
 
 .portaltype-object #slickslideshow,
 body.template-collection_view #slickslideshow,
+body.template-detailed_tabular_view #slickslideshow,
 body.template-etickets_view #slickslideshow,
 .portletSlideshow #slickslideshow {
     width: 100%;
@@ -4886,6 +4891,7 @@ body.template-full_view #slideshow-controls {
 }
 
 body.template-collection_view #slideshow-controls,
+body.template-detailed_tabular_view #slideshow-controls,
 body.template-etickets_view #slideshow-controls,
 body.template-content_view #slideshow-controls,
 body.template-full_view #slideshow-controls {
@@ -5070,6 +5076,7 @@ body.template-full_view #slideshow-controls .btn.share-btn {
 
 .portaltype-object header,
 body.template-collection_view header,
+body.template-detailed_tabular_view header,
 body.template-etickets_view header,
 body.portaltype-portlet-page header,
 body.template-content_view header,
@@ -5157,6 +5164,8 @@ body.template-instruments_view.portaltype-object #slideshow-controls .btn.pause-
 .portaltype-object .slick-list, .portaltype-object .slick-track,
 body.template-collection_view .slick-list,
 body.template-collection_view .slick-track,
+body.template-detailed_tabular_view .slick-list,
+body.template-detailed_tabular_view .slick-track,
 body.template-etickets_view .slick-list,
 body.template-etickets_view .slick-track,
 .portletSlideshow .slick-list,
@@ -5171,6 +5180,7 @@ body.template-full_view .slick-track
 
 .portaltype-object .slick-slideshow,
 body.template-collection_view .slick-slideshow,
+body.template-detailed_tabular_view .slick-slideshow,
 body.template-etickets_view .slick-slideshow,
 .portletSlideshow .slick-slideshow,
 body.template-content_view .slick-slideshow,
@@ -5185,6 +5195,7 @@ body.template-full_view .slick-slideshow {
 
 .portaltype-object .slick-slide img,
 body.template-collection_view .slick-slide img,
+body.template-detailed_tabular_view .slick-slide img,
 body.template-etickets_view .slick-slide img,
 .portletSlideshow .slick-slide img,
 body.template-content_view .slick-slide img,
@@ -5246,6 +5257,7 @@ body.template-full_view #slideshow-controls > div p {
 
 .portaltype-object .inner-bg,
 body.template-collection_view .inner-bg,
+body.template-detailed_tabular_view .inner-bg,
 body.template-etickets_view .inner-bg,
 .portletSlideshow .inner-bg,
 body.template-content_view .inner-bg,
@@ -5589,6 +5601,7 @@ body:not(.portaltype-portlet-page) .slick-slideshow.collection + #slideshow-cont
 }
 
 body.template-collection_view #content .documentFirstHeading,
+body.template-detailed_tabular_view #content .documentFirstHeading,
 body.template-etickets_view #content .documentFirstHeading,
 body.portaltype-portlet-page #content .documentFirstHeading,
 body.template-content_view #content .documentFirstHeading,
@@ -5617,6 +5630,8 @@ body.portaltype-portlet-page #content .documentDescription {
 
 body.template-collection_view #content .documentDescription.description, 
 body.template-collection_view #content .documentDescription,
+body.template-detailed_tabular_view #content .documentDescription.description, 
+body.template-detailed_tabular_view #content .documentDescription,
 body.template-etickets_view #content .documentDescription.description, 
 body.template-etickets_view #content .documentDescription {
     /*position: absolute;*/
@@ -5658,6 +5673,7 @@ body.portaltype-portlet-page #portlet_bodytext {
 }
 
 body.template-collection_view .slick-slideshow,
+body.template-detailed_tabular_view .slick-slideshow,
 body.template-etickets_view .slick-slideshow,
 .portletSlideshow .slick-slideshow,
 body.template-content_view .slick-slideshow,
@@ -11919,6 +11935,15 @@ body.portaltype-object:not(.template-edit) .template-edit span.pattern-relatedit
 
 body.portaltype-object:not(.template-edit) .template-edit span.pattern-relateditems-item-title {
     text-decoration: underline;
+}
+
+body.template-detailed_tabular_view table.listing {
+    width: 980px !important;
+    margin: 0 auto;
+}
+
+body.template-detailed_tabular_view #content-core {
+    padding-bottom: 50px;
 }
 
 

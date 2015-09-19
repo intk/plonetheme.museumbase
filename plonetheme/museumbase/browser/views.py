@@ -611,8 +611,6 @@ class ContentView(BrowserView):
             return True
 
 
-
-
 class NumberOfResults(CommonBrowserView):
     """
     Called by AJAX to know how many results in the collection. Returns JSON.
@@ -667,5 +665,34 @@ class CustomManagePortlets(ManageContextualPortlets):
     def __init__(self, context, request):
         # Skip past the main parent constructor, since it sets disable_border
         super(ManageContextualPortlets, self).__init__(context, request)
+
+class TableView(BrowserView):
+    index = ViewPageTemplateFile('templates/table_view.pt')
+
+    def getYear(self, item):
+        obj = item.getObject()
+
+        if hasattr(obj, 'titleAuthorImprintCollation_imprint_year'):
+            year = obj.titleAuthorImprintCollation_imprint_year
+            return year
+        else:
+            return None
+
+    def getAuthor(self, context_author, item):
+        obj = item.getObject()
+        if hasattr(obj, 'titleAuthorImprintCollation_titleAuthor_author'):
+            authors = obj.titleAuthorImprintCollation_titleAuthor_author
+            if authors:
+                author = authors[0]
+                author_name = author['author']
+                return author_name
+        else:
+            return context_author.get('name_or_id', None)
+
+    def render(self):
+        return self.index()
+
+    def __call__(self):
+        return self.render()
 
 
