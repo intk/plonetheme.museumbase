@@ -11952,6 +11952,10 @@ div.template-edit .select2-container-multi.select2-orderable .select2-search-cho
     cursor: pointer !important;
 }
 
+body.template-edit textarea {
+    padding-left: 18px !important;
+}
+
 
 /* Backend media queries */
 @media (max-width: 767px) {
