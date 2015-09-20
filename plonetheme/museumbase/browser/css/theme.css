@@ -11957,6 +11957,11 @@ body.template-edit textarea {
 }
 
 
+body.template-edit fieldset.formPanel legend,
+div.template-edit fieldset.formPanel legend {
+    display: none;
+}
+
 /* Backend media queries */
 @media (max-width: 767px) {
 
