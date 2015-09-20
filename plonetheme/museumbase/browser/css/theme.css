@@ -11131,8 +11131,8 @@ body.portaltype-object:not(.template-edit) #formfield-form-widgets-identificatio
 }
 
 body.portaltype-object:not(.template-edit) .form-control[disabled] {
-    background-color: #f4f4f4 !important;
-    border: 1px solid #f4f4f4 !important;
+    background-color: #e6e6e6 !important;
+    border: 1px solid #e6e6e6 !important;
     color: #000000;
 }
 
@@ -11949,7 +11949,7 @@ body.template-detailed_tabular_view #content-core {
 
 div.template-edit .select2-container-multi.select2-orderable .select2-search-choice span, 
 div.template-edit .select2-container-multi.select2-orderable .select2-search-choice {
-    cursor: pointer !important;
+    cursor: text !important;
 }
 
 body.template-edit textarea {
@@ -11961,6 +11961,9 @@ body.template-edit fieldset.formPanel legend,
 div.template-edit fieldset.formPanel legend {
     display: none;
 }
+
+
+
 
 /* Backend media queries */
 @media (max-width: 767px) {
