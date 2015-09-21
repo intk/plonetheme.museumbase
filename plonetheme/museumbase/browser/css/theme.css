@@ -12085,7 +12085,51 @@ div.faceted-form .listingBar div {
     padding-bottom: 0px !important;
 }
 
+#fieldset-title_author .col-sm-3,
+#fieldset-abstract_subject_terms .col-sm-3,
+#fieldset-copies_and_shelf_marks .col-sm-3 {
+    width: 22.6% !important;
+}
 
+#fieldset-abstract_subject_terms .col-sm-9 {
+
+}
+
+#fieldset-abstract_subject_terms #formfield-form-widgets-abstractAndSubjectTerms_startDate label {
+    width: 47.2% !important;
+}
+
+#formfield-form-widgets-relations_volume .col-sm-3 {
+    width: 22.6% !important;
+}
+
+#form-widgets-abstractAndSubjectTerms_subjectTerm td.cell-2,
+#form-widgets-abstractAndSubjectTerms_subjectTerm td.cell-3 {
+    width: 296px;
+}
+
+#formfield-form-widgets-abstractAndSubjectTerms_personKeywordType td.cell-2,
+#formfield-form-widgets-abstractAndSubjectTerms_personKeywordType td.cell-3 {
+    width: 296px;
+}
+
+#formfield-form-widgets-freeFieldsAndNumbers_freeFields .option .single-checkbox-widget {
+    margin-right: 80px;
+    margin-left: 80px;
+    margin-top: 15px;
+}
+
+#formfield-form-widgets-freeFieldsAndNumbers_freeFields .option label {
+    display: block !important;
+}
+
+#formfield-form-widgets-freeFieldsAndNumbers_freeFields .option label span {
+    display: none !important;
+}
+
+#formfield-form-widgets-freeFieldsAndNumbers_freeFields th.header.cell-3 {
+    text-align: center;
+}
 
 /* Backend media queries */
 @media (max-width: 767px) {
