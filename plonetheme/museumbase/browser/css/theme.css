@@ -11136,6 +11136,13 @@ body.portaltype-object:not(.template-edit) .form-control[disabled] {
     color: #000000;
 }
 
+body.portaltype-object:not(.template-edit) textarea.form-control[disabled],
+body.portaltype-object:not(.template-edit) .datagridwidget-body select.form-control[disabled],
+body.portaltype-object:not(.template-edit) select.choice-field.select-widget[disabled]  {
+    background-color: #f4f4f4 !important;
+    border: 1px solid #f4f4f4 !important;
+}
+
 body.portaltype-object:not(.template-edit) select {
     -webkit-font-smoothing: antialiased;
     -webkit-rtl-ordering: logical;
@@ -11949,7 +11956,7 @@ body.template-detailed_tabular_view #content-core {
 
 div.template-edit .select2-container-multi.select2-orderable .select2-search-choice span, 
 div.template-edit .select2-container-multi.select2-orderable .select2-search-choice {
-    cursor: text !important;
+    cursor: pointer !important;
 }
 
 body.template-edit textarea {
