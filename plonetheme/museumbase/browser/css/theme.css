@@ -4804,6 +4804,7 @@ body.template-double_view #portal-logo img {
 
 .portaltype-object #slickslideshow,
 body.template-collection_view #slickslideshow,
+body.template-facetednavigation_view #slickslideshow,
 body.template-detailed_tabular_view #slickslideshow,
 body.template-etickets_view #slickslideshow,
 .portletSlideshow #slickslideshow,
@@ -4815,6 +4816,7 @@ body.template-full_view #slickslideshow {
 
 .portaltype-object .slideshowWrapper,
 body.template-collection_view .slideshowWrapper,
+body.template-facetednavigation_view .slideshowWrapper,
 body.template-etickets_view .slideshowWrapper,
 body.template-detailed_tabular_view .slideshowWrapper,
 .portletSlideshow .slideshowWrapper,
@@ -4825,6 +4827,7 @@ body.template-full_view .slideshowWrapper {
 
 .portaltype-object #slickslideshow .slick-slide,
 body.template-collection_view #slickslideshow .slick-slide,
+body.template-facetednavigation_viewfacetednavigation_view #slickslideshow .slick-slide,
 body.template-etickets_view #slickslideshow .slick-slide,
 body.template-detailed_tabular_view #slickslideshow .slick-slide,
 .portletSlideshow #slickslideshow .slick-slide,
@@ -4835,6 +4838,7 @@ body.template-full_view #slickslideshow .slick-slide {
 
 .portaltype-object #slickslideshow .slick-slide img, .slideshowContent .slick-slide iframe,
 body.template-collection_view #slickslideshow .slick-slide img,
+body.template-facetednavigation_viewfacetednavigation_view #slickslideshow .slick-slide img,
 body.template-detailed_tabular_view #slickslideshow .slick-slide img,
 body.template-etickets_view #slickslideshow .slick-slide img,
 .portletSlideshow #slickslideshow .slick-slide img,
@@ -4870,6 +4874,7 @@ body.template-content_view #portal-logo img {
 
 .portaltype-object #slickslideshow,
 body.template-collection_view #slickslideshow,
+body.template-facetednavigation_view #slickslideshow,
 body.template-detailed_tabular_view #slickslideshow,
 body.template-etickets_view #slickslideshow,
 .portletSlideshow #slickslideshow {
@@ -4891,6 +4896,7 @@ body.template-full_view #slideshow-controls {
 }
 
 body.template-collection_view #slideshow-controls,
+body.template-facetednavigation_view #slideshow-controls,
 body.template-detailed_tabular_view #slideshow-controls,
 body.template-etickets_view #slideshow-controls,
 body.template-content_view #slideshow-controls,
@@ -5076,6 +5082,7 @@ body.template-full_view #slideshow-controls .btn.share-btn {
 
 .portaltype-object header,
 body.template-collection_view header,
+body.template-facetednavigation_view header,
 body.template-detailed_tabular_view header,
 body.template-etickets_view header,
 body.portaltype-portlet-page header,
@@ -5164,6 +5171,8 @@ body.template-instruments_view.portaltype-object #slideshow-controls .btn.pause-
 .portaltype-object .slick-list, .portaltype-object .slick-track,
 body.template-collection_view .slick-list,
 body.template-collection_view .slick-track,
+body.template-facetednavigation_view .slick-list,
+body.template-facetednavigation_view .slick-track,
 body.template-detailed_tabular_view .slick-list,
 body.template-detailed_tabular_view .slick-track,
 body.template-etickets_view .slick-list,
@@ -5180,6 +5189,7 @@ body.template-full_view .slick-track
 
 .portaltype-object .slick-slideshow,
 body.template-collection_view .slick-slideshow,
+body.template-facetednavigation_view .slick-slideshow,
 body.template-detailed_tabular_view .slick-slideshow,
 body.template-etickets_view .slick-slideshow,
 .portletSlideshow .slick-slideshow,
@@ -5195,6 +5205,7 @@ body.template-full_view .slick-slideshow {
 
 .portaltype-object .slick-slide img,
 body.template-collection_view .slick-slide img,
+body.template-facetednavigation_view .slick-slide img,
 body.template-detailed_tabular_view .slick-slide img,
 body.template-etickets_view .slick-slide img,
 .portletSlideshow .slick-slide img,
@@ -5257,6 +5268,7 @@ body.template-full_view #slideshow-controls > div p {
 
 .portaltype-object .inner-bg,
 body.template-collection_view .inner-bg,
+body.template-facetednavigation_view .inner-bg,
 body.template-detailed_tabular_view .inner-bg,
 body.template-etickets_view .inner-bg,
 .portletSlideshow .inner-bg,
@@ -5601,6 +5613,7 @@ body:not(.portaltype-portlet-page) .slick-slideshow.collection + #slideshow-cont
 }
 
 body.template-collection_view #content .documentFirstHeading,
+body.template-facetednavigation_view #content .documentFirstHeading,
 body.template-detailed_tabular_view #content .documentFirstHeading,
 body.template-etickets_view #content .documentFirstHeading,
 body.portaltype-portlet-page #content .documentFirstHeading,
@@ -5630,6 +5643,8 @@ body.portaltype-portlet-page #content .documentDescription {
 
 body.template-collection_view #content .documentDescription.description, 
 body.template-collection_view #content .documentDescription,
+body.template-facetednavigation_view #content .documentDescription.description, 
+body.template-facetednavigation_view #content .documentDescription,
 body.template-detailed_tabular_view #content .documentDescription.description, 
 body.template-detailed_tabular_view #content .documentDescription,
 body.template-etickets_view #content .documentDescription.description, 
@@ -5673,6 +5688,7 @@ body.portaltype-portlet-page #portlet_bodytext {
 }
 
 body.template-collection_view .slick-slideshow,
+body.template-facetednavigation_view .slick-slideshow,
 body.template-detailed_tabular_view .slick-slideshow,
 body.template-etickets_view .slick-slideshow,
 .portletSlideshow .slick-slideshow,
@@ -6131,11 +6147,13 @@ body.template-content_view .slick-slideshow:before,
 body.template-full_view .slick-slideshow:before,
 .portletSlideshow .slick-slideshow:before,
 body.template-collection_view .slick-slideshow:before,
+body.template-facetednavigation_view .slick-slideshow:before,
 body.template-etickets_view .slick-slideshow:before {
     padding-top: 56.25%;
 }
 
 body.template-collection_view .slick-slideshow.slick-initialized,
+body.template-facetednavigation_view .slick-slideshow.slick-initialized,
 body.template-etickets_view .slick-slideshow.slick-initialized,
 .portletSlideshow .slick-slideshow.slick-initialized {
     height: 100% !important;
@@ -11969,6 +11987,103 @@ div.template-edit fieldset.formPanel legend {
     display: none;
 }
 
+/* Faceted navigation */
+div.faceted-form {
+    width: 980px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+div.faceted-form #right-area {
+    width: 30%;
+}
+
+div.faceted-form .right-area-js {
+    margin-right: 19em;
+}
+
+div.faceted-form .listingBar .number-list {
+    width: 60% !important;
+    padding-left: 10px !important;
+}
+
+
+div.faceted-form .listingBar #next_item {
+    width: 40% !important;
+    padding-right: 10px !important;
+}
+
+div.faceted-form .listingBar a.btn {
+    background-color: #ffffff !important;
+    border: 0px !important;
+    padding-right: 0px !important;
+    text-align: right;
+}
+
+div.faceted-form .faceted-checkbox-criterion {
+    display: block;
+}
+
+div.faceted-form fieldset input.form-control {
+    height: 45px;
+    display: inline-block;
+    width: 86%;
+}
+
+div.faceted-form fieldset input.searchButton {
+    height: 44px;
+    border: 0px;
+    display: inline-block;;
+}
+
+div.faceted-form div.faceted-textwidget-place-all {
+    display: inline-block;
+    float: left;
+    margin-right: 20px;
+}
+
+div.faceted-form div.faceted-textwidget-place-all, 
+div.faceted-form div.faceted-textwidget-place-current {
+    padding-top: 10px;
+}
+
+div.faceted-form a.faceted-criteria-hide,
+div.faceted-form a.faceted-criteria-show {
+    font-size: 0.800em !important;
+}
+
+div.faceted-form .faceted-criteria-reset a {
+    font-size: 0.800em !important;
+}
+
+body:not(.template-folder_contents) #content div.faceted-form ul, body:not(.template-sharing) #content div.faceted-form ul {
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+}
+
+div.faceted-form div.faceted-checkbox-more a {
+    font-size: 0.800em !important;
+}
+
+div.faceted-form #next_item a {
+    font-size: 0.9em !important;
+}
+
+div.faceted-form #next_item a {
+    font-size: 0.9em !important;
+}
+
+div.faceted-form .number-list a {
+    font-size: 0.9em !important;
+}
+
+div.faceted-form .photoAlbumEntry {
+    padding-left: 10px;
+}
+
+div.faceted-form .listingBar div {
+    padding-bottom: 0px !important;
+}
 
 
 
