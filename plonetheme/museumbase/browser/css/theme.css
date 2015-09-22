@@ -9426,7 +9426,7 @@ div.field select {
 }
 
 #formfield-form-widgets-identification_taxonomy_objectstatus div.fieldset-input {
-    width: 58.1% !important
+    width: 60.2% !important
 }
 
 div.field textarea {
@@ -9472,7 +9472,7 @@ select.formTabs {
 }
 
 .datagridwidget-table-view-block .select2-container {
-    width: 70% !important;
+    width: 72.7% !important;
 }
 
 .template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label,
@@ -9536,7 +9536,7 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 }
 
 div.datagridwidget-widget-nameType select.select-widget {
-    width: 70% !important;
+    width: 72.7% !important;
 }
 
 #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-name label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType div.label, #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-name div.label {
@@ -9715,12 +9715,12 @@ fieldset.formPanel .datagridwidget-body .datagridwidget-block-edit-cell div.labe
 
 #fieldset-numbers_relationships .datagridwidget-widget-notes div.label, 
 #fieldset-numbers_relationships .datagridwidget-widget-notes div.label label {
-    width: 26.8% !important;
+    width: 27.3% !important;
 }
 
 #fieldset-numbers_relationships .datagridwidget-widget-association div.label, 
 #fieldset-numbers_relationships .datagridwidget-widget-association div.label label {
-    width: 26.8% !important;
+    width: 27.3% !important;
 }
 
 #fieldset-numbers_relationships input.contenttree-widget.relationlist-field,
@@ -9760,7 +9760,7 @@ fieldset.formPanel input.contenttree-widget.relationlist-field {
 }
 
 #fieldset-value_insurance .datagridwidget-widget-curr .select2-container {
-    width: 59.8% !important;
+    width: 65% !important;
 }
 
 #fieldset-value_insurance .datagridwidget-widget-valuer,
@@ -9799,7 +9799,7 @@ fieldset.formPanel input.contenttree-widget.relationlist-field {
 }
 
 #fieldset-value_insurance .datagridwidget-widget-date input {
-    width: 59.8% !important;
+    width: 65% !important;
 }
 
 /* Confirmation date / renewal date */
@@ -10009,12 +10009,6 @@ span.option span {
     float: left;
 }
 
-div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title,
-div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type {
-    width: 50% !important;
-    float: left;
-}
-
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title {
     clear: both;
 }
@@ -10026,19 +10020,8 @@ div.template-edit #formfield-form-widgets-identification_titleDescription_title 
     width: 27.3% !important;
 }
 
-div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label,
-div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label label {
-    width: 54.5% !important;
-}
-
-
-
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title input {
-    width: 70% !important;
-}
-
-div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title input {
-    width: 44% !important;
+    width: 72.7% !important;
 }
 
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label {
@@ -10047,8 +10030,8 @@ div.template-edit #formfield-form-widgets-identification_titleDescription_title 
 }
 
 div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label {
-    width: 35% !important;
-    text-align: right;
+    width: 22.7% !important;
+    text-align: left;
 }
 
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label label {
@@ -10056,27 +10039,14 @@ div.template-edit #formfield-form-widgets-identification_titleDescription_title 
     text-align: left;
 }
 
-div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label label {
-    width: 100% !important;
-    text-align: right;
-}
 
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label label {
     padding-right: 30px;
 }
 
-div.temlpate-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type input {
-    width: 59.8% !important;
-}
 
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type input {
-    width: 70% !important;
-}
-
-div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title,
-div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type {
-    width: 50% !important;
-    float: left;
+    width: 72.7% !important;
 }
 
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title,
@@ -10222,7 +10192,7 @@ body.template-collective-object-object input.text-widget {
 }
 
 .template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea {
-    width: 70% !important;
+    width: 72.7% !important;
     /*min-height: 419px !important;*/
 }
 
@@ -10333,12 +10303,16 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 }
 
 #formfield-form-widgets-location_currentLocation textarea {
-    width: 70.6% !important;
+    width: 70.7% !important;
 }
 
 #formfield-form-widgets-productionDating_production_productionReason div.fieldset-input,
 #formfield-form-widgets-productionDating_dating_notes div.fieldset-input {
     width: 77.4% !important;
+}
+
+#formfield-form-widgets-location_currentLocation .datagridwidget-widget-fitness input {
+    width: 100% !important;
 }
 
 /* Option 2 
@@ -10612,7 +10586,7 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 }
 
 #fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-type input {
-    width: 59.8% !important;
+    width: 63.5% !important;
 }
 
 #fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-unit {
@@ -10691,11 +10665,11 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 }
 
 #formfield-form-widgets-associations_associatedPersonInstitutions .datagridwidget-widget-endDate input {
-    width: 64.6% !important;
+    width: 70% !important;
 }
 
 #fieldset-associations textarea {
-    width: 70% !important;
+    width: 72.7% !important;
 }
 
 /* **** */
@@ -10728,7 +10702,7 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 }
 
 #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subject div.select2-container {
-    width: 58.3% !important;
+    width: 65% !important;
     min-width: 0px !important;
 }
 
@@ -10778,7 +10752,7 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 }
 
 #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName input {
-    width: 45.3% !important;
+    width: 51% !important;
 }
 
 #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank {
@@ -10827,7 +10801,7 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 }
 
 #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-endDate input {
-    width: 58.3% !important;
+    width: 65% !important;
 }
 
 #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-startDate {
@@ -10876,7 +10850,7 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 }
 
 #fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-endDate input {
-    width: 58.3% !important;
+    width: 65% !important;
 }
 
 #fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-startDate {
@@ -10894,7 +10868,7 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 }
 
 #fieldset-documentation .datagridwidget-body .datagridwidget-block-edit-cell textarea {
-    width: 70% !important;
+    width: 72.7% !important;
 }
 /* **** */
 
@@ -10928,7 +10902,7 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 }
 
 #fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-endDate input {
-    width: 58.3% !important;
+    width: 65% !important;
 }
 
 #fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-startDate {
@@ -10950,7 +10924,7 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 }
 
 #fieldset-iconography .datagridwidget-body .datagridwidget-block-edit-cell textarea {
-    width: 70% !important;
+    width: 72.7% !important;
 }
 
 #formfield-form-widgets-physicalCharacteristics_technique .cell-3 {
@@ -10988,7 +10962,7 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 }
 
 #formfield-form-widgets-identification_taxonomy_notes textarea {
-    width: 70% !important;
+    width: 72.7% !important;
 }
 
 #formfield-form-widgets-acquisition_acquisition_acquisitionFrom div.label,
@@ -11024,11 +10998,6 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 
 body.template-collective-object-object #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label, 
 body.template-collective-object-object #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label label {
-    width: 54.5% !important;
-}
-
-body.template-collective-object-object #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type input {
-    width: 59.8% !important;
 }
 
 #formfield-form-widgets-associations_associatedSubjects div..datagridwidget-widget-properName {
@@ -11201,6 +11170,10 @@ body:not(.template-edit) div.template-edit .datagridwidget-body select.form-cont
 body:not(.template-edit) div.template-edit select.choice-field.select-widget[disabled]  {
     background-color: #f4f4f4 !important;
     border: 1px solid #f4f4f4 !important;
+    border-bottom-color: #f4f4f4 !important;
+    border-left-color: #f4f4f4 !important;
+    border-right-color: #f4f4f4 !important;
+    border-top-color: #f4f4f4 !important;
 }
 
 body:not(.template-edit) div.template-edit select {
@@ -11531,6 +11504,11 @@ body:not(.template-edit) div.template-edit .select2-container-multi.select2-cont
     box-shadow: none !important;
     color: #000000 !important;
     -webkit-text-fill-color:#000000 !important;
+    border: 1px solid #f4f4f4 !important;
+    border-bottom-color: #f4f4f4 !important;
+    border-left-color: #f4f4f4 !important;
+    border-right-color: #f4f4f4 !important;
+    border-top-color: #f4f4f4 !important;
 }
 
 body:not(.template-edit) div.template-edit .select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice {
@@ -11630,15 +11608,15 @@ body:not(.template-edit) div.template-edit .datagridwidget-manipulator {
 }
 
 body:not(.template-edit) div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label {
-    width: 45.5% !important;
+    width: 22.7% !important;
 }
 
 body:not(.template-edit) div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title input {
-    width: 54% !important;
+    width: 77.3% !important;
 }
 
 body:not(.template-edit) div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type input {
-    width: 65% !important;
+    width: 77.3% !important;
 }
 
 body:not(.template-edit) div.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label {
@@ -11748,7 +11726,7 @@ span.pattern-relateditems-path {
 }
 
 .datagridwidget-block-edit-cell .pattern-relateditems-container {
-    width: 70% !important;
+    width: 72.7% !important;
 }
 
 
@@ -11871,7 +11849,7 @@ body:not(.template-edit) div.template-edit #fieldset-associations #formfield-for
 }
 
 body:not(.template-edit) div.template-edit #fieldset-numbers_relationships .datagridwidget-widget-notes div.label, #fieldset-numbers_relationships .datagridwidget-widget-notes div.label label {
-    width: 22.2% !important;
+    width: 26.7% !important;
 }
 
 body:not(.template-edit) div.template-edit #fieldset-value_insurance .datagridwidget-widget-value div.label, 
@@ -12204,6 +12182,66 @@ div.template-edit #ormfield-form-widgets-freeFieldsAndNumbers_freeFields th.cell
 #ajax-error-msg {
     display: none;
 }
+
+body.template-image_reference_view div.title-description-wrapper {
+    height: 500px !important;
+}
+
+body.template-image_reference_view .documentFirstHeading {
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#formfield-form-widgets-productionDating_production_periods .col-sm-9 {
+    width: 60.2% !important;
+}
+
+div.template-edit #formfield-form-widgets-productionDating_production_periods .col-sm-9 {
+    width: 76.9% !important;
+}
+
+div.template-edit #content-core tr.datagridwidget-row td.datagridwidget-block-edit-cell {
+    padding-right: 0px !important;
+}
+
+div.template-edit #content-core #form-widgets-iconography_generalSearchCriteria_classificationTheme .datagridwidget-cell.cell-2  {
+    padding-right: 0px !important;
+}
+
+div.template-edit #content-core #formfield-form-widgets-iconography_contentDescription .datagridwidget-cell.cell-2  {
+    padding-right: 0px !important;
+}
+
+div.template-edit #content-core #formfield-form-widgets-numbersRelationships_numbers .datagridwidget-cell.cell-4 {
+    padding-right: 0px !important;
+}
+
+div.template-edit #content-core #formfield-form-widgets-conditionConservation_conditions .datagridwidget-cell.cell-5 {
+    padding-right: 0px !important;
+}
+
+div.template-edit #content-core #formfield-form-widgets-conditionConservation_completeness .datagridwidget-cell.cell-4 {
+    padding-right: 0px !important;
+}
+
+div.template-edit #content-core #formfield-form-widgets-recommendationsRequirements_legalLicenceRequirements_requirementsHeld .datagridwidget-cell.cell-5 {
+    padding-right: 0px !important;
+}
+
+div.template-edit #content-core #formfield-form-widgets-labels .datagridwidget-cell.cell-2  {
+    padding-right: 0px !important;
+}
+
+div.template-edit #content-core #formfield-form-widgets-notes .datagridwidget-cell.cell-1  {
+    padding-right: 0px !important;
+}
+
+div.template-edit #content-core #formfield-form-widgets-notes_free_fields .datagridwidget-cell.cell-4  {
+    padding-right: 0px !important;
+}
+
 
 /* Backend media queries */
 @media (max-width: 767px) {
