@@ -4155,7 +4155,6 @@ body.portaltype-portlet-page .slick-prev:hover, body.portaltype-portlet-page .sl
 #collectionFilters .portletWrapper {
     padding-top: 25px; /* height - height/2 - line height */
 }
-
 /* NEW QUERIES */
 @media (max-width: 480px) {
     #collectionFilters {
@@ -10002,8 +10001,16 @@ span.option span {
     clear: both;
 }*/
 
+
+
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title,
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type {
+    width: 100% !important;
+    float: left;
+}
+
+div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title,
+div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type {
     width: 50% !important;
     float: left;
 }
@@ -10012,20 +10019,44 @@ span.option span {
     clear: both;
 }
 
+
+
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label,
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label label {
+    width: 27.3% !important;
+}
+
+div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label,
+div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label label {
     width: 54.5% !important;
 }
 
+
+
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title input {
+    width: 70% !important;
+}
+
+div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title input {
     width: 44% !important;
 }
 
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label {
+    width: 27.3% !important;
+    text-align: left;
+}
+
+div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label {
     width: 35% !important;
     text-align: right;
 }
+
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label label {
+    width: 100% !important;
+    text-align: left;
+}
+
+div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label label {
     width: 100% !important;
     text-align: right;
 }
@@ -10034,13 +10065,23 @@ span.option span {
     padding-right: 30px;
 }
 
-#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type input {
+div.temlpate-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type input {
     width: 59.8% !important;
+}
+
+#formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type input {
+    width: 70% !important;
+}
+
+div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title,
+div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type {
+    width: 50% !important;
+    float: left;
 }
 
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title,
 #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type {
-    width: 50% !important;
+    width: 100% !important;
     float: left;
 }
 
@@ -10052,6 +10093,7 @@ span.option span {
 #fieldset-field_collection .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
     width: 26.7% !important;
 }
+
 /****/
 
 
@@ -12155,8 +12197,12 @@ div.template-edit #formfield-form-widgets-relations_museumObjects .datagridwidge
     width: 100% !important;
 }
 
-div.template-edit f#ormfield-form-widgets-freeFieldsAndNumbers_freeFields th.cell-3 span {
+div.template-edit #ormfield-form-widgets-freeFieldsAndNumbers_freeFields th.cell-3 span {
     margin-left: -30px;
+}
+
+#ajax-error-msg {
+    display: none;
 }
 
 /* Backend media queries */
