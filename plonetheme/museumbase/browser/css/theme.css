@@ -11134,8 +11134,8 @@ ul.jqtree_common.jqtree-tree {
     min-width: 500px;
 }
 
-body.portaltype-object:not(.template-edit) .datagridwidget-row input,
-body.portaltype-object:not(.template-edit) .datagridwidget-row textarea {
+body:not(.template-edit) div.template-edit .datagridwidget-row input,
+body:not(.template-edit) div.template-edit .datagridwidget-row textarea {
     line-height: 1.42857143;
     color: #000000;
     border-radius: 0;
@@ -11144,24 +11144,24 @@ body.portaltype-object:not(.template-edit) .datagridwidget-row textarea {
     display: inline-block;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label label {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type div.label label {
     width: 100% !important;
 }
 
-body.portaltype-object:not(.template-edit) .form-control[disabled] {
+body:not(.template-edit) div.template-edit .form-control[disabled] {
     background-color: #e6e6e6 !important;
     border: 1px solid #e6e6e6 !important;
     color: #000000;
 }
 
-body.portaltype-object:not(.template-edit) textarea.form-control[disabled],
-body.portaltype-object:not(.template-edit) .datagridwidget-body select.form-control[disabled],
-body.portaltype-object:not(.template-edit) select.choice-field.select-widget[disabled]  {
+body:not(.template-edit) div.template-edit textarea.form-control[disabled],
+body:not(.template-edit) div.template-edit .datagridwidget-body select.form-control[disabled],
+body:not(.template-edit) div.template-edit select.choice-field.select-widget[disabled]  {
     background-color: #f4f4f4 !important;
     border: 1px solid #f4f4f4 !important;
 }
 
-body.portaltype-object:not(.template-edit) select {
+body:not(.template-edit) div.template-edit select {
     -webkit-font-smoothing: antialiased;
     -webkit-rtl-ordering: logical;
     align-items: center;
@@ -11224,11 +11224,11 @@ body.portaltype-object:not(.template-edit) select {
     box-shadow: none;
 }
 
-body.portaltype-object:not(.template-edit) select.formTabs[disabled] {
+body:not(.template-edit) div.template-edit select.formTabs[disabled] {
     cursor: not-allowed;
 }
 
-body.portaltype-object:not(.template-edit) select.formTabs {
+body:not(.template-edit) div.template-edit select.formTabs {
     -webkit-appearance: menulist-button;
     -webkit-font-smoothing: antialiased;
     -webkit-rtl-ordering: logical;
@@ -11292,7 +11292,7 @@ body.portaltype-object:not(.template-edit) select.formTabs {
     -webkit-writing-mode: horizontal-tb;
 }
 
-body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy_objectstatus {
+body:not(.template-edit) div.template-edit #form-widgets-identification_taxonomy_objectstatus {
     -webkit-font-smoothing: antialiased;
     -webkit-rtl-ordering: logical;
     align-items: center;
@@ -11465,25 +11465,25 @@ body.template-edit #form-widgets-identification_taxonomy_objectstatus {
     background-color: #f4f4f4;
 }
 
-body.portaltype-object:not(.template-edit) .select2-container-multi .select2-choices .select2-search-choice {
+body:not(.template-edit) div.template-edit .select2-container-multi .select2-choices .select2-search-choice {
     margin: 6px 0 3px 2px !important;
 }
 
-body.portaltype-object:not(.template-edit) .pattern-relateditems-tree-select,
-body.portaltype-object:not(.template-edit) .pattern-relateditems-path-label,
-body.portaltype-object:not(.template-edit) .datagridwidget-manipulator,
-body.portaltype-object:not(.template-edit) .searchButton {
+body:not(.template-edit) div.template-edit .pattern-relateditems-tree-select,
+body:not(.template-edit) div.template-edit .pattern-relateditems-path-label,
+body:not(.template-edit) div.template-edit .datagridwidget-manipulator,
+body:not(.template-edit) div.template-edit .searchButton {
     pointer-events: none !important;
 }
 
-body.portaltype-object:not(.template-edit) .pattern-relateditems-container span.pattern-relateditems-path,
-body.portaltype-object:not(.template-edit) span.pattern-relateditems-item-path {
+body:not(.template-edit) div.template-edit .pattern-relateditems-container span.pattern-relateditems-path,
+body:not(.template-edit) div.template-edit span.pattern-relateditems-item-path {
     display: none;
 }
 
-body.portaltype-object:not(.template-edit) input[type="text"]:not(#srch-term),
-body.portaltype-object:not(.template-edit) textarea,
-body.portaltype-object:not(.template-edit) .select2-container-multi.select2-container-disabled .select2-choices {
+body:not(.template-edit) div.template-edit input[type="text"]:not(#srch-term),
+body:not(.template-edit) div.template-edit textarea,
+body:not(.template-edit) div.template-edit .select2-container-multi.select2-container-disabled .select2-choices {
     border: 0px !important;
     background-color: #f4f4f4 !important;
     box-shadow: none !important;
@@ -11491,23 +11491,23 @@ body.portaltype-object:not(.template-edit) .select2-container-multi.select2-cont
     -webkit-text-fill-color:#000000 !important;
 }
 
-body.portaltype-object:not(.template-edit) .select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice {
+body:not(.template-edit) div.template-edit .select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice {
     border: 0px!important;
     background-image: none;
     background-color: #f4f4f4;
     box-shadow: none !important;
 }
 
-body.portaltype-object:not(.template-edit) .searchButton {
+body:not(.template-edit) div.template-edit .searchButton {
     box-shadow: none !important;
 }
 
-body.portaltype-object:not(.template-edit) select {
+body:not(.template-edit) div.template-edit select {
     -webkit-appearance: none;
     -moz-appearance: none;
 }
 
-body.portaltype-object:not(.template-edit) textarea {
+body:not(.template-edit) div.template-edit textarea {
     padding-left: 18px !important;
 }
 
@@ -11523,133 +11523,133 @@ body.portaltype-object.userrole-authenticated:not(.template-edit) {
     background-color: #ffffff !important;
 }
 
-body.portaltype-object:not(.template-edit) .select2-container-multi.pat-relateditems .select2-choices .select2-search-choice {
+body:not(.template-edit) div.template-edit .select2-container-multi.pat-relateditems .select2-choices .select2-search-choice {
     margin: 6px 0 3px 2px !important;
 }
 
 
-body.portaltype-object:not(.template-edit) .select2-container:not(.pat-relateditems) .select2-search-choice {
+body:not(.template-edit) div.template-edit .select2-container:not(.pat-relateditems) .select2-search-choice {
     pointer-events: none;
 }
 
 
-body.portaltype-object:not(.template-edit) .datagridwidget-row div.select2-container {
+body:not(.template-edit) div.template-edit .datagridwidget-row div.select2-container {
     height: 37px !important;
 }
 
-body.portaltype-object:not(.template-edit) .datagridwidget-row .select2-container-multi .select2-choices .select2-search-choice {
+body:not(.template-edit) div.template-edit .datagridwidget-row .select2-container-multi .select2-choices .select2-search-choice {
     margin: 6px 0 3px 2px !important;
 }
 
-body.portaltype-object:not(.template-edit) .pattern-relateditems-container,
-body.portaltype-object:not(.template-edit) .select2-container.pat-relateditems {
+body:not(.template-edit) div.template-edit .pattern-relateditems-container,
+body:not(.template-edit) div.template-edit .select2-container.pat-relateditems {
     width: 100% !important;
 }
 
-body.portaltype-object:not(.template-edit) .datagridwidget-row .pattern-relateditems-container,
-body.portaltype-object:not(.template-edit) .datagridwidget-row .select2-container.pat-relateditems {
+body:not(.template-edit) div.template-edit .datagridwidget-row .pattern-relateditems-container,
+body:not(.template-edit) div.template-edit .datagridwidget-row .select2-container.pat-relateditems {
     width: 77.3% !important;
 }
 
-body.portaltype-object:not(.template-edit) .datagridwidget-table-view-block .select2-container {
+body:not(.template-edit) div.template-edit .datagridwidget-table-view-block .select2-container {
     width: 77.3% !important;
 }
 
-body.portaltype-object:not(.template-edit) select.select-widget {
+body:not(.template-edit) div.template-edit select.select-widget {
     width: 100% !important;
 }
 
-body.portaltype-object:not(.template-edit) li.select2-search-choice {
+body:not(.template-edit) div.template-edit li.select2-search-choice {
     color: #000000 !important;
 }
 
-body.portaltype-object:not(.template-edit) #content .field input[type="text"][name$=".title"] {
+body:not(.template-edit) div.template-edit #content .field input[type="text"][name$=".title"] {
     color: #000000 !important;
 }
 
-body.portaltype-object:not(.template-edit) label {
+body:not(.template-edit) div.template-edit label {
     color: #000000 !important;
 }
 
-body.portaltype-object:not(.template-edit) th.header span {
+body:not(.template-edit) div.template-edit th.header span {
     color: #000000 !important;
 }
-body.portaltype-object:not(.template-edit) .searchButton {
+body:not(.template-edit) div.template-edit .searchButton {
     color: #000000 !important;
 }
 
-body.portaltype-object:not(.template-edit) select.formTabs,
-body.portaltype-object:not(.template-edit) select.formTabs:focus {
+body:not(.template-edit) div.template-edit select.formTabs,
+body:not(.template-edit) div.template-edit select.formTabs:focus {
     box-shadow: none !important;
 }
 
-body.portaltype-object:not(.template-edit) .datagridwidget-manipulator {
+body:not(.template-edit) div.template-edit .datagridwidget-manipulator {
     display: none;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label {
     width: 45.5% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title input {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title input {
     width: 54% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type input {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-type input {
     width: 65% !important;
 }
 
-body.portaltype-object:not(.template-edit) div.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label {
+body:not(.template-edit) div.template-edit .datagridwidget-body .datagridwidget-block-edit-cell div.label {
     width: 22.7% !important;
 }
 
-body.portaltype-object:not(.template-edit) .template-edit #content-core .datagridwidget-body .datagridwidget-block-edit-cell textarea {
+body:not(.template-edit) div.template-edit #content-core .datagridwidget-body .datagridwidget-block-edit-cell textarea {
     width: 77.3% !important;
 }
 
-body.portaltype-object:not(.template-edit) .template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.searchButton):not(.ac_input):not(.relationlist-field) {
+body:not(.template-edit) div.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.searchButton):not(.ac_input):not(.relationlist-field) {
     width: 77.3% !important;
 }
 
-body.portaltype-object:not(.template-edit) .datagridwidget-table-view thead th {
+body:not(.template-edit) div.template-edit .datagridwidget-table-view thead th {
     padding: 0px !important;
 }
 
-body.portaltype-object:not(.template-edit) tr.datagridwidget-row td.datagridwidget-cell:last-child {
+body:not(.template-edit) div.template-edit tr.datagridwidget-row td.datagridwidget-cell:last-child {
     padding-right: 0px !important;
 }
 
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_taxonomy_notes textarea {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-identification_taxonomy_notes textarea {
     width: 77.3% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_taxonomy_objectstatus div.fieldset-input {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-identification_taxonomy_objectstatus div.fieldset-input {
     width: 77.4% !important;
 }
 
-body.portaltype-object:not(.template-edit) .datagridwidget-block-edit-cell div[id$='autocomplete'] {
+body:not(.template-edit) div.template-edit .datagridwidget-block-edit-cell div[id$='autocomplete'] {
     width: 77.1% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-identification_titleDescription_translatedTitle .datagridwidget-block-edit-cell {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-identification_titleDescription_translatedTitle .datagridwidget-block-edit-cell {
     padding-right: 0px !important;
 }
 
-body.portaltype-object:not(.template-edit) #content .datagridwidget-block-edit-cell {
+body:not(.template-edit) div.template-edit #content .datagridwidget-block-edit-cell {
     padding-right: 0px !important;
 }
 
-body.portaltype-object:not(.template-edit) #form-widgets-identification_objectName_objectname .cell-4 {
+body:not(.template-edit) div.template-edit #form-widgets-identification_objectName_objectname .cell-4 {
     padding-right: 0px !important;
 }
 
-body.portaltype-object:not(.template-edit) #form-widgets-identification_objectName_otherName .cell-2,
-body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy .cell-2 {
+body:not(.template-edit) div.template-edit #form-widgets-identification_objectName_otherName .cell-2,
+body:not(.template-edit) div.template-edit #form-widgets-identification_taxonomy .cell-2 {
     padding-right: 0px !important;
 }
 
-body.portaltype-object:not(.template-edit) .autocompleteInputWidget span {
+body:not(.template-edit) div.template-edit .autocompleteInputWidget span {
     color: #000000 !important;
 }
 
@@ -11738,202 +11738,202 @@ span.pattern-relateditems-path {
     min-width: 0px !important;
 }
 
-body.portaltype-object:not(.template-edit) #form-widgets-identification_taxonomy_objectstatus {
+body:not(.template-edit) div.template-edit #form-widgets-identification_taxonomy_objectstatus {
     width: 100% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-iconography_generalSearchCriteria_generalthemes .fieldset-input {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-iconography_generalSearchCriteria_generalthemes .fieldset-input {
     width: 77.5% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-iconography_generalSearchCriteria_specificthemes .fieldset-input {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-iconography_generalSearchCriteria_specificthemes .fieldset-input {
     width: 77.5% !important;
 }
 
-body.portaltype-object:not(.template-edit) .datagridwidget-row select.select-widget {
+body:not(.template-edit) div.template-edit .datagridwidget-row select.select-widget {
     width: 77.3% !important;
 }
 
 body.portaltyoe-object:not(.template-edit) .datagridwidget-row textarea {
     width: 77.3% !important;
 }
-body.portaltype-object:not(.template-edit) .datagridwidget-row .datagridwidget-cell select.select-widget {
+body:not(.template-edit) div.template-edit .datagridwidget-row .datagridwidget-cell select.select-widget {
     width: 100% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-startDate div.label, 
-body.portaltype-object:not(.template-edit) #fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-startDate div.label label {
+body:not(.template-edit) div.template-edit #fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-startDate div.label, 
+body:not(.template-edit) div.template-edit #fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-startDate div.label label {
     width: 37.6% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-endDate input {
+body:not(.template-edit) div.template-edit #fieldset-iconography #formfield-form-widgets-iconography_contentPeriodDates .datagridwidget-widget-endDate input {
     width: 65% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-iconography_iconographySource_sourceGeneral .fieldset-input,
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-iconography_iconographySource_sourceSpecific .fieldset-input,
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-iconography_iconographySource_sourceObjectNumber .fieldset-input {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-iconography_iconographySource_sourceGeneral .fieldset-input,
+body:not(.template-edit) div.template-edit #formfield-form-widgets-iconography_iconographySource_sourceSpecific .fieldset-input,
+body:not(.template-edit) div.template-edit #formfield-form-widgets-iconography_iconographySource_sourceObjectNumber .fieldset-input {
     width: 77.5% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-associations_associatedPersonInstitutions .datagridwidget-widget-startDate div.label {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-associations_associatedPersonInstitutions .datagridwidget-widget-startDate div.label {
     width: 47.4% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-associations_associatedPersonInstitutions .datagridwidget-widget-endDate input {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-associations_associatedPersonInstitutions .datagridwidget-widget-endDate input {
     width: 69.8% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-associations .datagridwidget-table-view-block .select2-container {
+body:not(.template-edit) div.template-edit #fieldset-associations .datagridwidget-table-view-block .select2-container {
     width: 77.3% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subjectType div.label, 
-body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subjectType div.label label {
+body:not(.template-edit) div.template-edit #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subjectType div.label, 
+body:not(.template-edit) div.template-edit #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subjectType div.label label {
     width: 37.8% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subject div.select2-container {
+body:not(.template-edit) div.template-edit #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-subject div.select2-container {
     width: 64.7% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank div.label, 
-body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank div.label label {
+body:not(.template-edit) div.template-edit #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank div.label, 
+body:not(.template-edit) div.template-edit #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank div.label label {
     width: 42% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-properName {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-properName {
     clear: both;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName input {
+body:not(.template-edit) div.template-edit #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName input {
     width: 50.6% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-startDate div.label, 
-body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-startDate div.label label {
+body:not(.template-edit) div.template-edit #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-startDate div.label, 
+body:not(.template-edit) div.template-edit #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-startDate div.label label {
     width: 37.8% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-endDate input {
+body:not(.template-edit) div.template-edit #fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-endDate input {
     width: 64.7% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-startDate div.label, 
-body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-startDate div.label label {
+body:not(.template-edit) div.template-edit #fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-startDate div.label, 
+body:not(.template-edit) div.template-edit #fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-startDate div.label label {
     width: 37.8% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-endDate input {
+body:not(.template-edit) div.template-edit #fieldset-associations #formfield-form-widgets-associations_associatedPeriods .datagridwidget-widget-endDate input {
     width: 64.7% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-numbers_relationships .datagridwidget-widget-notes div.label, #fieldset-numbers_relationships .datagridwidget-widget-notes div.label label {
+body:not(.template-edit) div.template-edit #fieldset-numbers_relationships .datagridwidget-widget-notes div.label, #fieldset-numbers_relationships .datagridwidget-widget-notes div.label label {
     width: 22.2% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-value_insurance .datagridwidget-widget-value div.label, 
-body.portaltype-object:not(.template-edit) #fieldset-value_insurance .datagridwidget-widget-value div.label label {
+body:not(.template-edit) div.template-edit #fieldset-value_insurance .datagridwidget-widget-value div.label, 
+body:not(.template-edit) div.template-edit #fieldset-value_insurance .datagridwidget-widget-value div.label label {
     width: 45.4% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-value_insurance .datagridwidget-widget-curr .select2-container {
+body:not(.template-edit) div.template-edit #fieldset-value_insurance .datagridwidget-widget-curr .select2-container {
     width: 65% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-value_insurance .datagridwidget-widget-valuer div.label, 
-body.portaltype-object:not(.template-edit) #fieldset-value_insurance .datagridwidget-widget-valuer div.label label {
+body:not(.template-edit) div.template-edit #fieldset-value_insurance .datagridwidget-widget-valuer div.label, 
+body:not(.template-edit) div.template-edit #fieldset-value_insurance .datagridwidget-widget-valuer div.label label {
     width: 45.4% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-value_insurance .datagridwidget-widget-date input {
+body:not(.template-edit) div.template-edit #fieldset-value_insurance .datagridwidget-widget-date input {
     width: 65% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-policy_number input.text-widget,
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-insurance_company input.text-widget,
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-renewal_date input.text-widget,
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-reference input.text-widget,
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-conditions input.text-widget {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-policy_number input.text-widget,
+body:not(.template-edit) div.template-edit #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-insurance_company input.text-widget,
+body:not(.template-edit) div.template-edit #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-renewal_date input.text-widget,
+body:not(.template-edit) div.template-edit #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-reference input.text-widget,
+body:not(.template-edit) div.template-edit #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-conditions input.text-widget {
     width: 77.3% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_partOf .fieldset-input {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_partOf .fieldset-input {
     width: 77.5% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-date input {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-date input {
     width: 70% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_notes .fieldset-input {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_notes .fieldset-input {
     width: 77.5% !important;
 }
 
-body.portaltype-object:not(.template-edit) #form-widgets-acquisition_accession_date {
+body:not(.template-edit) div.template-edit #form-widgets-acquisition_accession_date {
     width: 100% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-acquisition_acquisition_acquisitionFrom div.label, 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-acquisition_acquisition_acquisitionFrom div.label label {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-acquisition_acquisition_acquisitionFrom div.label, 
+body:not(.template-edit) div.template-edit #formfield-form-widgets-acquisition_acquisition_acquisitionFrom div.label label {
     width: 25% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-acquisition_acquisition_acquisitionFrom .datagridwidget-block-edit-cell .pattern-relateditems-container {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-acquisition_acquisition_acquisitionFrom .datagridwidget-block-edit-cell .pattern-relateditems-container {
     width: 75% !important;
 }
 
-body.portaltype-object:not(.template-edit) #form-widgets-disposal_deaccession {
+body:not(.template-edit) div.template-edit #form-widgets-disposal_deaccession {
     width: 100% !important;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) input:not(.select2-input), 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) div.select2-container {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) input:not(.select2-input), 
+body:not(.template-edit) div.template-edit #formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) div.select2-container {
     width: 99% !important;
 }
 
-body.portaltype-object:not(.template-edit) .template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.searchButton):not(.ac_input):not(.relationlist-field) {
+body:not(.template-edit) div.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.searchButton):not(.ac_input):not(.relationlist-field) {
     width: 77.3% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-field_collection .datagridwidget-body .datagridwidget-block-edit-cell div.label, 
-body.portaltype-object:not(.template-edit) #fieldset-field_collection .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
+body:not(.template-edit) div.template-edit #fieldset-field_collection .datagridwidget-body .datagridwidget-block-edit-cell div.label, 
+body:not(.template-edit) div.template-edit #fieldset-field_collection .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
     width: 22% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-field_collection .div-20-80 .fieldset-input {
+body:not(.template-edit) div.template-edit #fieldset-field_collection .div-20-80 .fieldset-input {
     width: 76.1% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-code div.label, 
-body.portaltype-object:not(.template-edit) #fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-code div.label label {
+body:not(.template-edit) div.template-edit #fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-code div.label, 
+body:not(.template-edit) div.template-edit #fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-code div.label label {
     width: 44.4% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-codeType div.select2-container {
+body:not(.template-edit) div.template-edit #fieldset-field_collection #formfield-form-widgets-fieldCollection_fieldCollection_placeCodes .datagridwidget-widget-codeType div.select2-container {
     width: 63.2% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-unit div.label, 
-body.portaltype-object:not(.template-edit) #fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-unit div.label label {
+body:not(.template-edit) div.template-edit #fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-unit div.label, 
+body:not(.template-edit) div.template-edit #fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-unit div.label label {
     width: 36.7% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-type input {
+body:not(.template-edit) div.template-edit #fieldset-field_collection #formfield-form-widgets-fieldCollection_habitatStratigraphy_stratigrafie .datagridwidget-widget-type input {
     width: 63.2% !important;
 }
 
-body.portaltype-object:not(.template-edit) #form-widgets-notes_free_fields .option .single-checkbox-widget {
+body:not(.template-edit) div.template-edit #form-widgets-notes_free_fields .option .single-checkbox-widget {
     margin-right: 40px;
     margin-left: 80px;
     margin-top: 15px;
 }
 
-body.portaltype-object:not(.template-edit) #formfield-form-widgets-fieldCollection_fieldCollection_events .fieldset-input {
+body:not(.template-edit) div.template-edit #formfield-form-widgets-fieldCollection_fieldCollection_events .fieldset-input {
     width: 77.1% !important;
 }
 
-body.portaltype-object:not(.template-edit) #fieldset-field_collection .col-sm-9 {
+body:not(.template-edit) div.template-edit #fieldset-field_collection .col-sm-9 {
     width: 77.1%;
 }
 
@@ -11954,12 +11954,12 @@ body.template-edit .suppressVisualEditor {
     width: 200px !important;
 }
 
-body.portaltype-object:not(.template-edit) .template-edit span.pattern-relateditems-item-title a {
+body:not(.template-edit) div.template-edit span.pattern-relateditems-item-title a {
     line-height: 12px !important;
     text-decoration: underline;
 }
 
-body.portaltype-object:not(.template-edit) .template-edit span.pattern-relateditems-item-title {
+body:not(.template-edit) div.template-edit span.pattern-relateditems-item-title {
     text-decoration: underline;
 }
 
@@ -12129,6 +12129,34 @@ div.faceted-form .listingBar div {
 
 #formfield-form-widgets-freeFieldsAndNumbers_freeFields th.header.cell-3 {
     text-align: center;
+}
+
+body.portaltype-book div.template-edit .col-sm-9 {
+    width: 77% !important;
+}
+
+body.portaltype-book div.template-edit .div-50 .fieldset-input {
+    width: 46.5% !important;
+}
+
+div.template-edit #formfield-form-widgets-relations_museumObjects .datagridwidget-row .pattern-relateditems {
+    width: 100% !important;
+}
+
+div.template-edit #formfield-form-widgets-freeFieldsAndNumbers_PPN .col-sm-9 {
+    width: 100% !important;
+}
+ 
+div.template-edit #formfield-form-widgets-copiesAndShelfMarks_copyDetails .datagridwidget-table-view-block .select2-container {
+    width: 77.3% !important;
+}
+
+div.template-edit #formfield-form-widgets-relations_museumObjects .datagridwidget-row .pattern-relateditems-container {
+    width: 100% !important;
+}
+
+div.template-edit f#ormfield-form-widgets-freeFieldsAndNumbers_freeFields th.cell-3 span {
+    margin-left: -30px;
 }
 
 /* Backend media queries */
