@@ -12354,6 +12354,37 @@ body.template-edit #formfield-form-widgets-documentationFreeArchive_documentatio
     visibility: hidden;
 }
 
+body.portaltype-book #formfield-form-widgets-IBasic-title {
+    padding-bottom: 38px !important;
+}
+
+body.portaltype-book.template-edit .col-sm-9 {
+    width: 77.3%;
+}
+
+#content-core #formfield-form-widgets-titleAuthorImprintCollation_titleAuthor_title .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-block-edit-cell {
+    padding-top: 0px !important;
+}
+
+
+#content-core #formfield-form-widgets-titleAuthorImprintCollation_titleAuthor_title .datagridwidget-table-view-block tr:not(:first-child) td.datagridwidget-manipulator {
+    padding-top: 0px !important;
+}
+
+#content-core #formfield-form-widgets-titleAuthorImprintCollation_titleAuthor_title .datagridwidget-body tr:not(:first-child) label {
+    visibility: hidden;
+}
+
+body.template-edit #formfield-form-widgets-seriesNotesISBN_notes_bibliographicalNotes textarea,
+body.template-edit #formfield-form-widgets-abstractAndSubjectTerms_notes textarea {
+    border-right: 1px solid #AAA !important;
+}
+
+body.template-edit #formfield-form-widgets-abstractAndSubjectTerms_endDate .fieldset-input {
+    width: 77.1% !important;
+}
+
+
 /* Backend media queries */
 @media (max-width: 767px) {
 
