@@ -682,12 +682,19 @@ class TableView(BrowserView):
         obj = item.getObject()
         if hasattr(obj, 'titleAuthorImprintCollation_titleAuthor_author'):
             authors = obj.titleAuthorImprintCollation_titleAuthor_author
-            if authors:
+             if authors:
                 author = authors[0]
-                author_name = author['author']
-                return author_name
-        else:
-            return context_author.get('name_or_id', None)
+                authors_list = author['authors']
+                if authors_list:
+                    author_person = authors_list[0]
+                    author_name = getattr(author_preson, 'title', '')
+                    return author_name
+                else:
+                    return ""
+            else:
+                return ""
+         else:
+             return context_author.get('name_or_id', None)
 
     def render(self):
         return self.index()

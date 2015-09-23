@@ -12110,6 +12110,92 @@ div.faceted-form .listingBar div {
     padding-bottom: 0px !important;
 }
 
+#faceted-results {
+    clear:both;
+}
+
+#center-bottom-area {
+    clear:both;
+}
+
+div.eea-preview-items {
+    clear: both;
+}
+
+div.faceted-form .listingBar .previous {
+    font-size: 0.9em !important;
+}
+
+div.faceted-form .listingBar .previous a {
+    padding-left: 0px;
+}
+
+div.faceted-form .listingBar div:not(.number-list):first-child {
+    margin-left: -18px !important;
+}
+
+div.faceted-form #next_item {
+    float:right;
+}
+
+div.faceted-form .photoAlbumEntryTitle {
+    display: block;
+}
+
+div.faceted-form .photoAlbumEntry a {
+    text-decoration: none !important;
+}
+
+div.faceted-form .photoAlbumEntryTitle:hover {
+    text-decoration: underline !important;
+}
+
+div.faceted-form .photoAlbumEntryDescription {
+    font-size: 0.9em;
+    color: #666666;
+}
+
+div.faceted-form .faceted-criteria a {
+    color: #242424 !important;
+}
+
+div.faceted-form .listingBar #next_item {
+    width: 35% !important;
+    padding-right: 10px !important;
+}
+
+div.faceted-form .faceted-criteria dl {
+    padding-left: 8px;
+}
+
+div.faceted-form .faceted-criteria-hide-show {
+    padding-left: 8px;
+}
+
+div.faceted-form .faceted-checkbox-more {
+    display: none !important;
+}
+
+div.faceted-form legend {
+    width: auto !important;
+    border-bottom: 0px !important;
+}
+
+div.faceted-form .listingBar a.btn {
+    background-color: #ffffff !important;
+    border: 0px !important;
+}
+
+ div.faceted-form .photoAlbumEntry {
+    padding-left: 10px;
+   padding-bottom: 15px;
+ }
+
+ div.faceted-form .listingBar div {
+     visibility: hidden;
+ }
+
+
 #fieldset-title_author .col-sm-3,
 #fieldset-abstract_subject_terms .col-sm-3,
 #fieldset-copies_and_shelf_marks .col-sm-3 {
