@@ -682,7 +682,7 @@ class TableView(BrowserView):
         obj = item.getObject()
         if hasattr(obj, 'titleAuthorImprintCollation_titleAuthor_author'):
             authors = obj.titleAuthorImprintCollation_titleAuthor_author
-             if authors:
+            if authors:
                 author = authors[0]
                 authors_list = author['authors']
                 if authors_list:
@@ -693,8 +693,8 @@ class TableView(BrowserView):
                     return ""
             else:
                 return ""
-         else:
-             return context_author.get('name_or_id', None)
+        else:
+            return context_author.get('name_or_id', None)
 
     def render(self):
         return self.index()
