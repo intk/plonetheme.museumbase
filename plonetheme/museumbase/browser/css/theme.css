@@ -9869,7 +9869,7 @@ fieldset.formPanel input.contenttree-widget.relationlist-field {
 }
 
 #form-widgets-acquisition_accession_date {
-    width: 50% !important;
+    width: 100% !important;
 }
 
 #formfield-form-widgets-acquisition_costs_offer_price_currency label,
@@ -10193,8 +10193,12 @@ body.template-collective-object-object input.text-widget {
 
 .template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea {
     width: 72.7% !important;
-    border-right: 2px solid #AAA !important;
+    
     /*min-height: 419px !important;*/
+}
+
+body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea {
+    border-right: 2px solid #AAA !important;
 }
 
 body.template-collective-object-object .datagridwidget-body .datagridwidget-block-edit-cell textarea {
@@ -10622,7 +10626,7 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 }
 
 #form-widgets-disposal_deaccession {
-    width: 35.2% !important;
+    width: 100% !important;
 }
 
 #form-widgets-recommendationsRequirements_legalLicenceRequirements_requirementsHeld td.cell-1 {
@@ -12254,6 +12258,14 @@ body.template-edit #formfield-form-widgets-reproductions_reproduction textarea {
 
 body.template-edit #formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_parts textarea {
     border-right: 1px solid #AAA !important;
+}
+
+body.template-edit #fieldset-iconography .col-sm-9 {
+    width: 77.5%;
+}
+
+body.template-edit #formfield-form-widgets-documentationFreeArchive_documentationFreeText .datagridwidget-body tr:not(:first-child) div.label {
+    visibility: hidden;
 }
 
 /* Backend media queries */
