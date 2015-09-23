@@ -10193,6 +10193,7 @@ body.template-collective-object-object input.text-widget {
 
 .template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea {
     width: 72.7% !important;
+    border-right: 2px solid #AAA !important;
     /*min-height: 419px !important;*/
 }
 
@@ -12242,6 +12243,18 @@ div.template-edit #content-core #formfield-form-widgets-notes_free_fields .datag
     padding-right: 0px !important;
 }
 
+body.template-edit #form-widgets-identification_titleDescription_description {
+    border-right: 2px solid #AAA !important;
+}
+
+body.template-edit #formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_relatedObjects textarea,
+body.template-edit #formfield-form-widgets-reproductions_reproduction textarea {
+    border-right: 1px solid #AAA !important;
+}
+
+body.template-edit #formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_parts textarea {
+    border-right: 1px solid #AAA !important;
+}
 
 /* Backend media queries */
 @media (max-width: 767px) {
