@@ -12424,11 +12424,13 @@ body.template-edit #formfield-form-widgets-abstractAndSubjectTerms_endDate .fiel
     width: 77.1% !important;
 }
 
-body.template-edit.portaltype-personorinstitution .col-sm-3 {
+body.template-edit.portaltype-personorinstitution .col-sm-3,
+body.template-edit.portaltype-exhibition .col-sm-3 {
     width: 22.7%;
 }
 
-body.template-edit.portaltype-personorinstitution .col-sm-9 {
+body.template-edit.portaltype-personorinstitution .col-sm-9,
+body.template-edit.portaltype-exhibition .col-sm-9 {
     width: 77.3%;
 }
 
@@ -12440,17 +12442,36 @@ body.portaltype-personorinstitution #content form ul.nav-tabs {
     margin-left: 0px !important;
 }
 
-body.portaltype-personorinstitution div.template-edit .col-sm-3 {
+body.portaltype-personorinstitution div.template-edit .col-sm-3,
+body.portaltype-exhibition div.template-edit .col-sm-3 {
     width: 22.7%;
 }
 
-body.portaltype-personorinstitution div.template-edit .col-sm-9 {
+body.portaltype-personorinstitution div.template-edit .col-sm-9,
+body.portaltype-exhibition div.template-edit .col-sm-9 {
     width: 77.3%;
 }
 
 
 body.portaltype-personinstitution div.template-edit #content-core .datagridwidget-cell {
     padding-right: 0px !important;
+}
+
+body.portaltype-exhibition label[for="form-widgets-exhibitionsDetails_exhibition_altTitle"] {
+    display: none;
+}
+
+input.pattern-pickadate-date, input.pattern-pickadate-time {
+    height: 37px !important;
+}
+
+body.portaltype-exhibition.userrole-authenticated div.title-description-wrapper,
+body.portaltype-exhibition.userrole-authenticated #slickslideshow {
+    display:none !important;
+}
+
+body:not(.template-edit).portaltype-exhibition.userrole-authenticated #portal-header {
+    background-color: #ffffff !important;
 }
 
 /* Backend media queries */
