@@ -12384,6 +12384,21 @@ body.template-edit #formfield-form-widgets-abstractAndSubjectTerms_endDate .fiel
     width: 77.1% !important;
 }
 
+body.template-edit.portaltype-personorinstitution .col-sm-3 {
+    width: 22.7%;
+}
+
+body.template-edit.portaltype-personorinstitution .col-sm-9 {
+    width: 77.3%;
+}
+
+body.portaltype-personorinstitution div.title-description-wrapper {
+    display: none !important;
+}
+
+body.portaltype-personorinstitution #content form ul.nav-tabs {
+    margin-left: 0px !important;
+}
 
 /* Backend media queries */
 @media (max-width: 767px) {
