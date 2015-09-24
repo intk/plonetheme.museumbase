@@ -12371,7 +12371,47 @@ body.portaltype-book.template-edit .col-sm-9 {
     padding-top: 0px !important;
 }
 
+body.portaltype-personorinstitution #content-core #formfield-form-widgets-nameInformation_relationWithOtherNames_use .datagridwidget-table-view-block tr:not(:first-child) td.datagridwidget-manipulator {
+    padding-top: 0px !important;
+}
+
+body.portaltype-personorinstitution #content-core #formfield-form-widgets-nameInformation_relationWithOtherNames_usedFor .datagridwidget-table-view-block tr:not(:first-child) td.datagridwidget-manipulator {
+    padding-top: 0px !important;
+}
+
+body.portaltype-personorinstitution #content-core #formfield-form-widgets-nameInformation_relationWithOtherNames_equivalent .datagridwidget-table-view-block tr:not(:first-child) td.datagridwidget-manipulator {
+    padding-top: 0px !important;
+}
+
+body.portaltype-personorinstitution #content-core #formfield-form-widgets-nameInformation_relationWithOtherNames_use .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-block-edit-cell {
+    padding-top: 0px !important;
+}
+
+
+body.portaltype-personorinstitution #content-core #formfield-form-widgets-nameInformation_relationWithOtherNames_usedFor .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-block-edit-cell {
+    padding-top: 0px !important;
+}
+
+
+body.portaltype-personorinstitution #content-core #formfield-form-widgets-nameInformation_relationWithOtherNames_equivalent .datagridwidget-table-view tr:not(:first-child) td.datagridwidget-block-edit-cell {
+    padding-top: 0px !important;
+}
+
+
+
 #content-core #formfield-form-widgets-titleAuthorImprintCollation_titleAuthor_title .datagridwidget-body tr:not(:first-child) label {
+    visibility: hidden;
+}
+
+body.portaltype-personorinstitution #formfield-form-widgets-nameInformation_relationWithOtherNames_use .datagridwidget-body tr:not(:first-child) label {
+    visibility: hidden;
+}
+
+body.portaltype-personorinstitution #formfield-form-widgets-nameInformation_relationWithOtherNames_usedFor .datagridwidget-body tr:not(:first-child) label {
+    visibility: hidden;
+}
+
+body.portaltype-personorinstitution #formfield-form-widgets-nameInformation_relationWithOtherNames_equivalent .datagridwidget-body tr:not(:first-child) label {
     visibility: hidden;
 }
 
@@ -12398,6 +12438,19 @@ body.portaltype-personorinstitution div.title-description-wrapper {
 
 body.portaltype-personorinstitution #content form ul.nav-tabs {
     margin-left: 0px !important;
+}
+
+body.portaltype-personorinstitution div.template-edit .col-sm-3 {
+    width: 22.7%;
+}
+
+body.portaltype-personorinstitution div.template-edit .col-sm-9 {
+    width: 77.3%;
+}
+
+
+body.portaltype-personinstitution div.template-edit #content-core .datagridwidget-cell {
+    padding-right: 0px !important;
 }
 
 /* Backend media queries */
