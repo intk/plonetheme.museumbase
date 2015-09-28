@@ -46,7 +46,7 @@ ol {
     display: none;
 }
 
-body.template-content_view .managePortletsLink {
+body[class^="template-content"] .managePortletsLink {
     display: none;
 }
 
@@ -4807,7 +4807,7 @@ body.template-facetednavigation_view #slickslideshow,
 body.template-detailed_tabular_view #slickslideshow,
 body.template-etickets_view #slickslideshow,
 .portletSlideshow #slickslideshow,
-body.template-content_view #slickslideshow,
+body[class^="template-content"] #slickslideshow,
 body.template-full_view #slickslideshow {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -4819,7 +4819,7 @@ body.template-facetednavigation_view .slideshowWrapper,
 body.template-etickets_view .slideshowWrapper,
 body.template-detailed_tabular_view .slideshowWrapper,
 .portletSlideshow .slideshowWrapper,
-body.template-content_view .slideshowWrapper,
+body[class^="template-content"] .slideshowWrapper,
 body.template-full_view .slideshowWrapper {
     height: 100%;   
 }
@@ -4830,7 +4830,7 @@ body.template-facetednavigation_viewfacetednavigation_view #slickslideshow .slic
 body.template-etickets_view #slickslideshow .slick-slide,
 body.template-detailed_tabular_view #slickslideshow .slick-slide,
 .portletSlideshow #slickslideshow .slick-slide,
-body.template-content_view #slickslideshow .slick-slide,
+body[class^="template-content"] #slickslideshow .slick-slide,
 body.template-full_view #slickslideshow .slick-slide {
     max-width: 100%;
 }
@@ -4841,7 +4841,7 @@ body.template-facetednavigation_viewfacetednavigation_view #slickslideshow .slic
 body.template-detailed_tabular_view #slickslideshow .slick-slide img,
 body.template-etickets_view #slickslideshow .slick-slide img,
 .portletSlideshow #slickslideshow .slick-slide img,
-body.template-content_view #slickslideshow .slick-slide img,
+body[class^="template-content"] #slickslideshow .slick-slide img,
 body.template-full_view #slickslideshow .slick-slide img {
     max-width: 100%;
 }
@@ -4863,7 +4863,7 @@ body.portaltype-object {
 .portaltype-object #portal-logo img,
 body.template-collection_view #portal-logo img,
 body.portaltype-portlet-page #portal-logo img,
-body.template-content_view #portal-logo img {
+body[class^="template-content"] #portal-logo img {
     
 }
 
@@ -4883,7 +4883,7 @@ body.template-etickets_view #slickslideshow,
 
 .portaltype-object #slideshow-controls,
 body.portaltype-portlet-page #slideshow-controls,
-body.template-content_view #slideshow-controls,
+body[class^="template-content"] #slideshow-controls,
 body.template-full_view #slideshow-controls {
     position: absolute;
     bottom: 0;
@@ -4898,21 +4898,21 @@ body.template-collection_view #slideshow-controls,
 body.template-facetednavigation_view #slideshow-controls,
 body.template-detailed_tabular_view #slideshow-controls,
 body.template-etickets_view #slideshow-controls,
-body.template-content_view #slideshow-controls,
+body[class^="template-content"] #slideshow-controls,
 body.template-full_view #slideshow-controls {
     display: none;
 }
 
 .portaltype-object #slideshow-controls > div,
 body.portaltype-portlet-page #slideshow-controls > div,
-body.template-content_view #slideshow-controls > div,
+body[class^="template-content"] #slideshow-controls > div,
 body.template-full_view #slideshow-controls > div {
     height: 100%;
 }
 
 .portaltype-object #slideshow-controls > div p,
 body.portaltype-portlet-page #slideshow-controls > div p,
-body.template-content_view #slideshow-controls > div p,
+body[class^="template-content"] #slideshow-controls > div p,
 body.template-full_view #slideshow-controls > div p {
     line-height: 33px;
     padding: 23.5px;
@@ -4921,14 +4921,14 @@ body.template-full_view #slideshow-controls > div p {
 
 .portaltype-object #slideshow-controls .slide-description,
 body.portaltype-portlet-page #slideshow-controls .slide-description,
-body.template-content_view #slideshow-controls .slide-description,
+body[class^="template-content"] #slideshow-controls .slide-description,
 body.template-full_view #slideshow-controls .slide-description {
     color: #ffffff !important;
 }
 
 .portaltype-object #slideshow-controls .slide-description span,
 body.portaltype-portlet-page #slideshow-controls .slide-description span,
-body.template-content_view #slideshow-controls .slide-description span,
+body[class^="template-content"] #slideshow-controls .slide-description span,
 body.template-full_voew #slideshow-controls .slide-description span {
     padding-right: 20px;
 }
@@ -4941,7 +4941,7 @@ body.portaltype-portlet-page #slideshow-controls .actions-dev {
 
 .portaltype-object #slideshow-controls .actions-div,
 body.portaltype-portlet-page #slideshow-controls .actions-div,
-body.template-content_view #slideshow-controls .actions-div,
+body[class^="template-content"] #slideshow-controls .actions-div,
 body.template-full_view #slideshow-controls .actions-div {
     padding-right: 0px;
     padding-left: 0px;
@@ -4960,13 +4960,13 @@ body.portaltype-portlet-page #slideshow-controls .btn.share-btn .fa.fa-share-alt
     opacity: 0.6;
 }
 
-body.template-content_view #slideshow-controls .actions-div a .fa.fa-info-circle, 
-body.template-content_view #slideshow-controls .actions-div a .fa.fa-times,
-body.template-content_view #slideshow-controls .btn.expand-btn .fa.fa-expand, 
-body.template-content_view #slideshow-controls .btn.expand-btn .fa.fa-compress, 
-body.template-content_view #slideshow-controls .btn.play-btn .fa.fa-play,
-body.template-content_view #slideshow-controls .btn.play-btn .fa.fa-pause,
-body.template-content_view #slideshow-controls .btn.share-btn .fa.fa-share-alt {
+body[class^="template-content"] #slideshow-controls .actions-div a .fa.fa-info-circle, 
+body[class^="template-content"] #slideshow-controls .actions-div a .fa.fa-times,
+body[class^="template-content"] #slideshow-controls .btn.expand-btn .fa.fa-expand, 
+body[class^="template-content"] #slideshow-controls .btn.expand-btn .fa.fa-compress, 
+body[class^="template-content"] #slideshow-controls .btn.play-btn .fa.fa-play,
+body[class^="template-content"] #slideshow-controls .btn.play-btn .fa.fa-pause,
+body[class^="template-content"] #slideshow-controls .btn.share-btn .fa.fa-share-alt {
     line-height: 60px;
     color: #ffffff;
     font-size: 1.250em;
@@ -5014,7 +5014,7 @@ body.template-book_view #slideshow-controls .btn.zoom-btn .fa.fa-search-minus {
 
 .portaltype-object #slideshow-controls .btn,
 body.portaltype-portlet-page #slideshow-controls .btn,
-body.template-content_view #slideshow-controls .btn,
+body[class^="template-content"] #slideshow-controls .btn,
 body.template-full_view #slideshow-controls .btn {
     display: none;
     height: 100%;
@@ -5072,8 +5072,8 @@ body.template-instruments_view #slideshow-controls .btn.pause-btn, {
 
 .portaltype-object #slideshow-controls .btn.expand-btn,
 body.portaltype-portlet-page #slideshow-controls .btn.expand-btn,
-body.template-content_view #slideshow-controls .btn.expand-btn,
-body.template-content_view #slideshow-controls .btn.share-btn,
+body[class^="template-content"] #slideshow-controls .btn.expand-btn,
+body[class^="template-content"] #slideshow-controls .btn.share-btn,
 body.template-full_view #slideshow-controls .btn.expand-btn,
 body.template-full_view #slideshow-controls .btn.share-btn {
     display: block;
@@ -5085,7 +5085,7 @@ body.template-facetednavigation_view header,
 body.template-detailed_tabular_view header,
 body.template-etickets_view header,
 body.portaltype-portlet-page header,
-body.template-content_view header,
+body[class^="template-content"] header,
 body.template-full_view header {
     position: absolute;
     top: 0;
@@ -5115,9 +5115,9 @@ body.portaltype-portlet-page #slideshow-controls .btn.share-btn:hover .fa {
     opacity: 1;
 }
  
-body.template-content_view  #slideshow-controls .btn.expand-btn:hover .fa,
-body.template-content_view  #slideshow-controls .btn.play-btn:hover .fa,
-body.template-content_view  #slideshow-controls .btn.share-btn:hover .fa {
+body[class^="template-content"]  #slideshow-controls .btn.expand-btn:hover .fa,
+body[class^="template-content"]  #slideshow-controls .btn.play-btn:hover .fa,
+body[class^="template-content"]  #slideshow-controls .btn.share-btn:hover .fa {
     opacity: 1;
 }
 
@@ -5144,7 +5144,7 @@ body.template-instruments_view.portaltype-object #slideshow-controls .btn.pause-
         padding-left: 0px;
     }
 
-    body.template-content_view #slideshow-controls .slide-description,
+    body[class^="template-content"] #slideshow-controls .slide-description,
     body.template-full_view #slideshow-controls .slide-description {
         padding-left: 0px;
     }
@@ -5159,8 +5159,8 @@ body.template-instruments_view.portaltype-object #slideshow-controls .btn.pause-
         font-size: 1.000em !important;
     }
 
-    body.template-content_view .slide-description #slide-description, 
-    body.template-content_view .slide-description #slide-count,
+    body[class^="template-content"] .slide-description #slide-description, 
+    body[class^="template-content"] .slide-description #slide-count,
     body.template-full_view .slide-description #slide-description, 
     body.template-full_view .slide-description #slide-count {
         font-size: 1.000em !important;
@@ -5178,8 +5178,8 @@ body.template-etickets_view .slick-list,
 body.template-etickets_view .slick-track,
 .portletSlideshow .slick-list,
 .portletSlideshow .slick-track,
-body.template-content_view .slick-list,
-body.template-content_view .slick-track,
+body[class^="template-content"] .slick-list,
+body[class^="template-content"] .slick-track,
 body.template-full_view .slick-list,
 body.template-full_view .slick-track
  {
@@ -5192,7 +5192,7 @@ body.template-facetednavigation_view .slick-slideshow,
 body.template-detailed_tabular_view .slick-slideshow,
 body.template-etickets_view .slick-slideshow,
 .portletSlideshow .slick-slideshow,
-body.template-content_view .slick-slideshow,
+body[class^="template-content"] .slick-slideshow,
 body.template-full_view .slick-slideshow {
     width: 100% !important;
 }
@@ -5208,7 +5208,7 @@ body.template-facetednavigation_view .slick-slide img,
 body.template-detailed_tabular_view .slick-slide img,
 body.template-etickets_view .slick-slide img,
 .portletSlideshow .slick-slide img,
-body.template-content_view .slick-slide img,
+body[class^="template-content"] .slick-slide img,
 body.template-full_view .slick-slide img {
     position: relative;
     top: 50%;
@@ -5251,14 +5251,14 @@ body.template-full_view .slick-slide img {
 
 .portaltype-object #slideshow-controls,
 body.portaltype-portlet-page #slideshow-controls,
-body.template-content_view #slideshow-controls,
+body[class^="template-content"] #slideshow-controls,
 body.template-full_view #slideshow-controls {
     padding-left: 0px;
 }
 
 .portaltype-object #slideshow-controls > div p,
 body.portaltype-portlet-page #slideshow-controls > div p,
-body.template-content_view #slideshow-controls > div p,
+body[class^="template-content"] #slideshow-controls > div p,
 body.template-full_view #slideshow-controls > div p {
     padding-left: 13.5px;
 }
@@ -5271,7 +5271,7 @@ body.template-facetednavigation_view .inner-bg,
 body.template-detailed_tabular_view .inner-bg,
 body.template-etickets_view .inner-bg,
 .portletSlideshow .inner-bg,
-body.template-content_view .inner-bg,
+body[class^="template-content"] .inner-bg,
 body.template-full_view .inner-bg
  {
     height: 100%;
@@ -5333,7 +5333,7 @@ header.fullscreen {
     }
 
     body.portaltype-portlet-page #slideshow-controls .btn,
-    body.template-content_view #slideshow-controls .btn {
+    body[class^="template-content"] #slideshow-controls .btn {
         width: 100%;
         opacity: 1 !important;
     }
@@ -5415,14 +5415,14 @@ header.fullscreen {
 
 .portaltype-object .slide-description, .portaltype-object .slide-count,
 body.portaltype-portlet-page .slide-description, .portaltype-object .slide-count,
-body.template-content_view .slide-description, .portaltype-object .slide-count,
+body[class^="template-content"] .slide-description, .portaltype-object .slide-count,
 body.template-full_view .slide-description, .portaltype-object .slide-count {
     opacity: 0.6;
 }
 
 .portaltype-object #slickslideshow.fullscreen #slideshow-controls,
 body.portaltype-portlet-page #slickslideshow.fullscreen #slideshow-controls,
-body.template-content_view #slickslideshow.fullscreen #slideshow-controls,
+body[class^="template-content"] #slickslideshow.fullscreen #slideshow-controls,
 body.template-full_view #slickslideshow.fullscreen #slideshow-controls
 {
     opacity: 0.8;
@@ -5616,7 +5616,7 @@ body.template-facetednavigation_view #content .documentFirstHeading,
 body.template-detailed_tabular_view #content .documentFirstHeading,
 body.template-etickets_view #content .documentFirstHeading,
 body.portaltype-portlet-page #content .documentFirstHeading,
-body.template-content_view #content .documentFirstHeading,
+body[class^="template-content"].documentFirstHeading,
 body.template-full_view #content .documentFirstHeading {
     background: transparent;
     /*position: absolute;*/
@@ -5658,8 +5658,8 @@ body.template-etickets_view #content .documentDescription {
     color: #ffffff;
 }
 
-body.template-content_view #content .documentDescription.description, 
-body.template-content_view #content .documentDescription {
+body[class^="template-content"].documentDescription.description, 
+body[class^="template-content"].documentDescription {
     /*position: absolute;*/
     /*top: 330px;*/
     width: 100%;
@@ -5691,7 +5691,7 @@ body.template-facetednavigation_view .slick-slideshow,
 body.template-detailed_tabular_view .slick-slideshow,
 body.template-etickets_view .slick-slideshow,
 .portletSlideshow .slick-slideshow,
-body.template-content_view .slick-slideshow,
+body[class^="template-content"] .slick-slideshow,
 body.template-full_view .slick-slideshow  {
     height: 100%;
 }
@@ -5741,12 +5741,12 @@ body.template-portlets .documentFirstHeading {
         /*margin-top: 170px;*/
     }
 
-    body.template-content_view #content .documentFirstHeading {
+    body[class^="template-content"].documentFirstHeading {
         padding-top: 70px !important;
         padding-left: 50px;
     }
 
-    body.template-content_view #content .documentDescription.description, body.template-content_view #content .documentDescription {
+    body[class^="template-content"].documentDescription.description, body[class^="template-content"].documentDescription {
         /*margin-top: 110px;*/
         padding-left: 50px;
     }
@@ -5777,7 +5777,7 @@ body.template-portlets .documentFirstHeading {
     body.template-collection_view .slick-slideshow,
     body.template-etickets_view .slick-slideshow,
     .portletSlideshow .slick-slideshow,
-    body.template-content_view .slick-slideshow {
+    body[class^="template-content"] .slick-slideshow {
         height: auto;
     }
 
@@ -5816,12 +5816,12 @@ body.template-portlets .documentFirstHeading {
         padding-top: 100px !important;
     }
 
-    body.template-content_view #content .documentFirstHeading {
+    body[class^="template-content"].documentFirstHeading {
         padding-top: 100px !important;
         padding-left: 80px;
     }
 
-    body.template-content_view #content .documentDescription.description, body.template-content_view #content .documentDescription {
+    body[class^="template-content"].documentDescription.description, body[class^="template-content"].documentDescription {
         /*top: 170px;*/
         padding-left: 80px;
     }
@@ -5872,12 +5872,12 @@ body.template-portlets .documentFirstHeading {
         padding-top: 160px !important;
     }
 
-    body.template-content_view #content .documentFirstHeading {
+    body[class^="template-content"].documentFirstHeading {
         padding-top: 100px !important;
         padding-left: 60px;
     }
 
-    body.template-content_view #content .documentDescription.description, body.template-content_view #content .documentDescription {
+    body[class^="template-content"].documentDescription.description, body[class^="template-content"].documentDescription {
         /*margin-top: 150px;*/
         padding-left: 60px;
     }
@@ -5926,7 +5926,7 @@ body.template-portlets .documentFirstHeading {
     body.template-collection_view #content .documentFirstHeading,
     body.template-etickets_view #content .documentFirstHeading,
     body.portaltype-portlet-page #content .documentFirstHeading,
-    body.template-content_view #content .documentFirstHeading {
+    body[class^="template-content"].documentFirstHeading {
         background: transparent;
         /*position: absolute;*/
         /*top: 260px;*/
@@ -5955,7 +5955,7 @@ body.portaltype-portlet-page #slideshow-controls {
 
 
 body.portaltype-portlet-page .wrap-next, body.portaltype-portlet-page .wrap-prev,
-body.template-content_view .wrap-next, body.template-content_view .wrap-prev,
+body[class^="template-content"] .wrap-next, body[class^="template-content"] .wrap-prev,
 body.template-full_view .wrap-next, body.template-full_view .wrap-prev {
     opacity: 0;
     transition: opacity 0.2s ease-in;
@@ -5971,13 +5971,13 @@ body.portaltype-portlet-page .documentDescription {
     pointer-events: none;
 }
 
-body.template-content_view .slideshow:hover .wrap-next, 
-body.template-content_view .slideshow:hover .wrap-prev {
+body[class^="template-content"] .slideshow:hover .wrap-next, 
+body[class^="template-content"] .slideshow:hover .wrap-prev {
     opacity: 1;
     transition: opacity 0.2s ease-in;
 }
 
-body.template-content_view .documentDescription {
+body[class^="template-content"] .documentDescription {
     pointer-events: none;
 }
 
@@ -6012,27 +6012,27 @@ body.portaltype-portlet-page #slideshow-controls .btn.expand-btn {
 }
 
 
-body.template-content_view .slideshow,
+body[class^="template-content"] .slideshow,
 body.template-full_view .slideshow {
     background-color: #f5f5f5;
 }
 
 body.portaltype-portlet-page .slideshow:not(.fullscreen),
-body.template-content_view .slideshow:not(.fullscreen),
+body[class^="template-content"] .slideshow:not(.fullscreen),
 body.template-full_view .slideshow:not(.fullscreen) {
     background-color: #242424; 
 }
 
 
 body.portaltype-portlet-page .slideshow:not(.fullscreen) .slideshowWrapper,
-body.template-content_view .slideshow:not(.fullscreen) .slideshowWrapper,
+body[class^="template-content"] .slideshow:not(.fullscreen) .slideshowWrapper,
 body.template-full_view .slideshow:not(.fullscreen) .slideshowWrapper {
     padding-top: 80px;
     padding-bottom: 80px;
 }
 
 body.portaltype-portlet-page .slideshow:not(.fullscreen) .slick-slideshow,
-body.template-content_view .slideshow:not(.fullscreen) .slick-slideshow,
+body[class^="template-content"] .slideshow:not(.fullscreen) .slick-slideshow,
 body.template-full_view .slideshow:not(.fullscreen) .slick-slideshow {
     height: auto;
     pointer-events: all;
@@ -6042,31 +6042,31 @@ body.template-full_view .slideshow:not(.fullscreen) .slick-slideshow {
     display: none;
 }
 
-body.template-content_view .contentsListing,
+body[class^="template-content"] .contentsListing,
 body.template-full_view .contentsListing {
     display: none;
 }
 
-body.template-content_view .slick-prev, body.template-content_view .slick-next,
+body[class^="template-content"] .slick-prev, body[class^="template-content"] .slick-next,
 body.template-full_view .slick-prev, body.template-full_view .slick-next,
 body.template-book_view .slick-prev, body.template-book_view .slick-next,
 body.template-instruments_view .slick-prev, body.template-instruments_view .slick-next {
     opacity: 0.6;
 }
 
-body.template-content_view .slick-prev:hover, body.template-content_view .slick-next:hover {
+body[class^="template-content"] .slick-prev:hover, body[class^="template-content"] .slick-next:hover {
     opacity: 1;
 }
 
-body.template-content_view .documentFirstHeading {
+body[class^="template-content"] .documentFirstHeading {
     pointer-events: none;
 }
 
-body.template-content_view #parent-fieldname-text-dates {
+body[class^="template-content"] #parent-fieldname-text-dates {
     padding-bottom: 0px;
 }
 
-body.template-content_view #content-core #parent-fieldname-text-dates span, body.template-content_view #content-core #parent-fieldname-text-dates abbr {
+body[class^="template-content"] #parent-fieldname-text-dates span, body[class^="template-content"] #parent-fieldname-text-dates abbr {
     font-family: 'Merriweather', serif !important;
     font-weight: 700 !important;
     color: #D75745 !important;
@@ -6074,11 +6074,11 @@ body.template-content_view #content-core #parent-fieldname-text-dates span, body
     margin-bottom: 0px;
 }
 
-body.template-content_view #content-core #parent-fieldname-text-dates p {
+body[class^="template-content"] #parent-fieldname-text-dates p {
     margin-bottom: 0px;
 }
 
-body.template-content_view #content-core #parent-fieldname-text-dates > * {
+body[class^="template-content"] #parent-fieldname-text-dates > * {
     font-family: 'Merriweather', serif !important;
     font-weight: 700 !important;
     font-size: 1.875em;
@@ -6139,10 +6139,10 @@ body.template-full_view #content-core #parent-fieldname-text-dates > * {
 body.template-collection_view .slick-slideshow,
 body.template-etickets_view .slick-slideshow,
 .portletSlideshow .slick-slideshow,
-body.template-content_view .slick-slideshow {
+body[class^="template-content"] .slick-slideshow {
 }
 
-body.template-content_view .slick-slideshow:before,
+body[class^="template-content"] .slick-slideshow:before,
 body.template-full_view .slick-slideshow:before,
 .portletSlideshow .slick-slideshow:before,
 body.template-collection_view .slick-slideshow:before,
@@ -6159,7 +6159,7 @@ body.template-etickets_view .slick-slideshow.slick-initialized,
     padding-top: 0;
 }
 
-body.template-content_view .slideshow {
+body[class^="template-content"] .slideshow {
     height: 700px;
 }
 
@@ -7561,7 +7561,7 @@ body.template-instruments_view .slideshow img.zoomed {
 }
 
 /* MOBILE IMPROVEMENTS */
-body.template-content_view .slick-slideshow {
+body[class^="template-content"] .slick-slideshow {
     height: 100% !important;
 }
 
@@ -7584,7 +7584,7 @@ body.template-full_view .slick-slideshow {
         height: auto !important;
     }
 
-    body.template-content_view .slideshow {
+    body[class^="template-content"] .slideshow {
         height: 274px;
     }
 
@@ -7632,7 +7632,7 @@ body.template-full_view .slick-slideshow {
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
-    body.template-content_view .slideshow {
+    body[class^="template-content"] .slideshow {
         height: 438px;
     }
 
@@ -7676,7 +7676,7 @@ body.template-full_view .slick-slideshow {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    body.template-content_view .slideshow {
+    body[class^="template-content"] .slideshow {
         height: 565px;
     }
 
@@ -7700,28 +7700,28 @@ body.template-full_view .slick-slideshow {
         opacity: 1 !important;
     }
 
-    body.template-content_view #slideshow-controls .btn,
+    body[class^="template-content"] #slideshow-controls .btn,
     body.template-full_view #slideshow-controls .btn {
         width: 33%;
         opacity: 1 !important;
     }
 
-    body.template-content_view .slick-slideshow,
+    body[class^="template-content"] .slick-slideshow,
     body.template-full_view .slick-slideshow {
         height: 100% !important;
     }
 
-    body.template-content_view #parent-fieldname-text-dates,
+    body[class^="template-content"] #parent-fieldname-text-dates,
     body.template-full_view #parent-fieldname-text-dates {
         padding-top: 35px;
     }
 
-    body.template-content_view #parent-fieldname-text,
+    body[class^="template-content"] #parent-fieldname-text,
     body.template-full_view #parent-fieldname-text {
         padding-top: 10px;
     }
 
-    body.template-content_view:not(.portaltype-event) #parent-fieldname-text,
+    body[class^="template-content"]:not(.portaltype-event) #parent-fieldname-text,
     body.template-full_view:not(.portaltype-event) #parent-fieldname-text {
         padding-top: 40px;
     }
@@ -7731,12 +7731,12 @@ body.template-full_view .slick-slideshow {
         opacity: 1 !important;
     }
 
-    body.template-content_view #slideshow-controls, body.portaltype-portlet-page #slideshow-controls,
+    body[class^="template-content"] #slideshow-controls, body.portaltype-portlet-page #slideshow-controls,
     body.template-full_view #slideshow-controls, {
         height: 50px;
     }
 
-    body.template-content_view #slideshow-controls .actions-div a .fa,
+    body[class^="template-content"] #slideshow-controls .actions-div a .fa,
     body.template-full_view #slideshow-controls .actions-div a .fa,
     body.portaltype-portlet-page #slideshow-controls .actions-div a .fa  {
         font-size: 1.000em !important;
@@ -8252,11 +8252,11 @@ dl.actionMenu.deactivated dd div {
     }
 }
 
-body.template-content_view #content-view-portlets .portletWrapper {
+body[class^="template-content"] #content-view-portlets .portletWrapper {
 
 }
 
-body.template-content_view #content-view-portlets a.managePortletsFallback {
+body[class^="template-content"] #content-view-portlets a.managePortletsFallback {
     width: 25%;
     color: #D75745 !important;
     font-size: 1.000em !important;
@@ -8264,7 +8264,7 @@ body.template-content_view #content-view-portlets a.managePortletsFallback {
     font-weight: 400;
 }
 
-body.template-content_view #content-view-portlets a.managePortletsFallback:hover {
+body[class^="template-content"] #content-view-portlets a.managePortletsFallback:hover {
     width: 25%;
     color: #D75745 !important;
     font-size: 1.000em !important;
@@ -12473,6 +12473,345 @@ body.portaltype-exhibition.userrole-authenticated #slickslideshow {
 body:not(.template-edit).portaltype-exhibition.userrole-authenticated #portal-header {
     background-color: #ffffff !important;
 }
+
+/* ==========================================================================
+   $BASE-DATE-PICKER
+   ========================================================================== */
+/**
+ * The picker box.
+ */
+.picker__box {
+  padding: 0 1em !important;
+}
+/**
+ * The header containing the month and year stuff.
+ */
+.picker__header {
+  text-align: center !important;
+  position: relative !important;
+  margin-top: .75em !important;
+}
+/**
+ * The month and year labels.
+ */
+.picker__month,
+.picker__year {
+  font-weight: 500 !important;
+  display: inline-block !important;
+  margin-left: .25em !important;
+  margin-right: .25em !important;
+}
+.picker__year {
+  color: #999999 !important;
+  font-size: .8em !important;
+  font-style: italic !important;
+}
+/**
+ * The month and year selectors.
+ */
+.picker__select--month,
+.picker__select--year {
+  border: 1px solid #b7b7b7 !important;
+  height: 2.5em !important;
+  padding: .5em .25em !important;
+  margin-left: .25em !important;
+  margin-right: .25em !important;
+  font-size: .6em !important;
+}
+@media (min-width: 24.5em) {
+  .picker__select--month,
+  .picker__select--year {
+    font-size: .8em !important;
+    margin-top: -0.5em !important;
+  }
+}
+.picker__select--month {
+  width: 35% !important;
+}
+.picker__select--year {
+  width: 22.5% !important;
+}
+.picker__select--month:focus,
+.picker__select--year:focus {
+  border-color: #0089ec !important;
+}
+/**
+ * The month navigation buttons.
+ */
+.picker__nav--prev,
+.picker__nav--next {
+  position: absolute;
+  padding: .5em 1.25em !important;
+  width: 1em !important;
+  height: 1em !important;
+  top: -0.25em !important;
+}
+@media (min-width: 24.5em) {
+  .picker__nav--prev,
+  .picker__nav--next {
+    top: -0.33em !important;
+  }
+}
+.picker__nav--prev {
+  left: -1em;
+  padding-right: 1.25em !important;
+}
+@media (min-width: 24.5em) {
+  .picker__nav--prev {
+    padding-right: 1.5em !important;
+  }
+}
+.picker__nav--next {
+  right: -0.4em !important;
+  padding-left: 1.25em !important;
+}
+@media (min-width: 24.5em) {
+  .picker__nav--next {
+    padding-left: 1.5em !important;
+  }
+}
+.picker__nav--prev:before,
+.picker__nav--next:before {
+  content: " " !important;
+  border-top: .5em solid transparent !important;
+  border-bottom: .5em solid transparent !important;
+  border-right: 0.75em solid #000000 !important;
+  width: 0 !important;
+  height: 0 !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+.picker__nav--next:before {
+  border-right: 0 !important;
+  border-left: 0.75em solid #000000 !important;
+}
+.picker__nav--prev:hover,
+.picker__nav--next:hover {
+  cursor: pointer !important;
+  color: #000000 !important;
+  background: #b1dcfb !important;
+}
+.picker__nav--disabled,
+.picker__nav--disabled:hover,
+.picker__nav--disabled:before,
+.picker__nav--disabled:before:hover {
+  cursor: default !important;
+  background: none !important;
+  border-right-color: #f5f5f5 !important;
+  border-left-color: #f5f5f5 !important;
+}
+/**
+ * The calendar table of dates
+ */
+.picker__table {
+  text-align: center !important;
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  table-layout: fixed !important;
+  font-size: inherit !important;
+  width: 100% !important;
+  margin-top: .75em !important;
+  margin-bottom: .5em !important;
+}
+@media (min-height: 33.875em) {
+  .picker__table {
+    margin-bottom: .75em !important;
+  }
+}
+.picker__table td {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/**
+ * The weekday labels
+ */
+.picker__weekday {
+  width: 14.285714286% !important;
+  font-size: .75em !important;
+  padding-bottom: .25em !important;
+  color: #999999 !important;
+  font-weight: 500 !important;
+  /* Increase the spacing a tad */
+}
+@media (min-height: 33.875em) {
+  .picker__weekday {
+    padding-bottom: .5em !important;
+  }
+}
+/**
+ * The days on the calendar
+ */
+.picker__day {
+  padding: .3125em 0 !important;
+  font-weight: 200 !important;
+  border: 1px solid transparent !important;
+}
+.picker__day--today {
+  color: #0089ec !important;
+  position: relative !important;
+}
+.picker__day--today:before {
+  content: " " !important;
+  position: absolute !important;
+  top: 2px !important;
+  right: 2px !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-top: 0.5em solid #0059bc !important;
+  border-left: .5em solid transparent !important;
+}
+.picker__day--selected,
+.picker__day--selected:hover {
+  border-color: #0089ec !important;
+}
+.picker__day--highlighted {
+  background: #b1dcfb; !important
+}
+.picker__day--disabled:before {
+  border-top-color: #aaaaaa !important;
+}
+.picker__day--outfocus {
+  color: #dddddd !important;
+}
+.picker__day--infocus:hover,
+.picker__day--outfocus:hover {
+  cursor: pointer !important;
+  color: #000000 !important;
+  background: #b1dcfb !important;
+}
+.picker__day--highlighted:hover,
+.picker--focused .picker__day--highlighted {
+  background: #0089ec !important;
+  color: #ffffff !important;
+}
+.picker__day--disabled,
+.picker__day--disabled:hover {
+  background: #f5f5f5 !important;
+  border-color: #f5f5f5 !important;
+  color: #dddddd !important;
+  cursor: default !important;
+}
+.picker__day--highlighted.picker__day--disabled,
+.picker__day--highlighted.picker__day--disabled:hover {
+  background: #bbbbbb !important;
+}
+/**
+ * The footer containing the "today" and "clear" buttons.
+ */
+.picker__footer {
+  text-align: center !important;
+}
+.picker__button--today,
+.picker__button--clear {
+  border: 1px solid #ffffff !important;
+  background: #ffffff !important;
+  font-size: .8em !important;
+  padding: .66em 0 !important;
+  font-weight: bold !important;
+  width: 50% !important;
+  display: inline-block !important;
+  vertical-align: bottom !important;
+}
+.picker__button--today:hover,
+.picker__button--clear:hover {
+  cursor: pointer !important;
+  color: #000000 !important;
+  background: #b1dcfb !important;
+  border-bottom-color: #b1dcfb !important;
+}
+.picker__button--today:focus,
+.picker__button--clear:focus {
+  background: #b1dcfb !important;
+  border-color: #0089ec !important;
+  outline: none !important;
+}
+.picker__button--today:before,
+.picker__button--clear:before {
+  position: relative !important;
+  display: inline-block !important;
+  height: 0 !important;
+}
+.picker__button--today:before {
+  content: " " !important;
+  margin-right: .45em !important;
+  top: -0.05em !important;
+  width: 0 !important;
+  border-top: 0.66em solid #0059bc !important;
+  border-left: .66em solid transparent !important;
+}
+.picker__button--clear:before {
+  content: "\D7" !important;
+  margin-right: .35em !important;
+  top: -0.1em !important;
+  color: #ee2200 !important;
+  vertical-align: top !important;
+  font-size: 1.1em !important;
+}
+
+body:not(.template-folder_contents):not(.template-sharing):not(.template-usergroup-groupprefs) #content th.picker__weekday {
+    background-color: #ffffff;
+}
+
+.picker__holder {
+    overflow: hidden !important;
+}
+
+.picker__day--today:before {
+    content: " ";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 0;
+    height: 0;
+    border-top: 0.5em solid #0059bc;
+    border-left: .5em solid transparent;
+}
+
+.pattern-pickadate-wrapper .pattern-pickadate-date-wrapper .picker__holder {
+    width: 49%;
+    font-size: 12px;
+    margin: 0 0.5em;
+    margin-left: 0px;
+}
+
+body:not(.template-folder_contents) #content ul, body:not(.template-sharing) #content ul.picker__list {
+    margin-left: 0px !important;
+}
+
+.picker--time .picker__box {
+    padding: 0 !important;
+    position: relative !important;
+}
+
+.pattern-pickadate-wrapper .pattern-pickadate-time-wrapper .picker__holder {
+    width: 180px;
+    font-size: 11px;
+    margin: 0 0.5em;
+    margin-left:0px;
+    overflow: auto !important;
+    overflow-x: hidden !important;
+}
+
+#content ul.picker__list .picker__button--clear {
+    display: block !important;
+}
+
+.pattern-pickadate-wrapper .pattern-pickadate-date-wrapper .picker__input {
+    text-align: left;
+}
+
+.pattern-pickadate-wrapper .pattern-pickadate-time-wrapper .picker__input {
+    text-align: left;
+}
+
+
+#content div.template-edit .form-horizontal .pattern-pickadate-time-wrapper {
+    width: 49.6% !important;
+}
+
+/* ==========================================================================
+   $CLASSIC-DATE-PICKER
+   ========================================================================== */
 
 /* Backend media queries */
 @media (max-width: 767px) {
