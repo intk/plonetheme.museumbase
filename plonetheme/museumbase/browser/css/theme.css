@@ -12827,6 +12827,10 @@ body.portaltype-audiovisual div.template-edit .col-sm-9 {
     width: 77.3%;
 }
 
+body.portaltype-audiovisual.template-edit .col-sm-9 {
+    width: 77.3%;
+}
+
 /* Backend media queries */
 @media (max-width: 767px) {
 
