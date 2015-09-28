@@ -12266,7 +12266,7 @@ div.template-edit #formfield-form-widgets-relations_museumObjects .datagridwidge
     width: 100% !important;
 }
 
-div.template-edit #ormfield-form-widgets-freeFieldsAndNumbers_freeFields th.cell-3 span {
+div.template-edit #formfield-form-widgets-freeFieldsAndNumbers_freeFields th.cell-3 span {
     margin-left: -30px;
 }
 
@@ -12774,7 +12774,7 @@ body:not(.template-folder_contents):not(.template-sharing):not(.template-usergro
     margin-left: 0px;
 }
 
-body:not(.template-folder_contents) #content ul, body:not(.template-sharing) #content ul.picker__list {
+body:not(.template-folder_contents) #content ul.picker__list, body:not(.template-sharing) #content ul.picker__list {
     margin-left: 0px !important;
 }
 
@@ -12812,6 +12812,20 @@ body:not(.template-folder_contents) #content ul, body:not(.template-sharing) #co
 /* ==========================================================================
    $CLASSIC-DATE-PICKER
    ========================================================================== */
+
+
+
+body.portaltype-audiovisual.userrole-authenticated #slickslideshow {
+    display: none;
+}
+
+body.portaltype-audiovisual.userrole-authenticated div.title-description-wrapper {
+    display: none;
+}
+
+body.portaltype-audiovisual div.template-edit .col-sm-9 {
+    width: 77.3%;
+}
 
 /* Backend media queries */
 @media (max-width: 767px) {
