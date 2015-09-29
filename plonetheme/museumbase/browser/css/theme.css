@@ -12813,8 +12813,6 @@ body:not(.template-folder_contents) #content ul.picker__list, body:not(.template
    $CLASSIC-DATE-PICKER
    ========================================================================== */
 
-
-
 body.portaltype-audiovisual.userrole-authenticated #slickslideshow {
     display: none;
 }
@@ -12837,6 +12835,18 @@ body.portaltype-treatment div.template-edit .datagridwidget-row .pattern-related
 
 div.template-edit #form-widgets-treatmentDetails_identification_conservator td.datagridwidget-cell {
     padding-right: 0px !important;
+}
+
+body.portaltype-outgoingloan #fieldset-contract .col-sm-9 {
+    width: 77.3%;
+}
+
+body.portaltype-outgoingloan #fieldset-contract .col-sm-3 {
+    width: 22.7%;
+}
+
+body.portaltype-outgoingloan #fieldset-contract .div-50 .control-label {
+    width: 47.2% !important;
 }
 
 /* Backend media queries */
