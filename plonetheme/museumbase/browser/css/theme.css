@@ -12849,6 +12849,18 @@ body.portaltype-outgoingloan #fieldset-contract .div-50 .control-label {
     width: 47.2% !important;
 }
 
+body.portaltype-incomingloan #fieldset-contract .col-sm-9 {
+    width: 77.3%;
+}
+
+body.portaltype-incomingloan #fieldset-contract .col-sm-3 {
+    width: 22.7%;
+}
+
+body.portaltype-incomingloan #fieldset-contract .div-50 .control-label {
+    width: 47.2% !important;
+}
+
 /* Backend media queries */
 @media (max-width: 767px) {
 
