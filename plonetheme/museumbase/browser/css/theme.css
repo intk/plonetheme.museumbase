@@ -12863,6 +12863,7 @@ body.portaltype-incomingloan #fieldset-contract .div-50 .control-label {
 
 #formfield-form-widgets-loanRequest_requestConfirmation_datecheck .fieldset-input {
     margin-top: -46px !important;
+    width: 10px !important;
 }
 
 #formfield-form-widgets-loanRequest_requestConfirmation_date .fieldset-input {
@@ -12875,6 +12876,7 @@ body.portaltype-incomingloan #fieldset-contract .div-50 .control-label {
 
 #formfield-form-widgets-contract_contractLetter_returned .fieldset-input {
     margin-top: -46px !important;
+    width: 10px !important;
 }
 
 body.portaltype-incomingloan #fieldset-contract #formfield-form-widgets-contract_contractLetter_signedReturned .fieldset-input {
@@ -12887,6 +12889,7 @@ body.portaltype-incomingloan #fieldset-contract #formfield-form-widgets-contract
 
 #formfield-form-widgets-loanRequest_requestLetter_templateCheck .fieldset-input {
     margin-top: -46px !important;
+    width: 10px !important;
 }
 
 body.portaltype-incomingloan #formfield-form-widgets-loanRequest_requestLetter_template .fieldset-input {
