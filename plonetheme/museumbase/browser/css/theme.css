@@ -12861,6 +12861,43 @@ body.portaltype-incomingloan #fieldset-contract .div-50 .control-label {
     width: 47.2% !important;
 }
 
+#formfield-form-widgets-loanRequest_requestConfirmation_datecheck .fieldset-input {
+    margin-top: -46px !important;
+}
+
+#formfield-form-widgets-loanRequest_requestConfirmation_date .fieldset-input {
+    width: 42.5% !important;
+}
+
+#formfield-form-widgets-loanRequest_requestConfirmation_date .control-label {
+    width: 56% !important;
+}
+
+#formfield-form-widgets-contract_contractLetter_returned .fieldset-input {
+    margin-top: -46px !important;
+}
+
+body.portaltype-incomingloan #fieldset-contract #formfield-form-widgets-contract_contractLetter_signedReturned .fieldset-input {
+    width: 42.7% !important;
+}
+
+body.portaltype-incomingloan #fieldset-contract #formfield-form-widgets-contract_contractLetter_signedReturned .control-label {
+    width: 51% !important;
+}
+
+#formfield-form-widgets-loanRequest_requestLetter_templateCheck .fieldset-input {
+    margin-top: -46px !important;
+}
+
+body.portaltype-incomingloan #formfield-form-widgets-loanRequest_requestLetter_template .fieldset-input {
+    width: 70% !important;
+}
+
+body.portaltype-incomingloan #formfield-form-widgets-loanRequest_requestLetter_template .control-label {
+    width: 27% !important;
+}
+
+
 /* Backend media queries */
 @media (max-width: 767px) {
 
