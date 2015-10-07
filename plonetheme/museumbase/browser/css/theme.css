@@ -12990,7 +12990,22 @@ body.portaltype-outgoingloan #formfield-form-widgets-contract_extension .datagri
     width: 0px !important;
 }
 
+body.template-edit #content span.pattern-relateditems-item-title a {
+    line-height: 0px !important;
+}
 
+
+body.template-edit #content span.pattern-relateditems-item-title a:visited {
+    line-height: 0px !important;
+}
+
+body.no-img-slideshow #edit-content-views {
+    padding-top: 400px !important;
+}
+
+body.no-img-slideshow h1.documentFirstHeading {
+    display: block !important;
+}
 
 /******************/
 /* MEDIA QUERIES  */
