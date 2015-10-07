@@ -11857,7 +11857,7 @@ body:not(.template-edit) div.template-edit #fieldset-associations #formfield-for
     width: 64.7% !important;
 }
 
-body:not(.template-edit) div.template-edit #fieldset-numbers_relationships .datagridwidget-widget-notes div.label, #fieldset-numbers_relationships .datagridwidget-widget-notes div.label label {
+body:not(.template-edit) div.template-edit #fieldset-numbers_relationships .datagridwidget-widget-notes div.label, body:not(.template-edit) div.template-edit #fieldset-numbers_relationships .datagridwidget-widget-notes div.label label {
     width: 22.3% !important;
 }
 
@@ -13005,6 +13005,18 @@ body.no-img-slideshow #edit-content-views {
 
 body.no-img-slideshow h1.documentFirstHeading {
     display: block !important;
+}
+
+body.template-edit #fieldset-numbers_relationships .datagridwidget-widget-notes div.label {
+    width: 26.8% !important;
+}
+
+body.template-edit #fieldset-numbers_relationships .datagridwidget-widget-notes div.label label {
+    width: 26.8% !important;
+}
+
+body.template-edit #fieldset-numbers_relationships .datagridwidget-widget-notes textarea {
+    width: 72.2% !important;
 }
 
 /******************/
