@@ -11629,7 +11629,7 @@ body:not(.template-edit) div.template-edit .datagridwidget-body .datagridwidget-
 }
 
 body:not(.template-edit) div.template-edit #content-core .datagridwidget-body .datagridwidget-block-edit-cell textarea {
-    width: 77.3% !important;
+    width: 77.2% !important;
 }
 
 body:not(.template-edit) div.template-edit #content-core #formfield-form-widgets-numbersRelationships_relationshipsWithOtherObjects_parts .datagridwidget-body .datagridwidget-block-edit-cell textarea {
