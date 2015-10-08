@@ -12878,6 +12878,17 @@ body.portaltype-incomingloan #formfield-form-widgets-loanRequest_requestConfirma
     width: 56% !important;
 }
 
+
+
+body.portaltype-objectentry .col-sm-3 {
+    width: 22.7%;
+}
+
+body.portaltype-objectentry .col-sm-9 {
+    width: 77.3%;
+}
+
+
 /* Common */
 #formfield-form-widgets-contract_contractLetter_returned .fieldset-input {
     margin-top: -46px !important;
@@ -13017,6 +13028,18 @@ body.template-edit #fieldset-numbers_relationships .datagridwidget-widget-notes 
 
 body.template-edit #fieldset-numbers_relationships .datagridwidget-widget-notes textarea {
     width: 72.2% !important;
+}
+
+div.form-horizontal.hide-label label {
+    display: none;
+}
+
+div.form-horizontal.hide-label .fieldset-input {
+    width: 100%;
+}
+
+.template-edit #formfield-form-widgets-listWithLinkedObjects_linkedObjects .datagridwidget-widget-conditionChecked input.single-checkbox-widget {
+    width: 10px !important;
 }
 
 /******************/
