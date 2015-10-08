@@ -12880,11 +12880,13 @@ body.portaltype-incomingloan #formfield-form-widgets-loanRequest_requestConfirma
 
 
 
-body.portaltype-objectentry .col-sm-3 {
+body.portaltype-objectentry .col-sm-3,
+body.portaltype-resource .col-sm-3 {
     width: 22.7%;
 }
 
-body.portaltype-objectentry .col-sm-9 {
+body.portaltype-objectentry .col-sm-9,
+body.portaltype-resource .col-sm-9 {
     width: 77.3%;
 }
 
