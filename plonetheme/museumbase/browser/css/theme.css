@@ -13045,6 +13045,15 @@ div.form-horizontal.hide-label .fieldset-input {
     width: 10px !important;
 }
 
+
+.template-edit #formfield-form-widgets-taxonomicTermDetails_sourceAndDefinition_publication input.single-checkbox-widget {
+    width: 10px !important;
+}
+
+#formfield-form-widgets-identification_taxonomy span.pattern-relateditems-path {
+    display: none !important;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
