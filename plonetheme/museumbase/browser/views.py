@@ -498,7 +498,8 @@ class FolderListing(CommonBrowserView):
         results = []
 
         if self.context.portal_type  == 'Collection':
-            return self.context.results(batch=batch, b_size=pagesize, sort_on=sort_on, b_start=b_start)
+            results = self.context.results(batch=batch, b_size=pagesize, sort_on=sort_on, b_start=b_start)
+            return results
         elif self.context.portal_type in ['Folder', 'Press Kit']:
             brains = self.context.getFolderContents()
             if only_documented:
