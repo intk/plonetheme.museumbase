@@ -24,9 +24,7 @@
                   <meta property="og:url" tal:attributes="content fb_url"/>
                   <meta property="og:type" tal:attributes="content fb_type"/>
                   <meta property="og:description" tal:attributes="content fb_description"/>
-                  
             </tal:fb-properties>
-          
           </tal:definitions>
 
 </tal:facebook-opengraph>
