@@ -13058,6 +13058,11 @@ div.form-horizontal.hide-label .fieldset-input {
     display: none !important;
 }
 
+span.pattern-relateditems-result-title {
+    font-family: "Source Sans Pro",Calibri,Candara,Arial,serif !important;
+    font-size: 1.1em !important;;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
