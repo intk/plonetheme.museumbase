@@ -13183,6 +13183,10 @@ body[class^="template-collective-"] #content span.pattern-relateditems-item-titl
     line-height: 0px !important;
 }
 
+body:not(.template-edit) .template-edit .fieldset-input.taxonomy-link {
+    display: none !important;
+}
+
 
 /******************/
 /* MEDIA QUERIES  */
