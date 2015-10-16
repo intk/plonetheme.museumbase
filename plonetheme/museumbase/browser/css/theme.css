@@ -13063,6 +13063,19 @@ span.pattern-relateditems-result-title {
     font-size: 1.1em !important;;
 }
 
+#formfield-form-widgets-freeFieldsAndNumbers_PPN .fieldset-input {
+    width: 100% !important;
+}
+
+div.control-label.taxonomy-link {
+    width: 22.7% !important;
+
+}
+
+div.fieldset-input.taxonomy-link a {
+    font-size: 0.875em !important;
+    color: #333333 !important;
+}
 /******************/
 /* MEDIA QUERIES  */
 /******************/
