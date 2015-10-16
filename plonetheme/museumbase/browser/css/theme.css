@@ -7439,7 +7439,7 @@ body.template-sharing  #content .documentDescription {
 
 .template-edit textarea.text-field,
 body.template-sharing textarea.text-field,
-body.template-collective-object-object textarea.text-field {
+body[class^="template-collective-"] textarea.text-field {
     height: 37px;
 }
 
@@ -9480,8 +9480,8 @@ select.formTabs {
     width: 27.3% !important;
 }
 
-body.template-collective-object-object .datagridwidget-body .datagridwidget-block-edit-cell div.label,
-body.template-collective-object-object .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
+body[class^="template-collective-"] .datagridwidget-body .datagridwidget-block-edit-cell div.label,
+body[class^="template-collective-"] .datagridwidget-body .datagridwidget-block-edit-cell div.label label {
     width: 27.3% !important;
 }
 
@@ -10125,21 +10125,21 @@ span.required {
 
 /* ADD PAGE */
 
-body.template-collective-object-object #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType div.label {
+body[class^="template-collective-"] #formfield-form-widgets-associations_associatedPersonInstitution .datagridwidget-widget-nameType div.label {
     width: 28.3% !important;
 }
 
-body.template-collective-object-object #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-confirmation_date div.label {
+body[class^="template-collective-"] #formfield-form-widgets-valueInsurance_insurance .datagridwidget-widget-confirmation_date div.label {
     width: 47.2% !important;
 }
 
 
-body.template-collective-object-object #formfield-form-widgets-fieldCollection_fieldCollection_fieldCollNumber tr:not(:first-child) input, 
-body.template-collective-object-object#formfield-form-widgets-fieldCollection_fieldCollection_event tr:not(:first-child) input {
+body[class^="template-collective-"] #formfield-form-widgets-fieldCollection_fieldCollection_fieldCollNumber tr:not(:first-child) input, 
+body[class^="template-collective-"]#formfield-form-widgets-fieldCollection_fieldCollection_event tr:not(:first-child) input {
     margin-left: 28.4% !important;
 }
 
-body.template-collective-object-object #formfield-form-widgets-location_normalLocation_normalLocation .control-label {
+body[class^="template-collective-"] #formfield-form-widgets-location_normalLocation_normalLocation .control-label {
     width: 24% !important;
 }
 
@@ -10187,7 +10187,7 @@ input.select2-input {
     height: 37px !important;
 }
 
-body.template-collective-object-object input.text-widget {
+body[class^="template-collective-"] input.text-widget {
     height: 37px !important;
 }
 
@@ -10201,7 +10201,7 @@ body.template-edit .datagridwidget-body .datagridwidget-block-edit-cell textarea
     border-right: 2px solid #AAA !important;
 }
 
-body.template-collective-object-object .datagridwidget-body .datagridwidget-block-edit-cell textarea {
+body[class^="template-collective-"] .datagridwidget-body .datagridwidget-block-edit-cell textarea {
     width: 69.9% !important;
     /*min-height: 419px !important;*/
 }
@@ -11001,8 +11001,8 @@ body.template-collective-object-object .datagridwidget-body .datagridwidget-bloc
 
 
 
-body.template-collective-object-object #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label, 
-body.template-collective-object-object #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label label {
+body[class^="template-collective-"] #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label, 
+body[class^="template-collective-"] #formfield-form-widgets-identification_titleDescription_title .datagridwidget-widget-title div.label label {
 }
 
 #formfield-form-widgets-associations_associatedSubjects div..datagridwidget-widget-properName {
@@ -12895,6 +12895,21 @@ body.portaltype-article .col-sm-9 {
     width: 77.3%;
 }
 
+body[class^="template-collective-"]:not(.template-collective-object-object) .col-sm-9 {
+    width: 77.3%;
+}
+
+body[class^="template-collective-"]:not(.template-collective-object-object) .col-sm-3 {
+    width: 22.7%;
+}
+
+body[class^="template-collective-"]:not(.template-collective-object-object) .div-50 .control-label {
+    width: 47.3% !important;
+}
+
+#formfield-form-widgets-taxonomicTermDetails_sourceAndDefinition_publication .datagridwidget-widget-originalDescription input.single-checkbox-widget {
+    width: 10px !important;
+}
 
 /* Common */
 #formfield-form-widgets-contract_contractLetter_returned .fieldset-input {
@@ -13037,6 +13052,10 @@ body.template-edit #fieldset-numbers_relationships .datagridwidget-widget-notes 
     width: 72.2% !important;
 }
 
+body[class^="template-collective-"] #fieldset-numbers_relationships .datagridwidget-widget-notes textarea {
+    width: 72.2% !important;
+}
+
 div.form-horizontal.hide-label label {
     display: none;
 }
@@ -13076,6 +13095,95 @@ div.fieldset-input.taxonomy-link a {
     font-size: 0.875em !important;
     color: #333333 !important;
 }
+
+#formfield-form-widgets-iconography_contentPersonInstitution div.datagridwidget-widget-notes {
+clear: both !important;
+}
+
+#formfield-form-widgets-associations_associatedSubjects div.datagridwidget-widget-identifier {
+display:none !important;
+}
+
+
+
+
+
+
+#formfield-form-widgets-exhibitions_exhibition .datagridwidget-widget-notes {
+clear:both !important;
+}
+
+
+
+
+
+#formfield-form-widgets-documentationFreeArchive_archiveNumber .autocompleteInputWidget span {
+    display: inline-block !important;
+}
+
+@media (max-width: 480px) {
+#portal-logo img {
+margin-left:5px !important;
+}
+}
+
+
+div.template-edit {
+padding-bottom: 90px !important;
+}
+
+body.portaltype-object:not(.template-edit) select.formTabs[disabled] {
+    cursor: not-allowed !important;
+}
+
+div.template-edit .select2-container-multi.select2-orderable .select2-search-choice span, 
+div.template-edit .select2-container-multi.select2-orderable .select2-search-choice {
+    cursor: pointer !important;
+}
+
+
+
+body.portaltype-book #formfield-form-widgets-IBasic-title {
+padding-bottom: 38px !important;
+}
+
+div.faceted-form .listingBar div {
+    visibility: initial !important;
+}
+
+div.template-edit .pattern-pickadate-date-wrapper input.picker__input {
+pointer-events:none !important;
+}
+
+div.template-edit .pattern-pickadate-time-wrapper input.picker__input {
+pointer-events:none !important;
+}
+
+.portaltype-exhibition.template-edit p.discreet {
+visibility:hidden !important;
+}
+
+body[class^="template-collective-"] .datagridwidget-body .datagridwidget-block-edit-cell textarea {
+    width: 72.7% !important;
+}
+
+body[class^="template-collective-"] #form-widgets-identification_objectName_objectname th.cell-2, body[class^="template-collective-"] #form-widgets-identification_objectName_objectname td.cell-2 {
+    display: none;
+}
+
+body[class^="template-collective-"] #form-widgets-identification_objectName_objectname td.cell-3 {
+    width: 200px !important;
+}
+
+body[class^="template-collective-"] #content span.pattern-relateditems-item-title a:visited {
+    line-height: 0px !important;
+}
+
+body[class^="template-collective-"] #content span.pattern-relateditems-item-title a {
+    line-height: 0px !important;
+}
+
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
