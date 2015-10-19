@@ -12,6 +12,7 @@ from plone.dexterity.interfaces import IDexterityFTI
 from zope.component import getUtility
 from Products.CMFCore.utils import getToolByName
 from zope.i18nmessageid import MessageFactory
+from plone.app.uuid.utils import uuidToCatalogBrain, uuidToObject
 
 MessageFactory = MessageFactory('Products.mediaObject')
 
@@ -83,11 +84,9 @@ class get_nav_objects(BrowserView):
         
         if "/" not in start:
             object_id = self.context.getId()
-            catalog = getToolByName(self.context, 'portal_catalog')
-            search_results = catalog.searchResults({'UID':collection_id})
+            collection_object = uuidToCatalogBrain(collection_id)
 
-            if len(search_results) > 0:
-                collection_object = search_results[0]
+            if collection_object:
                 if collection_object.portal_type == "Collection":
                     ## Get Batch of collection
                     results = self.get_batch(collection_object, start, pagesize)
@@ -119,11 +118,9 @@ class get_nav_objects(BrowserView):
 
         if "/" not in start:
             object_id = self.context.getId()
-            catalog = getToolByName(self.context, 'portal_catalog')
-            search_results = catalog.searchResults({'UID':collection_id})
+            collection_object = uuidToCatalogBrain(collection_id)
 
-            if len(search_results) > 0:
-                collection_object = search_results[0]
+            if collection_object:
                 if collection_object.portal_type == "Collection":
                     results = self.get_batch(collection_object, start, pagesize)
                     object_idx = self.get_object_idx(results, object_id)
@@ -145,10 +142,9 @@ class get_nav_objects(BrowserView):
                             return first_element
 
     def get_collection_from_catalog(self, collection_id):
-        catalog = getToolByName(self.context, 'portal_catalog')
-        search_results = catalog.searchResults({'UID':collection_id})
-        if len(search_results) > 0:
-            collection_object = search_results[0]
+        uuid = collection_id
+        collection_object = uuidToCatalogBrain(collection_id)
+        if collection_object:
             if collection_object.portal_type == "Collection":
                 return collection_object
 
@@ -694,12 +690,12 @@ class CollectionSlideshow(BrowserView):
     def getImageObject(self, item):
         if item.portal_type == "Image":
             return item.getObject()
+
         if item.hasMedia and item.leadMedia != None:
-            catalog = getToolByName(self.context, 'portal_catalog')
-            media_brains = catalog.queryCatalog({"UID": item.leadMedia})
-            media = media_brains[0]
-            media_object = media.getObject()
-            return "%s%s" %(media_object.absolute_url(), "/@@images/image/large")
+            uuid = item.leadMedia
+            media_object = uuidToObject(uuid)
+            if media_object:
+                return "%s%s" %(media_object.absolute_url(), "/@@images/image/large")
 
         return ""
 

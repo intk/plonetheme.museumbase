@@ -30,6 +30,7 @@ from zope.component import getUtility
 from plone.registry.interfaces import IRegistry
 from collective.leadmedia.interfaces import ICanContainMedia
 from zope.interface import implements
+from plone.app.uuid.utils import uuidToCatalogBrain, uuidToObject
 
 SHOP_AVAILABLE = True
 
@@ -134,12 +135,6 @@ class CommonBrowserView(BrowserView):
     def getTagsAsClass(self, item):
         
         classes = []
-        
-        if not hasattr(item, 'getURL'):
-            catalog = getToolByName(self.context, 'portal_catalog')
-            brains = catalog.queryCatalog({"UID": item.UID()})
-            item = brains[0]
-        
         for tag in item.Subject:
             classes.append("tag_%s"%tag.replace(" ", "_"))
         
@@ -149,9 +144,8 @@ class CommonBrowserView(BrowserView):
         classes = []
         
         if not hasattr(item, 'getURL'):
-            catalog = getToolByName(self.context, 'portal_catalog')
-            brains = catalog.queryCatalog({"UID": item.UID()})
-            item = brains[0]
+            uuid = item.UID()
+            item = uuidToCatalogBrain(uuid)
         
         for tag in item.Subject:
             if tag == "video":
@@ -200,7 +194,6 @@ class CommonBrowserView(BrowserView):
         return isVimeo, vimeoId
     
     def getLeadMediaTag(self, item, scale="large"):
-        catalog = getToolByName(self.context, 'portal_catalog')
         if item.portal_type == 'Link':
             isYoutube, youtubeId = self.checkYoutubeLink(item.getRemoteUrl)
             isVimeo, vimeoId = self.checkVimeoLink(item.getRemoteUrl)
@@ -219,18 +212,18 @@ class CommonBrowserView(BrowserView):
         
         elif hasattr(item, 'leadMedia'):
             leadUID = item.leadMedia
-            leadBrain = catalog.queryCatalog({"UID": leadUID})
-            if len(leadBrain) != 0:
-                lead = leadBrain[0].getURL()
+            leadBrain = uuidToCatalogBrain(leadUID)
+            if leadBrain:
+                lead = leadBrain.getURL()
             else:
                 lead = None
         else:
-            brains = catalog.queryCatalog({"UID": item.UID()})
-            if len(brains) != 0:
-                leadUID = brains[0].leadMedia
-                leadBrain = catalog.queryCatalog({"UID": leadUID})
-                if len(leadBrain) != 0:
-                    lead = leadBrain[0].getURL()
+            brains = uuidToCatalogBrain(item.UID())
+            if brains:
+                leadUID = brains.leadMedia
+                leadBrain = uuidToCatalogBrain(leadUID)
+                if leadBrain:
+                    lead = leadBrain.getURL()
                 else:
                     lead = None
             else:
@@ -251,10 +244,10 @@ class CommonBrowserView(BrowserView):
         if hasattr(item, 'hasMedia'):
             return item.hasMedia
         else:
-            catalog = getToolByName(self.context, 'portal_catalog')
-            brains = catalog.queryCatalog({"UID": item.UID()})
-            if len(brains) != 0:
-                return brains[0].hasMedia
+            uuid = item.UID()
+            brains = uuidToCatalogBrain(uuid)
+            if brains:
+                return brains.hasMedia
             else:
                 return False
     
@@ -460,10 +453,8 @@ class SearchView(CommonBrowserView, Search):
         catalog = getToolByName(self.context, 'portal_catalog')
 
         for uid in filters:
-            search_results = catalog.queryCatalog({'UID':uid})
-            if len(search_results) > 0:
-                search_filter = search_results[0]
-                item = search_filter.getObject()
+            item = uuidToObject(uid)
+            if item:
                 searchFilters.append({"name": item.Title(), "path": '/'.join(item.getPhysicalPath())})
 
         return searchFilters
@@ -563,11 +554,9 @@ class FolderListing(CommonBrowserView):
         if item.portal_type == "Image":
             return item.getObject()
         if item.hasMedia and item.leadMedia != None:
-            catalog = getToolByName(self.context, 'portal_catalog')
-            media_brains = catalog.queryCatalog({"UID": item.leadMedia})
-            if len(media_brains) > 0:
-                media = media_brains[0]
-                media_object = media.getObject()
+            uuid = item.leadMedia
+            media_object = uuidToObject(uuid)
+            if media_object:
                 return media_object
 
 class CollectionPortlet(base.Renderer, FolderListing):

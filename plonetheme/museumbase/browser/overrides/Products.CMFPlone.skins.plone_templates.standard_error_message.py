@@ -15,6 +15,7 @@
 # because we need to render the error on an actual content object
 from AccessControl import Unauthorized
 from Products.CMFCore.utils import getToolByName
+from plone.app.uuid.utils import uuidToCatalogBrain, uuidToObject
 
 try:
     while not hasattr(context.aq_explicit, 'restrictedTraverse'):
@@ -39,11 +40,9 @@ def getImageObject(item):
     if item.portal_type == "Image":
         return item.getObject()
     if item.hasMedia and item.leadMedia != None:
-        catalog = getToolByName(context, 'portal_catalog')
-        media_brains = catalog.queryCatalog({"UID": item.leadMedia})
-        if len(media_brains) > 0:
-            media = media_brains[0]
-            media_object = media.getObject()
+        uuid = item.leadMedia
+        media_object = uuidToObject(uuid)
+        if media_object:
             return media_object
 
 no_actions = {'folder': [], 'user': [], 'global': [], 'workflow': []}
