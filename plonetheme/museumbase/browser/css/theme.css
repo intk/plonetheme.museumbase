@@ -10730,49 +10730,7 @@ body[class^="template-collective-"] .datagridwidget-body .datagridwidget-block-e
 /* **** */
 
 
-#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank {
-    clear: both;
-}
 
-#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank div.label,
-#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank div.label label {
-    width: 50.5% !important;
-}
-
-#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank select {
-    width: 46.5% !important;
-}
-
-#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName div.label {
-    width: 49% !important;
-    text-align: right;
-}
-#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName div.label label {
-    width: 100% !important;
-    text-align: right;
-}
-
-#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName div.label label {
-    padding-right: 30px;
-}
-
-#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName input {
-    width: 51% !important;
-}
-
-#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-taxonomicRank {
-    width: 54% !important;
-    float: left;
-}
-
-#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-scientificName {
-    width: 46% !important;
-    float:left;
-}
-
-#fieldset-associations #formfield-form-widgets-associations_associatedSubjects .datagridwidget-widget-startDate {
-    clear: both;
-}
 
 /* **** */
 
