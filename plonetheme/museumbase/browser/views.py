@@ -58,42 +58,6 @@ class CommonBrowserView(BrowserView):
     nxt = None
     prv = None
     
-    def cacheNextPrev(self):
-        """
-        Caches the values for next and prev
-        """
-        catalog = getToolByName(self.context, 'portal_catalog')
-        results = catalog.queryCatalog({"portal_type": "Media Event",
-                                 "sort_on": "start",
-                                 "hasMedia": True,
-                                 "review_state": "published"})
-        
-        for i in range(0, len(results)):
-            if results[i].UID == self.context.UID():
-                if i < len(results) - 2:
-                    self.nxt = results[i +1]
-    
-                if i > 0:
-                    self.prv = results[i -1]
-
-    def getNextEvent(self):
-        """
-        Gets the next event in chronological order.
-        """
-        if self.nxt is None:
-            self.cacheNextPrev()
-        
-        return self.nxt
-    
-    def getPrevEvent(self):
-        """
-        Gets the previous event in chronological order
-        """
-        if self.prv is None:
-            self.cacheNextPrev()
-        
-        return self.prv
-    
     def showManageButton(self):
         secman = getSecurityManager()
         if not secman.checkPermission('Portlets: Manage portlets', self.context):
