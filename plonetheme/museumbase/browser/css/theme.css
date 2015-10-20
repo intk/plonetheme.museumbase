@@ -13146,6 +13146,10 @@ body:not(.template-edit) .template-edit .fieldset-input.taxonomy-link {
 }
 
 
+#fieldset-relations .col-sm-3 {
+    width: 22.7%;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
