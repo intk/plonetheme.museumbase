@@ -26,6 +26,7 @@
                         useView python:item.portal_type in viewActions;
                         item_type item/Type;
                         item_title item/Title;
+                        item_index repeat/item/index;
                         item_created item/CreationDate;
                         item_modified item/ModificationDate;
                         item_obj item/getObject;
@@ -41,7 +42,7 @@
             <div class="thumbnail">
                   <div class="thumb-wrapper">
                     <!-- IMAGE -->
-                    <a class="thumb-image" tal:condition="python: (item.hasMedia or item.portal_type == 'Image')" href="" tal:attributes="href python: item_link+'?collection_id='+collection_id+'&b_start=0' if collection_item != None and item_type == 'Object' else item_link"
+                    <a class="thumb-image" tal:condition="python: (item.hasMedia or item.portal_type == 'Image')" href="" tal:attributes="href python: item_link+'?collection_id='+collection_id+'&b_start='+str(item_index) if collection_item != None and item_type == 'Object' else item_link"
                       tal:define="item_img python:view.getImageObject(item)">
                       <img tal:define="images item_img/@@images;
                                          scale python: images.scale('image', scale='mini')"
