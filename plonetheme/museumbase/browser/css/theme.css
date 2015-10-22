@@ -13156,6 +13156,23 @@ span.pattern-relateditems-item-common_name {
     display: block;
 }
 
+span.pattern-relateditems-result-path {
+    font-family: "Source Sans Pro",Calibri,Candara,Arial,serif !important;
+}
+
+#formfield-form-widgets-identification_taxonomy .datagridwidget-widget-scientific_name span.pattern-relateditems-path {
+    display: block !important;
+}
+
+
+#formfield-form-widgets-identification_taxonomy .datagridwidget-widget-scientific_name .pattern-relateditems-item-path {
+    display: block !important;
+}
+
+#formfield-form-widgets-identification_taxonomy .datagridwidget-widget-scientific_name .pat-relateditems {
+    height: auto !important;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
