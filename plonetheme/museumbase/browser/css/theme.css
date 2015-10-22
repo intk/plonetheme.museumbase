@@ -13150,6 +13150,12 @@ body:not(.template-edit) .template-edit .fieldset-input.taxonomy-link {
     width: 22.7%;
 }
 
+span.pattern-relateditems-item-common_name {
+    font-size: 11px;
+    color: #444;
+    display: block;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
