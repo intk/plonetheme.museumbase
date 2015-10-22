@@ -12994,7 +12994,7 @@ body.no-img-slideshow #edit-content-views {
     padding-top: 400px !important;
 }
 
-body.no-img-slideshow h1.documentFirstHeading {
+body.no-img-slideshow.userrole-authenticated  h1.documentFirstHeading {
     display: block !important;
 }
 
