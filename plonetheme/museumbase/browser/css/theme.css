@@ -10139,10 +10139,6 @@ body[class^="template-collective-"]#formfield-form-widgets-fieldCollection_field
     margin-left: 28.4% !important;
 }
 
-body[class^="template-collective-"] #formfield-form-widgets-location_normalLocation_normalLocation .control-label {
-    width: 24% !important;
-}
-
 div.autocompleteInputWidget {
     padding-top: 6px !important;
 }
@@ -10263,12 +10259,6 @@ body[class^="template-collective-"] .datagridwidget-body .datagridwidget-block-e
     width: 100%;
 }
 
-/*#fieldset-location .datagridwidget-widget-fitness input {
-    width: 22% !important;
-}*/
-
-
-
 #formfield-form-widgets-location_checks th.header.cell-2 {
     width: 210px;
 }
@@ -10277,56 +10267,14 @@ body[class^="template-collective-"] .datagridwidget-body .datagridwidget-block-e
     width: 175px;
 }
 
-#formfield-form-widgets-location_normalLocation_normalLocation .control-label {
-    width: 23.9% !important;
+
+#fieldset-location .col-sm-3 {
+    width: 22.6%;
 }
 
-#formfield-form-widgets-location_normalLocation_normalLocation .fieldset-input {
-    width: 76% !important;
+#fieldset-location .col-sm-9 {
+    width: 77.4%;
 }
-
-
-/* Standplaats */
-
-#formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) {
-    width: 20% !important;
-    float:left;
-}
-
-#formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) label,
-#formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) div.label {
-    width: 100% !important;
-}
-
-#formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) div.select2-container {
-    min-width: 50px !important;
-}
-
-#formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) input:not(.select2-input),
-#formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) div.select2-container {
-    width: 90% !important;
-}
-
-#formfield-form-widgets-location_currentLocation textarea {
-    width: 70.7% !important;
-}
-
-#formfield-form-widgets-productionDating_production_productionReason div.fieldset-input,
-#formfield-form-widgets-productionDating_dating_notes div.fieldset-input {
-    width: 77.4% !important;
-}
-
-#formfield-form-widgets-location_currentLocation .datagridwidget-widget-fitness input {
-    width: 100% !important;
-}
-
-/* Option 2 
-.fieldset-input select {
-    border: 0;
-    outline: 1px solid #CCC;
-    background-color: white;
-}
-*/
 
 #fieldset-value_insurance .datagridwidget-widget-curr div.label label {
     width: 100% !important;
@@ -11872,11 +11820,6 @@ body:not(.template-edit) div.template-edit #formfield-form-widgets-acquisition_a
 
 body:not(.template-edit) div.template-edit #form-widgets-disposal_deaccession {
     width: 100% !important;
-}
-
-body:not(.template-edit) div.template-edit #formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) input:not(.select2-input), 
-body:not(.template-edit) div.template-edit #formfield-form-widgets-location_currentLocation td div.datagridwidget-block:not(:last-child) div.select2-container {
-    width: 99% !important;
 }
 
 body:not(.template-edit) div.template-edit .datagridwidget-body .datagridwidget-block-edit-cell input:not(.searchButton):not(.ac_input):not(.relationlist-field) {
