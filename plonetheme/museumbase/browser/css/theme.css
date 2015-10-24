@@ -12722,10 +12722,6 @@ body.portaltype-audiovisual.userrole-authenticated #slickslideshow {
     display: none;
 }
 
-body.portaltype-audiovisual.userrole-authenticated div.title-description-wrapper {
-    display: none;
-}
-
 body.portaltype-audiovisual div.template-edit .col-sm-9 {
     width: 77.3%;
 }
