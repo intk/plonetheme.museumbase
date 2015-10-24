@@ -12937,8 +12937,9 @@ body.no-img-slideshow #edit-content-views {
     padding-top: 400px !important;
 }
 
-body.no-img-slideshow.userrole-authenticated  h1.documentFirstHeading {
+body.no-img-slideshow.userrole-authenticated #content h1.documentFirstHeading {
     display: block !important;
+    color: #333333 !important;
 }
 
 body.template-edit #fieldset-numbers_relationships .datagridwidget-widget-notes div.label {
