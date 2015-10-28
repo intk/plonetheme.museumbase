@@ -13191,9 +13191,18 @@ body.portaltype-image .col-sm-3 {
     padding-bottom: 50px !important;
 }
 
-#title-description-wrapper a.discreet {
+div.title-description-wrapper a.discreet {
     padding-left: 40px !important;
 }
+
+body.portaltype-image #content div.title-description-wrapper {
+    pointer-events: all !important;
+}
+
+body.portaltype-image #edit-content-views {
+    margin-top: 50px !important;
+}
+
 
 /******************/
 /* MEDIA QUERIES  */
