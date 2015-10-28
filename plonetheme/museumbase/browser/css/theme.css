@@ -12339,9 +12339,9 @@ body.template-edit.portaltype-exhibition .col-sm-9 {
     width: 77.3%;
 }
 
-body.portaltype-personorinstitution div.title-description-wrapper {
+/*body.portaltype-personorinstitution div.title-description-wrapper {
     display: none !important;
-}
+}*/
 
 body.portaltype-personorinstitution #content form ul.nav-tabs {
     margin-left: 0px !important;
@@ -12885,6 +12885,10 @@ body.portaltype-outgoingloan #formfield-form-widgets-objects_object .datagridwid
     width: 70.2% !important;
 }
 
+body:not(.template-edit).portaltype-outgoingloan #formfield-form-widgets-objects_object .datagridwidget-widget-reviewRequest_template select {
+    width: 75.2% !important;
+}
+
 body.portaltype-outgoingloan #formfield-form-widgets-objects_object .datagridwidget-widget-reviewRequest_templateCheck {
     margin-top:-43px;
 }
@@ -12899,6 +12903,10 @@ body.portaltype-outgoingloan #formfield-form-widgets-objects_object .datagridwid
     width: 70.2% !important;
 }
 
+body:not(.template-edit).portaltype-outgoingloan #formfield-form-widgets-objects_object .datagridwidget-widget-permissionOwner_requestTemplate select {
+    width: 75.2% !important;
+}
+
 body.portaltype-outgoingloan #formfield-form-widgets-objects_object .datagridwidget-widget-permissionOwner_requestTemplateCheck {
     margin-top:-43px;
 }
@@ -12910,6 +12918,11 @@ body.portaltype-outgoingloan #formfield-form-widgets-objects_object .datagridwid
 body.portaltype-outgoingloan #formfield-form-widgets-contract_extension .datagridwidget-widget-result_template select {
     margin-left:20px;
     width: 70.2% !important;
+}
+
+body:not(.template-edit).portaltype-outgoingloan #formfield-form-widgets-contract_extension .datagridwidget-widget-result_template select {
+    margin-left:20px;
+    width: 75.2% !important;
 }
 
 body.portaltype-outgoingloan #formfield-form-widgets-contract_extension .datagridwidget-widget-result_templateCheck {
@@ -13111,6 +13124,67 @@ span.pattern-relateditems-result-path {
 
 #formfield-form-widgets-identification_taxonomy .datagridwidget-widget-scientific_name .pat-relateditems {
     height: auto !important;
+}
+
+body:not(.template-edit) div.template-edit #formfield-form-widgets-objects_object div.datagridwidget-widget-reviewRequest_templateCheck input.bool-field {
+    width: 10px !important;
+}
+
+body:not(.template-edit) div.template-edit #formfield-form-widgets-objects_object div.datagridwidget-widget-permissionOwner_requestTemplateCheck input.bool-field {
+    width: 10px !important;
+}
+
+body:not(.template-edit) div.template-edit #formfield-form-widgets-contract_extension div.datagridwidget-widget-result_templateCheck input.bool-field {
+    width: 10px !important;
+}
+
+body.portaltype-incomingloan.template-edit #fieldset-transport .col-sm-3 {
+    width: 22.7%;
+}
+
+body.portaltype-incomingloan .template-edit #fieldset-transport .col-sm-3 {
+    width: 22.7%;
+}
+
+body.portaltype-incomingloan.template-edit #fieldset-transport .col-sm-9 {
+    width: 77.3%;
+}
+
+body.portaltype-incomingloan .template-edit #fieldset-transport .col-sm-9 {
+    width: 77.3%;
+}
+
+body.portaltype-outgoingloan.template-edit #fieldset-transport .col-sm-3 {
+    width: 22.7%;
+}
+
+body.portaltype-outgoingloan .template-edit #fieldset-transport .col-sm-3 {
+    width: 22.7%;
+}
+
+body.portaltype-outgoingloan.template-edit #fieldset-transport .col-sm-9 {
+    width: 77.3%;
+}
+
+body.portaltype-outgoingloan .template-edit #fieldset-transport .col-sm-9 {
+    width: 77.3%;
+}
+
+
+#formfield-form-widgets-seriesNotesISBN_notes_broadcastingcompany .control-label {
+    width: 22.7%;
+}
+
+#formfield-form-widgets-seriesNotesISBN_notes_productioncompany .control-label {
+    width: 22.7%;
+}
+
+body.portaltype-image .col-sm-9 {
+    width: 77.3%;
+}
+
+body.portaltype-image .col-sm-3 {
+    width: 22.7%;
 }
 
 /******************/
