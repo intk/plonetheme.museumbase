@@ -13378,6 +13378,10 @@ body[class^="template-collective-"] form fieldset {
     padding-top: 40px;
 }
 
+textarea {
+    line-height: 15px !important;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
