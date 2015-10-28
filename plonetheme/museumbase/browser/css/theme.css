@@ -13207,6 +13207,10 @@ body.portaltype-image #edit-content-views {
     display: none !important;
 }
 
+#formfield-form-widgets-IImageReference-priref {
+    display: none !important;
+}
+
 
 /******************/
 /* MEDIA QUERIES  */
