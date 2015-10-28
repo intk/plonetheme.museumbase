@@ -13203,6 +13203,10 @@ body.portaltype-image #edit-content-views {
     margin-top: 50px !important;
 }
 
+#form-widgets-IImageReference-priref {
+    display: none !important;
+}
+
 
 /******************/
 /* MEDIA QUERIES  */
