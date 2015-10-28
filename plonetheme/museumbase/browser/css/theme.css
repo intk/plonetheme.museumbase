@@ -12775,6 +12775,43 @@ body.portaltype-incomingloan #formfield-form-widgets-loanRequest_requestConfirma
     width: 56% !important;
 }
 
+body.template-collective-outgoingloan-outgoingloan #fieldset-contract .col-sm-9 {
+    width: 77.3%;
+}
+
+body.template-collective-outgoingloan-outgoingloan #fieldset-contract .col-sm-3 {
+    width: 22.7%;
+}
+
+body.template-collective-outgoingloan-outgoingloan #fieldset-contract .div-50 .control-label {
+    width: 47.2% !important;
+}
+
+body.template-collective-incomingloan-incomingloan #fieldset-contract .col-sm-9 {
+    width: 77.3%;
+}
+
+body.template-collective-incomingloan-incomingloan  #fieldset-contract .col-sm-3 {
+    width: 22.7%;
+}
+
+body.template-collective-incomingloan-incomingloan  #fieldset-contract .div-50 .control-label {
+    width: 47.2% !important;
+}
+
+body.template-collective-incomingloan-incomingloan  #formfield-form-widgets-loanRequest_requestConfirmation_datecheck .fieldset-input {
+    margin-top: -46px !important;
+    width: 10px !important;
+}
+
+body.template-collective-incomingloan-incomingloan  #formfield-form-widgets-loanRequest_requestConfirmation_date .fieldset-input {
+    width: 42.5% !important;
+}
+
+body.template-collective-incomingloan-incomingloan  #formfield-form-widgets-loanRequest_requestConfirmation_date .control-label {
+    width: 56% !important;
+}
+
 
 
 body.portaltype-objectentry .col-sm-3,
@@ -12822,6 +12859,23 @@ body[class^="template-collective-"]:not(.template-collective-object-object) .div
     width: 51.4% !important;
 }
 
+body.template-collective-incomingloan-incomingloan #formfield-form-widgets-contract_contractLetter_signedReturned .control-label {
+    width: 51.4% !important;
+}
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-contract_contractLetter_signedReturned .control-label {
+    width: 51.4% !important;
+}
+
+
+body.template-collective-incomingloan-incomingloan #formfield-form-widgets-contract_contractLetter_signedReturned .fieldset-input {
+    width: 42.3% !important;
+}
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-contract_contractLetter_signedReturned .fieldset-input {
+    width: 42.3% !important;
+}
+
 /**/
 
 
@@ -12866,6 +12920,51 @@ body.portaltype-incomingloan #formfield-form-widgets-loanRequest_requestLetter_t
 body.portaltype-incomingloan #formfield-form-widgets-loanRequest_requestLetter_template .control-label {
     width: 27% !important;
 }
+
+
+/* Checkboses add view */
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-contract_conditionReport_template .fieldset-input {
+    width: 75.2% !important;
+    margin-left: 20px;
+}
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-contract_conditionReport_templateCheck .fieldset-input {
+    width: 10px !important;
+    margin-top: -46px;
+}
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-contract_contractLetter_template .fieldset-input {
+    width: 75.2% !important;
+    margin-left: 20px;
+}
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-contract_contractLetter_templateCheck .fieldset-input {
+    width: 10px !important;
+    margin-top: -42px;
+}
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-contract_contractLetter_templateCheck {
+    margin-bottom: 0px !important;
+}
+
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-contract_contractLetter_template {
+    margin-bottom: 10px !important;
+}
+
+body.template-collective-incomingloan-incomingloan #formfield-form-widgets-loanRequest_requestLetter_templateCheck .fieldset-input {
+    margin-top: -46px !important;
+    width: 10px !important;
+}
+
+body.template-collective-incomingloan-incomingloan #formfield-form-widgets-loanRequest_requestLetter_template .fieldset-input {
+    width: 73% !important;
+}
+
+body.template-collective-incomingloan-incomingloan #formfield-form-widgets-loanRequest_requestLetter_template .control-label {
+    width: 27% !important;
+}
+
 
 /* CHECKBOXES */
 /* Checkbox without datagrid */
@@ -12932,6 +13031,61 @@ body.portaltype-outgoingloan #formfield-form-widgets-contract_extension .datagri
 body.portaltype-outgoingloan #formfield-form-widgets-contract_extension .datagridwidget-widget-result_templateCheck div.label {
     width: 0px !important;
 }
+
+/* CHECKBOXES add view */
+/* Checkbox without datagrid */
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-loanRequest_requestConfirmation_template .fieldset-input {
+    width: 72.9% !important;
+    margin-left: 20px;
+}
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-loanRequest_requestConfirmation_templateCheck .fieldset-input {
+    width: 10px !important;
+    margin-top: -46px;
+}
+
+/* Checkbox with datagrid */
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-objects_object .datagridwidget-widget-reviewRequest_template select {
+    margin-left:20px;
+    width: 70.2% !important;
+}
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-objects_object .datagridwidget-widget-reviewRequest_templateCheck {
+    margin-top:-43px;
+}
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-objects_object .datagridwidget-widget-reviewRequest_templateCheck div.label {
+    width: 0px !important;
+}
+/**/
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-objects_object .datagridwidget-widget-permissionOwner_requestTemplate select {
+    margin-left:20px;
+    width: 70.2% !important;
+}
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-objects_object .datagridwidget-widget-permissionOwner_requestTemplateCheck {
+    margin-top:-43px;
+}
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-objects_object .datagridwidget-widget-permissionOwner_requestTemplateCheck div.label {
+    width: 0px !important;
+}
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-contract_extension .datagridwidget-widget-result_template select {
+    margin-left:20px;
+    width: 70.2% !important;
+}
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-contract_extension .datagridwidget-widget-result_templateCheck {
+    margin-top:-43px;
+}
+
+body.template-collective-outgoingloan-outgoingloan #formfield-form-widgets-contract_extension .datagridwidget-widget-result_templateCheck div.label {
+    width: 0px !important;
+}
+
+/**/
 
 body.template-edit #content span.pattern-relateditems-item-title a {
     line-height: 0px !important;
@@ -13211,6 +13365,18 @@ body.portaltype-image #edit-content-views {
     display: none !important;
 }
 
+body.template-collective-objectentry-objectentry #formfield-form-widgets-listWithLinkedObjects_linkedObjects .datagridwidget-widget-conditionChecked input.bool-field {
+    width: 10px !important;
+}
+
+
+body[class^="template-collective-"] form fieldset .page-header:first-child {
+    margin-top: 0px;
+}
+
+body[class^="template-collective-"] form fieldset {
+    padding-top: 40px;
+}
 
 /******************/
 /* MEDIA QUERIES  */
