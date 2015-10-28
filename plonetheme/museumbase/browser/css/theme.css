@@ -13187,6 +13187,14 @@ body.portaltype-image .col-sm-3 {
     width: 22.7%;
 }
 
+#edit-header-wrapper {
+    padding-bottom: 50px !important;
+}
+
+#title-description-wrapper a.discreet {
+    padding-left: 40px !important;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
