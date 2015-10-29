@@ -14,6 +14,12 @@
     list-style-type: decimal;
 }
 
+.template-edit.portaltype-object #content h1.documentFirstHeading {
+    padding-top: 260px;
+}
+
+
+
 ul, menu, dir {
     display: block;
     list-style-type: disc;
@@ -13394,6 +13400,27 @@ textarea {
 
 body:not(.template-edit) .template-edit .add-form-link {
     display: none !important;
+}
+
+body.template-edit .slick-slideshow {
+    height: 100% !important;
+}
+
+body.template-edit #slickslideshow {
+    height: 700px;
+}
+
+
+body.template-edit.no-img-slideshow.portaltype-object #content-core {
+    padding-top: 600px !important;
+}
+
+body.template-edit.portaltype-object:not(.no-img-slideshow) #portal-logo img {
+    content: url('++resource++plonetheme.zmcms.images/logo-branco.png') !important;
+}
+
+body.template-edit.portaltype-object .slideshow:not(.slideshow-loaded) {
+    visibility: hidden !important;
 }
 
 /******************/
