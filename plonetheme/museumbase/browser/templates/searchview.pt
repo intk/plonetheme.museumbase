@@ -39,8 +39,6 @@
           batch_size batch/sequence_length|string:0;
           ">
 
-          
-
           <div id="search-page-header">
 
             <h1 class="documentFirstHeading"
@@ -267,21 +265,19 @@
                                  item_title python: view.getItemTitle(item);
                                  item_url python:item_type == 'Media Event' and '%s'%item.getURL() or item.getURL();
                                  item_absoluteUrl python: item.getURL();
-
-                                 item_modified item/ModificationDate;
+                                 item_has_media python: getattr(item, 'leadMedia', None);
                                  item_created item/CreationDate;
                                  item_icon item/getIcon;
                                  user_admin python:view.checkUserPermission();
                                  item_wf_state_class python:'state-' + normalizeString(item.review_state);
                                  item_creator item/Creator;
-                                 item_modified item/ModificationDate;
                                  hide_book python: 'bibliotheek' in item_absoluteUrl and user_admin == False;
                                  item_link python: (item_type == 'Press Kit' and not view.checkPermission(item, 'Add portal content')) and item_url + '/download_zip' or (item_type in use_view_action and item_url+'/view' or item_url);">
                                  
                                  <metal:block define-slot="entry" tal:condition="not:hide_book">
 
                                   <div class="col-lg-4 col-md-4 col-sm-5">
-                                    <a class="imagelink" tal:condition="item/hasMedia" href="" tal:attributes="href item_link"><tal:image replace="structure python:view.getLeadMediaTag(item, scale='mini')"></tal:image></a>
+                                    <a class="imagelink" tal:condition="item_has_media" href="" tal:attributes="href item_link"><tal:image replace="structure python:view.getLeadMediaTag(item, scale='mini')"></tal:image></a>
                                   </div>
 
                                   <div class="res-info col-lg-8 col-md-8 col-sm-7">
@@ -296,10 +292,7 @@
 
 
                                    <div class="description">
-                                    <span tal:condition="python:item.Description() != '' " tal:replace="python:item.Description()"></span>
-                                    <tal:bodyfallback condition="python:item.Description == '' and item_type != 'Image' and item_type != 'File' and item_type != 'Folder' and item_type != 'Press Kit'">
-                                      <span tal:condition="python: getattr(item.getObject(), 'text', False)" tal:replace="python:view.trimText(item.getObject().text, 200, strip=True)"></span>
-                                    </tal:bodyfallback>
+                                    <span tal:condition="python:item_description != ''" tal:replace="python:item_description"></span>
                                   </div>
                                 </div>
                                 <div class="clearfix"></div>

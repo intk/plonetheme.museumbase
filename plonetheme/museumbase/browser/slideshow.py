@@ -707,7 +707,7 @@ class CollectionSlideshow(BrowserView):
             results = list(brains)
             
             for item in results[1:]:
-                if item.portal_type == "Link" and item.hasMedia:
+                if item.portal_type == "Link" and item.leadMedia:
                     image = self.getImageObject(item)
                     obj_id = obj.getId()
                     obj = item.getObject()
@@ -726,7 +726,7 @@ class CollectionSlideshow(BrowserView):
                         "image_path": image
                     });
 
-                elif item.portal_type == "Link" and not item.hasMedia:
+                elif item.portal_type == "Link" and not item.leadMedia:
                     obj = item.getObject()
                     obj_id = obj.getId()
                     data_description = obj.Description()

@@ -13161,6 +13161,16 @@ div.fieldset-input.taxonomy-link a {
     color: #333333 !important;
 }
 
+div.control-label.add-link {
+    width: 22.7% !important;
+
+}
+
+div.fieldset-input.add-link a {
+    font-size: 0.875em !important;
+    color: #333333 !important;
+}
+
 #formfield-form-widgets-iconography_contentPersonInstitution div.datagridwidget-widget-notes {
 clear: both !important;
 }
@@ -13380,6 +13390,10 @@ body[class^="template-collective-"] form fieldset {
 
 textarea {
     line-height: 15px !important;
+}
+
+body:not(.template-edit) .template-edit .add-form-link {
+    display: none !important;
 }
 
 /******************/

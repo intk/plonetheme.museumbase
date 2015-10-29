@@ -205,13 +205,13 @@ class CommonBrowserView(BrowserView):
         if item.portal_type == "Collection":
             return len(self.getCollectionMedia(item)) > 0
         
-        if hasattr(item, 'hasMedia'):
-            return item.hasMedia
+        if hasattr(item, 'leadMedia'):
+            return item.leadMedia != None
         else:
             uuid = item.UID()
             brains = uuidToCatalogBrain(uuid)
             if brains:
-                return brains.hasMedia
+                return brains.leadMedia != None
             else:
                 return False
     
@@ -460,7 +460,7 @@ class FolderListing(CommonBrowserView):
             if only_documented:
                 final_res = []
                 for res in brains:
-                    if res.hasMedia:
+                    if res.leadMedia:
                         final_res.append(res)
             else:
                 final_res = list(brains)
@@ -517,7 +517,7 @@ class FolderListing(CommonBrowserView):
     def getImageObject(self, item):
         if item.portal_type == "Image":
             return item.getObject()
-        if item.hasMedia and item.leadMedia != None:
+        if item.leadMedia != None:
             uuid = item.leadMedia
             media_object = uuidToObject(uuid)
             if media_object:
@@ -540,7 +540,7 @@ class ContentView(BrowserView):
 
         obj = ICanContainMedia(item)
 
-        details = {}    
+        details = {}
         details["title"] = item.Title()
         details["type"] = "article"
         details["site_name"] = "Teylers Museum"
@@ -549,8 +549,8 @@ class ContentView(BrowserView):
         details["double_image"] = ""
         details["image"] = ""
 
-        if obj.hasMedia():
-            image = obj.getLeadMedia()
+        image = obj.getLeadMedia()
+        if image != None:
             details["image"] = image.absolute_url()+'/@@images/image/large'
         else:
             details["image"] = ""
@@ -580,7 +580,7 @@ class NumberOfResults(CommonBrowserView):
             if only_documented:
                 result = []
                 for res in brains:
-                    if res.hasMedia:
+                    if res.leadMedia:
                         result.append(res)
     
         if result is not None:

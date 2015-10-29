@@ -34,7 +34,6 @@
       </div><!-- /.container-fluid -->
     </div>
 
-    
 
     <div class="tileColumns container-fluid">
       
@@ -80,7 +79,7 @@
               <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" metal:define-macro="listitem">
                 <div class="thumbnail">
                   <div class="thumb-wrapper">
-                    <a class="thumb-image" tal:condition="python: (item.hasMedia or item.portal_type == 'Image') and item_img != None" href="" tal:attributes="href python: item_link+'?collection_id='+collection_id+'&b_start='+str(b_start+item_index) if portal_type == 'Collection' and item_type == 'Object' else item_link"
+                    <a class="thumb-image" tal:condition="python: (item.leadMedia != None or item.portal_type == 'Image') and item_img != None" href="" tal:attributes="href python: item_link+'?collection_id='+collection_id+'&b_start='+str(b_start+item_index) if portal_type == 'Collection' and item_type == 'Object' else item_link"
                       >
 
                       <img tal:define="images item_img/@@images;
@@ -135,7 +134,7 @@
                     </p>
                     <p tal:condition="not:item_is_buyable">
                       <span tal:condition="python:item_obj
-.description != '' " tal:replace="python:view.trimText(item_obj
+.description != ''" tal:replace="python:view.trimText(item_obj
 .description, 200, strip=False)"></span>
                         
                     </p>

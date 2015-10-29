@@ -42,7 +42,7 @@
             <div class="thumbnail">
                   <div class="thumb-wrapper">
                     <!-- IMAGE -->
-                    <a class="thumb-image" tal:condition="python: (item.hasMedia or item.portal_type == 'Image')" href="" tal:attributes="href python: item_link+'?collection_id='+collection_id+'&b_start='+str(item_index) if collection_item != None and item_type == 'Object' else item_link"
+                    <a class="thumb-image" tal:condition="python: (item.leadMedia != None or item.portal_type == 'Image')" href="" tal:attributes="href python: item_link+'?collection_id='+collection_id+'&b_start='+str(item_index) if collection_item != None and item_type == 'Object' else item_link"
                       tal:define="item_img python:view.getImageObject(item)">
                       <img tal:define="images item_img/@@images;
                                          scale python: images.scale('image', scale='mini')"
@@ -51,15 +51,6 @@
                              tal:replace="structure python: scale.tag(css_class='tileImage', alt=item_title, title=item_title)" /> 
                       
                     </a> 
-
-                    <!--<div class="thumb-image" tal:condition="python: (item.hasMedia or item.portal_type == 'Image') and excluded_from_nav"
-                      tal:define="item_img python:view.getImageObject(item)">
-                      <img tal:define="images item_img/@@images;
-                                         scale python: images.scale('image', scale='mini')"
-                             tal:condition="scale"
-                             src="" alt=""
-                             tal:replace="structure python: scale.tag(css_class='tileImage', alt=item_title, title=item_title)" /> 
-                    </div>-->  
                     
                   </div>
                   
