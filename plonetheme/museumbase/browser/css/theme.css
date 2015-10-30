@@ -11465,9 +11465,9 @@ body:not(.template-edit) div.template-edit .select2-container-multi.pat-relatedi
 }
 
 
-body:not(.template-edit) div.template-edit .select2-container:not(.pat-relateditems) .select2-search-choice {
+/*body:not(.template-edit) div.template-edit .select2-container:not(.pat-relateditems) .select2-search-choice {
     pointer-events: none;
-}
+}*/
 
 
 body:not(.template-edit) div.template-edit .datagridwidget-row div.select2-container {
@@ -12183,6 +12183,18 @@ div.template-edit #formfield-form-widgets-freeFieldsAndNumbers_freeFields th.cel
 
 #ajax-error-msg {
     display: none;
+}
+
+#ajax-error-msg a {
+    color: #ffffff !important;
+    font-family: "Source Sans Pro", Calibri, Candara, Arial, serif !important;
+    font-size: 100% !important;
+    line-height: 1.42857143 !important;
+    text-decoration: underline;
+}
+
+#content #ajax-error-msg a:hover {
+    color: #ffffff !important;
 }
 
 body.template-image_reference_view div.title-description-wrapper {
@@ -13421,6 +13433,11 @@ body.template-edit.portaltype-object:not(.no-img-slideshow) #portal-logo img {
 
 body.template-edit.portaltype-object .slideshow:not(.slideshow-loaded) {
     visibility: hidden !important;
+}
+
+body:not(.template-edit) div.template-edit .select2-container .select2-search-choice div {
+    -webkit-user-select: initial !important;
+    user-select: initial !important;
 }
 
 /******************/
