@@ -13477,6 +13477,14 @@ body.template-detailed_tabular_view .listingBar > .col-lg-3:first-child {
     padding-left: 0px !important;
 }
 
+body.template-detailed_tabular_view div.slideshow {
+    height: 300px !important;
+}
+
+body.template-detailed_tabular_view #content h1.documentFirstHeading {
+    padding-top: 140px !important;
+}
+
 
 /******************/
 /* MEDIA QUERIES  */
