@@ -13440,6 +13440,44 @@ body:not(.template-edit) div.template-edit .select2-container .select2-search-ch
     user-select: initial !important;
 }
 
+th.header-title {
+    width: 60%;
+}
+
+th.header-author {
+    width: 30%;
+}
+
+body.template-detailed_tabular_view table td {
+    padding: 9px !important;
+}
+
+body.template-detailed_tabular_view table th {
+    padding: 9px !important;
+}
+
+body.template-detailed_tabular_view table {
+    margin-bottom: 50px !important;
+}
+
+body.template-detailed_tabular_view .listingBar {
+    width: 980px;
+    margin: 0 auto;
+}
+
+body.template-detailed_tabular_view .listingBar .number-list {
+    padding-left: 0px !important;
+}
+
+body.template-detailed_tabular_view .listingBar #next_item {
+    padding-right: 0px !important;
+}
+
+body.template-detailed_tabular_view .listingBar > .col-lg-3:first-child {
+    padding-left: 0px !important;
+}
+
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/

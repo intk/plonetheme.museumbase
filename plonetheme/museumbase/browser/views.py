@@ -31,6 +31,7 @@ from plone.registry.interfaces import IRegistry
 from collective.leadmedia.interfaces import ICanContainMedia
 from zope.interface import implements
 from plone.app.uuid.utils import uuidToCatalogBrain, uuidToObject
+from z3c.relationfield.interfaces import IRelationValue
 
 SHOP_AVAILABLE = True
 
@@ -641,8 +642,21 @@ class TableView(BrowserView):
                 authors_list = author['authors']
                 if authors_list:
                     author_person = authors_list[0]
-                    author_name = getattr(author_preson, 'title', '')
-                    return author_name
+                    portal_type = getattr(author_person, 'portal_type', '')
+                    author_url = ""
+                    author_name = ""
+
+                    if IRelationValue.providedBy(author_person):
+                        person = author_person.to_object
+                        author_url = person.absolute_url()
+                        author_name = getattr(person, 'title', '')
+
+                    elif portal_type == "Book":
+                        author_url = author_person.absolute_url()
+                        author_name = getattr(author_person, 'title', '')
+
+                    final_author = "<a href='%s'>%s</a>" %(author_url, author_name)
+                    return final_author
                 else:
                     return ""
             else:

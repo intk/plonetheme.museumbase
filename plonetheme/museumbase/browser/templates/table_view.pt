@@ -13,26 +13,22 @@
             <metal:entries fill-slot="entries">
 
             <div metal:use-macro="context/batch_macros/macros/navigation" />
-            <table class="listing"
+
+            <div class="table-responsive">
+            <table class="table listing"
                    summary="Content listing"
                    i18n:attributes="summary summary_content_listing;">
                 <thead>
                     <tr>
-                        <th class="nosort">&nbsp;<tal:title i18n:translate="listingheader_title"
+                        <th class="nosort header-title">&nbsp;<tal:title i18n:translate="listingheader_title"
                           >Title</tal:title>&nbsp;</th>
-                        <th class="nosort"
+                        <th class="nosort header-author"
                             tal:condition="show_about">&nbsp;<tal:title i18n:translate="listingheader_author"
                           >Author</tal:title>&nbsp;</th>
 
                         <th class="nosort"
                             tal:condition="show_about">&nbsp;<tal:modified i18n:translate="listingheader_year"
                           >Jaar</tal:modified>&nbsp;</th>
-                        
-                        <th class="nosort"
-                            tal:condition="show_about">&nbsp;<tal:modified i18n:translate="listingheader_modified"
-                          >Modified</tal:modified>&nbsp;</th>
-
-                        
                     </tr>
                 </thead>
 
@@ -67,7 +63,7 @@
                                   tal:define="author python:view.getAuthor(pas_member.info(item_creator), item)">
                                 
                                 <a 
-                                   tal:content="author"
+                                   tal:replace="structure author"
                                    tal:omit-tag="not:author">
                                   Bob Dobalina
                                 </a>
@@ -81,10 +77,10 @@
                           </tal:year>
                         </td>
 
-                        <td tal:condition="show_about"
+                        <!--<td tal:condition="show_about"
                             tal:content="python:toLocalizedTime(item_modified,long_format=1)">
                           August 16, 2001 at 23:35:59
-                        </td>
+                        </td>-->
 
                     </tr>
 
@@ -92,6 +88,7 @@
                     </metal:block>
                 </tbody>
             </table>
+            </div>
 
             </metal:entries>
         </metal:block>
