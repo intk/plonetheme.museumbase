@@ -54,6 +54,7 @@
                     </p>
 
                     <p tal:condition="python: item_type in ['Event', 'Exhibition']" class="item-dates">
+                      <tal:restrict tal:condition="python: item.start != None and item.end != None">
                     <tal:differentday tal:condition="python:not item.start.Date() == item.end.Date()" i18n:translate="event_when_differentday">
                       <abbr i18n:name="startdate">
                         <span tal:replace="python: toLocalizedTime(item.start.strftime('%d %B %Y'))">Start Date</span>
@@ -77,6 +78,7 @@
                          <span tal:content="python:toLocalizedTime(item.end, time_only=1)">End Time</span>
                       </abbr>
                     </tal:sameday>
+                  </tal:restrict>
                   </p>
 
 
