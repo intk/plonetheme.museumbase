@@ -130,7 +130,6 @@
         title="Media  View"
         for="*"
         class=".views.FolderListing"
-        template="templates/collection_custom.pt"
         layer=".interfaces.IThemeSpecific"
         permission="zope2.View"
     />

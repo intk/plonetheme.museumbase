@@ -448,70 +448,27 @@ class FolderListing(CommonBrowserView):
     """'
     Override of folder_listing view
     """
+
+    collection_template = ViewPageTemplateFile('templates/collection_custom.pt')
+    folder_template = ViewPageTemplateFile('templates/folder_custom.pt')
+
     def results(self, batch=True, b_start = 0, pagesize=33, sort_on='sortable_title', only_documented=False):
         results = []
 
         if self.context.portal_type  == 'Collection':
             results = self.context.results(batch=batch, b_size=pagesize, sort_on=sort_on, b_start=b_start)
             return results
+
         elif self.context.portal_type in ['Folder', 'Press Kit']:
             brains = self.context.getFolderContents()
-            if only_documented:
-                final_res = []
-                for res in brains:
-                    if res.leadMedia:
-                        final_res.append(res)
-            else:
-                final_res = list(brains)
+            final_res = list(brains)
+            
             if batch:
                 results = Batch(final_res, pagesize, start=b_start)
             else:
                 return final_res
 
         return results
-
-    def getPrice(self, item):
-        if SHOP_AVAILABLE:
-            item_data = get_item_data_provider(item)
-            net_price = Decimal(item_data.net)
-            vat = item_data.vat
-            if vat % 2 != 0:
-                item_vat = Decimal(vat).quantize(Decimal('1.0'))
-            else:
-                item_vat = Decimal(vat)
-            
-            gross_price = net_price + net_price / Decimal(100) * item_vat
-            return gross_price
-        else:
-            return float(0.0)
-
-
-    def isBuyable(self, item):
-        if SHOP_AVAILABLE:
-            return IBuyable.providedBy(item)
-        else:
-            return False 
-
-    def getItemTitle(self, item):
-        if item.title != "" and item.title != None:
-            return item.title
-
-        if hasattr(item, 'identification_taxonomy'):
-            if len(item.identification_taxonomy) > 0:
-                taxonomy = item.identification_taxonomy[0]
-                common_name = taxonomy['common_name']
-                if common_name != "" and common_name != None:
-                    return common_name
-
-                scientific_name = taxonomy['scientific_name']
-
-                if scientific_name != "" and scientific_name != None:
-                    return scientific_name
-
-        if hasattr(item, 'identification_identification_objectNumber'):
-            return item.identification_identification_objectNumber
- 
-        return ""
 
     def getImageObject(self, item):
         if item.portal_type == "Image":
@@ -521,6 +478,16 @@ class FolderListing(CommonBrowserView):
             media_object = uuidToObject(uuid)
             if media_object:
                 return media_object
+        else:
+            return None
+
+    def __call__(self):
+        """"""
+        portal_type = self.context.portal_type
+        if portal_type == "Folder":
+            return self.folder_template()
+        else:
+            return self.collection_template()
 
 class CollectionPortlet(base.Renderer, FolderListing):
     """

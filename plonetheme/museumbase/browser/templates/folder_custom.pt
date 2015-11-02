@@ -12,11 +12,9 @@
 
 <div class="tileColumns container-fluid">
   <div class="row-fluid">
-
-  <metal:block use-macro="context/standard_view/macros/content-core">
-
+  <metal:block use-macro="context/folder_listing/macros/content-core">
       <metal:entries fill-slot="entries">
-      <metal:block use-macro="context/standard_view/macros/entries">
+      <metal:block use-macro="context/folder_listing/macros/entries">
       <metal:entry fill-slot="entry">
 
           <tal:entry_details
@@ -70,7 +68,6 @@
       </metal:entries>
 
   </metal:block>
-
 </div>
 </div>
 </metal:content-core>
