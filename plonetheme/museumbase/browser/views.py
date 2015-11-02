@@ -452,10 +452,12 @@ class FolderListing(CommonBrowserView):
     collection_template = ViewPageTemplateFile('templates/collection_custom.pt')
     folder_template = ViewPageTemplateFile('templates/folder_custom.pt')
 
-    def results(self, batch=True, b_start = 0, pagesize=33, sort_on='sortable_title', only_documented=False):
+    def results(self, batch=True, b_start=0):
         results = []
 
         if self.context.portal_type  == 'Collection':
+            sort_on = getattr(self.context, 'sort_on', 'sortable_title')
+            pagesize = getattr(self.context, 'item_count', 33)
             results = self.context.results(batch=batch, b_size=pagesize, sort_on=sort_on, b_start=b_start)
             return results
 
