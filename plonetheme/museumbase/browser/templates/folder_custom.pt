@@ -50,6 +50,35 @@
                     <p tal:condition="item_description">
                       <span tal:content="item_description"></span>  
                     </p>
+
+                    <p tal:condition="python: item_type in ['Event', 'Exhibition']" class="item-dates">
+                      <tal:restrict tal:condition="python: item.start != None and item.end != None">
+                    <tal:differentday tal:condition="python:not item.start.Date() == item.end.Date()" i18n:translate="event_when_differentday">
+                      <abbr i18n:name="startdate">
+                        <span tal:replace="python: toLocalizedTime(item.start.strftime('%d %B %Y'))">Start Date</span>
+                        <tal:word i18n:translate="event_when_differentday_optional_word_between_date_and_time" />
+                      </abbr>
+                      t/m
+                      <span i18n:name="linebreak" />
+                      <abbr i18n:name="enddate">
+                        <span tal:replace="python: toLocalizedTime(item.end.strftime('%d %B %Y'))">End Date</span>
+                        <tal:word i18n:translate="event_when_differentday_optional_word_between_date_and_time" />
+                      </abbr>
+                    </tal:differentday>
+
+                    <tal:sameday tal:condition="python:item.start.Date() == item.end.Date()" i18n:translate="event_when_sameday">
+                      <span tal:replace="python: toLocalizedTime(item.start.strftime('%d %B %Y'))" i18n:name="date">Start Date Time</span>,
+                      <abbr i18n:name="starttime">
+                        <span tal:content="python:toLocalizedTime(item.start, time_only=1)">Start Time</span>
+                      </abbr >
+                      -
+                      <abbr i18n:name="endtime">
+                         <span tal:content="python:toLocalizedTime(item.end, time_only=1)">End Time</span>
+                      </abbr>
+                    </tal:sameday>
+                  </tal:restrict>
+                  </p>
+                  
                   </div>
               </div>
             </div>
