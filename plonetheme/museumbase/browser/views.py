@@ -415,8 +415,6 @@ class SearchView(CommonBrowserView, Search):
         searchFiltersRecord = registry['searchfilters.folders']
         filters = list(searchFiltersRecord)
 
-        catalog = getToolByName(self.context, 'portal_catalog')
-
         for uid in filters:
             item = uuidToObject(uid)
             if item:
@@ -532,31 +530,12 @@ class CollectionPortlet(base.Renderer, FolderListing):
     render = _template
 
 class ContentView(BrowserView):
-    def getFBdetails(self):
-        item = self.context
-        
-        state = getMultiAdapter(
-                (item, self.request),
-                name=u'plone_context_state')
-
-        obj = ICanContainMedia(item)
-
-        details = {}
-        details["title"] = item.Title()
-        details["type"] = "article"
-        details["site_name"] = "Teylers Museum"
-        details["url"] = item.absolute_url()
-        details["description"] = item.Description()
-        details["double_image"] = ""
-        details["image"] = ""
-
-        image = obj.getLeadMedia()
-        if image != None:
-            details["image"] = image.absolute_url()+'/@@images/image/large'
+    def showManageButton(self):
+        secman = getSecurityManager()
+        if not secman.checkPermission('Portlets: Manage portlets', self.context):
+            return False
         else:
-            details["image"] = ""
-
-        return details
+            return True
 
     def showManageButton(self):
         secman = getSecurityManager()

@@ -174,21 +174,6 @@
 
     </div>
   </div>
-
-  <!--<div id="folder-portlet-wrapper">
-    <div class="row folder-portlet">
-      <tal:block replace="structure provider:plonetheme.bootstrapModern.folderPortletManager"/>
-    </div>
-
-    <div id="folder-manager-button" class="row manage-portlets-link"> 
-           <a class="managePortletsFallback"
-                    tal:condition="view/showManageButton"
-                    tal:define="portal context/@@plone_portal_state/portal;"
-                    tal:attributes="href string:${portal/absolute_url}/@@manage-folder-portlets">
-                    Manage folder portlets
-            </a>     
-     </div>
-   </div>-->
     
     </metal:block>
   </div>
