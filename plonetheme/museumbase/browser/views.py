@@ -390,16 +390,10 @@ class SearchView(CommonBrowserView, Search):
 
     def getItemTitle(self, item):
         title = item.Title()
-        brain = item._brain
 
-        sm = getSecurityManager()
-        if not sm.checkPermission(ModifyPortalContent, self.context):
-            return title
-
-        if brain.portal_type == "Object":
-            obj = brain.getObject()
-            if obj.identification_identification_objectNumber:
-                title = "%s - %s" %(obj.identification_identification_objectNumber, title)
+        if item.portal_type == "Object":
+            if item.identification_identification_objectNumber:
+                title = "%s - %s" %(item.identification_identification_objectNumber, title)
 
         return title
 
@@ -416,9 +410,9 @@ class SearchView(CommonBrowserView, Search):
         filters = list(searchFiltersRecord)
 
         for uid in filters:
-            item = uuidToObject(uid)
+            item = uuidToCatalogBrain(uid)
             if item:
-                searchFilters.append({"name": item.Title(), "path": '/'.join(item.getPhysicalPath())})
+                searchFilters.append({"name": item.Title, "path": item.getPath()})
 
         return searchFilters
     

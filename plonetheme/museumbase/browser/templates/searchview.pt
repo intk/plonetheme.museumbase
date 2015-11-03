@@ -4,7 +4,7 @@
   xmlns:i18n="http://xml.zope.org/namespaces/i18n"
   lang="en"
   metal:use-macro="context/main_template/macros/master"
-  i18n:domain="plone">
+  i18n:domain="plonelocales">
 
   <head>
     <metal:block metal:fill-slot="head_slot">
@@ -13,6 +13,8 @@
         tal:define="here_url context/@@plone_context_state/object_url;"
         tal:condition="request/SearchableText|nothing"
         tal:attributes="href string:$here_url/search_rss?${request/QUERY_STRING}"/>
+
+      <link rel="home" title="Home" tal:attributes="href view/navroot_url" />
 
     </metal:block>
 
@@ -30,26 +32,26 @@
           action="@@search"
           class="searchPage enableAutoFocus"
           tal:define="portal context/@@plone_portal_state/portal;
-          first_call not:request/advanced_search|nothing;
-          st python:request.get('SearchableText', '');
-          DateTime python:modules['DateTime'].DateTime;
-          b_start python:0;
-          b_start request/b_start | b_start;
-          batch python: view.results(b_start=b_start);
-          batch_size batch/sequence_length|string:0;
-          ">
+            first_call not:request/advanced_search|nothing;
+            st python:request.get('SearchableText', '');
+            DateTime python:modules['DateTime'].DateTime;
+            b_start python:0;
+            b_start request/b_start | b_start;
+            batch python: view.results(b_start=b_start);
+            batch_size batch/sequence_length|string:0;
+            ">
 
           <div id="search-page-header">
 
-            <h1 class="documentFirstHeading"
-              i18n:translate=""
-              tal:condition="st">
-              Search results</h1>
+              <h1 class="documentFirstHeading"
+                i18n:translate=""
+                tal:condition="st">
+                Search results</h1>
 
-            <h1 class="documentFirstHeading"
-              i18n:translate=""
-              tal:condition="not:st">
-              Search results</h1>
+              <h1 class="documentFirstHeading"
+                i18n:translate=""
+                tal:condition="not:st">
+                Search results</h1>
 
 
                 <h2 class="documentDescription" i18n:translate="">
@@ -237,7 +239,6 @@
 
                          <div class="clearfix"></div>
 
-                         <!-- SEARCH RESULTS -->
                          <metal:searchresults define-macro="search_results">
 
                           <div id="search-results"
@@ -253,7 +254,9 @@
                            site_properties context/portal_properties/site_properties;
                            use_view_action site_properties/typesUseViewActionInListings|python:();
                            allowAnonymousViewAbout site_properties/allowAnonymousViewAbout;
-                           show_about python:not isAnon or allowAnonymousViewAbout;">
+                           show_about python:not isAnon or allowAnonymousViewAbout;
+                           user_admin python: view.checkUserPermission();">
+
                            <div class="searchResults row-fluid">
                             <div class="col-lg-8 results-wrapper">
                               <tal:results repeat="item batch">
@@ -262,17 +265,15 @@
                                  normalizeString nocall:context/@@plone/normalizeString;
                                  item_description item/Description;
                                  item_type item/Type;
-                                 item_title python: view.getItemTitle(item);
-                                 item_url python:item_type == 'Media Event' and '%s'%item.getURL() or item.getURL();
-                                 item_absoluteUrl python: item.getURL();
+                                 item_title python: view.getItemTitle(item) if user_admin else item.Title();
+                                 item_url item/getURL;
                                  item_has_media python: getattr(item, 'leadMedia', None);
                                  item_created item/CreationDate;
                                  item_icon item/getIcon;
-                                 user_admin python:view.checkUserPermission();
                                  item_wf_state_class python:'state-' + normalizeString(item.review_state);
                                  item_creator item/Creator;
-                                 hide_book python: 'bibliotheek' in item_absoluteUrl and user_admin == False;
-                                 item_link python: (item_type == 'Press Kit' and not view.checkPermission(item, 'Add portal content')) and item_url + '/download_zip' or (item_type in use_view_action and item_url+'/view' or item_url);">
+                                 hide_book python: 'bibliotheek' in item_url and user_admin == False;
+                                 item_link item/getURL">
                                  
                                  <metal:block define-slot="entry" tal:condition="not:hide_book">
 
@@ -289,11 +290,39 @@
                                        Item Title
                                      </a>
                                    </h2>
+                                   
+                                   <p tal:condition="python: item_type in ['Event', 'Exhibition']" class="item-dates">
 
+                                      <tal:restrict tal:condition="python: str(item.start) != '' and str(item.end) != ''">
+                                      <tal:differentday tal:condition="python:not item.start.Date() == item.end.Date()" i18n:translate="event_when_differentday">
+                                        <abbr i18n:name="startdate">
+                                          <span tal:replace="python: toLocalizedTime(item.start.strftime('%d %B %Y'))">Start Date</span>
+                                          <tal:word i18n:translate="event_when_differentday_optional_word_between_date_and_time" />
+                                        </abbr>
+                                        t/m
+                                        <span i18n:name="linebreak" />
+                                        <abbr i18n:name="enddate">
+                                          <span tal:replace="python: toLocalizedTime(item.end.strftime('%d %B %Y'))">End Date</span>
+                                          <tal:word i18n:translate="event_when_differentday_optional_word_between_date_and_time" />
+                                        </abbr>
+                                      </tal:differentday>
+
+                                      <tal:sameday tal:condition="python:item.start.Date() == item.end.Date()" i18n:translate="event_when_sameday">
+                                        <span tal:replace="python: toLocalizedTime(item.start.strftime('%d %B %Y'))" i18n:name="date">Start Date Time</span>,
+                                        <abbr i18n:name="starttime">
+                                          <span tal:content="python:toLocalizedTime(item.start, time_only=1)">Start Time</span>
+                                        </abbr >
+                                        -
+                                        <abbr i18n:name="endtime">
+                                           <span tal:content="python:toLocalizedTime(item.end, time_only=1)">End Time</span>
+                                        </abbr>
+                                      </tal:sameday>
+                                    </tal:restrict>
+                                  </p>
 
                                    <div class="description">
                                     <span tal:condition="python:item_description != ''" tal:replace="python:item_description"></span>
-                                  </div>
+                                   </div>
                                 </div>
                                 <div class="clearfix"></div>
                               </metal:block>                                          
@@ -301,28 +330,11 @@
 
                           </tal:results>
                         </div>
+                        
                         <div class="col-lg-4 portlet-wrapper">
-                          <div class="navbar navbar-default" id="search-results-selector" role="navigation">
-
-                            <!-- Brand and toggle get grouped for better mobile display -->
-                            <div class="navbar-header">
-                              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                <span class="sr-only"></span>
-                                <i class="fa fa-chevron-down"></i>
-                              </button>
-                              <a class="navbar-brand">Toon alle resultaten</a>
-                            </div>
-                            <!-- Collect the nav links, forms, and other content for toggling -->
-                            <div class="collapse navbar-collapse in" id="bs-example-navbar-collapse-1">
-                              <ul class="nav navbar-nav">
-                                <!-- Render portlet manager -->
-                                <tal:block replace="structure provider:plonetheme.bootstrapModern.searchPortletManager"/>
-                              </ul>
-                            </div><!-- /.navbar-collapse -->
-
-                          </div>
                         </div>
                       </div>
+
                       <div metal:use-macro="context/batch_macros/macros/navigation" />
                     </metal:results>
                   </div>

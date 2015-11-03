@@ -26,33 +26,35 @@
           <div id="parent-fieldname-text-dates" tal:condition="python: context.portal_type in ['Event', 'Exhibition']" tal:define="toLocalizedTime nocall:plone_view/toLocalizedTime;">
             <p>
             
-            <tal:differentday tal:condition="python:not context.start.Date() == context.end.Date()" i18n:translate="event_when_differentday">
-              <abbr i18n:name="startdate">
-                <span tal:replace="python: toLocalizedTime(context.start.strftime('%d %B %Y'))">Start Date</span>
-                <tal:word i18n:translate="event_when_differentday_optional_word_between_date_and_time" />
-              </abbr>
-              to
-              <span i18n:name="linebreak" />
-              <abbr i18n:name="enddate">
-                <span tal:replace="python: toLocalizedTime(context.end.strftime('%d %B %Y'))">End Date</span>
-                <tal:word i18n:translate="event_when_differentday_optional_word_between_date_and_time" />
-              </abbr>
-              
-            </tal:differentday>
+            <tal:restrict tal:condition="python: getattr(context, 'start', None) != None and getattr(context, 'end', None) != None">
+              <tal:differentday tal:condition="python:not context.start.Date() == context.end.Date()" i18n:translate="event_when_differentday">
+                <abbr i18n:name="startdate">
+                  <span tal:replace="python: toLocalizedTime(context.start.strftime('%d %B %Y'))">Start Date</span>
+                  <tal:word i18n:translate="event_when_differentday_optional_word_between_date_and_time" />
+                </abbr>
+                to
+                <span i18n:name="linebreak" />
+                <abbr i18n:name="enddate">
+                  <span tal:replace="python: toLocalizedTime(context.end.strftime('%d %B %Y'))">End Date</span>
+                  <tal:word i18n:translate="event_when_differentday_optional_word_between_date_and_time" />
+                </abbr>
+                
+              </tal:differentday>
 
-            <tal:sameday tal:condition="python:context.start.Date() == context.end.Date()" i18n:translate="event_when_sameday">
-              <span tal:replace="python: toLocalizedTime(context.start.strftime('%d %B %Y'))" i18n:name="date">Start Date Time</span>
-              <span i18n:name="linebreak" />
-              ,
-              <abbr i18n:name="starttime">
-                <span tal:content="python: toLocalizedTime(context.start, time_only=1)">Start Time</span>
-              </abbr >
-              -
-              <abbr i18n:name="endtime">
-                 <span tal:content="python:toLocalizedTime(context.end, time_only=1)">End Time</span>
-              </abbr>
+              <tal:sameday tal:condition="python:context.start.Date() == context.end.Date()" i18n:translate="event_when_sameday">
+                <span tal:replace="python: toLocalizedTime(context.start.strftime('%d %B %Y'))" i18n:name="date">Start Date Time</span>
+                <span i18n:name="linebreak" />
+                ,
+                <abbr i18n:name="starttime">
+                  <span tal:content="python: toLocalizedTime(context.start, time_only=1)">Start Time</span>
+                </abbr >
+                -
+                <abbr i18n:name="endtime">
+                   <span tal:content="python:toLocalizedTime(context.end, time_only=1)">End Time</span>
+                </abbr>
 
-            </tal:sameday>
+              </tal:sameday>
+            </tal:restrict>
             </p>
 
         </div>
