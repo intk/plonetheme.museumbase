@@ -26,7 +26,7 @@
           <div id="parent-fieldname-text-dates" tal:condition="python: context.portal_type in ['Event', 'Exhibition']" tal:define="toLocalizedTime nocall:plone_view/toLocalizedTime;">
             <p>
             
-            <tal:restrict tal:condition="python: getattr(context, 'start', None) != None and getattr(context, 'end', None) != None">
+            <tal:restrict tal:condition="python: getattr(context, 'start', None) != None and getattr(context, 'end', None) != None" i18n:domain="plonelocales">
               <tal:differentday tal:condition="python:not context.start.Date() == context.end.Date()" i18n:translate="event_when_differentday">
                 <abbr i18n:name="startdate">
                   <span tal:replace="python: toLocalizedTime(context.start.strftime('%d %B %Y'))">Start Date</span>

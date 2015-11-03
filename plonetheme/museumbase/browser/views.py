@@ -564,7 +564,8 @@ class CustomManagePortlets(ManageContextualPortlets):
         super(ManageContextualPortlets, self).__init__(context, request)
 
 class TableView(BrowserView):
-    index = ViewPageTemplateFile('templates/table_view.pt')
+    index_folder = ViewPageTemplateFile('templates/table_view.pt')
+    index_collection = ViewPageTemplateFile('templates/table_collection_view.pt')
 
     def getYear(self, item):
         obj = item.getObject()
@@ -636,10 +637,10 @@ class TableView(BrowserView):
         else:
             return context_author.get('name_or_id', None)
 
-    def render(self):
-        return self.index()
-
     def __call__(self):
-        return self.render()
+        if self.context.portal_type == "Collection":
+            return self.index_collection()
+        else:
+            return self.index_folder()
 
 

@@ -21,10 +21,11 @@ class LanguageSelector(LanguageSelectorViewlet):
 
 		if len(results) > 0:
 			for brain in results:
-				url = brain.getObject().absolute_url()
+				url = brain.getURL()
 				extra_languages.append({
 					"title": brain.Title,
 					"url": url
 					})
 
 		return extra_languages
+		

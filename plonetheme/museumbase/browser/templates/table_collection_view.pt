@@ -8,47 +8,51 @@
 
 <body>
 
-    <metal:content-core fill-slot="content-core">
-        <metal:block define-macro="listing" extend-macro="context/folder_listing/macros/content-core">
-            <metal:entries fill-slot="entries">
+    <div metal:fill-slot="content-core"
+      tal:define="b_start python:request.get('b_start', 0);
+                  batch python:context.results(b_start=b_start);
+                  normalizeString nocall: context/plone_utils/normalizeString;">
 
             <div metal:use-macro="context/batch_macros/macros/navigation" />
 
             <div class="table-responsive">
             <table class="table listing"
+                  i18n:attributes="summary"
                    summary="Content listing"
-                   i18n:attributes="summary summary_content_listing;">
+                   tal:condition="batch"
+                   tal:define="pas_member context/@@pas_member"
+                   >
                 <thead>
                     <tr>
                         <th class="nosort header-title">&nbsp;<tal:title i18n:translate="listingheader_title"
                           >Title</tal:title>&nbsp;</th>
                         <th class="nosort header-author"
-                            tal:condition="show_about">&nbsp;<tal:title i18n:translate="listingheader_author"
+                            >&nbsp;<tal:title i18n:translate="listingheader_author"
                           >Author</tal:title>&nbsp;</th>
 
                         <th class="nosort"
-                            tal:condition="show_about">&nbsp;<tal:modified i18n:translate="listingheader_year"
+                            >&nbsp;<tal:modified i18n:translate="listingheader_year"
                           >Jaar</tal:modified>&nbsp;</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <metal:block use-macro="context/folder_listing/macros/entries">
-                        <metal:entry fill-slot="entry">
+                    <tal:block tal:repeat="item batch">
 
-                    <tr metal:define-macro="listitem"
-                        tal:define="oddrow repeat/item/odd;"
+                    <tr 
+                        tal:define="oddrow repeat/item/odd;
+                                    item_url item/getURL;
+                                    item_type item/portal_type;
+                                    item_title_or_id item/Title;
+                                    item_description item/Description;
+                                    item_creator item/Creator;
+                                    item_type_class python:'contenttype-' + normalizeString(item_type);
+                                    item_wf_state item/review_state|python: context.portal_workflow.getInfoFor(item, 'review_state', '');
+                                    item_wf_state_class python:'state-' + normalizeString(item_wf_state);"
                         tal:attributes="class python:'even' if oddrow else 'odd'">
 
                             <td>
-                                <img width="16" height="16"
-                                     src="" alt=""
-                                     tal:condition="item_icon/url"
-                                     tal:attributes="src item_icon/url;
-                                                     alt item_icon/description;
-                                                     title item_icon/title;
-                                                     width item_icon/width;
-                                                     height item_icon/height;" />
+                                
                                 <a href="#"
                                    tal:attributes="href python:item_url;
                                                    class string:$item_wf_state_class $item_type_class;
@@ -58,7 +62,7 @@
                                 </a>
                             </td>
 
-                            <td tal:condition="show_about">
+                            <td>
                                 <tal:name tal:condition="item_creator"
                                   tal:define="author python:view.getAuthor(pas_member.info(item_creator), item)">
                                 
@@ -71,26 +75,21 @@
                                 </tal:name>
                             </td>
                             
-                        <td tal:condition="show_about">
+                        <td>
                           <tal:year tal:define="year python: view.getYear(item)">
                             <span tal:content="year" tal:omit-tag="not:year"></span>
                           </tal:year>
                         </td>
-
                     </tr>
+                  </tal:block>
 
-                        </metal:entry>
-                    </metal:block>
                 </tbody>
             </table>
             </div>
 
-            </metal:entries>
-        </metal:block>
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
 
-        <metal:subtopics use-macro="context/atct_topic_view/macros/folderlisting_macro" />
-
-    </metal:content-core>
+    </div>
 
 </body>
 </html>
