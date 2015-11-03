@@ -1,5 +1,5 @@
 <div class="portlet portletCollection"
-    i18n:domain="plone"
+    i18n:domain="plonelocales"
     tal:define="collection_url view/collection_url;
                 plone_view context/@@plone;
                 collection_item view/collection;
