@@ -42,8 +42,9 @@
                     <tr 
                         tal:define="oddrow repeat/item/odd;
                                     item_url item/getURL;
+                                    item_id item/getId|item/id;
                                     item_type item/portal_type;
-                                    item_title_or_id item/Title;
+                                    item_title_or_id python: item.Title() if item.Title() != '' else item_id;
                                     item_description item/Description;
                                     item_creator item/Creator;
                                     item_type_class python:'contenttype-' + normalizeString(item_type);
@@ -86,9 +87,9 @@
                 </tbody>
             </table>
             </div>
-
-        <div metal:use-macro="context/batch_macros/macros/navigation" />
-
+        
+          <div metal:use-macro="context/batch_macros/macros/navigation" />
+          <div class="clearfix"></div>
     </div>
 
 </body>
