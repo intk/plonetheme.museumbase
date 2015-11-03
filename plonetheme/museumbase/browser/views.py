@@ -6,6 +6,7 @@ from Products.Five import BrowserView
 from AccessControl import getSecurityManager
 from Products.CMFPlone.PloneBatch import Batch
 from Products.CMFCore.permissions import ModifyPortalContent
+from plone.dexterity.browser.view import DefaultView
 
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -563,6 +564,8 @@ class CustomManagePortlets(ManageContextualPortlets):
         # Skip past the main parent constructor, since it sets disable_border
         super(ManageContextualPortlets, self).__init__(context, request)
 
+
+
 class TableView(BrowserView):
     index_folder = ViewPageTemplateFile('templates/table_view.pt')
     index_collection = ViewPageTemplateFile('templates/table_collection_view.pt')
@@ -642,5 +645,46 @@ class TableView(BrowserView):
             return self.index_collection()
         else:
             return self.index_folder()
+
+
+class ObjectFields(DefaultView):
+    def getJSON(self):
+        data = []
+        from zope.i18nmessageid import MessageFactory
+
+        if self.context.portal_type == "Object":
+            _ = MessageFactory('collective.object')
+        elif self.context.portal_type == "Book":
+            _ = MessageFactory('collective.bibliotheek')
+        else:
+            _ = MessageFactory('collective.objec')
+
+        for group in self.groups:
+            new_group = []
+            for widget in group.widgets.values():
+                try:
+                    _label = _(widget.label)
+                    label = self.context.translate(_label)
+                    new_field = {label:widget.value}
+                    json.dumps(new_field)
+                    new_group.append(new_field)
+                except:
+                    _label = _(widget.label)
+                    label = self.context.translate(_label)
+                    new_field = {label:str(widget.value)}
+                    new_group.append(new_field)
+
+            _group_label = _(group.label)
+            group_label = self.context.translate(_group_label)
+            data.append({group_label:new_group})
+
+        result = json.dumps(data)
+        return result
+
+
+    
+
+
+
 
 

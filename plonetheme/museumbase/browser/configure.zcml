@@ -247,6 +247,15 @@
     />
 
     <browser:page
+        name="get_json_fields"
+        for="*"
+        class=".views.ObjectFields"
+        layer=".interfaces.IThemeSpecific"
+        template="templates/get_object_fields.pt"
+        permission="zope2.View"
+    />
+
+    <browser:page
       name="get_number_of_results"
       for="*"
       class=".views.NumberOfResults"
