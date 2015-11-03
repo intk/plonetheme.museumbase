@@ -13485,6 +13485,28 @@ body.template-detailed_tabular_view #content h1.documentFirstHeading {
     padding-top: 140px !important;
 }
 
+.template-folder_contents #content a,
+.template-detailed_tabular_view #content .listingBar a {
+    line-height: 20px !important;
+}
+
+.template-folder_contents #content .listingBar .number-list {
+    width: 40% !important;
+}
+
+.template-folder_contents #content .listingBar #next_item {
+    width: 32% !important;
+    padding-right: 0px !important;
+}
+
+.template-folder_contents #content .listingBar > .col-lg-3:first-child {
+    width: 28% !important;
+    padding-left: 0px !important;
+}
+
+
+
+
 
 /******************/
 /* MEDIA QUERIES  */
