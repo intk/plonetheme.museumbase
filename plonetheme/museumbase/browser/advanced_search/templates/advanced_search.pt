@@ -60,7 +60,6 @@
               </div>
             </div>
 
-
             <div class="col-sm-12" i18n:domain="plone">
               <input class="searchPage searchButton btn btn-inverse"
                             type="submit"
