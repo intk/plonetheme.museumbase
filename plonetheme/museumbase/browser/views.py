@@ -398,6 +398,22 @@ class SearchView(CommonBrowserView, Search):
 
         return title
 
+    def getExtraFilters(self):
+        params = self.request.form.items()
+        extra_filters = []
+
+        for param, value in params:
+            if param in ['identification_identification_objectNumber', 'Title']:
+                if value:
+                    q = "&".join(["%s=%s" %(p, v) for p, v in params if p != param])
+                    search_filter = {}
+                    search_filter["param"] = param
+                    search_filter["value"] = value
+                    search_filter["link"] = self.context.absolute_url()+"/@@search?%s" %(q)
+                    extra_filters.append(search_filter)
+
+        return extra_filters
+
     def checkUserPermission(self):
         sm = getSecurityManager()
         if sm.checkPermission(ModifyPortalContent, self.context):

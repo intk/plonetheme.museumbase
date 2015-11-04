@@ -92,6 +92,7 @@
             <div class="clearfix"></div> 
 
             <div class="container-fluid">
+
               <div id="search-results-wrapper" class="row-fluid"
                          tal:define="normalizeString nocall:context/@@plone/normalizeString;">
 
@@ -235,6 +236,17 @@
                                </metal:sorting>
                              </span>
                            </span>
+                            
+                            <div class="clearfix extra-fields" i18n:domain="collective.object">
+                            <tal:define_extra
+                              tal:define="extra_filters python: view.getExtraFilters()">
+                              <p tal:condition="extra_filters">Verfijnen: </p>
+                              <tal:items repeat="extra_filter extra_filters">
+                                <p i18n:translate=""><span i18n:translate="" tal:content="python: extra_filter['param']"></span>: <span tal:content="python: extra_filter['value']"></span><span style="margin-left: 10px;">[ <a tal:attributes="href python: extra_filter['link']">X</a> ]</span></p>
+                              </tal:items>
+                            </tal:define_extra>
+                            </div>
+                           
                          </div> 
 
                          <div class="clearfix"></div>
