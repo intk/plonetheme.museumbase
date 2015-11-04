@@ -416,6 +416,39 @@ class SearchView(CommonBrowserView, Search):
                 searchFilters.append({"name": item.Title, "path": item.getPath()})
 
         return searchFilters
+
+class AdvancedSearchView(CommonBrowserView, Search):
+    """
+    Adding to Search view
+    """
+
+    def getItemTitle(self, item):
+        title = item.Title()
+
+        if item.portal_type == "Object":
+            if item.identification_identification_objectNumber:
+                title = "%s - %s" %(item.identification_identification_objectNumber, title)
+
+        return title
+
+    def checkUserPermission(self):
+        sm = getSecurityManager()
+        if sm.checkPermission(ModifyPortalContent, self.context):
+            return True
+        return False
+
+    def getSearchFilters(self):
+        searchFilters = []
+        registry = getUtility(IRegistry)
+        searchFiltersRecord = registry['searchfilters.folders']
+        filters = list(searchFiltersRecord)
+
+        for uid in filters:
+            item = uuidToCatalogBrain(uid)
+            if item:
+                searchFilters.append({"name": item.Title, "path": item.getPath()})
+
+        return searchFilters
     
 class PagePortletView(ViewletBase):
     """

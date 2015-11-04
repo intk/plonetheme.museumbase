@@ -327,8 +327,8 @@ body.canvas-slid  .bt-menu-trigger span:after {
 
     .menu_wrapper {
     	position: fixed;
-    	width: 60px;
-    	height: 60px;
+    	width: 60px !important;
+    	height: 60px !important;
     	background-color: #000000;
     	z-index: 10;
 	}

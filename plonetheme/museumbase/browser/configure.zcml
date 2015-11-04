@@ -43,6 +43,15 @@
     />
 
     <browser:page
+        name="advancedsearch"
+        class=".views.AdvancedSearchView"
+        permission="zope2.View"
+        for="*"
+        layer=".interfaces.IThemeSpecific"
+        template="advanced_search/templates/advanced_search.pt"
+    />
+
+    <browser:page
         name="updated_search"
         class=".views.SearchView"
         permission="zope2.View"
