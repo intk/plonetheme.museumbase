@@ -240,9 +240,9 @@
                             <div class="clearfix extra-fields" i18n:domain="collective.object">
                             <tal:define_extra
                               tal:define="extra_filters python: view.getExtraFilters()">
-                              <p tal:condition="extra_filters">Verfijnen: </p>
+                              <p tal:condition="extra_filters" tal:content="python: 'Verfijnen: ' if getattr(context, 'language', None) == 'nl' else 'Refine: '"></p>
                               <tal:items repeat="extra_filter extra_filters">
-                                <p i18n:translate=""><span i18n:translate="" tal:content="python: extra_filter['param']"></span>: <span tal:content="python: extra_filter['value']"></span><span style="margin-left: 10px;">[ <a tal:attributes="href python: extra_filter['link']">X</a> ]</span></p>
+                                <p i18n:translate=""><span i18n:translate="" tal:content="python: extra_filter['param']"></span>: <span tal:content="python: extra_filter['value']"></span><span> <a tal:attributes="href python: extra_filter['link']" class="glyphicon glyphicon-remove extra-filter-remove"></a></span></p>
                               </tal:items>
                             </tal:define_extra>
                             </div>

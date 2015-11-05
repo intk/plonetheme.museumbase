@@ -13631,6 +13631,11 @@ body.template-advancedsearch .field input[type="text"] {
     margin-left: 15px;
 }
 
+.extra-filter-remove {
+    text-decoration: none !important;
+    font-size: 1.2em !important;
+}
+
 
 
 /******************/
