@@ -86,7 +86,7 @@
                     </div>
 
                     <tal:advanced_search_query tal:define="advanced_query python: view.getAdvancedButtonQuery()">
-                    <a class="advanced-search"tal:attributes="href python: context.absolute_url()+'/@@advancedsearch'" i18n:translate="label_advanced_search">Advanced search</a>
+                    <a class="advanced-search"tal:attributes="href python: context.absolute_url()+'/@@advancedsearch?'+advanced_query if advanced_query else context.absolute_url()+'/@@advancedsearch'" i18n:translate="label_advanced_search">Advanced search</a>
                     </tal:advanced_search_query>
 
                   </div>
