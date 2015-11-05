@@ -13636,6 +13636,28 @@ body.template-advancedsearch .field input[type="text"] {
     font-size: 1.2em !important;
 }
 
+a.advanced-search {
+    width: 25%;
+    margin: 0 auto;
+    display: block;
+    padding-top: 60px;
+    color: #ffffff !important;
+}
+
+#content a.advanced-search:hover {
+    color: #ffffff !important;
+}
+
+#search-page-header {
+    background: rgba(0,0,0,0.2) !important;
+    background-color: rgba(0,0,0,0.2) !important;
+}
+
+#search-page-header:before {
+    pointer-events: none !important;
+    background-color: rgba(0,0,0,0.0) !important;
+}
+
 
 
 /******************/

@@ -85,6 +85,8 @@
                           i18n:attributes="value label_search;"/>
                     </div>
 
+                    <a class="advanced-search"tal:attributes="href python: context.absolute_url()+'/@@advancedsearch'" i18n:translate="label_advanced_search">Advanced search</a>
+
                   </div>
                 </fieldset>
             </div> <!-- Search page header -->
