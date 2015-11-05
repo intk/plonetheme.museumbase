@@ -398,19 +398,39 @@ class SearchView(CommonBrowserView, Search):
 
         return title
 
+    def getAdvancedButtonQuery(self):
+        params = self.request.form.items()
+
+        registry = getUtility(IRegistry)
+        searchFiltersRecord = registry['advancedsearch.fields']
+        q = ""
+
+        if searchFiltersRecord:
+            advancedfields = list(searchFiltersRecord)
+            advancedfields.append("SearchableText")
+            q = "&".join(["%s=%s" %(param,value) for param,value in params if param in advancedfields and value])
+
+        return q
+
     def getExtraFilters(self):
         params = self.request.form.items()
         extra_filters = []
 
-        for param, value in params:
-            if param in ['identification_identification_objectNumber', 'Title']:
-                if value:
-                    q = "&".join(["%s=%s" %(p, v) for p, v in params if p != param])
-                    search_filter = {}
-                    search_filter["param"] = param
-                    search_filter["value"] = value
-                    search_filter["link"] = self.context.absolute_url()+"/@@search?%s" %(q)
-                    extra_filters.append(search_filter)
+        registry = getUtility(IRegistry)
+        searchFiltersRecord = registry['advancedsearch.fields']
+
+        if searchFiltersRecord:
+            advancedfields = list(searchFiltersRecord)
+
+            for param, value in params:
+                if param in advancedfields:
+                    if value:
+                        q = "&".join(["%s=%s" %(p, v) for p, v in params if p != param])
+                        search_filter = {}
+                        search_filter["param"] = param
+                        search_filter["value"] = value
+                        search_filter["link"] = self.context.absolute_url()+"/@@search?%s" %(q)
+                        extra_filters.append(search_filter)
 
         return extra_filters
 
@@ -424,45 +444,14 @@ class SearchView(CommonBrowserView, Search):
         searchFilters = []
         registry = getUtility(IRegistry)
         searchFiltersRecord = registry['searchfilters.folders']
-        filters = list(searchFiltersRecord)
+        if searchFiltersRecord:
+            filters = list(searchFiltersRecord)
 
-        for uid in filters:
-            item = uuidToCatalogBrain(uid)
-            if item:
-                searchFilters.append({"name": item.Title, "path": item.getPath()})
-
-        return searchFilters
-
-class AdvancedSearchView(CommonBrowserView, Search):
-    """
-    Adding to Search view
-    """
-
-    def getItemTitle(self, item):
-        title = item.Title()
-
-        if item.portal_type == "Object":
-            if item.identification_identification_objectNumber:
-                title = "%s - %s" %(item.identification_identification_objectNumber, title)
-
-        return title
-
-    def checkUserPermission(self):
-        sm = getSecurityManager()
-        if sm.checkPermission(ModifyPortalContent, self.context):
-            return True
-        return False
-
-    def getSearchFilters(self):
-        searchFilters = []
-        registry = getUtility(IRegistry)
-        searchFiltersRecord = registry['searchfilters.folders']
-        filters = list(searchFiltersRecord)
-
-        for uid in filters:
-            item = uuidToCatalogBrain(uid)
-            if item:
-                searchFilters.append({"name": item.Title, "path": item.getPath()})
+            if filters:
+                for uid in filters:
+                    item = uuidToCatalogBrain(uid)
+                    if item:
+                        searchFilters.append({"name": item.Title, "path": item.getPath()})
 
         return searchFilters
     

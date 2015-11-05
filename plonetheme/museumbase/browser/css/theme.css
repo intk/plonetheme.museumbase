@@ -13658,6 +13658,27 @@ a.advanced-search {
     background-color: rgba(0,0,0,0.0) !important;
 }
 
+.overlay-ajax #layout-contents {
+    background-color: #ffffff;
+}
+
+.overlay-ajax .documentDescription {
+    background-color: #ffffff;
+}
+
+.overlay-ajax #layout-contents textarea {
+    height: 200px;
+    width: 100%;
+}
+
+.overlay-ajax div {
+    background-color: #ffffff;
+}
+
+.overlay-ajax #layout-contents {
+    padding: 25px;
+}
+
 
 
 /******************/

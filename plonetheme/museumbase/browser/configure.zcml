@@ -44,7 +44,7 @@
 
     <browser:page
         name="advancedsearch"
-        class=".views.AdvancedSearchView"
+        class=".advanced_search.views.AdvancedSearchView"
         permission="zope2.View"
         for="*"
         layer=".interfaces.IThemeSpecific"

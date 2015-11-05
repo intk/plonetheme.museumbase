@@ -38,6 +38,7 @@
           st python:request.get('SearchableText', '');
           lang python: getattr(context, 'language', 'en');
           input_placeholder python: 'Type om te zoeken' if lang == 'nl' else 'Type to search';
+          advanced_fields python: view.getAdvancedFields();
           ">
 
           <div id="search-page-header">
@@ -51,32 +52,27 @@
                id="search_input"
                title="Search Site"
                placeholder="Search site"
+               tal:attributes="value st"
                i18n:attributes="title title_search_title; placeholder title_search_title"
                />
                
-             
           </div>
 
           <div class="input-wrapper container-fluid" i18n:domain="collective.object">
-
-            <div class="form-group field">
-              <label for="Title" class="col-sm-2 control-label" i18n:translate="">Title</label>
-              <div class="col-sm-10">
-                <input type="text" name="Title" class="form-control" id="Title" placeholder=""
-                i18n:attributes="placeholder"
-                >
-              </div>
-            </div>
-
-            <div class="form-group field">
-              <label for="identification_identification_objectNumber" class="col-sm-2 control-label" i18n:translate="">Object number</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="identification_identification_objectNumber" placeholder="" i18n:attributes="placeholder" 
-                name="identification_identification_objectNumber">
-              </div>
-            </div>
-            
-            
+            <tal:extra_fields tal:repeat="field advanced_fields">
+              <tal:field 
+                tal:define="field_label field">
+                  <div class="form-group field">
+                    <label class="col-sm-2 control-label" i18n:translate="" tal:attributes="for field;" tal:content="field">Title</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" placeholder=""
+                      i18n:attributes="placeholder"
+                      tal:attributes="name field; id field; value python: request.get(field, '')"
+                      >
+                    </div>
+                  </div>
+              </tal:field>
+            </tal:extra_fields>
 
             <div class="col-sm-12" i18n:domain="plone">
               <input class="searchPage searchButton btn btn-inverse"
