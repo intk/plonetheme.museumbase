@@ -13679,7 +13679,23 @@ a.advanced-search {
     padding: 25px;
 }
 
+#form-widgets-notes_free_fields th.cell-1 {
+    width: 130px;
+}
 
+#form-widgets-notes_free_fields th.cell-2 {
+    width: 155px;
+}
+
+#form-widgets-notes_free_fields th.cell-3 {
+    width: 112px;
+}
+
+#form-widgets-notes_free_fields .option .single-checkbox-widget {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
 
 /******************/
 /* MEDIA QUERIES  */

@@ -697,6 +697,19 @@ class ObjectFields(DefaultView):
         else:
             _ = MessageFactory('collective.objec')
 
+        for widget in self.widgets.values():
+            try:
+                _label = _(widget.label)
+                label = self.context.translate(_label)
+                new_field = {label:widget.value}
+                json.dumps(new_field)
+                data.append(new_field)
+            except:
+                _label = _(widget.label)
+                label = self.context.translate(_label)
+                new_field = {label:str(widget.value)}
+                data.append(new_field)
+                
         for group in self.groups:
             new_group = []
             for widget in group.widgets.values():
@@ -715,6 +728,10 @@ class ObjectFields(DefaultView):
             _group_label = _(group.label)
             group_label = self.context.translate(_group_label)
             data.append({group_label:new_group})
+
+        
+
+
 
         result = json.dumps(data)
         return result
