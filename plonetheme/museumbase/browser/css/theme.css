@@ -13800,6 +13800,10 @@ body.no-img-slideshow div#plone-document-byline {
     padding-top: 400px;
 }
 
+div.template-edit ul.select2-choices .select2-search-choice div {
+    text-decoration: underline;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
