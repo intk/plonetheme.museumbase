@@ -33,6 +33,7 @@ from collective.leadmedia.interfaces import ICanContainMedia
 from zope.interface import implements
 from plone.app.uuid.utils import uuidToCatalogBrain, uuidToObject
 from z3c.relationfield.interfaces import IRelationValue
+from plone.app.layout.viewlets.content import DocumentBylineViewlet
 
 SHOP_AVAILABLE = True
 
@@ -737,7 +738,11 @@ class ObjectFields(DefaultView):
         return result
 
 
+class CustomDocumentByLineViewlet(DocumentBylineViewlet):
+    render = ViewPageTemplateFile("templates/document_byline.pt")
     
+
+
 
 
 

@@ -13671,10 +13671,6 @@ a.advanced-search {
     width: 100%;
 }
 
-.overlay-ajax div {
-    background-color: #ffffff;
-}
-
 .overlay-ajax #layout-contents {
     padding: 25px;
 }
@@ -13695,6 +13691,97 @@ a.advanced-search {
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+.template-versions_history_form #slickslideshow {
+    display: none;
+}
+
+.template-versions_history_form #content {
+    padding-top: 100px;
+    width: 980px;
+    margin: 0 auto; 
+}
+
+.overlay-history .version-table-version {
+    display: none !important;
+}
+
+.overlay-history #content-core {
+    padding: 20px;
+}
+
+div.overlay div.close {
+    background-image: url("++resource++plonetheme.museumbase.css/pb_close.png");
+    position: absolute;
+    left: -14px;
+    top: -14px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+}
+
+.overlay-ajax div {
+    background-color: none !important;
+}
+
+.pb-ajax, .pb-image, .overlay iframe {
+    background-color: #fff;
+    border: 1px solid #999;
+    white-space: normal;
+    box-shadow: 0 0 3em 0.5em #666;
+    -moz-box-shadow: 0 0 3em 0.5em #666;
+    -webkit-box-shadow: 0 0 3em #666;
+    overflow: auto;
+}
+
+.overlay-history ul {
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-bottom: auto;
+}
+
+.overlay-history td {
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle !important;
+}
+
+.overlay-history table {
+    width: 100%;
+    font-family: 'Merriweather', serif;
+    font-size: 0.875em;
+}
+
+.overlay-history {
+    width: 900px;
+}
+
+.overlay-history input.standalone {
+    background: #0095da;
+    font-family: 'Merriweather', serif;
+    color: #ffffff;
+    font-size: 0.875em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #0095da;
+    border-radius: 30px;
+    padding: 8px 16px !important;
+}
+.overlay-history input.standalone:hover {
+    background: #000000;
+    font-family: 'Merriweather', serif;
+    color: #ffffff;
+    font-size: 0.875em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+    border-radius: 30px;
+    padding: 8px 16px !important;
+}
+
+div#plone-document-byline {
+    padding-left: 40px;
+    padding-top: 30px;
 }
 
 /******************/

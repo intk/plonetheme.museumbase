@@ -131,6 +131,14 @@
       layer="plone.app.multilingual.interfaces.IPloneAppMultilingualInstalled"
     />
 
+    <browser:viewlet
+        name="plonetheme.museumbase.documentbyline"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+        class=".views.CustomDocumentByLineViewlet"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
     <!-- Pages -->
 
     <browser:page
