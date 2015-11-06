@@ -13125,7 +13125,7 @@ body.template-edit #content span.pattern-relateditems-item-title a:visited {
 }
 
 body.no-img-slideshow #edit-content-views {
-    padding-top: 400px !important;
+    padding-top: 40px !important;
 }
 
 body.no-img-slideshow.userrole-authenticated #content h1.documentFirstHeading {
@@ -13782,6 +13782,22 @@ div.overlay div.close {
 div#plone-document-byline {
     padding-left: 40px;
     padding-top: 30px;
+}
+
+body.portaltype-folder div#plone-document-byline {
+    display: none !important;
+}
+
+body.portaltype-portlet-page div#plone-document-byline {
+    display: none !important;
+}
+
+body.template-collection_view div#plone-document-byline {
+    display: none !important;
+}
+
+body.no-img-slideshow div#plone-document-byline {
+    padding-top: 400px;
 }
 
 /******************/

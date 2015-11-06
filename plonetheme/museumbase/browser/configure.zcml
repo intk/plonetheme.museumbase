@@ -133,7 +133,7 @@
 
     <browser:viewlet
         name="plonetheme.museumbase.documentbyline"
-        manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
         class=".views.CustomDocumentByLineViewlet"
         layer=".interfaces.IThemeSpecific"
         permission="zope2.View"

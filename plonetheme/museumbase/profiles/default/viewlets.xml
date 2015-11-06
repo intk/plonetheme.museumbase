@@ -46,6 +46,7 @@
     </order>
 
     <order manager="plone.belowcontentbody" skinname="*">
+        <viewlet name="plonetheme.museumbase.documentbyline" insert-after="*"/>
          <viewlet name="bda.plone.shop.buyable" insert-before="*"/>
     </order>
 
@@ -58,7 +59,7 @@
     </order>
 
     <order manager="plone.belowcontenttitle" skinname="*">
-        <viewlet name="plonetheme.museumbase.documentbyline" insert-after="*"/>
+
         <viewlet name="plone.belowcontenttitle.documentbyline" />
         
     </order>
