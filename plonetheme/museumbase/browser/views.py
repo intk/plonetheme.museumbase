@@ -7,6 +7,8 @@ from AccessControl import getSecurityManager
 from Products.CMFPlone.PloneBatch import Batch
 from Products.CMFCore.permissions import ModifyPortalContent
 from plone.dexterity.browser.view import DefaultView
+from plone.app.contentlisting.interfaces import IContentListing
+from Products.ZCTextIndex.ParseTree import ParseError
 
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -392,6 +394,35 @@ class SearchView(CommonBrowserView, Search):
     Adding to Search view
     """
 
+    def results(self, query=None, batch=True, b_size=10, b_start=0):
+        """ Get properly wrapped search results from the catalog.
+        Everything in Plone that performs searches should go through this view.
+        'query' should be a dictionary of catalog parameters.
+        """
+        if query is None:
+            query = {}
+        if batch:
+            query['b_start'] = b_start = int(b_start)
+            query['b_size'] = b_size
+        query = self.filter_query(query)
+
+        if query is None:
+            results = []
+        else:
+            if 'identification_identification_objectNumber' in query:
+                query['identification_identification_objectNumber'] = query['identification_identification_objectNumber'].lower()
+                
+            catalog = getToolByName(self.context, 'portal_catalog')
+            try:
+                results = catalog(**query)
+            except ParseError:
+                return []
+
+        results = IContentListing(results)
+        if batch:
+            results = Batch(results, b_size, b_start)
+        return results
+
     def getItemTitle(self, item):
         title = item.Title()
 
@@ -732,10 +763,6 @@ class ObjectFields(DefaultView):
             group_label = self.context.translate(_group_label)
             data.append({group_label:new_group})
 
-        
-
-
-
         result = json.dumps(data)
         return result
 
@@ -775,7 +802,7 @@ class CustomDocumentByLineViewlet(DocumentBylineViewlet):
             return parent.absolute_url()
         except Unauthorized:
             return None
-            
+
     
 
 
