@@ -13577,6 +13577,12 @@ body.template-advancedsearch input.main-search {
     display: block;
 }
 
+@media (max-width: 991px) {
+    body.template-advancedsearch input.main-search {
+        width: 90%;
+    }
+}
+
 body.template-advancedsearch #search-page-header {
     background-color: rgba(0,0,0,0.2);
 }
@@ -13637,11 +13643,12 @@ body.template-advancedsearch .field input[type="text"] {
 }
 
 a.advanced-search {
-    width: 25%;
+    width: auto;
     margin: 0 auto;
     display: block;
     padding-top: 60px;
     color: #ffffff !important;
+    text-align: center;
 }
 
 #content a.advanced-search:hover {
@@ -13802,6 +13809,10 @@ body.no-img-slideshow div#plone-document-byline {
 
 div.template-edit ul.select2-choices .select2-search-choice div {
     text-decoration: underline;
+}
+
+#fieldscontainer {
+    width: 50%;
 }
 
 /******************/

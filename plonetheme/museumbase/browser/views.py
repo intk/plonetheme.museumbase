@@ -34,6 +34,8 @@ from zope.interface import implements
 from plone.app.uuid.utils import uuidToCatalogBrain, uuidToObject
 from z3c.relationfield.interfaces import IRelationValue
 from plone.app.layout.viewlets.content import DocumentBylineViewlet
+from Acquisition import aq_parent, aq_inner
+from Products.CMFPlone.interfaces import IPloneSiteRoot
 
 SHOP_AVAILABLE = True
 
@@ -740,6 +742,40 @@ class ObjectFields(DefaultView):
 
 class CustomDocumentByLineViewlet(DocumentBylineViewlet):
     render = ViewPageTemplateFile("templates/document_byline.pt")
+
+    def parent_url(self):
+        """
+        """
+        context = aq_inner(self.context)
+        portal_membership = getToolByName(context, 'portal_membership')
+
+        obj = context
+
+        checkPermission = portal_membership.checkPermission
+
+        # Abort if we are at the root of the portal
+        if IPloneSiteRoot.providedBy(context):
+            return None
+
+        # Get the parent. If we can't get it (unauthorized), use the portal
+        parent = aq_parent(obj)
+
+        # We may get an unauthorized exception if we're not allowed to access
+        # the parent. In this case, return None
+        try:
+            if getattr(parent, 'getId', None) is None or \
+                    parent.getId() == 'talkback':
+                # Skip any Z3 views that may be in the acq tree;
+                # Skip past the talkback container if that's where we are
+                parent = aq_parent(parent)
+
+            if not checkPermission('List folder contents', parent):
+                return None
+
+            return parent.absolute_url()
+        except Unauthorized:
+            return None
+            
     
 
 

@@ -83,4 +83,15 @@
     </div>
   </tal:rights>
 
+  <div>
+    <a href=""
+      class="link-parent"
+      tal:define="parent_url view/parent_url"
+      tal:condition="python: parent_url and getattr(context, 'portal_type', None) == 'Image'"
+      tal:attributes="href string:${parent_url}/folder_contents"
+      i18n:translate="go_to_parent_url">
+      Up one level
+    </a>
+  </div>
 </div>
+
