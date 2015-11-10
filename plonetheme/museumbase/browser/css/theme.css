@@ -13815,6 +13815,14 @@ div.template-edit ul.select2-choices .select2-search-choice div {
     width: 50%;
 }
 
+#content .select2-search-choice a {
+    line-height: 0px !important;
+}
+
+#content .select2-search-choice a:visited {
+    line-height: 0px !important;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
