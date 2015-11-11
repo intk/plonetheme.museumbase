@@ -413,7 +413,7 @@ class SearchView(CommonBrowserView, Search):
                 query['identification_identification_objectNumber'] = query['identification_identification_objectNumber'].lower()
 
             if 'identification__identification_collections' in query:
-                query['identification__identification_collections'] = query['identification__identification_collections'].split(";")
+                query['identification__identification_collections'] = query['identification__identification_collections'].split("_")
                 
             catalog = getToolByName(self.context, 'portal_catalog')
             try:
