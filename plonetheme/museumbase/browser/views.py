@@ -427,8 +427,11 @@ class SearchView(CommonBrowserView, Search):
         title = item.Title()
 
         if item.portal_type == "Object":
-            if item.identification_identification_objectNumber:
-                title = "%s - %s" %(item.identification_identification_objectNumber.encode('ascii','ignore'), title.encode('ascii', 'ignore'))
+            try:
+                if item.identification_identification_objectNumber:
+                    title = "%s - %s" %(item.identification_identification_objectNumber.encode('ascii','ignore'), title.encode('ascii', 'ignore'))
+            except:
+                title = item.Title()
 
         return title
 
