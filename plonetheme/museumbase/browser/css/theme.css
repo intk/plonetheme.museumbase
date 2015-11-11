@@ -13831,6 +13831,18 @@ body.template-advancedsearch .select2-container {
     height: 37px !important;
 }
 
+body.template-folder_contents div.title-description-wrapper {
+    height: 400px !important;
+}
+
+body.template-folder_contents h1.documentFirstHeading {
+    display: block !important;
+}
+
+body.template-folder_contents #portal-header {
+    background: #f5f5f5 !important;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/

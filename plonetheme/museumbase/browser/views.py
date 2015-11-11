@@ -420,10 +420,13 @@ class SearchView(CommonBrowserView, Search):
                 results = catalog(**query)
             except ParseError:
                 return []
+            except UnicodeDecodeError:
+                return []
 
         results = IContentListing(results)
         if batch:
             results = Batch(results, b_size, b_start)
+
         return results
 
     def getItemTitle(self, item):
