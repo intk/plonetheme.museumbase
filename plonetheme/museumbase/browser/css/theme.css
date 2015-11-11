@@ -13823,6 +13823,14 @@ div.template-edit ul.select2-choices .select2-search-choice div {
     line-height: 0px !important;
 }
 
+body.template-advancedsearch #advanced-search-wrapper input:not(.searchButton):not(.main-search) {
+    height: 37px !important;
+}
+
+body.template-advancedsearch .select2-container {
+    height: 37px !important;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/

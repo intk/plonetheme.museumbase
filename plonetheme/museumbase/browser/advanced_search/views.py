@@ -13,15 +13,6 @@ class AdvancedSearchView(CommonBrowserView, Search):
     Adding to Search view
     """
 
-    def getItemTitle(self, item):
-        title = item.Title()
-
-        if item.portal_type == "Object":
-            if item.identification_identification_objectNumber:
-                title = "%s - %s" %(item.identification_identification_objectNumber, title)
-
-        return title
-
     def checkUserPermission(self):
         sm = getSecurityManager()
         if sm.checkPermission(ModifyPortalContent, self.context):
@@ -29,12 +20,36 @@ class AdvancedSearchView(CommonBrowserView, Search):
         return False
 
     def getAdvancedFields(self):
+        advanced_widgets = {
+            'identification__identification_collections': {
+                'data': '{"orderable": true, "vocabularyUrl": "%s/@@getVocabulary?name=collective.object.collection&field=identification_identification_collections", "initialValues": {}, "separator": "_"}' % (self.context.absolute_url())
+            },
+        }
+        
         searchFilters = []
         registry = getUtility(IRegistry)
         searchFiltersRecord = registry['advancedsearch.fields']
         if searchFiltersRecord:
             filters = list(searchFiltersRecord)
             if filters:
-                searchFilters = [advanced_filter for advanced_filter in filters if advanced_filter != ""]
+                for advanced_filter in filters:
+                    if advanced_filter != "":
+                        is_widget = False
+                        data_select = ""
+                        if advanced_filter in advanced_widgets:
+                            is_widget = True
+                            data_select = advanced_widgets[advanced_filter]['data']
+
+                        new_filter = {
+                            "name": advanced_filter,
+                            "is_widget": is_widget,
+                            "select2_data": data_select
+                        }
+
+                        searchFilters.append(new_filter)
+                    else:
+                        continue
+            else:
+                return searchFilters
 
         return searchFilters

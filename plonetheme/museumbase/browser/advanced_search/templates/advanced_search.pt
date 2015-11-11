@@ -58,17 +58,29 @@
                
           </div>
 
-          <div class="input-wrapper container-fluid" i18n:domain="collective.object">
+          <div class="input-wrapper container-fluid" i18n:domain="collective.object" id="advanced-search-wrapper">
             <tal:extra_fields tal:repeat="field advanced_fields">
               <tal:field 
-                tal:define="field_label field">
+                tal:define="field_label python:field['name'];
+                            is_widget python:field['is_widget'];
+                            select2_data python: field['select2_data'];">
+
                   <div class="form-group field">
-                    <label class="col-sm-2 control-label" i18n:translate="" tal:attributes="for field;" tal:content="field">Title</label>
+                    <label class="col-sm-2 control-label" i18n:translate="" tal:attributes="for field_label;" tal:content="field_label">Title</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" placeholder=""
-                      i18n:attributes="placeholder"
-                      tal:attributes="name field; id field; value python: request.get(field, '')"
-                      >
+
+                      <tal:notwidget tal:condition="not:is_widget">
+                        <input type="text" class="form-control" placeholder=""
+                        i18n:attributes="placeholder"
+                        tal:attributes="name field_label; id field_label; value python: request.get(field_label, '')"
+                        >
+                      </tal:notwidget>
+                      
+                      <tal:iswidget tal:condition="is_widget">
+                        <input class="pat-select2 select2-offscreen" type="text" name="" value="" data-pat-select2="" tabindex="-1"
+                          tal:attributes="name field_label; id field_label; value python: request.get(field_label, ''); data-pat-select2 select2_data">
+                      </tal:iswidget>
+
                     </div>
                   </div>
               </tal:field>

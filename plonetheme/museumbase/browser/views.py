@@ -411,6 +411,9 @@ class SearchView(CommonBrowserView, Search):
         else:
             if 'identification_identification_objectNumber' in query:
                 query['identification_identification_objectNumber'] = query['identification_identification_objectNumber'].lower()
+
+            if 'identification__identification_collections' in query:
+                query['identification__identification_collections'] = query['identification__identification_collections'].split(";")
                 
             catalog = getToolByName(self.context, 'portal_catalog')
             try:
@@ -462,13 +465,33 @@ class SearchView(CommonBrowserView, Search):
             for param, value in params:
                 if param in advancedfields:
                     if value:
-                        q = "&".join(["%s=%s" %(p, v) for p, v in params if p != param])
-                        search_filter = {}
-                        search_filter["param"] = param
-                        search_filter["value"] = value
-                        search_filter["link"] = self.context.absolute_url()+"/@@search?%s" %(q)
-                        extra_filters.append(search_filter)
+                        if param in ['identification__identification_collections']:
+                            list_fields = value.split("_")
+                            curr = 0
+                            for field in list_fields:
+                                curr += 1
+                                q = "&".join(["%s=%s" %(p, v) for p, v in params if p != param])
 
+                                new_list_field = [f for f in list_fields if f != field]
+                                new_string = "_".join(new_list_field)
+                                q += "&%s=%s" %(param, new_string)
+
+                                search_filter = {}
+                                if curr > 1:
+                                    search_filter["param"] = ''
+                                else:
+                                    search_filter["param"] = param
+                                search_filter["value"] = field
+                                search_filter["link"] = self.context.absolute_url()+"/@@search?%s" %(q)
+                                extra_filters.append(search_filter)
+                        else:
+                            q = "&".join(["%s=%s" %(p, v) for p, v in params if p != param])
+                            search_filter = {}
+                            search_filter["param"] = param
+                            search_filter["value"] = value
+                            search_filter["link"] = self.context.absolute_url()+"/@@search?%s" %(q)
+                            extra_filters.append(search_filter)
+                            
         return extra_filters
 
     def checkUserPermission(self):

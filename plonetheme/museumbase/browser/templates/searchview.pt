@@ -246,7 +246,7 @@
                               tal:define="extra_filters python: view.getExtraFilters()">
                               <p tal:condition="extra_filters" tal:content="python: 'Verfijnen: ' if getattr(context, 'language', None) == 'nl' else 'Refine: '"></p>
                               <tal:items repeat="extra_filter extra_filters">
-                                <p i18n:translate=""><span i18n:translate="" tal:content="python: extra_filter['param']"></span>: <span tal:content="python: extra_filter['value']"></span><span> <a tal:attributes="href python: extra_filter['link']" class="glyphicon glyphicon-remove extra-filter-remove"></a></span></p>
+                                <p i18n:translate=""><tal:hasparam tal:condition="python: extra_filter['param'] != ''"><span i18n:translate="" tal:content="python: extra_filter['param']"></span>: </tal:hasparam><span tal:content="python: extra_filter['value']"></span><span> <a tal:attributes="href python: extra_filter['link']" class="glyphicon glyphicon-remove extra-filter-remove"></a></span></p>
                               </tal:items>
                             </tal:define_extra>
                             </div>
