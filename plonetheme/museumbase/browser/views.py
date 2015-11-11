@@ -428,7 +428,7 @@ class SearchView(CommonBrowserView, Search):
 
         if item.portal_type == "Object":
             if item.identification_identification_objectNumber:
-                title = "%s - %s" %(item.identification_identification_objectNumber, title)
+                title = "%s - %s" %(item.identification_identification_objectNumber.encode('ascii','ignore'), title.encode('ascii', 'ignore'))
 
         return title
 
