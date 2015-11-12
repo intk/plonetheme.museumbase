@@ -13843,6 +13843,15 @@ body.template-folder_contents #portal-header {
     background: #f5f5f5 !important;
 }
 
+body.template-advancedsearch #advanced-search-wrapper input.select2-input {
+    padding-top: 6px !important;
+}
+
+body.template-advancedsearch #advanced-search-wrapper input {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/

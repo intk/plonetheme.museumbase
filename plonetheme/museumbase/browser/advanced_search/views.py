@@ -20,10 +20,22 @@ class AdvancedSearchView(CommonBrowserView, Search):
         return False
 
     def getAdvancedFields(self):
+
+        context_url = self.context.absolute_url()
+
         advanced_widgets = {
             'identification__identification_collections': {
-                'data': '{"orderable": true, "vocabularyUrl": "%s/@@getVocabulary?name=collective.object.collection&field=identification_identification_collections", "initialValues": {}, "separator": "_"}' % (self.context.absolute_url())
+                'data': '{"orderable": true, "vocabularyUrl": "%s/@@getVocabulary?name=collective.object.collection&field=identification_identification_collections", "initialValues": {}, "separator": "_"}' % (context_url)
             },
+            'physicalCharacteristics__material': {
+                'data': '{"orderable": true, "vocabularyUrl": "%s/@@getVocabulary?name=collective.object.materials&field=material", "initialValues": {}, "separator": "_"}' % (context_url)
+            },
+            'physicalCharacteristics__technique': {
+                'data': '{"orderable": true, "vocabularyUrl": "%s/@@getVocabulary?name=collective.object.techniques&field=technique", "initialValues": {}, "separator": "_"}' % (context_url)
+            },
+            'identification__objectName_objectname_type': {
+                'data':'{"orderable": true, "vocabularyUrl": "%s/@@getVocabulary?name=collective.object.objectname_type&field=types", "initialValues": {}, "separator": "_"}' % (context_url)
+            }
         }
         
         searchFilters = []

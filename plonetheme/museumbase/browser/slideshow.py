@@ -1,5 +1,5 @@
-
-#Slideshow theme specific
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 from Products.Five import BrowserView
 import json
