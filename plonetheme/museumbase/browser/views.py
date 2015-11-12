@@ -483,6 +483,8 @@ class SearchView(CommonBrowserView, Search):
         if searchFiltersRecord:
             advancedfields = list(searchFiltersRecord)
 
+            advancedfields.append('path')
+
             for param, value in params:
                 if param in advancedfields:
                     if value:
