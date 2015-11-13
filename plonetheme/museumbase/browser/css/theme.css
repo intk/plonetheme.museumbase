@@ -13944,6 +13944,154 @@ body.userrole-authenticated #content-core p.discreet {
     width: auto;
 }
 
+body.template-vocabularytool_view .btn,
+body.template-simplevocabulary_view .btn {
+    background: #0095da;
+    font-family: 'Merriweather', serif;
+    color: #ffffff;
+    font-size: 0.875em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #0095da;
+    border-radius: 30px;
+    padding: 8px 16px !important;
+}
+
+body.template-vocabularytool_view .btn:hover,
+body.template-simplevocabulary_view .btn:hover {
+    background: #000000;
+    font-family: 'Merriweather', serif;
+    color: #ffffff;
+    font-size: 0.875em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+    border-radius: 30px;
+    padding: 8px 16px !important;
+}
+
+body.template-vocabularytool_view #content h1.documentFirstHeading,
+body.template-simplevocabulary_view #content h1.documentFirstHeading  {
+    padding-top: 100px !important;
+}
+
+body.template-vocabularytool_view #portlet-prefs,
+body.template-simplevocabulary_view #portlet-prefs {
+    padding-top: 80px;
+}
+
+body.template-vocabularytool_view .portletItem ul,
+body.template-simplevocabulary_view .portletItem ul {
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+body.template-overview-controlpanel #content {
+    width: 980px;
+    margin: 0 auto;
+}
+
+body.template-overview-controlpanel div.portalMessage {
+    padding: 0px !important;
+}
+
+body.template-overview-controlpanel #content ul.configlets {
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+}
+
+body.template-overview-controlpanel {
+    font-size: 0.875em;
+}
+
+body.template-vocabularytool_view label,
+body.template-simplevocabulary_view label {
+    margin-bottom: 0px !important;
+    margin-top: 5px !important;
+}
+
+body.template-vocabularytool_view #content legend,
+body.template-simplevocabulary_view #content legend  {
+    padding-top: 30px;
+}
+
+body.template-vocabularytool_view #content h2,
+body.template-simplevocabulary_view #content h2 {
+    padding-top: 30px;
+}
+
+body.template-vocabularytool_view #content .field,
+body.template-simplevocabulary_view #content .field {
+    padding-top: 10px;
+}
+
+body.template-vocabularytool_view form[name="folderContentsForm"],
+body.template-simplevocabulary_view form[name="folderContentsForm"] {
+    padding-top: 20px;
+}
+
+
+body.template-vocabularytool_view #content table td,
+body.template-vocabularytool_view #content table th, 
+body.template-simplevocabulary_view #content table td,
+body.template-simplevocabulary_view #content table th {
+    padding: 5px !important;
+    vertical-align: middle !important;
+}
+
+body.template-base_edit.portaltype-simplevocabularyterm #content form {
+    width: 980px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+body.template-base_edit.portaltype-simplevocabularyterm .formControls {
+    margin: 0px;
+}
+
+body.template-base_edit.portaltype-simplevocabularyterm p.discreet {
+    width: 980px;
+    margin: 0 auto;
+    display: block;
+}
+
+body.template-base_edit.portaltype-simplevocabularyterm .btn {
+    font-family: 'Merriweather', serif;
+    color: #ffffff;
+    font-size: 0.875em;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 30px;
+    padding: 8px 16px !important;
+}
+
+body.template-base_edit.portaltype-simplevocabularyterm fieldset {
+    padding-top: 20px;
+}
+
+body.template-base_edit.portaltype-simplevocabularyterm h1.documentFirstHeading {
+    padding-top: 140px !important;
+}
+
+body.template-base_view.portaltype-simplevocabularyterm #plone-document-byline {
+    padding-top: 370px;
+}
+
+body.template-base_view.portaltype-simplevocabularyterm div.title-description-wrapper {
+    background: #f5f5f5;
+}
+
+body.template-base_view.portaltype-simplevocabularyterm #content h1.documentFirstHeading {
+    margin-bottom: 150px !important;
+    padding-top: 150px !important;
+}
+
+body.template-base_view.portaltype-simplevocabularyterm #content-core {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 50px;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
