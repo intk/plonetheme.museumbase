@@ -140,6 +140,14 @@ msgstr "Type om te zoeken"
 msgid 'path'
 msgstr "pad"
 
+#: ../object.py
+msgid "Body"
+msgstr "Tekst"
+
+#: ../object.py
+msgid "Description"
+msgstr "Beschrijving"
+
 
 
 
