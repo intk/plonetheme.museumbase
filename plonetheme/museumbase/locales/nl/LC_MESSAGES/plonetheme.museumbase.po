@@ -148,6 +148,12 @@ msgstr "Tekst"
 msgid "Description"
 msgstr "Beschrijving"
 
+#: ../object.py
+msgid "Creator"
+msgstr "Auteur"
+
+
+
 
 
 
