@@ -13923,6 +13923,27 @@ body.template-prefs_keywords_view #content .btn:hover {
     padding: 8px 16px !important;   
 }
 
+body.userrole-authenticated form[class*="kssattr-formname-++add++"] {
+    width: 980px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+body.userrole-authenticated form[class*="kssattr-formname-++add++"] .formControls {
+    margin: 0px !important;
+}
+
+body.userrole-authenticated #content-core p.discreet {
+    display:none;
+}
+
+#content-core table.ordered-selection-field td {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width: auto;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
