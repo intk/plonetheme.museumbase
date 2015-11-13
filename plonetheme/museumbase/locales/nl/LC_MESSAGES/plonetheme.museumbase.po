@@ -92,6 +92,53 @@ msgstr "Met dit ticket hoeft u niet langs de kassa. U heeft directe toegang tot 
 msgid "This ticket is not redeemable for cash or for a ticket for a later time."
 msgstr "Dit ticket is niet inwisselbaar voor geld, of voor een entreebewijs voor een wordt gescand bij entree."
 
+#: ../object.py
+msgid 'identification_identification_objectNumber'
+msgstr 'Objectnummer'
+
+#: ../object.py
+msgid 'titleAuthorImprintCollation_titleAuthor_author'
+msgstr 'Auteur'
+
+#: ../object.py
+msgid 'titleAuthorImprintCollation_imprint_year'
+msgstr 'Jaar'
+
+#: ../object.py
+msgid 'identification_objectName_objectname_type'
+msgstr 'Soort object'
+
+#: ../object.py
+msgid 'physicalCharacteristics_materials'
+msgstr 'Materiaal'
+
+#: ../object.py
+msgid 'identification_identification_collection'
+msgstr 'Collectie'
+
+#: ../object.py
+msgid 'physicalCharacteristics_techniques'
+msgstr 'Techniek'
+
+#: ../object.py
+msgid 'productionDating_productionDating_maker'
+msgstr 'Vervaardiger'
+
+#: ../object.py
+msgid 'identification_taxonomy_commonName'
+msgstr "Populaire naam"
+
+#: ../object.py
+msgid 'Title'
+msgstr "Titel"
+
+#: ../object.py
+msgid 'type_to_search'
+msgstr "Type om te zoeken"
+
+#: ../object.py
+msgid 'path'
+msgstr "pad"
 
 
 

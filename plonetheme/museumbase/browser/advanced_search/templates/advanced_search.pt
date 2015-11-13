@@ -59,7 +59,7 @@
                
           </div>
 
-          <div class="input-wrapper container-fluid" i18n:domain="collective.object" id="advanced-search-wrapper">
+          <div class="input-wrapper container-fluid" i18n:domain="plonetheme.museumbase" id="advanced-search-wrapper">
             <tal:extra_fields tal:repeat="field advanced_fields">
               <tal:field 
                 tal:define="field_label python:field['name'];

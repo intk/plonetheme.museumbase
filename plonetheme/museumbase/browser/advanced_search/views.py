@@ -24,16 +24,16 @@ class AdvancedSearchView(CommonBrowserView, Search):
         context_url = self.context.absolute_url()
 
         advanced_widgets = {
-            'identification__identification_collections': {
+            'identification_identification_collection': {
                 'data': '{"orderable": true, "vocabularyUrl": "%s/@@getVocabulary?name=collective.object.collection&field=identification_identification_collections", "initialValues": {}, "separator": "_"}' % (context_url)
             },
-            'physicalCharacteristics__material': {
+            'physicalCharacteristics_materials': {
                 'data': '{"orderable": true, "vocabularyUrl": "%s/@@getVocabulary?name=collective.object.materials&field=material", "initialValues": {}, "separator": "_"}' % (context_url)
             },
-            'physicalCharacteristics__technique': {
+            'physicalCharacteristics_techniques': {
                 'data': '{"orderable": true, "vocabularyUrl": "%s/@@getVocabulary?name=collective.object.techniques&field=technique", "initialValues": {}, "separator": "_"}' % (context_url)
             },
-            'identification__objectName_objectname_type': {
+            'identification_objectName_objectname_type': {
                 'data':'{"orderable": true, "vocabularyUrl": "%s/@@getVocabulary?name=collective.object.objectname_type&field=types", "initialValues": {}, "separator": "_"}' % (context_url)
             }
         }

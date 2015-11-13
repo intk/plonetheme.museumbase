@@ -241,7 +241,7 @@
                              </span>
                            </span>
                             
-                            <div class="clearfix extra-fields" i18n:domain="collective.object">
+                            <div class="clearfix extra-fields" i18n:domain="plonetheme.museumbase">
                             <tal:define_extra
                               tal:define="extra_filters python: view.getExtraFilters()">
                               <p tal:condition="extra_filters" tal:content="python: 'Verfijnen: ' if getattr(context, 'language', None) == 'nl' else 'Refine: '"></p>

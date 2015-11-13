@@ -474,8 +474,8 @@ class SearchView(CommonBrowserView, Search):
         extra_filters = []
 
         # Needs fix
-        widget_fields = ['identification__identification_collections', 'physicalCharacteristics__material',
-                         'physicalCharacteristics__technique', 'identification__objectName_objectname_type']
+        widget_fields = ['identification_identification_collection', 'physicalCharacteristics_materials',
+                         'physicalCharacteristics_techniques', 'identification_objectName_objectname_type']
 
         registry = getUtility(IRegistry)
         searchFiltersRecord = registry['advancedsearch.fields']
