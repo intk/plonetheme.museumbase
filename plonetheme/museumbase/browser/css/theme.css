@@ -14005,13 +14005,14 @@ body.template-overview-controlpanel {
 }
 
 body.template-vocabularytool_view label,
-body.template-simplevocabulary_view label {
+body.template-simplevocabulary_view label,
+body.template-base_edit.portaltype-simplevocabulary label {
     margin-bottom: 0px !important;
     margin-top: 5px !important;
 }
 
 body.template-vocabularytool_view #content legend,
-body.template-simplevocabulary_view #content legend  {
+body.template-simplevocabulary_view #content legend {
     padding-top: 30px;
 }
 
@@ -14039,23 +14040,27 @@ body.template-simplevocabulary_view #content table th {
     vertical-align: middle !important;
 }
 
-body.template-base_edit.portaltype-simplevocabularyterm #content form {
+body.template-base_edit.portaltype-simplevocabularyterm #content form,
+body.template-base_edit.portaltype-simplevocabulary #content form {
     width: 980px;
     margin: 0 auto;
     padding-top: 40px;
 }
 
-body.template-base_edit.portaltype-simplevocabularyterm .formControls {
+body.template-base_edit.portaltype-simplevocabularyterm .formControls,
+body.template-base_edit.portaltype-simplevocabulary .formControls {
     margin: 0px;
 }
 
-body.template-base_edit.portaltype-simplevocabularyterm p.discreet {
+body.template-base_edit.portaltype-simplevocabularyterm p.discreet,
+body.template-base_edit.portaltype-simplevocabulary p.discreet {
     width: 980px;
     margin: 0 auto;
     display: block;
 }
 
-body.template-base_edit.portaltype-simplevocabularyterm .btn {
+body.template-base_edit.portaltype-simplevocabularyterm .btn,
+body.template-base_edit.portaltype-simplevocabulary #content .btn {
     font-family: 'Merriweather', serif;
     color: #ffffff;
     font-size: 0.875em;
@@ -14065,11 +14070,13 @@ body.template-base_edit.portaltype-simplevocabularyterm .btn {
     padding: 8px 16px !important;
 }
 
-body.template-base_edit.portaltype-simplevocabularyterm fieldset {
+body.template-base_edit.portaltype-simplevocabularyterm fieldset,
+body.template-base_edit.portaltype-simplevocabulary fieldset {
     padding-top: 20px;
 }
 
-body.template-base_edit.portaltype-simplevocabularyterm h1.documentFirstHeading {
+body.template-base_edit.portaltype-simplevocabularyterm h1.documentFirstHeading,
+body.template-base_edit.portaltype-simplevocabulary h1.documentFirstHeading {
     padding-top: 140px !important;
 }
 
