@@ -10,11 +10,16 @@
 
     <div metal:fill-slot="content-core"
       tal:define="b_start python:request.get('b_start', 0);
-                  batch python:context.results(b_start=b_start);
+                  sort_on python:request.get('sort_on', None);
+                  batch python:context.results(b_start=b_start, sort_on=sort_on);
                   normalizeString nocall: context/plone_utils/normalizeString;">
 
+            
             <div metal:use-macro="context/batch_macros/macros/navigation" />
 
+            <input type="hidden" name="b_start" tal:attributes="value b_start"/>
+
+            <div  id="table-collection">
             <div class="table-responsive">
             <table class="table listing"
                   i18n:attributes="summary"
@@ -24,13 +29,16 @@
                    >
                 <thead>
                     <tr>
-                        <th class="nosort header-title">&nbsp;<tal:title i18n:translate="listingheader_title"
+                        <th class="nosort header-title"
+                          id="title-column">&nbsp;<tal:title i18n:translate="listingheader_title"
                           >Title</tal:title>&nbsp;</th>
                         <th class="nosort header-author"
+                            id="author-column"
                             >&nbsp;<tal:title i18n:translate="listingheader_author"
                           >Author</tal:title>&nbsp;</th>
 
                         <th class="nosort"
+                            id="year-column"
                             >&nbsp;<tal:modified i18n:translate="listingheader_year"
                           >Jaar</tal:modified>&nbsp;</th>
                     </tr>
@@ -87,9 +95,11 @@
                 </tbody>
             </table>
             </div>
+            </div>
         
           <div metal:use-macro="context/batch_macros/macros/navigation" />
           <div class="clearfix"></div>
+        
     </div>
 
 </body>
