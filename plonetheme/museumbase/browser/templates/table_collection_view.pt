@@ -14,12 +14,13 @@
                   batch python:context.results(b_start=b_start, sort_on=sort_on);
                   normalizeString nocall: context/plone_utils/normalizeString;">
 
+            <div  id="table-collection">
             
             <div metal:use-macro="context/batch_macros/macros/navigation" />
 
             <input type="hidden" name="b_start" tal:attributes="value b_start"/>
 
-            <div  id="table-collection">
+            
             <div class="table-responsive">
             <table class="table listing"
                   i18n:attributes="summary"
@@ -95,11 +96,11 @@
                 </tbody>
             </table>
             </div>
-            </div>
+            
         
           <div metal:use-macro="context/batch_macros/macros/navigation" />
           <div class="clearfix"></div>
-        
+          </div>
     </div>
 
 </body>
