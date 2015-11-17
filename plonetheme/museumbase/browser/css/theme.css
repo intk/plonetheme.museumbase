@@ -14111,6 +14111,19 @@ img.tabular-img {
     width: 250px;
 }
 
+body.no-img-slideshow.template-collection_view.portaltype-folder div.title-description-wrapper {
+    background:#f5f5f5 !important;
+}
+
+body.no-img-slideshow.template-collection_view.portaltype-folder #edit-content-views {
+    padding-top: 400px !important
+}
+
+body.no-img-slideshow.template-collection_view.portaltype-folder #content h1.documentFirstHeading {
+    padding-top: 160px !important;
+    margin-bottom: 160px !important;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/

@@ -599,6 +599,16 @@ class FolderListing(CommonBrowserView):
         else:
             return None
 
+    def getItemURL(self, item, item_url):
+        if item.portal_type == "Image":
+            obj = item.getObject()
+            img = getattr(obj, 'image', None)
+            if not img:
+                new_url = "%s/view" %(item_url)
+                return new_url
+
+        return item_url
+
     def __call__(self):
         """"""
         portal_type = self.context.portal_type
