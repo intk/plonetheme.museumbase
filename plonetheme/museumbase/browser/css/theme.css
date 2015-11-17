@@ -14099,6 +14099,10 @@ body.template-base_view.portaltype-simplevocabularyterm #content-core {
     padding-bottom: 50px;
 }
 
+body.portaltype-resource div.template-edit .col-sm-9 {
+    width: 77.3%;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
