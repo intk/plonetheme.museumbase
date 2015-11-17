@@ -14107,6 +14107,10 @@ body[class^="template-collective-"] .object-listing {
     display: none !important;
 }
 
+img.tabular-img {
+    width: 250px;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/

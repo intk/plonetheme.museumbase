@@ -152,7 +152,9 @@ msgstr "Beschrijving"
 msgid "Creator"
 msgstr "Auteur"
 
-
+#: ../object.py
+msgid "location_currentlocation"
+msgstr "Standplaats"
 
 
 

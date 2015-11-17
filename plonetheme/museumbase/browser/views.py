@@ -692,6 +692,52 @@ class TableView(BrowserView):
     index_collection = ViewPageTemplateFile('templates/table_collection_view.pt')
     index_tabular_collection = ViewPageTemplateFile('templates/tabular_collection_view.pt')
 
+    def getMaker(self, item):
+        obj = item.getObject()
+
+        try:
+            if hasattr(obj, 'productionDating_productionDating'):
+                terms = []
+                production = obj.productionDating_productionDating
+                for line in production:
+                    if 'makers' in line:
+                        makers = line['makers']
+                        for maker in makers:
+                            if IRelationValue.providedBy(maker):
+                                maker_obj = maker.to_object
+                                title = getattr(maker_obj, 'title', "")
+                                terms.append(title)
+                            elif getattr(maker, 'portal_type', "") == "PersonOrInstitution":
+                                title = getattr(maker, 'title', "")
+                                terms.append(title)
+                            else:
+                                continue
+
+                structure = "<br>".join(terms)
+                return structure
+        except:
+            return ""
+        return ""
+
+    def getLeadMedia(self, UID):
+        if UID:
+            leadBrain = uuidToCatalogBrain(UID)
+            if leadBrain:
+                lead = leadBrain.getURL()
+                lead_crop = "%s/@@images/image/mini" %(lead)
+                return lead_crop
+        return ""
+
+    def getCurrLocation(self, data):
+        try:
+            result = ""
+
+            result = '<br>'.join(data)
+
+            return result
+        except:
+            return ""
+
     def getYear(self, item):
         obj = item.getObject()
 

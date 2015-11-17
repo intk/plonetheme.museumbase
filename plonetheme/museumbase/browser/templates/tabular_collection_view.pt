@@ -38,18 +38,45 @@
                         i18n:translate=""
                         tal:repeat="field fields"
                         i18n:domain="plonetheme.museumbase"
-                        tal:content="python: field[1]">Field name</th>
+                        tal:attributes="id python: field[1]+'-column'"
+                        tal:content="python: field[1] if field[0] not in ['leadMedia'] else ''">Field name</th>
                 </tr>
             </thead>
             <tbody>
             <tal:block tal:repeat="item batch">
                 <tr tal:define="oddrow repeat/item/odd;"
                     tal:attributes="class python:oddrow and 'even' or 'odd'" >
+
                 <tal:block tal:repeat="field fields">
-                    <td tal:condition="python:field[0] not in ['Title', 'Creator', ]"
+                    
+                    <td tal:condition="python:field[0] not in ['Title', 'Creator', 'location_currentlocation', 'leadMedia', 'productionDating_productionDating_maker']"
                         tal:define="field_data python:getattr(item, field[0])">
                         <tal:block tal:replace="field_data" />
                     </td>
+
+                    <td tal:condition="python:field[0] == 'productionDating_productionDating_maker'"
+                      >
+
+                      <tal:test tal:content="structure python:view.getMaker(item)"></tal:test>
+
+                    </td>
+
+                    <td tal:condition="python:field[0] == 'leadMedia'"
+                      tal:define="field_data python:getattr(item, field[0], None);">
+                      <tal:leadmedia tal:define='lead_media_url python:view.getLeadMedia(field_data)'>
+                          <img class="tabular-img" tal:attributes="src lead_media_url" tal:condition='field_data'/>
+                      </tal:leadmedia>
+                    </td>
+
+                    <td tal:condition="python:field[0] == 'location_currentlocation'"
+                        tal:define="field_data python:getattr(item, field[0], []);">
+                        <tal:curr_location
+                          tal:define="field_data_curr python:view.getCurrLocation(field_data);">
+                          <span tal:replace="structure field_data_curr"></span>
+                        </tal:curr_location>
+
+                    </td>
+
                     <td tal:condition="python:field[0] == 'Title'">
                         <a href="#"
                            tal:attributes="href item/getURL;
