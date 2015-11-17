@@ -289,7 +289,7 @@
                                  item_wf_state_class python:'state-' + normalizeString(item.review_state);
                                  item_creator item/Creator;
                                  hide_book python: 'bibliotheek' in item_url and user_admin == False;
-                                 item_link item/getURL">
+                                 item_link python:item_type in use_view_action and (item_url + '/view') or item_url">
                                  
                                  <metal:block define-slot="entry" tal:condition="not:hide_book">
 
