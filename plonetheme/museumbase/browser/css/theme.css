@@ -14103,6 +14103,10 @@ body.portaltype-resource div.template-edit .col-sm-9 {
     width: 77.3%;
 }
 
+body[class^="template-collective-"] .object-listing {
+    display: none !important;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
