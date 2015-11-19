@@ -483,12 +483,13 @@ class SearchView(CommonBrowserView, Search):
 
         if searchFiltersRecord:
             advancedfields = list(searchFiltersRecord)
-
             advancedfields.append('path')
 
             for param, value in params:
                 if param in advancedfields:
                     if value:
+                        if type(value) == list:
+                            continue
                         if param in widget_fields:
                             list_fields = value.split("_")
                             curr = 0
@@ -510,7 +511,6 @@ class SearchView(CommonBrowserView, Search):
                                 extra_filters.append(search_filter)
                         else:
                             q = "&".join(["%s=%s" %(p, v) for p, v in params if p != param])
-                            print q
                             search_filter = {}
                             search_filter["param"] = param
                             search_filter["value"] = value
