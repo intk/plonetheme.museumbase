@@ -478,7 +478,18 @@ class SearchView(CommonBrowserView, Search):
                          'physicalCharacteristics_techniques', 'identification_objectName_objectname_type']
 
 
-        params = [(k,v) if (k != 'path') else ('path', v[0]) for (k,v) in params if type(v) is list and len(v) > 0]
+        new_params = []
+        for k, v in params:
+            if k != "path":
+                new_params.append((k,v))
+            else:
+                if type(v) is list:
+                    for p in v:
+                        new_params.append(('path:list', p))
+                else:
+                    new_params.append((k,v))
+
+        params = new_params
 
         registry = getUtility(IRegistry)
         searchFiltersRecord = registry['advancedsearch.fields']
