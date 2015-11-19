@@ -477,6 +477,7 @@ class SearchView(CommonBrowserView, Search):
         widget_fields = ['identification_identification_collection', 'physicalCharacteristics_materials',
                          'physicalCharacteristics_techniques', 'identification_objectName_objectname_type']
 
+
         registry = getUtility(IRegistry)
         searchFiltersRecord = registry['advancedsearch.fields']
 
@@ -509,6 +510,7 @@ class SearchView(CommonBrowserView, Search):
                                 extra_filters.append(search_filter)
                         else:
                             q = "&".join(["%s=%s" %(p, v) for p, v in params if p != param])
+                            print q
                             search_filter = {}
                             search_filter["param"] = param
                             search_filter["value"] = value

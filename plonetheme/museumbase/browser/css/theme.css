@@ -14124,6 +14124,15 @@ body.no-img-slideshow.template-collection_view.portaltype-folder #content h1.doc
     margin-bottom: 160px !important;
 }
 
+div.extra-fields {
+    padding-left: 20px;
+}
+
+body.template-search #search-results {
+    padding-top: 0px !important;
+    padding-bottom: 50px !important;
+}
+
 /******************/
 /* MEDIA QUERIES  */
 /******************/
