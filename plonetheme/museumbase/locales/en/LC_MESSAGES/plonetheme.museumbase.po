@@ -19,6 +19,10 @@ msgid 'identification_identification_objectNumber'
 msgstr 'Object number'
 
 #: ../object.py
+msgid 'identification_objectNumber'
+msgstr 'Object number'
+
+#: ../object.py
 msgid 'titleAuthorImprintCollation_titleAuthor_author'
 msgstr 'Author'
 

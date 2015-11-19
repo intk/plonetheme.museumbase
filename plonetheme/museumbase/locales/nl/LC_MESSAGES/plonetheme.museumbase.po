@@ -97,6 +97,10 @@ msgid 'identification_identification_objectNumber'
 msgstr 'Objectnummer'
 
 #: ../object.py
+msgid 'identification_objectNumber'
+msgstr 'Objectnummer'
+
+#: ../object.py
 msgid 'titleAuthorImprintCollation_titleAuthor_author'
 msgstr 'Auteur'
 
@@ -106,7 +110,7 @@ msgstr 'Jaar'
 
 #: ../object.py
 msgid 'identification_objectName_objectname_type'
-msgstr 'Soort object'
+msgstr 'Objectnaam'
 
 #: ../object.py
 msgid 'physicalCharacteristics_materials'

@@ -73,7 +73,7 @@
                       <span tal:replace="python: toLocalizedTime(item.start.strftime('%d %B %Y'))" i18n:name="date">Start Date Time</span>,
                       <abbr i18n:name="starttime">
                         <span tal:content="python:toLocalizedTime(item.start, time_only=1)">Start Time</span>
-                      </abbr >
+                      </abbr>
                       -
                       <abbr i18n:name="endtime">
                          <span tal:content="python:toLocalizedTime(item.end, time_only=1)">End Time</span>
