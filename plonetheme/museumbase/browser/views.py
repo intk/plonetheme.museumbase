@@ -478,6 +478,8 @@ class SearchView(CommonBrowserView, Search):
                          'physicalCharacteristics_techniques', 'identification_objectName_objectname_type']
 
 
+        params = [(k,v) if (k != 'path') else ('path', v[0]) for (k,v) in params if type(v) is list and len(v) > 0]
+
         registry = getUtility(IRegistry)
         searchFiltersRecord = registry['advancedsearch.fields']
 
@@ -495,7 +497,7 @@ class SearchView(CommonBrowserView, Search):
                             curr = 0
                             for field in list_fields:
                                 curr += 1
-                                q = "&".join(["%s=%s" %(p, v) for p, v in params if p != param])
+                                q = "&".join(["%s=%s" %(p, v) for p, v in params if p != param and param not in ['created']])
 
                                 new_list_field = [f for f in list_fields if f != field]
                                 new_string = "_".join(new_list_field)
@@ -510,7 +512,7 @@ class SearchView(CommonBrowserView, Search):
                                 search_filter["link"] = self.context.absolute_url()+"/@@search?%s" %(q)
                                 extra_filters.append(search_filter)
                         else:
-                            q = "&".join(["%s=%s" %(p, v) for p, v in params if p != param])
+                            q = "&".join(["%s=%s" %(p, v) for p, v in params if p != param and param not in ['created']])
                             search_filter = {}
                             search_filter["param"] = param
                             search_filter["value"] = value
