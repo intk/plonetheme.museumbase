@@ -19,12 +19,14 @@
 
           <tal:entry_details
             tal:define="collection_id context/UID;
+                        item_obj item/getObject;
                         item_index repeat/item/index;
                         number repeat/item/number;
                         lead_image python:view.getImageObject(item);
                         portal_type context/portal_type;
                         item_title item/Title;
                         has_media item/leadMedia;
+                        item_is_buyable python:view.isBuyable(item_obj);
                         item_href python: view.getItemURL(item, item_url);">
 
 
@@ -79,6 +81,18 @@
                     </tal:sameday>
                   </tal:restrict>
                   </p>
+
+                  <p tal:condition="item_is_buyable">
+                      <tal:buyable-info tal:define="price python:view.getPrice(item_obj)" tal:condition="python: price != None">
+                        <span class="item-prices">€ <span tal:replace="python: '%0.2f' % price"></span></span>
+                      </tal:buyable-info>
+                    </p>
+                    <p tal:condition="not:item_is_buyable">
+                      <span tal:condition="python:item_obj
+.description != '' " tal:replace="python:view.trimText(item_obj
+.description, 200, strip=False)"></span>
+                        
+                    </p>
 
                   </div>
               </div>
