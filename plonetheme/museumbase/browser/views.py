@@ -641,6 +641,21 @@ class FolderListing(CommonBrowserView):
         else:
             return False
 
+    def getPrice(self, item):
+        if SHOP_AVAILABLE:
+            item_data = get_item_data_provider(item)
+            net_price = Decimal(item_data.net)
+            vat = item_data.vat
+            if vat % 2 != 0:
+                item_vat = Decimal(vat).quantize(Decimal('1.0'))
+            else:
+                item_vat = Decimal(vat)
+            
+            gross_price = net_price + net_price / Decimal(100) * item_vat
+            return gross_price
+        else:
+            return float(0.0)
+
     def getItemURL(self, item, item_url):
         if item.portal_type == "Image":
             obj = item.getObject()
