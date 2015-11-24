@@ -376,6 +376,21 @@ class CommonBrowserView(BrowserView):
             return False
         else:
             return IBuyableMarker.providedBy(item)
+
+    def getPrice(self, item):
+        if SHOP_AVAILABLE:
+            item_data = get_item_data_provider(item)
+            net_price = Decimal(item_data.net)
+            vat = item_data.vat
+            if vat % 2 != 0:
+                item_vat = Decimal(vat).quantize(Decimal('1.0'))
+            else:
+                item_vat = Decimal(vat)
+            
+            gross_price = net_price + net_price / Decimal(100) * item_vat
+            return gross_price
+        else:
+            return float(0.0)
     
     def getEventBookingLink(self, event):
         """
@@ -456,18 +471,21 @@ class SearchView(CommonBrowserView, Search):
         return title
 
     def getAdvancedButtonQuery(self):
-        params = self.request.form.items()
+        try:
+            params = self.request.form.items()
 
-        registry = getUtility(IRegistry)
-        searchFiltersRecord = registry['advancedsearch.fields']
-        q = ""
+            registry = getUtility(IRegistry)
+            searchFiltersRecord = registry['advancedsearch.fields']
+            q = ""
 
-        if searchFiltersRecord:
-            advancedfields = list(searchFiltersRecord)
-            advancedfields.append("SearchableText")
-            q = "&".join(["%s=%s" %(param,value) for param,value in params if param in advancedfields and value])
+            if searchFiltersRecord:
+                advancedfields = list(searchFiltersRecord)
+                advancedfields.append("SearchableText")
+                q = "&".join(["%s=%s" %(param,value) for param,value in params if param in advancedfields and value])
 
-        return q
+            return q
+        except:
+            return ""
 
     def getExtraFilters(self):
         params = self.request.form.items()
@@ -492,7 +510,10 @@ class SearchView(CommonBrowserView, Search):
         params = new_params
 
         registry = getUtility(IRegistry)
-        searchFiltersRecord = registry['advancedsearch.fields']
+        try:
+            searchFiltersRecord = registry['advancedsearch.fields']
+        except:
+            return []
 
         if searchFiltersRecord:
             advancedfields = list(searchFiltersRecord)
@@ -613,6 +634,12 @@ class FolderListing(CommonBrowserView):
                 return media_object
         else:
             return None
+
+    def isBuyable(self, item):
+        if SHOP_AVAILABLE:
+            return IBuyable.providedBy(item)
+        else:
+            return False
 
     def getItemURL(self, item, item_url):
         if item.portal_type == "Image":

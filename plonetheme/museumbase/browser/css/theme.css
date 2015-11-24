@@ -9624,14 +9624,14 @@ fieldset.formPanel div.querySelectSearch div.formControls button {
 #fieldset-exhibitions div.querySelectSearch div.formControls button,
 #fieldset-loans div.querySelectSearch div.formControls button,
 fieldset.formPanel div.querySelectSearch div.formControls button {
-    background: #0095da;
+    background: #d75745;
     font-family: "Merriweather", serif;
     font-weight: 400;
     color: #ffffff;
     font-size: 0.875em;
     border-style: solid;
     border-width: 0px;
-    border-color: #0095da;
+    border-color: #d75745;
     text-transform: none !important;
     letter-spacing: 0.05em;
     border-radius: 0;
@@ -13438,7 +13438,7 @@ body.template-edit.no-img-slideshow.portaltype-object #content-core {
 }
 
 body.template-edit.portaltype-object:not(.no-img-slideshow) #portal-logo img {
-    content: url('++resource++plonetheme.zmcms.images/logo-branco.png') !important;
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
 }
 
 body.template-edit.portaltype-object .slideshow:not(.slideshow-loaded) {
@@ -13520,14 +13520,14 @@ body.template-detailed_tabular_view #content h1.documentFirstHeading {
 }
 
 body.template-advancedsearch div.input-wrapper .btn {
-    background: #0095da;
+    background: #d75745;
     font-family: "Raleway", sans-serif;
     font-weight: 700;
     color: #ffffff;
     font-size: 1.000em;
     border-style: solid;
     border-width: 1px;
-    border-color: #0095da;
+    border-color: #d75745;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     border-radius: 30px;
@@ -13764,13 +13764,13 @@ div.overlay div.close {
 }
 
 .overlay-history input.standalone {
-    background: #0095da;
+    background: #d75745;
     font-family: 'Merriweather', serif;
     color: #ffffff;
     font-size: 0.875em;
     border-style: solid;
     border-width: 1px;
-    border-color: #0095da;
+    border-color: #d75745;
     border-radius: 30px;
     padding: 8px 16px !important;
 }
@@ -13900,13 +13900,13 @@ body.template-prefs_keywords_view #content label {
 }
 
 body.template-prefs_keywords_view #content .btn {
-    background: #0095da;
+    background: #d75745;
     font-family: 'Merriweather', serif;
     color: #ffffff;
     font-size: 0.875em;
     border-style: solid;
     border-width: 1px;
-    border-color: #0095da;
+    border-color: #d75745;
     border-radius: 30px;
     padding: 8px 16px !important;
 }
@@ -13946,13 +13946,13 @@ body.userrole-authenticated #content-core p.discreet {
 
 body.template-vocabularytool_view .btn,
 body.template-simplevocabulary_view .btn {
-    background: #0095da;
+    background: #d75745;
     font-family: 'Merriweather', serif;
     color: #ffffff;
     font-size: 0.875em;
     border-style: solid;
     border-width: 1px;
-    border-color: #0095da;
+    border-color: #d75745;
     border-radius: 30px;
     padding: 8px 16px !important;
 }

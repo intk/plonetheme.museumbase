@@ -444,6 +444,7 @@ slickSlideshow.resizeImage = function(current) {
 
 slickSlideshow.addSlideInIndex = function(slides, index) {
 	_logger.log("Add new bulk on index: "+index);
+
 	for (var i = 0; i < slides.length; i++) {
 		item = slides[i];
 		slide_item = {
@@ -457,15 +458,19 @@ slickSlideshow.addSlideInIndex = function(slides, index) {
 		}
 		slickSlideshow.slides.splice((index+i+1), 0, slide_item);
 		
-		if (slickSlideshow.double_view == false) { 
-			slickSlideshow.$obj.slickAdd("<div data-title='"+slides[i].title+"' data-id='"+slides[i].object_id+"' data-description='"+slides[i].description+"' data-url='"+slides[i].url+"' data-body='"+slides[i].body+"'><div class='inner-bg'><img data-lazy='"+slides[i].image_url+"'/></div></div>", (index+i));
+		if (slickSlideshow.double_view == false) {
+			if (slides[i].image_url != "") {
+				slickSlideshow.$obj.slickAdd("<div data-title='"+slides[i].title+"' data-id='"+slides[i].object_id+"' data-description='"+slides[i].description+"' data-url='"+slides[i].url+"' data-body='"+slides[i].body+"'><div class='inner-bg'><img data-lazy='"+slides[i].image_url+"'/></div></div>");
+			} else {
+				slickSlideshow.$obj.slickAdd("<div data-title='"+slides[i].title+"' data-id='"+slides[i].object_id+"' data-description='"+slides[i].description+"' data-url='"+slides[i].url+"' data-body='"+slides[i].body+"' class='no-image-slide'><div class='title-description-wrapper'><h1 class='documentFirstHeading no-image'>"+slides[i].title+"</h1><div class='documentDescription description no-image'>"+slides[i].description+"</div></div></div>");
+			}
 		} else if (slickSlideshow.view_type == "double_view") {
 			slide_w_images = "<div data-title='"+slides[i].title+"' data-id='"+slides[i].object_id+"' data-description='"+slides[i].description+"' data-url='"+slides[i].url+"' data-body='"+slides[i].body+"'><div class='inner-bg'>";
 			for (var j = 0; j < slides[i].images.length; j++) {
 				slide_w_images += "<div class='double-container'><img data-lazy='"+slides[i].images[j]+"'/></div>";
 			};
 			slide_w_images += "</div></div>";
-			slickSlideshow.$obj.slickAdd(slide_w_images, (index+i));
+			slickSlideshow.$obj.slickAdd(slide_w_images);
 		}
 	}
 
@@ -663,6 +668,12 @@ slickSlideshow.getNavigationContent = function(query, object_id, init) {
 
 				$("#slideshow-controls #slide-count").html((slickSlideshow.slideCount) + "/" + slickSlideshow.total_items);
 				
+				if (slickSlideshow.slideCount == 1) {
+					$("div.wrap-prev").hide();
+				} else if (slickSlideshow.slideCount == slickSlideshow.total_items) {
+					$("div.wrap-next").hide();
+				}
+
 				if ((title != "") && (description != "")) {
 					$("#slideshow-controls #slide-description").html(title + ", " + description);
 				}
@@ -883,12 +894,12 @@ slickSlideshow.initSlick = function(object_idx) {
 
 
 slickSlideshow.setLoadingProperties = function() {
-	slickSlideshow.bulk = 30;
+	slickSlideshow.bulk = 10;
 	slickSlideshow.lastItem = 0;
 	slickSlideshow.forward = true;
 	slickSlideshow.dangerous_entries = 1;
 	slickSlideshow.dangerous_item = slickSlideshow.bulk;
-	slickSlideshow.buffer = 5;
+	slickSlideshow.buffer = 4;
 	slickSlideshow.total = false;
 	slickSlideshow.reseted = false;
 	slickSlideshow.regular = false;
@@ -1253,29 +1264,30 @@ slickSlideshow.addBulkElements = function(index) {
 	current_url = location_query_split[0];
 
 	// Set request URL
-	var add_object = slickSlideshow.slides[index];
+	//var add_object = slickSlideshow.slides[index];
 	if (slickSlideshow.query != "") {
-		URL = current_url + "/" + request_url + slickSlideshow.query + "&object_id="+add_object.object_id;
+		URL = current_url + "/" + request_url + slickSlideshow.query + "&object_id="+slickSlideshow.slides.length;
 	} else {
-		URL = current_url + "/" + request_url + "?object_id="+add_object.object_id;
+		URL = current_url + "/" + request_url + "?object_id="+slickSlideshow.slides.length;
 	}
 
 	if ($("body").hasClass('template-multiple_view')) {
 		URL += "&bulk=5";
 	}
 
-	_logger.log("[Slideshow bulk] Get next bulk for object_id: "+add_object.object_id)
+	//_logger.log("[Slideshow bulk] Get next bulk for object_id: "+add_object.object_id)
 	
 	// Request
 	$.getJSON(URL, function(data) {
 		if (data.list != undefined) {
 			slickSlideshow.total = data.total;
-			slickSlideshow.addSlideInIndex(data.list, index);
+			slickSlideshow.addSlideInIndex(data.list, index-1);
 		}
 	});
 };
 
 slickSlideshow.resetSlideshow = function(item) {
+	return true;
 	var slide_count = slickSlideshow.slideCount;
 	slickSlideshow.$obj.html('');
 	slickSlideshow.$obj.unslick();
@@ -1546,14 +1558,22 @@ slickSlideshow.updateDOMProperties = function(curr, currentSlide, title, descrip
 slickSlideshow.contentAJAXrefresh = function(curr, currentObject) {
 	var $currentSlideObj = currentObject;
 
-
-
 	if (slickSlideshow.isCollection) {
 		var description = $currentSlideObj.attr('data-description');
 		var title = $currentSlideObj.attr('data-title');
 		var body = $currentSlideObj.attr('data-body');
 	} else {
+		
+		var collection_id = getParameterByName("collection_id");
+		var b_start = getParameterByName("b_start");
+		var new_b_start = slickSlideshow.slideCount - 1;
+
+		if (collection_id != "" && b_start != "") {
+			slickSlideshow.query = "?collection_id="+collection_id+"&b_start="+new_b_start;
+		}
+
 		var push_url = $currentSlideObj.attr('data-url') + slickSlideshow.query;
+
 		history.replaceState(null, null, push_url);
 		var description = $currentSlideObj.attr('data-description');
 		var title = $currentSlideObj.attr('data-title');
@@ -1698,6 +1718,22 @@ slickSlideshow.afterChange = function(event) {
 
 		// --- Update object details
 		$currentSlideObj = $($slides[currentSlide]);
+
+		if (slickSlideshow.slideCount-1 == 1) {
+			$("div.wrap-prev").show();
+		} 
+
+		else if (slickSlideshow.slideCount == 1) {
+			$("div.wrap-prev").hide();
+		}
+
+		if (slickSlideshow.forward) {
+			if (slickSlideshow.slideCount == slickSlideshow.total_items) {
+				$("div.wrap-next").hide();
+			}
+		} else {
+			$("div.wrap-next").show();
+		}
 
 		if ($currentSlideObj.hasClass('video-slide')) {
 			$(".actions-div").hide();

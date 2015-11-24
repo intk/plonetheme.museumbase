@@ -40,7 +40,11 @@ class AdvancedSearchView(CommonBrowserView, Search):
         
         searchFilters = []
         registry = getUtility(IRegistry)
-        searchFiltersRecord = registry['advancedsearch.fields']
+        try:
+            searchFiltersRecord = registry['advancedsearch.fields']
+        except:
+            return []
+            
         if searchFiltersRecord:
             filters = list(searchFiltersRecord)
             if filters:

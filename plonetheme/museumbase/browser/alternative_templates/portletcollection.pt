@@ -29,6 +29,8 @@
                         item_index repeat/item/index;
                         item_link item/getURL;
                         has_media item/leadMedia;
+                        item_obj item/getObject;
+                        item_is_buyable python:view.isBuyable(item_obj);
                         number repeat/item/number;">
 
             <div class="thumbnail">
@@ -82,6 +84,15 @@
                         </tal:sameday>
                       </tal:ony_dates>
                     </p>
+                      <p tal:condition="item_is_buyable">
+                        <tal:buyable-info tal:define="price python:view.getPrice(item_obj)">
+                          <span class="item-prices">€ <span tal:replace="python: '%0.2f' % price"></span></span>
+                        </tal:buyable-info>
+                      </p>
+
+                      <p tal:condition="not:item_is_buyable">
+                        <span tal:condition="python:item.Description() != ''" tal:replace="python:view.trimText(item.Description(), 200, strip=False)"></span>
+                      </p> 
 
                 </div>
               </div>
