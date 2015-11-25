@@ -682,12 +682,30 @@ class CollectionPortlet(base.Renderer, FolderListing):
     render = _template
 
 class ContentView(BrowserView):
-    def showManageButton(self):
-        secman = getSecurityManager()
-        if not secman.checkPermission('Portlets: Manage portlets', self.context):
-            return False
+
+    def getFBdetails(self):
+        item = self.context
+        
+        uid = item.UID()
+
+        item_brain = uuidToCatalogBrain(uid)
+
+        details = {}    
+        details["title"] = item.Title()
+        details["type"] = "article"
+        details["site_name"] = "Teylers Museum"
+        details["url"] = item.absolute_url()
+        details["description"] = item.Description()
+        details["double_image"] = ""
+        details["image"] = ""
+
+        if getattr(item_brain, "leadMedia", None) != None:
+            image = uuidToCatalogBrain(item_brain.leadMedia)
+            details["image"] = image.getURL()+'/@@images/image/large'
         else:
-            return True
+            details["image"] = ""
+
+        return details
 
     def showManageButton(self):
         secman = getSecurityManager()
