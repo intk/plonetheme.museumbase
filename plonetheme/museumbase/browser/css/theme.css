@@ -8365,7 +8365,8 @@ body.template-etickets_view .cart_item_count {
   font-weight: 400;
 }
 
-#cart select {
+#cart select,
+div.buyable select {
   width: 100px;
   background-color: #f5f5f5;
   border: 0 !important;
@@ -8552,7 +8553,8 @@ span.price.original {
     margin-right: 10px;
 }
 
-#cart select:hover {
+#cart select:hover,
+div.buyable:hover {
     cursor: pointer;
 }
 
@@ -8743,7 +8745,8 @@ body.template-checkout #visual-portal-wrapper > .row:first-child > div.col-md-12
     padding-right: 0px;
 }
 
-#cart select {
+#cart select,
+div.buyable select {
     background-color: #d75745 !important;
     color: #ffffff !important;
     -webkit-transition: none !important; 
@@ -8757,12 +8760,14 @@ body.template-checkout #visual-portal-wrapper > .row:first-child > div.col-md-12
     -webkit-appearance:none !important;
 }
 
-#cart .cart-select-box {
+#cart .cart-select-box,
+div.buyable .cart-select-box {
     position: relative;
     display: inline-block;
 }
 
-#cart .cart-select-box:after {
+#cart .cart-select-box:after,
+div.buyable .cart-select-box:after {
     content: " ";
     height: 0;
     width: 0;
@@ -9069,7 +9074,8 @@ body.template-mollie_payment_success #portal-logo img {
         font-size: 1.00em !important;
     }
 
-    #cart select {
+    #cart select,
+    div.buyable select {
         width: 65px !important;
     }
 
@@ -9172,7 +9178,8 @@ body.template-mollie_payment_success #portal-logo img {
         font-size: 1.00em !important;
     }
 
-    #cart select {
+    #cart select,
+    div.buyable select {
         width: 100% !important;
         text-align: right;
     }
@@ -10127,7 +10134,7 @@ label[for="form-widgets-fieldCollection_fieldCollection_dateEarly"] {
 }
 
 span.required {
-    display: none;
+    
 }
 
 .datagridwidget-block-edit-cell div[id$='autocomplete'] {
@@ -10170,7 +10177,6 @@ div.contenttree-widget + div.text-widget {
 }
 
 .form-control {
-    height: 33px;
     padding: 7px 18px;
 }
 
