@@ -13662,8 +13662,8 @@ a.advanced-search {
 }
 
 #search-page-header {
-    background: rgba(0,0,0,0.2) !important;
-    background-color: rgba(0,0,0,0.2) !important;
+    /*background: rgba(0,0,0,0.2) !important;
+    background-color: rgba(0,0,0,0.2) !important;*/
 }
 
 #search-page-header:before {
