@@ -37,11 +37,10 @@
                   <div class="thumb-wrapper">
                     <a class="thumb-image" tal:condition="python: (has_media != None or item_type == 'Image')" href="" tal:attributes="href python: item_link+'?collection_id='+collection_id+'&b_start='+str(item_index) if collection_item != None and item_type == 'Object' else item_link"
                       tal:define="item_img python:view.getImageObject(item)">
-                      <img tal:define="images item_img/@@images;
-                                         scale python: images.scale('image', scale='mini')"
-                             tal:condition="scale"
+                      <img tal:define="images_src python:item_img.absolute_url()+'/@@images/image/mini';
+                                         "
                              src="" alt=""
-                             tal:replace="structure python: scale.tag(css_class='tileImage', alt=item_title, title=item_title)" /> 
+                             tal:attributes="src images_src; class python:'tileImage'; alt item_title; title item_title;" /> 
                     </a> 
                     
                   </div>
