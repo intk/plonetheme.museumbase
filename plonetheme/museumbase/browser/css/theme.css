@@ -8312,7 +8312,7 @@ body.template-full_view #content-view-portlets a.managePortletsFallback:hover {
     padding-bottom: 50px;
 }
 
-body:not(.portaltype-product) #content-view-portlets {
+body #content-view-portlets {
     border-top: 1px solid #f5f5f5;
 }
 
