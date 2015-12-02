@@ -160,6 +160,23 @@ msgstr "Auteur"
 msgid "location_currentlocation"
 msgstr "Standplaats"
 
+#: ../object.py
+msgid 'object_type'
+msgstr "Objectnaam"
 
+#: ../object.py
+msgid 'material'
+msgstr "Materiaal"
 
+#: ../object.py
+msgid 'technique'
+msgstr "Techniek"
+
+#: ../object.py
+msgid 'object_number'
+msgstr "Objectnummer"
+
+#: ../object.py
+msgid 'maker'
+msgstr "Vervaardiger"
 

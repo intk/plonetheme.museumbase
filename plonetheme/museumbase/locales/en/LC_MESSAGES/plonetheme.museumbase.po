@@ -62,4 +62,22 @@ msgstr "Type to search"
 msgid 'path'
 msgstr "path"
 
+#: ../object.py
+msgid 'object_type'
+msgstr "Object type"
 
+#: ../object.py
+msgid 'material'
+msgstr "Material"
+
+#: ../object.py
+msgid 'technique'
+msgstr "Technique"
+
+#: ../object.py
+msgid 'object_number'
+msgstr "Object number"
+
+#: ../object.py
+msgid 'maker'
+msgstr "Author"

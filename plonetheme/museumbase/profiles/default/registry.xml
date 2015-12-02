@@ -7,12 +7,12 @@
 	        <value_type type="plone.registry.field.TextLine" />
 	    </field>
 	    <value>
-	    	<element>8960c981ea5846b59d5934d7f596a2fd</element>
+	    	<!--<element>8960c981ea5846b59d5934d7f596a2fd</element>
 			<element>5faa7d5ea0c64be382b8ffa0cebc268b</element>
 			<element>06836942f06f46dfb6470f83ffdfdb2b</element>
 			<element>2c99b99ad6f24c8f8eb05a29ec5b226d</element>
 			<element>c1b45fa7ce6244ee926dfca6705590d9</element>
-			<element>daa1c7f0aced499b83298fd12fe71cb4</element>
+			<element>daa1c7f0aced499b83298fd12fe71cb4</element>-->
 		</value> 
 	</record>
 
