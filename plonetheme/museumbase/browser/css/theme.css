@@ -13139,6 +13139,38 @@ body.no-img-slideshow.userrole-authenticated #content h1.documentFirstHeading {
     color: #333333 !important;
 }
 
+body.no-img-slideshow #parent-fieldname-text {
+    display: block !important;
+}
+
+body.no-img-slideshow .container.object-container {
+    display: block !important;
+}
+
+body.no-img-slideshow .object-fields {
+    display: block !important;
+}
+
+body.no-img-slideshow #slickslideshow {
+    display: none !important;
+}
+
+body.no-img-slideshow #portal-logo img {
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
+}
+
+body.no-img-slideshow #edit-content-views {
+    padding-top: 150px !important;
+}
+
+body.no-img-slideshow:not(.userrole-authenticated) #parent-fieldname-text {
+    padding-top: 150px !important;
+}
+
+body.no-img-slideshow {
+    background-color: #ffffff !important;
+}
+
 body.template-edit #fieldset-numbers_relationships .datagridwidget-widget-notes div.label {
     width: 26.8% !important;
 }
@@ -14122,6 +14154,15 @@ body.no-img-slideshow.template-collection_view.portaltype-folder div.title-descr
 }
 
 body.no-img-slideshow.template-collection_view.portaltype-folder #edit-content-views {
+    padding-top: 400px !important
+}
+
+body.no-img-slideshow.template-collection_view.portaltype-folder #content h1.documentFirstHeading {
+    padding-top: 160px !important;
+    margin-bottom: 160px !important;
+}
+
+body.no-img-slideshow.template-view.portaltype-object #edit-content-views {
     padding-top: 400px !important
 }
 

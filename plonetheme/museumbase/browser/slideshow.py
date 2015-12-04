@@ -14,9 +14,10 @@ from Products.CMFCore.utils import getToolByName
 from zope.i18nmessageid import MessageFactory
 from plone.app.uuid.utils import uuidToCatalogBrain, uuidToObject
 from plone.app.contenttypes.interfaces import ICollection
+import re
 
 MessageFactory = MessageFactory('Products.mediaObject')
-
+NOT_ALLOWED = [None, '', ' ']
 
 class get_nav_objects(BrowserView):
     """
@@ -227,27 +228,36 @@ class get_nav_objects(BrowserView):
             return ""
 
     def create_author_name(self, value):
-        comma_split = value.split(",")
-
-        for i in range(len(comma_split)):       
-            name_split = comma_split[i].split('(')
-            
-            raw_name = name_split[0]
-            name_split[0] = self.trim_white_spaces(raw_name)
-            name_artist = name_split[0]
-            
-            name_artist_link = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (name_artist, name_artist)
-            name_split[0] = name_artist_link
-
-            if len(name_split) > 1:
-                if len(name_split[1]) > 0:
-                    name_split[0] = name_artist_link + " "
         
-            comma_split[i] = '('.join(name_split)
+        final_author = ""
 
-        _value = ", ".join(comma_split)
+        author_name = value
+        brackets_content = re.findall('\(.*?\)',value)
+        for b in brackets_content:
+            author_name = author_name.replace(b, '')
+            author_name = author_name.strip()
 
-        return _value
+        split_name = author_name.split(',')
+        new_author = []
+
+        if (len(split_name) > 1) and (len(split_name) > 0):
+            new_author.append(split_name[-1])
+            new_author.append(split_name[0])
+        elif len(split_name) > 0:
+            new_author.append(split_name[0])
+        else:
+            new_author.append(value)
+
+        final_author_name = " ".join(new_author)
+        final_author_name = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' %(final_author_name, final_author_name)
+
+        final_brackets = []
+        final_brackets.append(final_author_name)
+        final_brackets.extend(brackets_content)
+
+        final_value = " ".join(final_brackets)
+
+        return final_value
 
     def create_materials(self, value):
         materials = value.split(',')
@@ -260,34 +270,197 @@ class get_nav_objects(BrowserView):
 
         return _value
 
+    def create_production_field(self, field):
+
+        authors = []
+        
+        for author in field:
+            production = ""
+
+            maker = author['creator']
+            qualifier = author['qualifier']
+            role = author['role']
+            date_of_birth = author['date_of_birth']
+            date_of_death = author['date_of_death']
+
+            production = self.create_author_name(maker)
+
+            dates = ""
+            if date_of_birth not in NOT_ALLOWED:
+                dates = "%s" %(date_of_birth)
+                if date_of_death not in NOT_ALLOWED:
+                    dates = "%s-%s" %(dates, date_of_death)
+            elif date_of_death not in NOT_ALLOWED:
+                dates = "%s" %(date_of_death)
+
+            if dates not in NOT_ALLOWED:
+                if production:
+                    production = "%s (%s)" %(production, dates)
+
+            if role not in NOT_ALLOWED:
+                if production:
+                    production = "%s (%s)" %(production, role)
+                else:
+                    production = "(%s)" %(role)
+
+            authors.append(production)
+
+        final_production = "<p>".join(authors)
+
+        return final_production
+
+    def create_dimension_field(self, field):
+        new_dimension_val = []
+        dimension_result = ""
+
+        for val in field:
+            dimension = ""
+            if val['value'] != "":
+                dimension = "%s" %(val['value'])
+            if val['unit'] != "":
+                dimension = "%s %s" %(dimension, val['unit'])
+            if val['type'] != "" and val['type'] != []:
+                dimension = "%s: %s" %(val['type'].lower(), dimension)
+
+            new_dimension_val.append(dimension)
+
+        dimension_result = '<p>'.join(new_dimension_val)
+        
+        return dimension_result
+
+    def create_general_repeatable(self, field):
+
+        values = []
+
+        for line in field:
+            new_line = []
+            if type(line) == dict:
+                for key, value in line.iteritems():
+                    if value not in NOT_ALLOWED:
+                        new_line.append(value)
+
+                final_line = ", ".join(new_line)
+                values.append(final_line)
+            else:
+                if line not in NOT_ALLOWED:
+                    values.append(line)
+
+        final_value = "<p>".join(values)
+
+        return final_value
+
+    def create_prod_dating_field(self, field):
+        period = None
+        start_date = field['start']
+        start_date_precision = field['start_precision']
+        end_date = field['end']
+        end_date_precision = field['end_precision']
+
+        if end_date == start_date:
+            end_date = ""
+
+        result = ""
+
+        if period != "" and period != None and period != " ":
+            result = "%s" %(period)
+
+        if start_date != "" and start_date != " ":
+            if result:
+                if start_date_precision != "" and start_date_precision != " ":
+                    result = "%s, %s %s" %(result, start_date_precision, start_date)
+                else:
+                    result = "%s, %s" %(result, start_date)
+            else:
+                if start_date_precision != "" and start_date_precision != " ":
+                    result = "%s %s" %(start_date_precision, start_date)
+                else:
+                    result = "%s" %(start_date)
+    
+
+        if end_date != "" and end_date != " ":
+            if result:
+                if end_date_precision != "" and end_date_precision != " ":
+                    result = "%s - %s %s" %(result, end_date_precision, start_date)
+                else:
+                    result = "%s - %s" %(result, end_date)
+            else:
+                if end_date_precision != "" and end_date_precision != " ":
+                    result = "%s %s" %(end_date_precision, start_date)
+                else:
+                    result = "%s" %(end_date)
+
+        return result
+
+
+
+    def create_production_dating_field(self, period_field):
+        period = []
+        for field in period_field:
+            result = self.create_prod_dating_field(field)
+            if result not in NOT_ALLOWED:
+                period.append(result)
+
+        final_period = "<p>".join(period)
+        return final_period
+
+
     def get_all_fields_object(self, object):
         object_schema = []
         schema = getUtility(IDexterityFTI, name='Object').lookupSchema()
 
         if object.portal_type == 'Object':
             for name, field in getFieldsInOrder(schema):
-                if name not in ["text", "object_tags", "book_title"]:
+                if name not in ["text", "object_tags", "book_title", "priref", "administration_name"]:
                     value = getattr(object, name, '')
-                    value = self.trim_white_spaces(value)
-                    if value != None and value != '' and value != " ":
-                        if name in ['technique', 'artist', 'material', 'object_type', 'object_category', 'publisher', 'author']:
-                            if (name == 'artist') or (name == 'author'):
-                                _value = self.create_author_name(value)
-                                value = _value
-                            elif (name == 'material') or (name == 'technique'):
-                                _value = self.create_materials(value)
-                                value = _value
-                            else:
-                                _value = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (value, value)
-                                value = _value
 
-                        _title = MessageFactory(field.title)
-                        new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
-                        
-                        if name in ['artist', 'author']:
-                            object_schema.insert(0, new_attr)
+                    if type(value) == list:
+                        if "creator" in name:
+                            value = self.create_production_field(value)
+                            if value:
+                                _title = MessageFactory(field.title)
+                                new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                                object_schema.append(new_attr)
+                        elif "dimension" in name:
+                            value = self.create_dimension_field(value)
+                            if value:
+                                _title = MessageFactory(field.title)
+                                new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                                object_schema.append(new_attr)
+                        elif "dating" in name:
+                            value = self.create_production_dating_field(value)
+                            if value:
+                                _title = MessageFactory(field.title)
+                                new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                                object_schema.append(new_attr)
                         else:
-                            object_schema.append(new_attr)
+                            value = self.create_general_repeatable(value)
+                            if value:
+                                _title = MessageFactory(field.title)
+                                new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                                object_schema.append(new_attr)
+
+                    
+                    else:
+                        value = self.trim_white_spaces(value)
+                        if value != None and value != '' and value != " ":
+                            if name in ['technique', 'artist', 'material', 'object_type', 'object_category', 'publisher', 'author']:
+                                if name in ['artist', 'author']:
+                                    _value = self.create_author_name(value)
+                                    value = _value
+                                elif name in ['material', 'technique']:
+                                    _value = self.create_materials(value)
+                                    value = _value
+                                else:
+                                    _value = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (value, value)
+                                    value = _value
+
+                            _title = MessageFactory(field.title)
+                            new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                            
+                            if name in ['artist', 'author']:
+                                object_schema.insert(0, new_attr)
+                            else:
+                                object_schema.append(new_attr)
             
             object_title = getattr(object, 'title', '')
             new_attr = {'title': self.context.translate('Title'), "value": object_title}
@@ -429,7 +602,10 @@ class get_nav_objects(BrowserView):
 
     def get_object_body(self, object):
         if hasattr(object, 'text') and object.text != None:
-            return object.text.output
+            try:
+                return object.text.output
+            except:
+                return ""
         else:
             return ""
 
@@ -646,7 +822,10 @@ class get_fields(BrowserView):
 
     def get_object_body(self, object):
         if hasattr(object, 'text') and object.text != None:
-            return object.text.output
+            try:
+                return object.text.output
+            except:
+                return ""
         else:
             return ""
 
@@ -665,27 +844,35 @@ class get_fields(BrowserView):
             return ""
 
     def create_author_name(self, value):
-        comma_split = value.split(",")
-
-        for i in range(len(comma_split)):       
-            name_split = comma_split[i].split('(')
-            
-            raw_name = name_split[0]
-            name_split[0] = self.trim_white_spaces(raw_name)
-            name_artist = name_split[0]
-            
-            name_artist_link = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (name_artist, name_artist)
-            name_split[0] = name_artist_link
-
-            if len(name_split) > 1:
-                if len(name_split[1]) > 0:
-                    name_split[0] = name_artist_link + " "
         
-            comma_split[i] = '('.join(name_split)
+        final_author = ""
 
-        _value = ", ".join(comma_split)
+        author_name = value
+        brackets_content = re.findall('\(.*?\)',value)
+        for b in brackets_content:
+            author_name = author_name.replace(b, '')
+            author_name = author_name.strip()
 
-        return _value
+        split_name = author_name.split(',')
+        new_author = []
+        if len(split_name) > 1 and len(split_name) > 0:
+            new_author.append(split_name[-1])
+            new_author.append(split_name[0])
+        elif len(split_name) > 0:
+            new_author.append(split_name[0])
+        else:
+            new_author.append(value)
+
+        final_author_name = " ".join(new_author)
+        final_author_name = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' %(final_author_name, final_author_name)
+
+        final_brackets = []
+        final_brackets.append(final_author_name)
+        final_brackets.extend(brackets_content)
+
+        final_value = " ".join(final_brackets)
+
+        return final_value
 
     def create_materials(self, value):
         materials = value.split(',')
@@ -698,34 +885,193 @@ class get_fields(BrowserView):
 
         return _value
 
+    def create_production_field(self, field):
+
+        authors = []
+        
+        for author in field:
+            production = ""
+
+            maker = author['creator']
+            qualifier = author['qualifier']
+            role = author['role']
+            date_of_birth = author['date_of_birth']
+            date_of_death = author['date_of_death']
+
+            production = self.create_author_name(maker)
+
+            dates = ""
+            if date_of_birth not in NOT_ALLOWED:
+                dates = "%s" %(date_of_birth)
+                if date_of_death not in NOT_ALLOWED:
+                    dates = "%s-%s" %(dates, date_of_death)
+            elif date_of_death not in NOT_ALLOWED:
+                dates = "%s" %(date_of_death)
+
+            if dates not in NOT_ALLOWED:
+                if production:
+                    production = "%s (%s)" %(production, dates)
+
+            if role not in NOT_ALLOWED:
+                if production:
+                    production = "%s (%s)" %(production, role)
+                else:
+                    production = "(%s)" %(role)
+
+            authors.append(production)
+
+        final_production = "<p>".join(authors)
+
+        return final_production
+
+    def create_dimension_field(self, field):
+        new_dimension_val = []
+        dimension_result = ""
+
+        for val in field:
+            dimension = ""
+            if val['value'] != "":
+                dimension = "%s" %(val['value'])
+            if val['unit'] != "":
+                dimension = "%s %s" %(dimension, val['unit'])
+            if val['type'] != "" and val['type'] != []:
+                dimension = "%s: %s" %(val['type'].lower(), dimension)
+
+            new_dimension_val.append(dimension)
+
+        dimension_result = '<p>'.join(new_dimension_val)
+        
+        return dimension_result
+
+    def create_general_repeatable(self, field):
+
+        values = []
+
+        for line in field:
+            new_line = []
+            if type(line) == dict:
+                for key, value in line.iteritems():
+                    if value not in NOT_ALLOWED:
+                        new_line.append(value)
+
+                final_line = ", ".join(new_line)
+                values.append(final_line)
+            else:
+                if line not in NOT_ALLOWED:
+                    values.append(line)
+
+        final_value = "<p>".join(values)
+
+        return final_value
+
+    def create_prod_dating_field(self, field):
+        period = None
+        start_date = field['start']
+        start_date_precision = field['start_precision']
+        end_date = field['end']
+        end_date_precision = field['end_precision']
+
+        if end_date == start_date:
+            end_date = ""
+
+        result = ""
+
+        if period != "" and period != None and period != " ":
+            result = "%s" %(period)
+
+        if start_date != "" and start_date != " ":
+            if result:
+                if start_date_precision != "" and start_date_precision != " ":
+                    result = "%s, %s %s" %(result, start_date_precision, start_date)
+                else:
+                    result = "%s, %s" %(result, start_date)
+            else:
+                if start_date_precision != "" and start_date_precision != " ":
+                    result = "%s %s" %(start_date_precision, start_date)
+                else:
+                    result = "%s" %(start_date)
+    
+
+        if end_date != "" and end_date != " ":
+            if result:
+                if end_date_precision != "" and end_date_precision != " ":
+                    result = "%s - %s %s" %(result, end_date_precision, start_date)
+                else:
+                    result = "%s - %s" %(result, end_date)
+            else:
+                if end_date_precision != "" and end_date_precision != " ":
+                    result = "%s %s" %(end_date_precision, start_date)
+                else:
+                    result = "%s" %(end_date)
+
+        return result
+
+    def create_production_dating_field(self, period_field):
+        period = []
+        for field in period_field:
+            result = self.create_prod_dating_field(field)
+            if result not in NOT_ALLOWED:
+                period.append(result)
+
+        final_period = "<p>".join(period)
+        return final_period
+
     def get_all_fields_object(self, object):
         object_schema = []
         schema = getUtility(IDexterityFTI, name='Object').lookupSchema()
 
         if object.portal_type == 'Object':
             for name, field in getFieldsInOrder(schema):
-                if name not in ["text", "object_tags", "book_title"]:
+                if name not in ["text", "object_tags", "book_title", "priref", "administration_name", "object_reproduction_reference"]:
                     value = getattr(object, name, '')
-                    value = self.trim_white_spaces(value)
-                    if value != None and value != '' and value != " ":
-                        if name in ['technique', 'artist', 'material', 'object_type', 'object_category', 'publisher', 'author']:
-                            if (name == 'artist') or (name == 'author'):
-                                _value = self.create_author_name(value)
-                                value = _value
-                            elif (name == 'material') or (name == 'technique'):
-                                _value = self.create_materials(value)
-                                value = _value
-                            else:
-                                _value = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (value, value)
-                                value = _value
-
-                        _title = MessageFactory(field.title)
-                        new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
-                        
-                        if name in ['artist', 'author']:
-                            object_schema.insert(0, new_attr)
+                    if type(value) == list:
+                        if "creator" in name:
+                            value = self.create_production_field(value)
+                            if value:
+                                _title = MessageFactory(field.title)
+                                new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                                object_schema.append(new_attr)
+                        elif "dimension" in name:
+                            value = self.create_dimension_field(value)
+                            if value:
+                                _title = MessageFactory(field.title)
+                                new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                                object_schema.append(new_attr)
+                        elif "dating" in name:
+                            value = self.create_production_dating_field(value)
+                            if value:
+                                _title = MessageFactory(field.title)
+                                new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                                object_schema.append(new_attr)
                         else:
-                            object_schema.append(new_attr)
+                            value = self.create_general_repeatable(value)
+                            if value:
+                                _title = MessageFactory(field.title)
+                                new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                                object_schema.append(new_attr)
+
+                    
+                    else:
+                        value = self.trim_white_spaces(value)
+                        if value != None and value != '' and value != " ":
+                            if name in ['technique', 'artist', 'material', 'object_type', 'object_category', 'publisher', 'author']:
+                                if (name == 'artist') or (name == 'author'):
+                                    _value = self.create_author_name(value)
+                                    value = _value
+                                elif (name == 'material') or (name == 'technique'):
+                                    _value = self.create_materials(value)
+                                    value = _value
+                                else:
+                                    _value = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (value, value)
+                                    value = _value
+
+                            _title = MessageFactory(field.title)
+                            new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                            
+                            if name in ['artist', 'author']:
+                                object_schema.insert(0, new_attr)
+                            else:
+                                object_schema.append(new_attr)
             
             object_title = getattr(object, 'title', '')
             new_attr = {'title': self.context.translate('Title'), "value": object_title}
