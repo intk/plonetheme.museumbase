@@ -403,6 +403,26 @@ class get_nav_objects(BrowserView):
         final_period = "<p>".join(period)
         return final_period
 
+    def create_inscription_field(self, field):
+        inscriptions = []
+
+        for line in field:
+            _type = line["type"]
+            _content = line["content"]
+
+            if _type not in NOT_ALLOWED and _content not in NOT_ALLOWED:
+                new_line = "%s: %s" %(_type, _content)
+                inscriptions.append(new_line)
+            elif _content not in NOT_ALLOWED:
+                new_line = "%s" %(_content)
+                inscriptions.append(new_line)
+
+        if inscriptions:
+            final_inscriptions = "<p>".join(inscriptions)
+            return final_inscriptions
+        else:
+            return ""
+
 
     def get_all_fields_object(self, object):
         object_schema = []
@@ -432,6 +452,14 @@ class get_nav_objects(BrowserView):
                                 _title = MessageFactory(field.title)
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
                                 object_schema.append(new_attr)
+
+                        elif "inscription" in name:
+                            value = self.create_inscription_field(value)
+                            if value:
+                                _title = MessageFactory(field.title)
+                                new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                                object_schema.append(new_attr)
+                                
                         else:
                             value = self.create_general_repeatable(value)
                             if value:
@@ -1016,6 +1044,26 @@ class get_fields(BrowserView):
         final_period = "<p>".join(period)
         return final_period
 
+    def create_inscription_field(self, field):
+        inscriptions = []
+
+        for line in field:
+            _type = line["type"]
+            _content = line["content"]
+
+            if _type not in NOT_ALLOWED and _content not in NOT_ALLOWED:
+                new_line = "%s: %s" %(_type, _content)
+                inscriptions.append(new_line)
+            elif _content not in NOT_ALLOWED:
+                new_line = "%s" %(_content)
+                inscriptions.append(new_line)
+
+        if inscriptions:
+            final_inscriptions = "<p>".join(inscriptions)
+            return final_inscriptions
+        else:
+            return ""
+
     def get_all_fields_object(self, object):
         object_schema = []
         schema = getUtility(IDexterityFTI, name='Object').lookupSchema()
@@ -1039,6 +1087,12 @@ class get_fields(BrowserView):
                                 object_schema.append(new_attr)
                         elif "dating" in name:
                             value = self.create_production_dating_field(value)
+                            if value:
+                                _title = MessageFactory(field.title)
+                                new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                                object_schema.append(new_attr)
+                        elif "inscription" in name:
+                            value = self.create_inscription_field(value)
                             if value:
                                 _title = MessageFactory(field.title)
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
@@ -1073,10 +1127,10 @@ class get_fields(BrowserView):
                             else:
                                 object_schema.append(new_attr)
             
-            object_title = getattr(object, 'title', '')
-            new_attr = {'title': self.context.translate('Title'), "value": object_title}
+            #object_title = getattr(object, 'title', '')
+            #new_attr = {'title': self.context.translate('Title'), "value": object_title}
 
-            if len(object_schema) > 1 and object_schema[0]['name'] == "author":
+            """if len(object_schema) > 1 and object_schema[0]['name'] == "author":
                 if object_schema[1]['name'] == "illustrator":
                     if object.book_title != '':
                         new_attr = {'title': self.context.translate('Title'), "value": object.book_title}
@@ -1089,7 +1143,7 @@ class get_fields(BrowserView):
             if len(object_schema) > 1 and object_schema[0]['name'] == "artist":
                 object_schema.insert(1, new_attr)
             elif len(object_schema) > 1 and object_schema[0]['name'] != "artist" and object_schema[0]['name'] != "author":
-                object_schema.insert(0, new_attr)
+                object_schema.insert(0, new_attr)"""
 
             obj_body = self.get_object_body(object)
             object_schema.append({"title": "body", "value":obj_body})
