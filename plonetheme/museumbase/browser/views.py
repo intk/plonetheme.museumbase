@@ -629,9 +629,11 @@ class FolderListing(CommonBrowserView):
             return item.getObject()
         if item.leadMedia != None:
             uuid = item.leadMedia
-            media_object = uuidToObject(uuid)
+            media_object = uuidToCatalogBrain(uuid)
             if media_object:
-                return media_object
+                return media_object.getURL()+"/@@images/image/mini"
+            else:
+                return None
         else:
             return None
 
