@@ -38,7 +38,7 @@
                       >
 
                       <tal:has_image tal:condition="lead_image">
-                      <img tal:define="images_src python:lead_image';
+                      <img tal:define="images_src python:lead_image;
                                          "
                              src="" alt=""
                              tal:attributes="src images_src; class python:'tileImage'; alt item_title; title item_title;" /> 
