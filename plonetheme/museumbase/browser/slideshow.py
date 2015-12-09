@@ -286,7 +286,7 @@ class get_nav_objects(BrowserView):
             date_of_birth = author['date_of_birth']
             date_of_death = author['date_of_death']
 
-            production = maker
+            production = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>, ' % (maker, maker)
 
             dates = ""
             if date_of_birth not in NOT_ALLOWED:
@@ -933,7 +933,7 @@ class get_fields(BrowserView):
             date_of_birth = author['date_of_birth']
             date_of_death = author['date_of_death']
 
-            production = maker
+            production = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>, ' % (maker, maker)
 
             dates = ""
             if date_of_birth not in NOT_ALLOWED:
