@@ -238,9 +238,12 @@ class get_nav_objects(BrowserView):
             author_name = author_name.strip()
 
         split_name = author_name.split(',')
-        new_author = []
+        if len(split_name) > 2:
+            final_value = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' %(value, value)
+            return final_value
 
-        if (len(split_name) > 1) and (len(split_name) > 0):
+        new_author = []
+        if len(split_name) > 1 and len(split_name) > 0:
             new_author.append(split_name[-1])
             new_author.append(split_name[0])
         elif len(split_name) > 0:
@@ -283,7 +286,7 @@ class get_nav_objects(BrowserView):
             date_of_birth = author['date_of_birth']
             date_of_death = author['date_of_death']
 
-            production = self.create_author_name(maker)
+            production = maker
 
             dates = ""
             if date_of_birth not in NOT_ALLOWED:
@@ -361,30 +364,30 @@ class get_nav_objects(BrowserView):
 
         result = ""
 
-        if period != "" and period != None and period != " ":
+        if period not in NOT_ALLOWED:
             result = "%s" %(period)
 
-        if start_date != "" and start_date != " ":
+        if start_date not in NOT_ALLOWED:
             if result:
-                if start_date_precision != "" and start_date_precision != " ":
+                if start_date_precision not in NOT_ALLOWED:
                     result = "%s, %s %s" %(result, start_date_precision, start_date)
                 else:
                     result = "%s, %s" %(result, start_date)
             else:
-                if start_date_precision != "" and start_date_precision != " ":
+                if start_date_precision not in NOT_ALLOWED:
                     result = "%s %s" %(start_date_precision, start_date)
                 else:
                     result = "%s" %(start_date)
     
 
-        if end_date != "" and end_date != " ":
+        if end_date not in NOT_ALLOWED:
             if result:
-                if end_date_precision != "" and end_date_precision != " ":
+                if end_date_precision not in NOT_ALLOWED:
                     result = "%s - %s %s" %(result, end_date_precision, start_date)
                 else:
                     result = "%s - %s" %(result, end_date)
             else:
-                if end_date_precision != "" and end_date_precision != " ":
+                if end_date_precision not in NOT_ALLOWED:
                     result = "%s %s" %(end_date_precision, start_date)
                 else:
                     result = "%s" %(end_date)
@@ -470,7 +473,7 @@ class get_nav_objects(BrowserView):
                     
                     else:
                         value = self.trim_white_spaces(value)
-                        if value != None and value != '' and value != " ":
+                        if value not in NOT_ALLOWED:
                             if name in ['technique', 'artist', 'material', 'object_type', 'object_category', 'publisher', 'author']:
                                 if name in ['artist', 'author']:
                                     _value = self.create_author_name(value)
@@ -882,6 +885,10 @@ class get_fields(BrowserView):
             author_name = author_name.strip()
 
         split_name = author_name.split(',')
+        if len(split_name) > 2:
+            final_value = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' %(value, value)
+            return final_value
+
         new_author = []
         if len(split_name) > 1 and len(split_name) > 0:
             new_author.append(split_name[-1])
@@ -926,7 +933,7 @@ class get_fields(BrowserView):
             date_of_birth = author['date_of_birth']
             date_of_death = author['date_of_death']
 
-            production = self.create_author_name(maker)
+            production = maker
 
             dates = ""
             if date_of_birth not in NOT_ALLOWED:
@@ -1004,30 +1011,30 @@ class get_fields(BrowserView):
 
         result = ""
 
-        if period != "" and period != None and period != " ":
+        if period not in NOT_ALLOWED:
             result = "%s" %(period)
 
-        if start_date != "" and start_date != " ":
+        if start_date not in NOT_ALLOWED:
             if result:
-                if start_date_precision != "" and start_date_precision != " ":
+                if start_date_precision not in NOT_ALLOWED:
                     result = "%s, %s %s" %(result, start_date_precision, start_date)
                 else:
                     result = "%s, %s" %(result, start_date)
             else:
-                if start_date_precision != "" and start_date_precision != " ":
+                if start_date_precision not in NOT_ALLOWED:
                     result = "%s %s" %(start_date_precision, start_date)
                 else:
                     result = "%s" %(start_date)
     
 
-        if end_date != "" and end_date != " ":
+        if end_date not in NOT_ALLOWED:
             if result:
-                if end_date_precision != "" and end_date_precision != " ":
+                if end_date_precision not in NOT_ALLOWED:
                     result = "%s - %s %s" %(result, end_date_precision, start_date)
                 else:
                     result = "%s - %s" %(result, end_date)
             else:
-                if end_date_precision != "" and end_date_precision != " ":
+                if end_date_precision not in NOT_ALLOWED:
                     result = "%s %s" %(end_date_precision, start_date)
                 else:
                     result = "%s" %(end_date)
@@ -1107,7 +1114,7 @@ class get_fields(BrowserView):
                     
                     else:
                         value = self.trim_white_spaces(value)
-                        if value != None and value != '' and value != " ":
+                        if value not in NOT_ALLOWED:
                             if name in ['technique', 'artist', 'material', 'object_type', 'object_category', 'publisher', 'author']:
                                 if (name == 'artist') or (name == 'author'):
                                     _value = self.create_author_name(value)
