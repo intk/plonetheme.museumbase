@@ -17,7 +17,7 @@ from plone.app.contenttypes.interfaces import ICollection
 import re
 
 MessageFactory = MessageFactory('Products.mediaObject')
-NOT_ALLOWED = [None, '', ' ']
+NOT_ALLOWED = [None, '', ' ', []]
 
 class get_nav_objects(BrowserView):
     """
@@ -318,11 +318,13 @@ class get_nav_objects(BrowserView):
 
         for val in field:
             dimension = ""
-            if val['value'] != "":
+            if val['value'] not in NOT_ALLOWED:
                 dimension = "%s" %(val['value'])
-            if val['unit'] != "":
+            else:
+                return ""
+            if val['unit'] not in NOT_ALLOWED:
                 dimension = "%s %s" %(dimension, val['unit'].lower())
-            if val['type'] != "" and val['type'] != []:
+            if val['type'] not in NOT_ALLOWED:
                 dimension = "%s: %s" %(val['type'].lower(), dimension)
 
             new_dimension_val.append(dimension)
@@ -997,11 +999,13 @@ class get_fields(BrowserView):
 
         for val in field:
             dimension = ""
-            if val['value'] != "":
+            if val['value'] not in NOT_ALLOWED:
                 dimension = "%s" %(val['value'])
-            if val['unit'] != "":
+            else:
+                return ""
+            if val['unit'] not in NOT_ALLOWED:
                 dimension = "%s %s" %(dimension, val['unit'].lower())
-            if val['type'] != "" and val['type'] != []:
+            if val['type'] not in NOT_ALLOWED:
                 dimension = "%s: %s" %(val['type'].lower(), dimension)
 
             new_dimension_val.append(dimension)
