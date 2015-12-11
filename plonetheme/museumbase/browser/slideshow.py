@@ -321,7 +321,7 @@ class get_nav_objects(BrowserView):
             if val['value'] != "":
                 dimension = "%s" %(val['value'])
             if val['unit'] != "":
-                dimension = "%s %s" %(dimension, val['unit'])
+                dimension = "%s %s" %(dimension, val['unit'].lower())
             if val['type'] != "" and val['type'] != []:
                 dimension = "%s: %s" %(val['type'].lower(), dimension)
 
@@ -331,9 +331,36 @@ class get_nav_objects(BrowserView):
         
         return dimension_result
 
-    def create_general_repeatable(self, field):
+    def create_general_repeatable(self, field, name):
 
         values = []
+
+        if "period" in name:
+            separator = "<p>"
+
+            for line in field:
+                period = line['period']
+                place = line['place']
+                reason = line['reason']
+                notes = line['notes']
+
+                if period not in NOT_ALLOWED:
+                    values.append(period)
+
+                if place not in NOT_ALLOWED:
+                    values.append(place)
+
+                if reason not in NOT_ALLOWED:
+                    values.append(reason)
+
+                if notes not in NOT_ALLOWED:
+                    values.append(notes)
+
+            final_value = separator.join(values)
+            return final_value
+
+        else:
+            separator = ", "
 
         for line in field:
             new_line = []
@@ -342,7 +369,7 @@ class get_nav_objects(BrowserView):
                     if value not in NOT_ALLOWED:
                         new_line.append(value)
 
-                final_line = ", ".join(new_line)
+                final_line = separator.join(new_line)
                 values.append(final_line)
             else:
                 if line not in NOT_ALLOWED:
@@ -351,8 +378,8 @@ class get_nav_objects(BrowserView):
         final_value = "<p>".join(values)
 
         return final_value
-
-    def create_prod_dating_field(self, field):
+        
+    def create_prod_dating_field(self, field, obj):
         period = None
         start_date = field['start']
         start_date_precision = field['start_precision']
@@ -392,14 +419,19 @@ class get_nav_objects(BrowserView):
                 else:
                     result = "%s" %(end_date)
 
+        object_period = getattr(obj, 'object_production_period', "")
+        if object_period:
+            if object_period[0]['period'] == result:
+                return ""
+
         return result
 
 
 
-    def create_production_dating_field(self, period_field):
+    def create_production_dating_field(self, period_field, obj):
         period = []
         for field in period_field:
-            result = self.create_prod_dating_field(field)
+            result = self.create_prod_dating_field(field, obj)
             if result not in NOT_ALLOWED:
                 period.append(result)
 
@@ -450,7 +482,7 @@ class get_nav_objects(BrowserView):
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
                                 object_schema.append(new_attr)
                         elif "dating" in name:
-                            value = self.create_production_dating_field(value)
+                            value = self.create_production_dating_field(value, object)
                             if value:
                                 _title = MessageFactory(field.title)
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
@@ -464,7 +496,7 @@ class get_nav_objects(BrowserView):
                                 object_schema.append(new_attr)
                                 
                         else:
-                            value = self.create_general_repeatable(value)
+                            value = self.create_general_repeatable(value, name)
                             if value:
                                 _title = MessageFactory(field.title)
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
@@ -968,7 +1000,7 @@ class get_fields(BrowserView):
             if val['value'] != "":
                 dimension = "%s" %(val['value'])
             if val['unit'] != "":
-                dimension = "%s %s" %(dimension, val['unit'])
+                dimension = "%s %s" %(dimension, val['unit'].lower())
             if val['type'] != "" and val['type'] != []:
                 dimension = "%s: %s" %(val['type'].lower(), dimension)
 
@@ -978,9 +1010,36 @@ class get_fields(BrowserView):
         
         return dimension_result
 
-    def create_general_repeatable(self, field):
+    def create_general_repeatable(self, field, name):
 
         values = []
+
+        if "period" in name:
+            separator = "<p>"
+
+            for line in field:
+                period = line['period']
+                place = line['place']
+                reason = line['reason']
+                notes = line['notes']
+
+                if period not in NOT_ALLOWED:
+                    values.append(period)
+
+                if place not in NOT_ALLOWED:
+                    values.append(place)
+
+                if reason not in NOT_ALLOWED:
+                    values.append(reason)
+
+                if notes not in NOT_ALLOWED:
+                    values.append(notes)
+
+            final_value = separator.join(values)
+            return final_value
+
+        else:
+            separator = ", "
 
         for line in field:
             new_line = []
@@ -989,7 +1048,7 @@ class get_fields(BrowserView):
                     if value not in NOT_ALLOWED:
                         new_line.append(value)
 
-                final_line = ", ".join(new_line)
+                final_line = separator.join(new_line)
                 values.append(final_line)
             else:
                 if line not in NOT_ALLOWED:
@@ -999,7 +1058,7 @@ class get_fields(BrowserView):
 
         return final_value
 
-    def create_prod_dating_field(self, field):
+    def create_prod_dating_field(self, field, obj):
         period = None
         start_date = field['start']
         start_date_precision = field['start_precision']
@@ -1039,12 +1098,17 @@ class get_fields(BrowserView):
                 else:
                     result = "%s" %(end_date)
 
+        object_period = getattr(obj, 'object_production_period', "")
+        if object_period:
+            if object_period[0]['period'] == result:
+                return ""
+
         return result
 
-    def create_production_dating_field(self, period_field):
+    def create_production_dating_field(self, period_field, obj):
         period = []
         for field in period_field:
-            result = self.create_prod_dating_field(field)
+            result = self.create_prod_dating_field(field, obj)
             if result not in NOT_ALLOWED:
                 period.append(result)
 
@@ -1093,7 +1157,7 @@ class get_fields(BrowserView):
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
                                 object_schema.append(new_attr)
                         elif "dating" in name:
-                            value = self.create_production_dating_field(value)
+                            value = self.create_production_dating_field(value, object)
                             if value:
                                 _title = MessageFactory(field.title)
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
@@ -1105,7 +1169,7 @@ class get_fields(BrowserView):
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
                                 object_schema.append(new_attr)
                         else:
-                            value = self.create_general_repeatable(value)
+                            value = self.create_general_repeatable(value, name)
                             if value:
                                 _title = MessageFactory(field.title)
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
