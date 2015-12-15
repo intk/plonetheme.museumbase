@@ -286,7 +286,7 @@ class get_nav_objects(BrowserView):
             date_of_birth = author['date_of_birth']
             date_of_death = author['date_of_death']
 
-            production = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>, ' % (maker, maker)
+            production = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (maker, maker)
 
             dates = ""
             if date_of_birth not in NOT_ALLOWED:
@@ -298,7 +298,7 @@ class get_nav_objects(BrowserView):
 
             if dates not in NOT_ALLOWED:
                 if production:
-                    production = "%s (%s)" %(production, dates)
+                    production = "%s, (%s)" %(production, dates)
 
             if role not in NOT_ALLOWED:
                 if production:
@@ -326,6 +326,9 @@ class get_nav_objects(BrowserView):
                 dimension = "%s %s" %(dimension, val['unit'].lower())
             if val['type'] not in NOT_ALLOWED:
                 dimension = "%s: %s" %(val['type'].lower(), dimension)
+
+            if val['part'] not in NOT_ALLOWED:
+                dimension = "%s (%s)" %(dimension, val['part'])
 
             new_dimension_val.append(dimension)
 
@@ -369,13 +372,21 @@ class get_nav_objects(BrowserView):
             if type(line) == dict:
                 for key, value in line.iteritems():
                     if value not in NOT_ALLOWED:
-                        new_line.append(value)
+                        if name in ['object_material']:
+                            new_value = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (value, value)
+                            new_line.append(new_value)
+                        else:   
+                            new_line.append(value)
 
                 final_line = separator.join(new_line)
                 values.append(final_line)
             else:
                 if line not in NOT_ALLOWED:
-                    values.append(line)
+                    if name in ['object_material']:
+                        new_value = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (value, value)
+                        new_line.append(new_value)
+                    else: 
+                        values.append(line)
 
         final_value = "<p>".join(values)
 
@@ -412,12 +423,15 @@ class get_nav_objects(BrowserView):
         if end_date not in NOT_ALLOWED:
             if result:
                 if end_date_precision not in NOT_ALLOWED:
-                    result = "%s - %s %s" %(result, end_date_precision, start_date)
+                    if end_date_precision != start_date_precision:
+                        result = "%s - %s %s" %(result, end_date_precision, end_date)
+                    else:
+                        result = "%s - %s" %(result, end_date)
                 else:
                     result = "%s - %s" %(result, end_date)
             else:
                 if end_date_precision not in NOT_ALLOWED:
-                    result = "%s %s" %(end_date_precision, start_date)
+                    result = "%s %s" %(end_date_precision, end_date)
                 else:
                     result = "%s" %(end_date)
 
@@ -967,7 +981,7 @@ class get_fields(BrowserView):
             date_of_birth = author['date_of_birth']
             date_of_death = author['date_of_death']
 
-            production = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>, ' % (maker, maker)
+            production = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (maker, maker)
 
             dates = ""
             if date_of_birth not in NOT_ALLOWED:
@@ -979,7 +993,7 @@ class get_fields(BrowserView):
 
             if dates not in NOT_ALLOWED:
                 if production:
-                    production = "%s (%s)" %(production, dates)
+                    production = "%s, (%s)" %(production, dates)
 
             if role not in NOT_ALLOWED:
                 if production:
@@ -1007,6 +1021,9 @@ class get_fields(BrowserView):
                 dimension = "%s %s" %(dimension, val['unit'].lower())
             if val['type'] not in NOT_ALLOWED:
                 dimension = "%s: %s" %(val['type'].lower(), dimension)
+
+            if val['part'] not in NOT_ALLOWED:
+                dimension = "%s (%s)" %(dimension, val['part'])
 
             new_dimension_val.append(dimension)
 
@@ -1050,13 +1067,21 @@ class get_fields(BrowserView):
             if type(line) == dict:
                 for key, value in line.iteritems():
                     if value not in NOT_ALLOWED:
-                        new_line.append(value)
+                        if name in ['object_material']:
+                            new_value = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (value, value)
+                            new_line.append(new_value)
+                        else:   
+                            new_line.append(value)
 
                 final_line = separator.join(new_line)
                 values.append(final_line)
             else:
                 if line not in NOT_ALLOWED:
-                    values.append(line)
+                    if name in ['object_material']:
+                        new_value = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (value, value)
+                        new_line.append(new_value)
+                    else: 
+                        values.append(line)
 
         final_value = "<p>".join(values)
 
@@ -1093,12 +1118,15 @@ class get_fields(BrowserView):
         if end_date not in NOT_ALLOWED:
             if result:
                 if end_date_precision not in NOT_ALLOWED:
-                    result = "%s - %s %s" %(result, end_date_precision, start_date)
+                    if end_date_precision != start_date_precision:
+                        result = "%s - %s %s" %(result, end_date_precision, end_date)
+                    else:
+                        result = "%s - %s" %(result, end_date)
                 else:
                     result = "%s - %s" %(result, end_date)
             else:
                 if end_date_precision not in NOT_ALLOWED:
-                    result = "%s %s" %(end_date_precision, start_date)
+                    result = "%s %s" %(end_date_precision, end_date)
                 else:
                     result = "%s" %(end_date)
 
