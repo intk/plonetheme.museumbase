@@ -474,6 +474,32 @@ class get_nav_objects(BrowserView):
         else:
             return ""
 
+    def create_digital_ref_field(self, field):
+
+        refs = []
+
+        for line in field:
+            ref = line['reference']
+            title = line['description']
+
+            if title not in NOT_ALLOWED and ref not in NOT_ALLOWED:
+                new_ref = '<a href="%s" target="_blank">%s</a>' % (ref, title)
+                refs.append(new_ref)
+            elif title not in NOT_ALLOWED:
+                new_ref = title
+                refs.append(new_ref)
+            elif ref not in NOT_ALLOWED:
+                new_ref = '<a href="%s" target="_blank">%s</a>' % (ref, ref)
+                refs.append(new_ref)
+            else:
+                pass
+
+        if refs:
+            final_refs = "<p>".join(refs)
+            return final_refs
+        else:
+            return ""
+
 
     def get_all_fields_object(self, object):
         object_schema = []
@@ -485,7 +511,7 @@ class get_nav_objects(BrowserView):
                     value = getattr(object, name, '')
 
                     if type(value) == list:
-                        if "creator" in name:
+                        if "creator" in name or 'object_author' in name:
                             value = self.create_production_field(value)
                             if value:
                                 _title = MessageFactory(field.title)
@@ -506,6 +532,13 @@ class get_nav_objects(BrowserView):
 
                         elif "inscription" in name:
                             value = self.create_inscription_field(value)
+                            if value:
+                                _title = MessageFactory(field.title)
+                                new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                                object_schema.append(new_attr)
+
+                        elif "digital_reference" in name:
+                            value = self.create_digital_ref_field(value)
                             if value:
                                 _title = MessageFactory(field.title)
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
@@ -1167,6 +1200,32 @@ class get_fields(BrowserView):
         else:
             return ""
 
+    def create_digital_ref_field(self, field):
+
+        refs = []
+
+        for line in field:
+            ref = line['reference']
+            title = line['description']
+
+            if title not in NOT_ALLOWED and ref not in NOT_ALLOWED:
+                new_ref = '<a href="%s" target="_blank">%s</a>' % (ref, title)
+                refs.append(new_ref)
+            elif title not in NOT_ALLOWED:
+                new_ref = title
+                refs.append(new_ref)
+            elif ref not in NOT_ALLOWED:
+                new_ref = '<a href="%s" target="_blank">%s</a>' % (ref, ref)
+                refs.append(new_ref)
+            else:
+                pass
+
+        if refs:
+            final_refs = "<p>".join(refs)
+            return final_refs
+        else:
+            return ""
+
     def get_all_fields_object(self, object):
         object_schema = []
         schema = getUtility(IDexterityFTI, name='Object').lookupSchema()
@@ -1176,7 +1235,7 @@ class get_fields(BrowserView):
                 if name not in ["text", "object_tags", "book_title", "priref", "administration_name", "object_reproduction_reference"]:
                     value = getattr(object, name, '')
                     if type(value) == list:
-                        if "creator" in name:
+                        if "creator" in name or 'object_author' in name:
                             value = self.create_production_field(value)
                             if value:
                                 _title = MessageFactory(field.title)
@@ -1200,6 +1259,13 @@ class get_fields(BrowserView):
                                 _title = MessageFactory(field.title)
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
                                 object_schema.append(new_attr)
+
+                        elif "digital_reference" in name:
+                            value = self.create_digital_ref_field(value)
+                            if value:
+                                _title = MessageFactory(field.title)
+                                new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                                object_schema.append(new_attr)
                         else:
                             value = self.create_general_repeatable(value, name)
                             if value:
@@ -1211,7 +1277,7 @@ class get_fields(BrowserView):
                     else:
                         value = self.trim_white_spaces(value)
                         if value not in NOT_ALLOWED:
-                            if name in ['technique', 'artist', 'material', 'object_type', 'object_category', 'publisher', 'author']:
+                            if name in ['technique', 'artist', 'material', 'object_type', 'object_category', 'publisher', 'author', 'illustrator']:
                                 if (name == 'artist') or (name == 'author'):
                                     _value = self.create_author_name(value)
                                     value = _value
