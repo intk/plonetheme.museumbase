@@ -267,9 +267,9 @@ class get_nav_objects(BrowserView):
         _value = ""
         for i, mat in enumerate(materials):
             if i == (len(materials)-1):
-                _value += '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (mat, mat)
+                _value += '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (mat.replace('"', "'"), mat)
             else:
-                _value += '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>, ' % (mat, mat)
+                _value += '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>, ' % (mat.replace('"', "'"), mat)
 
         return _value
 
@@ -286,27 +286,28 @@ class get_nav_objects(BrowserView):
             date_of_birth = author['date_of_birth']
             date_of_death = author['date_of_death']
 
-            production = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (maker, maker)
+            if maker not in NOT_ALLOWED:
+                production = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (maker, maker)
 
-            dates = ""
-            if date_of_birth not in NOT_ALLOWED:
-                dates = "%s" %(date_of_birth)
-                if date_of_death not in NOT_ALLOWED:
-                    dates = "%s-%s" %(dates, date_of_death)
-            elif date_of_death not in NOT_ALLOWED:
-                dates = "%s" %(date_of_death)
+                dates = ""
+                if date_of_birth not in NOT_ALLOWED:
+                    dates = "%s" %(date_of_birth)
+                    if date_of_death not in NOT_ALLOWED:
+                        dates = "%s-%s" %(dates, date_of_death)
+                elif date_of_death not in NOT_ALLOWED:
+                    dates = "%s" %(date_of_death)
 
-            if dates not in NOT_ALLOWED:
-                if production:
-                    production = "%s, (%s)" %(production, dates)
+                if dates not in NOT_ALLOWED:
+                    if production:
+                        production = "%s, (%s)" %(production, dates)
 
-            if role not in NOT_ALLOWED:
-                if production:
-                    production = "%s (%s)" %(production, role)
-                else:
-                    production = "(%s)" %(role)
+                if role not in NOT_ALLOWED:
+                    if production:
+                        production = "%s (%s)" %(production, role)
+                    else:
+                        production = "(%s)" %(role)
 
-            authors.append(production)
+                authors.append(production)
 
         final_production = "<p>".join(authors)
 
@@ -507,7 +508,7 @@ class get_nav_objects(BrowserView):
 
         if object.portal_type == 'Object':
             for name, field in getFieldsInOrder(schema):
-                if name not in ["text", "object_tags", "book_title", "priref", "administration_name"]:
+                if name not in ["text", "object_tags", "book_title", "priref", "administration_name", "object_reproduction_reference"]:
                     value = getattr(object, name, '')
 
                     if type(value) == list:
@@ -995,9 +996,9 @@ class get_fields(BrowserView):
         _value = ""
         for i, mat in enumerate(materials):
             if i == (len(materials)-1):
-                _value += '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (mat, mat)
+                _value += '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (mat.replace('"', "'"), mat)
             else:
-                _value += '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>, ' % (mat, mat)
+                _value += '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>, ' % (mat.replace('"', "'"), mat)
 
         return _value
 
@@ -1014,27 +1015,29 @@ class get_fields(BrowserView):
             date_of_birth = author['date_of_birth']
             date_of_death = author['date_of_death']
 
-            production = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (maker, maker)
+            if maker not in NOT_ALLOWED:
 
-            dates = ""
-            if date_of_birth not in NOT_ALLOWED:
-                dates = "%s" %(date_of_birth)
-                if date_of_death not in NOT_ALLOWED:
-                    dates = "%s-%s" %(dates, date_of_death)
-            elif date_of_death not in NOT_ALLOWED:
-                dates = "%s" %(date_of_death)
+                production = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (maker, maker)
 
-            if dates not in NOT_ALLOWED:
-                if production:
-                    production = "%s, (%s)" %(production, dates)
+                dates = ""
+                if date_of_birth not in NOT_ALLOWED:
+                    dates = "%s" %(date_of_birth)
+                    if date_of_death not in NOT_ALLOWED:
+                        dates = "%s-%s" %(dates, date_of_death)
+                elif date_of_death not in NOT_ALLOWED:
+                    dates = "%s" %(date_of_death)
 
-            if role not in NOT_ALLOWED:
-                if production:
-                    production = "%s (%s)" %(production, role)
-                else:
-                    production = "(%s)" %(role)
+                if dates not in NOT_ALLOWED:
+                    if production:
+                        production = "%s, (%s)" %(production, dates)
 
-            authors.append(production)
+                if role not in NOT_ALLOWED:
+                    if production:
+                        production = "%s (%s)" %(production, role)
+                    else:
+                        production = "(%s)" %(role)
+
+                authors.append(production)
 
         final_production = "<p>".join(authors)
 
