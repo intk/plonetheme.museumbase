@@ -180,3 +180,23 @@ msgstr "Objectnummer"
 msgid 'maker'
 msgstr "Vervaardiger"
 
+#: ../object.py
+msgid 'object_material'
+msgstr "Materiaal"
+
+#: ../object.py
+msgid 'object_technique'
+msgstr "Techniek"
+
+#: ../object.py
+msgid 'object_creator'
+msgstr "Vervaardiger"
+
+#: ../object.py
+msgid 'object_commonName'
+msgstr "Populaire naam"
+
+#: ../object.py
+msgid 'object_collection'
+msgstr 'Collectie'
+

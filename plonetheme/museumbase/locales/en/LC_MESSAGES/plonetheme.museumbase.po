@@ -79,5 +79,26 @@ msgid 'object_number'
 msgstr "Object number"
 
 #: ../object.py
-msgid 'maker'
+msgid 'object_creator'
 msgstr "Author"
+
+#: ../object.py
+msgid 'object_material'
+msgstr "Material"
+
+#: ../object.py
+msgid 'object_technique'
+msgstr "Technique"
+
+#: ../object.py
+msgid 'object_creator'
+msgstr "Creator"
+
+#: ../object.py
+msgid 'object_commonName'
+msgstr 'Common name'
+
+#: ../object.py
+msgid 'object_collection'
+msgstr 'Collection'
+

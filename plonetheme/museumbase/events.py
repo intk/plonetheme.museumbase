@@ -5,6 +5,7 @@ from plone.multilingual.interfaces import ILanguage
 from plone.multilingual.interfaces import ITranslatable
 
 def objectTranslated(ob, event):
+    return True
     createdEvent(ob, event)
 
     if ITranslatable.providedBy(ob):

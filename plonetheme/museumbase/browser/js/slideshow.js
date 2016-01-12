@@ -503,8 +503,6 @@ slickSlideshow.toggle_play = function(playBtn, slide) {
 
 slickSlideshow.addNavigationSlides = function() {
 
-	console.log("add slides");
-
 	slides = slickSlideshow.slides;
 
 	var init_slide = 0;
@@ -620,7 +618,7 @@ slickSlideshow.getNavigationContent = function(query, object_id, init) {
 	if (get_content != false) {
 		$.getJSON(URL, function(data) {
 			if (data != undefined) {
-				
+
 				object_to_go = data.object_idx;
 				
 				slickSlideshow.double_view = data.has_list_images;
@@ -1513,6 +1511,10 @@ slickSlideshow.updateSlideDescriptionBar = function(title, description) {
 
 slickSlideshow.updateSlideDetails = function(curr, currentSlide, title, description) {
 	var $currentSlideObj = currentSlide;
+
+	if (curr == 0 && !$("body").hasClass('template-book_view')) {
+		return true;
+	}
 
 	$("#content div.documentDescription.description").html(description);
 

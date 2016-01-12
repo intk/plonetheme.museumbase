@@ -508,7 +508,7 @@ class get_nav_objects(BrowserView):
 
         if object.portal_type == 'Object':
             for name, field in getFieldsInOrder(schema):
-                if name not in ["text", "object_tags", "book_title", "priref", "administration_name", "object_reproduction_reference"]:
+                if name not in ["text", "object_tags", "book_title", "priref", "administration_name", "object_reproduction_reference", "stable_uri"]:
                     value = getattr(object, name, '')
 
                     if type(value) == list:
@@ -575,10 +575,10 @@ class get_nav_objects(BrowserView):
                             else:
                                 object_schema.append(new_attr)
             
-            object_title = getattr(object, 'title', '')
-            new_attr = {'title': self.context.translate('Title'), "value": object_title}
+            ##object_title = getattr(object, 'title', '')
+            ##new_attr = {'title': self.context.translate('Title'), "value": object_title}
 
-            if len(object_schema) > 1 and object_schema[0]['name'] == "author":
+            """if len(object_schema) > 1 and object_schema[0]['name'] == "author":
                 if object_schema[1]['name'] == "illustrator":
                     if object.book_title != '':
                         new_attr = {'title': self.context.translate('Title'), "value": object.book_title}
@@ -591,7 +591,7 @@ class get_nav_objects(BrowserView):
             if len(object_schema) > 1 and object_schema[0]['name'] == "artist":
                 object_schema.insert(1, new_attr)
             elif len(object_schema) > 1 and object_schema[0]['name'] != "artist" and object_schema[0]['name'] != "author":
-                object_schema.insert(0, new_attr)
+                object_schema.insert(0, new_attr)"""
 
             obj_body = self.get_object_body(object)
             object_schema.append({"title": "body", "value":obj_body})
@@ -1235,7 +1235,7 @@ class get_fields(BrowserView):
 
         if object.portal_type == 'Object':
             for name, field in getFieldsInOrder(schema):
-                if name not in ["text", "object_tags", "book_title", "priref", "administration_name", "object_reproduction_reference"]:
+                if name not in ["text", "object_tags", "book_title", "priref", "administration_name", "object_reproduction_reference", "stable_uri"]:
                     value = getattr(object, name, '')
                     if type(value) == list:
                         if "creator" in name or 'object_author' in name:
