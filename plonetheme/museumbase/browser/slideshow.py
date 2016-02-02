@@ -375,7 +375,7 @@ class get_nav_objects(BrowserView):
             if type(line) == dict:
                 for key, value in line.iteritems():
                     if value not in NOT_ALLOWED:
-                        if name in ['object_material']:
+                        if name in ['object_material', 'object_technique']:
                             new_value = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (value, value)
                             new_line.append(new_value)
                         else:   
@@ -385,7 +385,7 @@ class get_nav_objects(BrowserView):
                 values.append(final_line)
             else:
                 if line not in NOT_ALLOWED:
-                    if name in ['object_material']:
+                    if name in ['object_material', 'object_technique']:
                         new_value = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (value, value)
                         new_line.append(new_value)
                     else: 
@@ -1157,7 +1157,7 @@ class get_fields(BrowserView):
             if type(line) == dict:
                 for key, value in line.iteritems():
                     if value not in NOT_ALLOWED:
-                        if name in ['object_material']:
+                        if name in ['object_material', 'object_technique']:
                             new_value = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (value, value)
                             new_line.append(new_value)
                         else:   
@@ -1167,7 +1167,7 @@ class get_fields(BrowserView):
                 values.append(final_line)
             else:
                 if line not in NOT_ALLOWED:
-                    if name in ['object_material']:
+                    if name in ['object_material', 'object_technique']:
                         new_value = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (value, value)
                         new_line.append(new_value)
                     else: 
