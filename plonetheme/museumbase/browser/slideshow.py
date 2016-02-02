@@ -287,7 +287,7 @@ class get_nav_objects(BrowserView):
             date_of_death = author['date_of_death']
 
             if maker not in NOT_ALLOWED:
-                production = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (maker, maker)
+                production = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (maker.replace("(-", "("), maker)
 
                 dates = ""
                 if date_of_birth not in NOT_ALLOWED:
@@ -322,11 +322,13 @@ class get_nav_objects(BrowserView):
             if val['value'] not in NOT_ALLOWED:
                 dimension = "%s" %(val['value'])
             else:
-                return ""
+                continue
             if val['unit'] not in NOT_ALLOWED:
                 dimension = "%s %s" %(dimension, val['unit'].lower())
             if val['type'] not in NOT_ALLOWED:
                 dimension = "%s: %s" %(val['type'].lower(), dimension)
+            else:
+                continue
 
             if val['part'] not in NOT_ALLOWED:
                 dimension = "%s (%s)" %(dimension, val['part'])
@@ -346,7 +348,7 @@ class get_nav_objects(BrowserView):
 
             for line in field:
                 period = line['period']
-                place = line['place']
+                place = ""
                 reason = line['reason']
                 notes = line['notes']
 
@@ -501,6 +503,41 @@ class get_nav_objects(BrowserView):
         else:
             return ""
 
+    def create_period_field(self, field, obj, name):
+
+        title = "Period"
+
+        object_dating = getattr(obj, 'object_dating', "")
+        value = ""
+
+        if object_dating:
+            for line in object_dating:
+                if line['start'] not in NOT_ALLOWED:
+                    if line['end'] not in NOT_ALLOWED:
+                        if line['start'] == line['end']:
+                            value = line['start']
+                            break
+
+        if field and value:
+            if field[0]['period'] == value:
+                title = "Dating"
+
+        result = self.create_general_repeatable(field, name)
+
+        return result, title
+
+    def create_production_place(self, field, obj, name):
+        values = []
+        separator = "<p>"
+
+        for line in field:
+            place = line['place']
+            if place not in NOT_ALLOWED:
+                values.append(place)
+
+        final_value = separator.join(values)
+        return final_value
+
 
     def get_all_fields_object(self, object):
         object_schema = []
@@ -524,6 +561,7 @@ class get_nav_objects(BrowserView):
                                 _title = MessageFactory(field.title)
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
                                 object_schema.append(new_attr)
+
                         elif "dating" in name:
                             value = self.create_production_dating_field(value, object)
                             if value:
@@ -543,6 +581,19 @@ class get_nav_objects(BrowserView):
                             if value:
                                 _title = MessageFactory(field.title)
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
+                                object_schema.append(new_attr)
+
+                        elif "object_production_period" in name:
+                            final_value, title = self.create_period_field(value, object, name)
+                            if final_value:
+                                _title = MessageFactory(title)
+                                new_attr = {"title": self.context.translate(_title), "value": final_value, "name": name}
+                                object_schema.append(new_attr)
+
+                            final_value = self.create_production_place(value, object, name)
+                            if final_value:
+                                _title = MessageFactory("Place of production")
+                                new_attr = {"title": self.context.translate(_title), "value": final_value, "name": name}
                                 object_schema.append(new_attr)
                                 
                         else:
@@ -1017,7 +1068,7 @@ class get_fields(BrowserView):
 
             if maker not in NOT_ALLOWED:
 
-                production = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (maker, maker)
+                production = '<a href="/'+self.context.language+'/search?SearchableText=%s">%s</a>' % (maker.replace("(-", "("), maker)
 
                 dates = ""
                 if date_of_birth not in NOT_ALLOWED:
@@ -1052,11 +1103,14 @@ class get_fields(BrowserView):
             if val['value'] not in NOT_ALLOWED:
                 dimension = "%s" %(val['value'])
             else:
-                return ""
+                continue
             if val['unit'] not in NOT_ALLOWED:
                 dimension = "%s %s" %(dimension, val['unit'].lower())
+
             if val['type'] not in NOT_ALLOWED:
                 dimension = "%s: %s" %(val['type'].lower(), dimension)
+            else:
+                continue
 
             if val['part'] not in NOT_ALLOWED:
                 dimension = "%s (%s)" %(dimension, val['part'])
@@ -1076,7 +1130,7 @@ class get_fields(BrowserView):
 
             for line in field:
                 period = line['period']
-                place = line['place']
+                place = ""
                 reason = line['reason']
                 notes = line['notes']
 
@@ -1229,6 +1283,41 @@ class get_fields(BrowserView):
         else:
             return ""
 
+    def create_period_field(self, field, obj, name):
+
+        title = "Period"
+
+        object_dating = getattr(obj, 'object_dating', "")
+        value = ""
+
+        if object_dating:
+            for line in object_dating:
+                if line['start'] not in NOT_ALLOWED:
+                    if line['end'] not in NOT_ALLOWED:
+                        if line['start'] == line['end']:
+                            value = line['start']
+                            break
+
+        if field and value:
+            if field[0]['period'] == value:
+                title = "Dating"
+
+        result = self.create_general_repeatable(field, name)
+
+        return result, title
+
+    def create_production_place(self, field, obj, name):
+        values = []
+        separator = "<p>"
+
+        for line in field:
+            place = line['place']
+            if place not in NOT_ALLOWED:
+                values.append(place)
+
+        final_value = separator.join(values)
+        return final_value
+
     def get_all_fields_object(self, object):
         object_schema = []
         schema = getUtility(IDexterityFTI, name='Object').lookupSchema()
@@ -1269,6 +1358,20 @@ class get_fields(BrowserView):
                                 _title = MessageFactory(field.title)
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
                                 object_schema.append(new_attr)
+
+                        elif "object_production_period" in name:
+                            final_value, title = self.create_period_field(value, object, name)
+                            if final_value:
+                                _title = MessageFactory(title)
+                                new_attr = {"title": self.context.translate(_title), "value": final_value, "name": name}
+                                object_schema.append(new_attr)
+
+                            final_value = self.create_production_place(value, object, name)
+                            if final_value:
+                                _title = MessageFactory("Place of production")
+                                new_attr = {"title": self.context.translate(_title), "value": final_value, "name": name}
+                                object_schema.append(new_attr)
+
                         else:
                             value = self.create_general_repeatable(value, name)
                             if value:

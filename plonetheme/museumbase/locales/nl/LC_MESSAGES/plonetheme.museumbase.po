@@ -200,3 +200,10 @@ msgstr "Populaire naam"
 msgid 'object_collection'
 msgstr 'Collectie'
 
+#: ../object.py
+msgid 'Place of production'
+msgstr 'Productieplaats'
+
+
+
+
