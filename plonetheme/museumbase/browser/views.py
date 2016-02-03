@@ -414,22 +414,23 @@ class SearchView(CommonBrowserView, Search):
     """
 
     def results(self, query=None, batch=True, b_size=10, b_start=0):
-        """ Get properly wrapped search results from the catalog.
+        """Get properly wrapped search results from the catalog.
         Everything in Plone that performs searches should go through this view.
-        'query' should be a dictionary of catalog parameters.
-        """
+        'query' should be a dictionary of catalog parameters."""
+        
         if query is None:
             query = {}
         if batch:
             query['b_start'] = b_start = int(b_start)
             query['b_size'] = b_size
+
         query = self.filter_query(query)
 
         if query is None:
             results = []
         else:
             ## Needs fix
-            if 'identification_identification_objectNumber' in query:
+            """if 'identification_identification_objectNumber' in query:
                 query['identification_identification_objectNumber'] = query['identification_identification_objectNumber'].lower()
 
             if 'identification__identification_collections' in query:
@@ -442,7 +443,7 @@ class SearchView(CommonBrowserView, Search):
                 query['physicalCharacteristics__technique'] = query['physicalCharacteristics__technique'].split("_")
             
             if 'identification__objectName_objectname_type' in query:
-                query['identification__objectName_objectname_type'] = query['identification__objectName_objectname_type'].split("_")
+                query['identification__objectName_objectname_type'] = query['identification__objectName_objectname_type'].split("_")"""
 
             catalog = getToolByName(self.context, 'portal_catalog')
             try:

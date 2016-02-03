@@ -186,13 +186,14 @@
                                  <br/>
 
                                  <div style="float:left; margin-right: 2em;" tal:define="ever string:1970-01-02">
-                                  <tal:items repeat="filter searchfilters">
+                                  <tal:items repeat="filter searchfilters" i18n:domain="plonetheme.museumbase">
                                     <input type="checkbox" name="path:list" checked="checked" tal:attributes="value filter/path;
                                       id string:folder_${filter/name};
                                       checked python:((filter.get('path') in request.get('path', []))) and 'checked' or '';"/>
                                       <label for=""
                                         tal:attributes="for string:folder_${filter/name}"
                                         tal:content="filter/name"
+                                        i18n:translate=""
                                         />
                                         <br/>
                                       </tal:items>
@@ -240,9 +241,12 @@
                          </div> 
 
                          <metal:searchresults define-macro="search_results">
-                          
+
                           <div id="search-results"
-                           tal:define="navigation_root_url context/@@plone_portal_state/navigation_root_url;">
+                           tal:define="navigation_root_url context/@@plone_portal_state/navigation_root_url;
+                           original_b_start b_start;
+                           b_start python: batch.sequence_length-1 if b_start > batch.sequence_length else b_start;
+                           batch python: view.results(b_start=b_start) if original_b_start > batch.sequence_length else batch">
 
                            <div class="clearfix extra-fields" i18n:domain="plonetheme.museumbase">
                             <tal:define_extra

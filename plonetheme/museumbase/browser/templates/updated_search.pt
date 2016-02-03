@@ -10,6 +10,7 @@
                   batch_base_url string:${here_url}/@@search;
                   ">
     
+
     <h1 id='update-search-header' class="documentFirstHeading"
         i18n:translate=""
         tal:condition="st">

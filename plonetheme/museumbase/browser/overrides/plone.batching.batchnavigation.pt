@@ -3,6 +3,7 @@
                    condition="batch"
                    metal:define-macro="navigation"
                    >
+
 <div class="clearfix"></div>
 <div class="listingBar row-fluid"
      i18n:domain="plone"

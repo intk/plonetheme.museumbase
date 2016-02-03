@@ -102,3 +102,24 @@ msgstr 'Common name'
 msgid 'object_collection'
 msgstr 'Collection'
 
+#: ../object.py
+msgid 'Kunst'
+msgstr 'Art'
+
+#: ../object.py
+msgid 'Instrumenten'
+msgstr 'Instruments'
+
+#: ../object.py
+msgid 'Munten en Penningen'
+msgstr 'Coins and Medals'
+
+#: ../object.py
+msgid 'Fossielen en mineralen'
+msgstr 'Fossils and Minerals'
+
+#: ../object.py
+msgid 'Boeken'
+msgstr 'Books'
+
+
