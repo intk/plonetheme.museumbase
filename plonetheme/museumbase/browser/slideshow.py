@@ -543,6 +543,13 @@ class get_nav_objects(BrowserView):
         object_schema = []
         schema = getUtility(IDexterityFTI, name='Object').lookupSchema()
 
+        state = getMultiAdapter(
+                (self.context, self.request),
+                name=u'plone_context_state')
+
+        # Check view type
+        view_type = state.view_template_id()
+
         if object.portal_type == 'Object':
             for name, field in getFieldsInOrder(schema):
                 if name not in ["text", "object_tags", "book_title", "priref", "administration_name", "object_reproduction_reference", "stable_uri"]:
@@ -553,6 +560,10 @@ class get_nav_objects(BrowserView):
                             value = self.create_production_field(value)
                             if value:
                                 _title = MessageFactory(field.title)
+                                
+                                if view_type == "double_view":
+                                    _title = MessageFactory("People/event(s) involved")
+
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
                                 object_schema.append(new_attr)
                         elif "dimension" in name:
@@ -1326,6 +1337,12 @@ class get_fields(BrowserView):
         object_schema = []
         schema = getUtility(IDexterityFTI, name='Object').lookupSchema()
 
+        state = getMultiAdapter(
+                (self.context, self.request),
+                name=u'plone_context_state')
+
+        view_type = state.view_template_id()
+
         if object.portal_type == 'Object':
             for name, field in getFieldsInOrder(schema):
                 if name not in ["text", "object_tags", "book_title", "priref", "administration_name", "object_reproduction_reference", "stable_uri"]:
@@ -1335,6 +1352,10 @@ class get_fields(BrowserView):
                             value = self.create_production_field(value)
                             if value:
                                 _title = MessageFactory(field.title)
+
+                                if view_type == "double_view":
+                                    _title = MessageFactory("People/event(s) involved")
+
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
                                 object_schema.append(new_attr)
                         elif "dimension" in name:
