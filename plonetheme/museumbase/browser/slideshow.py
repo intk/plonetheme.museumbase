@@ -621,6 +621,10 @@ class get_nav_objects(BrowserView):
                             if "fossielen" in object.absolute_url():
                                 value = ""
 
+                        if name in ["object_title"]:
+                            if view_type in ['book_view']:
+                                value = ""
+
                         if value not in NOT_ALLOWED:
                             if name in ['technique', 'artist', 'material', 'object_type', 'object_category', 'publisher', 'author']:
                                 if name in ['artist', 'author']:
@@ -1409,6 +1413,10 @@ class get_fields(BrowserView):
                         value = self.trim_white_spaces(value)
                         if name in ["object_title", "translated_title"]:
                             if "fossielen" in object.absolute_url():
+                                value = ""
+
+                        if name in ["object_title"]:
+                            if view_type in ['book_view']:
                                 value = ""
 
                         if value not in NOT_ALLOWED:
