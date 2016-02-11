@@ -552,7 +552,7 @@ class get_nav_objects(BrowserView):
 
         if object.portal_type == 'Object':
             for name, field in getFieldsInOrder(schema):
-                if name not in ["text", "object_tags", "book_title", "priref", "administration_name", "object_reproduction_reference", "stable_uri"]:
+                if name not in ["text", "object_tags", "priref", "administration_name", "object_reproduction_reference", "stable_uri"]:
                     value = getattr(object, name, '')
 
                     if type(value) == list:
@@ -1349,7 +1349,7 @@ class get_fields(BrowserView):
 
         if object.portal_type == 'Object':
             for name, field in getFieldsInOrder(schema):
-                if name not in ["text", "object_tags", "book_title", "priref", "administration_name", "object_reproduction_reference", "stable_uri"]:
+                if name not in ["text", "object_tags", "priref", "administration_name", "object_reproduction_reference", "stable_uri"]:
                     value = getattr(object, name, '')
                     if type(value) == list:
                         if "creator" in name or 'object_author' in name:
