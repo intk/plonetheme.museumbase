@@ -14517,6 +14517,12 @@ body.template-showorder #portal-logo img {
     display: none !important;
 }
 
+body.template-showorder #form-order_auth_form {
+    padding-top: 50px;
+    width: 900px;
+    margin: auto;
+}
+
 @media print {
     body.template-showorder #portal-logo img {
         content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
