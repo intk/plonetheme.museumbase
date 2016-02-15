@@ -14507,4 +14507,99 @@ body.template-search #search-results {
     }
 }
 
+/* ORDER PRINT */
+
+body.template-showorder #portal-logo img {
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
+}
+
+.print-logo {
+    display: none !important;
+}
+
+@media print {
+    body.template-showorder #portal-logo img {
+        content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
+    }
+
+    body.template-showorder #portal-personaltools-wrapper {
+        display: none !important;
+    }
+
+    body.template-showorder .menu_wrapper {
+        display: none !important;
+    }
+
+    body.template-showorder div h3 {
+        margin-top: 10px;
+    }
+
+    body.template-showorder div h3 {
+        color: #D75745 !important;
+    }
+
+    body.template-showorder a[href]::after {
+        content: "" !important;
+    }
+
+    body.template-showorder .order_details .qr_code {
+        position: absolute;
+        right: 1em;
+        top: 1em;
+    }
+
+    body.template-showorder .order_details_row div, body.template-showorder div.order_bookings {
+        padding: 0px;
+    }
+
+    body.template-showorder .order_bookings th, body.template-showorder .order_bookings td {
+        font-size: 0.8em;
+    }
+
+    body.template-showorder .order_bookings table th {
+        padding: 5px;
+        padding-left: 6px;
+        font-size: 0.8em !important;
+    }
+
+    body.template-showorder .order_bookings table td {
+        padding: 5px;
+        padding-left: 6px;
+    }
+
+    body.template-showorder #portal-footer-wrapper {
+        display: none !important;
+    }
+
+    body.template-showorder a, body.template-showorder a:visited, body.template-showorder a:hover {
+        text-decoration: none !important;
+    }
+
+    body.template-showorder .print-logo {
+        display: block !important;
+    }
+
+    body.template-showorder #portal-logo:not(.print-logo) {
+        display: none !important;
+    }
+
+    body.template-showorder #portal-logo {
+        text-decoration: none !important;
+    }
+
+    body.template-showorder .print-logo {
+        display: block;
+        margin-left: 0px !important;
+        margin-top: -30px !important;
+        padding-top: 0px !important;
+    }
+
+    body.template-showorder .print-logo {
+        margin: 0px !important;
+        padding: 0px !important;
+        margin-top: -30px !important;
+        margin-bottom: 40px !important;
+    }
+}
+
 
