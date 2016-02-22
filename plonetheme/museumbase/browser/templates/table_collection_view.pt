@@ -20,8 +20,8 @@
 
             <input type="hidden" name="b_start" tal:attributes="value b_start"/>
 
-            
             <div class="table-responsive">
+
             <table class="table listing"
                   i18n:attributes="summary"
                    summary="Content listing"
@@ -30,18 +30,23 @@
                    >
                 <thead>
                     <tr>
+                        <th class="nosort header-leadMedia"
+                          id="leadMedia-column">&nbsp;<tal:title i18n:translate="listingheader_leadMedia"
+                          ></tal:title>&nbsp;</th>
+
                         <th class="nosort header-title"
                           id="title-column">&nbsp;<tal:title i18n:translate="listingheader_title"
                           >Title</tal:title>&nbsp;</th>
-                        <th class="nosort header-author"
-                            id="author-column"
-                            >&nbsp;<tal:title i18n:translate="listingheader_author"
-                          >Author</tal:title>&nbsp;</th>
+
+                        <th class="nosort header-stock"
+                            id="stock-column"
+                            >&nbsp;<tal:title i18n:translate="listingheader_stock"
+                          >Voorraad</tal:title>&nbsp;</th>
 
                         <th class="nosort"
-                            id="year-column"
-                            >&nbsp;<tal:modified i18n:translate="listingheader_year"
-                          >Jaar</tal:modified>&nbsp;</th>
+                            id="articleNumber-column"
+                            >&nbsp;<tal:modified i18n:translate="listingheader_articleNumber"
+                          >Artikelnummer</tal:modified>&nbsp;</th>
                     </tr>
                 </thead>
 
@@ -56,10 +61,19 @@
                                     item_title_or_id python: item.Title() if item.Title() != '' else item_id;
                                     item_description item/Description;
                                     item_creator item/Creator;
+                                    leadMedia item/leadMedia;
+                                    product_stock item/product_stock;
+                                    product_articleNumber item/product_articleNumber;
                                     item_type_class python:'contenttype-' + normalizeString(item_type);
                                     item_wf_state item/review_state|python: context.portal_workflow.getInfoFor(item, 'review_state', '');
                                     item_wf_state_class python:'state-' + normalizeString(item_wf_state);"
                         tal:attributes="class python:'even' if oddrow else 'odd'">
+
+                          <td>
+                            <tal:leadmedia tal:define='lead_media_url python:view.getLeadMedia(leadMedia)'>
+                              <img class="tabular-img" tal:attributes="src lead_media_url" tal:condition='leadMedia'/>
+                            </tal:leadmedia>
+                          </td>
 
                             <td>
                                 
@@ -73,22 +87,15 @@
                             </td>
 
                             <td>
-                                <tal:name tal:condition="item_creator"
-                                  tal:define="author python:view.getAuthor(pas_member.info(item_creator), item)">
-                                
-                                <a 
-                                   tal:replace="structure author"
-                                   tal:omit-tag="not:author">
-                                  Bob Dobalina
-                                </a>
-
-                                </tal:name>
+                                <tal:stock tal:condition="product_stock">
+                                  <span tal:content="product_stock"></span>
+                                </tal:stock>
                             </td>
                             
                         <td>
-                          <tal:year tal:define="year python: view.getYear(item)">
-                            <span tal:content="year" tal:omit-tag="not:year"></span>
-                          </tal:year>
+                          <tal:articleNumber tal:condition="product_articleNumber">
+                            <span tal:content="product_articleNumber"></span>
+                          </tal:articleNumber>
                         </td>
                     </tr>
                   </tal:block>

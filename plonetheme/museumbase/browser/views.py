@@ -903,7 +903,7 @@ class TableView(BrowserView):
         if self.context.portal_type == "Collection" and '/bibliotheek' in self.context.absolute_url():
             return self.index_collection()
         elif self.context.portal_type == "Collection":
-            return self.index_tabular_collection()
+            return self.index_collection()
         else:
             return self.index_folder()
 

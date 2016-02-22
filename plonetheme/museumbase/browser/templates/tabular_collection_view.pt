@@ -27,6 +27,8 @@
             There are currently no items in this folder.
         </p>
 
+        
+
         <table class="listing" summary="Content listing"
             i18n:attributes="summary"
             tal:condition="batch"
