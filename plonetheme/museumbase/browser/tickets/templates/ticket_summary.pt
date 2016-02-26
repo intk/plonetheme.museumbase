@@ -34,27 +34,31 @@
                 <p class="title-aux">Entreebewijs / CJP</p>
             </div>
 
+
+
             <tal:block
               tal:define="number repeat/item/number;
                           booking_uid_count python: '%s-%03d' %(str(booking_uid), number);
                           global counter python: counter + 1;">
 
+              
               <div class="cart_item summary_item" tal:condition="show">
+                <div id="ticketBarcode" tal:attributes="data-text booking_uid_count" style="padding-top: 50px;margin:0 auto;">
+                          
+              </div>
+
+              <script>
+                var text = $("#ticketBarcode").data("text");
+                $("#ticketBarcode").barcode(text, "code128", {barWidth: 1, barHeight:90, fontSize: 15});
+              </script>
                 <table>
                   <tbody>
                     <tr>
                       <td><h3 i18n:translate="">Type of ticket</h3></td><td><span tal:content="title"></span></td>
-                      <td rowspan="5" class="ticket-info" tal:define="qr_code python: view.get_qr_code(booking_uid_count)">
+                      <td rowspan="5" class="ticket-info" tal:define="qr_code python: view.get_qr_code(booking_uid_count)" style="vertical-align: top; padding-top: 25px;">
 
                         <!--<img class="ticket-qr-code" tal:attributes="src qr_code"/>-->
-                        <div id="ticketBarcode" tal:attributes="data-text booking_uid_count">
-                          
-                        </div>
-
-                        <script>
-                          var text = $("#ticketBarcode").data("text");
-                          $("#ticketBarcode").barcode(text, "code128", {barWidth: 1, barHeight:90, fontSize: 15});
-                        </script>
+                        
 
                         <!--<p tal:content="booking_uid_count" style="margin-left:15px; line-height: 10px;"></p>-->
 
