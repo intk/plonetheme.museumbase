@@ -46,8 +46,18 @@
                       <td><h3 i18n:translate="">Type of ticket</h3></td><td><span tal:content="title"></span></td>
                       <td rowspan="5" class="ticket-info" tal:define="qr_code python: view.get_qr_code(booking_uid_count)">
 
-                        <img class="ticket-qr-code" tal:attributes="src qr_code"/>
-                        <p tal:content="booking_uid_count" style="margin-left:15px; line-height: 10px;"></p>
+                        <!--<img class="ticket-qr-code" tal:attributes="src qr_code"/>-->
+                        <div id="ticketBarcode" tal:attributes="data-text booking_uid_count">
+                          
+                        </div>
+
+                        <script>
+                          var text = $("#ticketBarcode").data("text");
+                          $("#ticketBarcode").barcode(text, "code128", {barWidth: 1, barHeight:90, fontSize: 15});
+                        </script>
+
+                        <!--<p tal:content="booking_uid_count" style="margin-left:15px; line-height: 10px;"></p>-->
+
                         <div class="info-div">
                           <p i18n:translate="">This ticket is only valid on the date/time indicated above.</p>
                           <p i18n:translate="">You do not need to go to the admissions counter.</p>
