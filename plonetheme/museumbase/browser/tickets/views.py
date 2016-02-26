@@ -3,7 +3,7 @@
 
 
 from bda.plone.cart.browser import CartView
-from bda.plone.orders.browser.views import OrderView
+from bda.plone.orders.browser.views import OrderView, OrdersViewBase, OrdersView
 from bda.plone.orders.browser.views import OrdersTable
 from bda.plone.orders.browser.views import OrdersData
 from bda.plone.orders.browser.views import TableData
@@ -32,6 +32,8 @@ from decimal import Decimal
 from bda.plone.orders.common import get_vendors_for
 from Products.Five import BrowserView
 from bda.plone.orders import message_factory as _
+from Products.CMFPlone.interfaces import IPloneSiteRoot
+
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 import urllib
@@ -53,18 +55,23 @@ DT_FORMAT = '%d.%m.%Y'
 ###
 ### Redeem view
 ###
-class RedeemViewBase(BrowserView):
+class RedeemViewBase(OrdersViewBase):
     table_view_name = '@@redeemtable'
 
     def redeem_table(self):
         return self.context.restrictedTraverse(self.table_view_name)()
 
-class RedeemView(RedeemViewBase):
-  def __call__(self):
-    # check if authenticated user is vendor
-    if not get_vendors_for():
-        raise Unauthorized
-    return super(RedeemView, self).__call__()
+class RedeemView(OrdersView):
+    table_view_name = '@@redeemtable'
+
+    def redeem_table(self):
+        return self.context.restrictedTraverse(self.table_view_name)()
+
+    def __call__(self):
+        # check if authenticated user is vendor
+        if not get_vendors_for():
+            raise Unauthorized
+        return super(RedeemView, self).__call__()
 
 
 class RedeemTableBase(BrowserView):
@@ -226,13 +233,13 @@ class RedeemDropdown(object):
 
     @property
     def identifyer(self):
-        return '%s-%s' % (self.name, str(self.record.attrs['uid']))
+        return '%s-%s' % (self.name, str(self.ticket_uid))
 
     @property
     def ajax_action(self):
         return '%s:#%s-%s:replace' % (self.action,
                                       self.name,
-                                      str(self.record.attrs['uid']))
+                                      str(self.ticket_uid))
 
     @property
     def items(self):
@@ -375,7 +382,26 @@ class RedeemTable(RedeemTableBase):
             'class_': 'select_order',
         }
         select_order = tag('input', **select_order_attrs)
-        return select_order + view_order
+
+        site = plone.api.portal.get()
+        portal_url = site.absolute_url()
+
+        ## Custom print order 
+        data = OrderData(self.context, uid=order_uid)
+
+        ordernumber = data.order.attrs.get('ordernumber', '')
+        email = data.order.attrs.get('personal_data.email', '')
+
+        print_order_attrs = {
+            "class_": "contenttype-document",
+            "href": "%s/showorder?ordernumber=%s&email=%s" %(portal_url, ordernumber, email),
+            "target": "_blank",
+            "title": _('view_order', default=u'View Order'),
+        }
+
+        print_order = tag('a', '&nbsp', **print_order_attrs)
+
+        return select_order + print_order
 
     def check_modify_order(self, order):
         vendor_uid = self.request.form.get('vendor', '')
@@ -555,97 +581,108 @@ class TicketTableData(BrowserView):
 
 
 class RedeemData(RedeemTable, TicketTableData):
-  soup_name = 'bda_plone_orders_bookings'
-  search_text_index = 'text'
+    soup_name = 'bda_plone_orders_bookings'
+    search_text_index = 'text'
 
-  def sort(self):
-    columns = self.columns
-    sortparams = dict()
-    sortcols_idx = int(self.request.form.get('iSortCol_0'))
-    sortparams['index'] = columns[sortcols_idx]['id']
-    sortparams['index'] = 'created'
-    sortparams['reverse'] = self.request.form.get('sSortDir_0') == 'desc'
-    return sortparams
+    def sort(self):
+        columns = self.columns
+        sortparams = dict()
+        sortcols_idx = int(self.request.form.get('iSortCol_0'))
+        sortparams['index'] = columns[sortcols_idx]['id']
+        sortparams['index'] = 'created'
+        sortparams['reverse'] = self.request.form.get('sSortDir_0') == 'desc'
+        return sortparams
 
-  def query(self, soup):
-    soup.reindex()
+    def _get_buyables_in_context(self):
+        catalog = plone.api.portal.get_tool("portal_catalog")
+        path = '/'.join(self.context.getPhysicalPath())
+        brains = catalog(path=path, object_provides=IBuyable.__identifier__)
+        for brain in brains:
+            yield brain.UID
 
-    # fetch user vendor uids
-    vendor_uids = get_vendor_uids_for()
-    # filter by given vendor uid or user vendor uids
-    vendor_uid = self.request.form.get('vendor')
+    def query(self, soup):
+        soup.reindex()
 
-    if vendor_uid:
-      vendor_uid = uuid.UUID(vendor_uid)
-      # raise if given vendor uid not in user vendor uids
-      if vendor_uid not in vendor_uids:
-          raise Unauthorized
-      query = Any('vendor_uid', [vendor_uid])
-    else:
-      query = Any('vendor_uid', vendor_uids)
-    
-    # filter by customer if given
-    customer = self.request.form.get('customer')
-    if customer:
-      query = query & Eq('creator', customer)
-    
-    # filter by search term if given
-    term = self.request.form['sSearch'].decode('utf-8')
+        # fetch user vendor uids
+        vendor_uids = get_vendor_uids_for()
+        # filter by given vendor uid or user vendor uids
+        vendor_uid = self.request.form.get('vendor')
 
-    if term:
-      query = query & Contains(self.search_text_index, term)
-        
+        if vendor_uid:
+            vendor_uid = uuid.UUID(vendor_uid)
+            # raise if given vendor uid not in user vendor uids
+            if vendor_uid not in vendor_uids:
+                raise Unauthorized
+            query = Any('vendor_uid', [vendor_uid])
+        else:
+            query = Any('vendor_uid', vendor_uids)
 
-    # Show only tickets that are paid
-    query = query & Eq('salaried', 'yes')
+        # filter by customer if given
+        customer = self.request.form.get('customer')
+        if customer:
+            query = query & Eq('creator', customer)
 
-    # query orders and return result
-    sort = self.sort()
-    try:
+        # filter by search term if given
+        term = self.request.form['sSearch'].decode('utf-8')
+
+        if term:
+            query = query & Contains(self.search_text_index, term)
+
+
+        # Show only tickets that are paid
+        query = query & Eq('salaried', 'yes')
+
+        if not IPloneSiteRoot.providedBy(self.context):
+            buyable_uids = self._get_buyables_in_context()
+            query = query & Any('buyable_uids', buyable_uids)
+
+        # query orders and return result
+        sort = self.sort()
+        try:
+            res = soup.lazy(query,
+                          sort_index=sort['index'],
+                          reverse=sort['reverse'],
+                          with_size=True)
+
+            length = res.next()
+        except:
+            length = 0
+            pass
+        return length, res
+
+    def query2(self, soup):
+
+        # fetch user vendor uids
+        vendor_uids = get_vendor_uids_for()
+        # filter by given vendor uid or user vendor uids
+        vendor_uid = self.request.form.get('vendor')
+
+        if vendor_uid:
+            vendor_uid = uuid.UUID(vendor_uid)
+            # raise if given vendor uid not in user vendor uids
+            if vendor_uid not in vendor_uids:
+                raise Unauthorized
+            query = Any('vendor_uids', [vendor_uid])
+        else:
+            query = Any('vendor_uids', vendor_uids)
+        # filter by customer if given
+        customer = self.request.form.get('customer')
+        if customer:
+            query = query & Eq('creator', customer)
+        # filter by search term if given
+        term = self.request.form['sSearch'].decode('utf-8')
+        if term:
+            query = query & Contains(self.search_text_index, term)
+        # query orders and return result
+        sort = self.sort()
         res = soup.lazy(query,
                       sort_index=sort['index'],
                       reverse=sort['reverse'],
                       with_size=True)
-
         length = res.next()
-    except:
-        length = 0
-        pass
-    return length, res
-
-  def query2(self, soup):
-
-    # fetch user vendor uids
-    vendor_uids = get_vendor_uids_for()
-    # filter by given vendor uid or user vendor uids
-    vendor_uid = self.request.form.get('vendor')
-
-    if vendor_uid:
-      vendor_uid = uuid.UUID(vendor_uid)
-      # raise if given vendor uid not in user vendor uids
-      if vendor_uid not in vendor_uids:
-          raise Unauthorized
-      query = Any('vendor_uids', [vendor_uid])
-    else:
-      query = Any('vendor_uids', vendor_uids)
-    # filter by customer if given
-    customer = self.request.form.get('customer')
-    if customer:
-      query = query & Eq('creator', customer)
-    # filter by search term if given
-    term = self.request.form['sSearch'].decode('utf-8')
-    if term:
-      query = query & Contains(self.search_text_index, term)
-    # query orders and return result
-    sort = self.sort()
-    res = soup.lazy(query,
-                  sort_index=sort['index'],
-                  reverse=sort['reverse'],
-                  with_size=True)
-    length = res.next()
 
 
-    return length, res
+        return length, res
 
 
 ###
