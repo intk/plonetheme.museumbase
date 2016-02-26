@@ -49,7 +49,7 @@
 
               <script>
                 var text = $("#ticketBarcode").data("text");
-                $("#ticketBarcode").barcode(text, "code128", {barWidth: 1, barHeight:90, fontSize: 15});
+                $("#ticketBarcode").barcode(text, "code128", {barWidth: 1, barHeight:40, fontSize: 11});
               </script>
                 <table>
                   <tbody>
