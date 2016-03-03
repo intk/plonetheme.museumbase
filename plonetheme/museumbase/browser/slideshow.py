@@ -621,6 +621,10 @@ class get_nav_objects(BrowserView):
                             if "fossielen" in object.absolute_url():
                                 value = ""
 
+                            if name in ["object_title"]:
+                                if "boeken" in object.absolute_url():
+                                    value = ""
+
                         if name in ["object_title"]:
                             if view_type in ['book_view']:
                                 value = ""
@@ -1414,6 +1418,10 @@ class get_fields(BrowserView):
                         if name in ["object_title", "translated_title"]:
                             if "fossielen" in object.absolute_url():
                                 value = ""
+
+                            if name in ["object_title"]:
+                                if "boeken" in object.absolute_url():
+                                    value = ""
 
                         if name in ["object_title"]:
                             if view_type in ['book_view']:
