@@ -306,7 +306,7 @@
                                      </a>
                                    </h2>
                                    
-                                   <p tal:condition="python: item_type in ['Event', 'Exhibition', 'BookableEvent']" class="item-dates">
+                                   <p tal:condition="python: item_type in ['Event', 'Exhibition', 'BookableEvent', 'Bookable Event']" class="item-dates">
 
                                       <tal:restrict tal:condition="python: str(item.start) != '' and str(item.end) != '' and item.start != None and item.end != None" i18n:domain="plonelocales">
                                         <tal:differentday tal:condition="python:not item.start.Date() == item.end.Date()" i18n:translate="event_when_differentday">

@@ -57,7 +57,7 @@
                       <span tal:content="python: view.trimText(item_description, 200, strip=False)"></span>
                     </p>
 
-                    <p tal:condition="python: item_type in ['Event', 'Exhibition', 'BookableEvent']" class="item-dates">
+                    <p tal:condition="python: item_type in ['Event', 'Exhibition', 'BookableEvent', 'Bookable Event']" class="item-dates">
                       <tal:restrict tal:condition="python: item.start != None and item.end != None">
                     <tal:differentday tal:condition="python:not item.start.Date() == item.end.Date()" i18n:translate="event_when_differentday">
                       <abbr i18n:name="startdate">
