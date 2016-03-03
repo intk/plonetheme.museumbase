@@ -27,8 +27,8 @@ $(document).ready(function() {
         fjs.parentNode.insertBefore(js, fjs);
       } (document, 'script', 'facebook-jssdk'));
   }
-  
-  if ($("body").hasClass('portaltype-formfolder') && !($("body").hasClass('template-quickedit')) {
+
+  if ($("body").hasClass('portaltype-formfolder') && !$("body").hasClass('template-quickedit')) {
     if ($("input[placeholder='0']").length > 0) {
       $("#pfg-fieldwrapper div:not(#archetypes-fieldname-limit_subscriptions)").hide();
       $("#pfg-fieldwrapper fieldset").hide();
