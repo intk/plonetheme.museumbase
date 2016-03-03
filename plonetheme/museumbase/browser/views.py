@@ -319,7 +319,7 @@ class CommonBrowserView(BrowserView):
         """
         Checks if the event is already past
         """
-        if event.portal_type != 'Event' and event.portal_type != 'Media Event':
+        if event.portal_type != 'Event' and event.portal_type != 'Media Event' and event.portal_type != 'BookableEvent':
             return False
         else:
             t = DateTime(time.time())

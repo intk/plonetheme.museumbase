@@ -14613,4 +14613,100 @@ body.template-checkout .tickets-checkout .cart_sum_content tr.shipping {
     display: none !important;
 }
 
+body.portaltype-portlet-page #content-core .thumbnail {
+padding-top:30px;
+}
+
+#content-core .thumb-image img {
+height:auto;
+}
+
+body.template-book_view #slideshow-controls .btn.zoom-btn {
+    display: none !important;
+}
+
+#slickslideshow .slick-slide img, #slickslideshow .slick-slide iframe {
+    height: 100%;
+}
+
+body.template-book_view #slideshow-controls .btn {
+    width: 20% !important;
+}
+
+body.portaltype-product #portal-logo img {
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
+}
+
+body.template-cart #portal-logo img {
+    content: url('++resource++plonetheme.museumbase.css/teylers.png') !important;
+}
+
+body.template-checkout #portal-logo img {
+    content: url('++resource++plonetheme.museumbase.css/teylers.png') !important;
+}
+body.template-image_view #content div.title-description-wrapper {
+    position: initial !important;
+}
+
+#portal-languageselector {
+  overflow: visible !important;
+}
+
+.form-control {
+height: 43px;
+}
+
+.portaltype-image span.required {
+display:block !important;
+}
+
+@media (max-width: 480px) {
+div.buyable .cart-select-box {
+    display: none !important;
+    clear: both;
+}
+}
+
+body.template-mollie_payment_success #portal-logo img {
+content: url('++resource++plonetheme.museumbase.css/teylers.png') !important;
+}
+
+body #content-view-portlets {
+    border-top: 1px solid #f5f5f5;
+}
+
+#formfield-form-widgets-priref {
+display:none !important;
+}
+
+#content #body-text {
+    width: 650px !important;
+    padding-bottom: 40px !important;
+}
+
+body.no-img-slideshow.template-view.portaltype-object.subsection-books-new-32f-20-journal-of-a-voyage-to-the-south-seas-in-his-majestys-ship-the-endeavour-faithfully-transcribed-from-the-papers-of-the-late-sydney-parkinson-draughtsman-to-sir-joseph-banks-in-his-expedition-with-dr-solander-round-the-world #edit-content-views {
+    padding-top: 600px !important;
+}
+
+body.userrole-authenticated.template-login_form  #content-core p.discreet {
+display: block !important;
+}
+
+body.no-img-slideshow.portaltype-object #portal-footer-wrapper {
+display: block !important;
+}
+
+
+body.template-search dl.actionMenu {
+width: 200px !important;
+}
+
+body.userrole-authenticated .video-slide .overlay-image {
+    display: none !important;
+}
+
+body.userrole-authenticated div:not(.video-slide) .overlay-image {
+    display: block !important;
+}
+
 

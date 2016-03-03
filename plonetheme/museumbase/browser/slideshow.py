@@ -1538,7 +1538,7 @@ class CollectionSlideshow(BrowserView):
                         "image_path": ""
                     });
 
-                elif item.portal_type == "Object" or item.portal_type == "Event":
+                elif item.portal_type in ["Object", "BookableEvent"]:
                     obj = item.getObject()
                     obj_id = obj.getId()
                     data_description = obj.Description()
