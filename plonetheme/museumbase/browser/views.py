@@ -689,6 +689,24 @@ class CollectionPortlet(base.Renderer, FolderListing):
 
 class ContentView(BrowserView):
 
+    def getFormUrl(self):
+        if self.context.portal_type in ["BookableEvent", "Bookable Event"]:
+            print self.context
+            form_folder = None
+            for _id in self.context:
+                content_obj = self.context[_id]
+                if content_obj.portal_type == "FormFolder":
+                    form_folder = content_obj
+                    break
+
+            if form_folder:
+                form_url = form_folder.absolute_url()
+                return form_url
+            else:
+                return self.context.absolute_url()
+        else:
+            return self.context.absolute_url()
+
     def getFBdetails(self):
         item = self.context
         
