@@ -95,7 +95,10 @@
 
         <div id="parent-fieldname-text" tal:condition="python: context.portal_type in ['BookableEvent', 'Bookable Event']" style="padding-top: 20px;"
           tal:define="form_url view/getFormUrl">
-          <p style="text-align: center; "><a class="btn btn-inverse btn-large internal-link" target="_self" title="" tal:attributes="href form_url">Reserveer</a></p>
+          
+          <p style="text-align: center; " tal:condition="python: form_url != 'sold_out'"><a class="btn btn-inverse btn-large internal-link" target="_self" title="" tal:attributes="href form_url">Reserveer</a></p>
+
+          <p style="text-align: center; " tal:condition="python: form_url == 'sold_out'"><a class="btn btn-inverse btn-large internal-link unavailable" target="_self" title="" href="" i18n:domain="collective.bookableEvent" i18n:translate="">Sold out</a></p>
         </div>
         
     </metal:content-core>

@@ -691,6 +691,10 @@ class ContentView(BrowserView):
 
     def getFormUrl(self):
         if self.context.portal_type in ["BookableEvent", "Bookable Event"]:
+            limit_subscriptions = getattr(self.context, 'limit_subscriptions', '')
+            if limit_subscriptions == "0":
+                return "sold_out"
+
             form_folder = None
             for _id in self.context:
                 content_obj = self.context[_id]
