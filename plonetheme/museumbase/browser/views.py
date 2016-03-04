@@ -691,7 +691,6 @@ class ContentView(BrowserView):
 
     def getFormUrl(self):
         if self.context.portal_type in ["BookableEvent", "Bookable Event"]:
-            print self.context
             form_folder = None
             for _id in self.context:
                 content_obj = self.context[_id]
