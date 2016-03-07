@@ -18,6 +18,7 @@ import re
 
 MessageFactory = MessageFactory('Products.mediaObject')
 NOT_ALLOWED = [None, '', ' ', []]
+NOT_ALLOWED_PARTS = ['opzet']
 
 class get_nav_objects(BrowserView):
     """
@@ -331,7 +332,10 @@ class get_nav_objects(BrowserView):
                 continue
 
             if val['part'] not in NOT_ALLOWED:
-                dimension = "%s (%s)" %(dimension, val['part'])
+                if val['part'] not in NOT_ALLOWED_PARTS:
+                    dimension = "%s (%s)" %(dimension, val['part'])
+                else:
+                    continue
 
             new_dimension_val.append(dimension)
 
@@ -1136,7 +1140,10 @@ class get_fields(BrowserView):
                 continue
 
             if val['part'] not in NOT_ALLOWED:
-                dimension = "%s (%s)" %(dimension, val['part'])
+                if val['part'] not in NOT_ALLOWED_PARTS:
+                    dimension = "%s (%s)" %(dimension, val['part'])
+                else:
+                    continue
 
             new_dimension_val.append(dimension)
 
@@ -1366,6 +1373,7 @@ class get_fields(BrowserView):
 
                                 new_attr = {"title": self.context.translate(_title), "value": value, "name": name}
                                 object_schema.append(new_attr)
+
                         elif "dimension" in name:
                             value = self.create_dimension_field(value)
                             if value:

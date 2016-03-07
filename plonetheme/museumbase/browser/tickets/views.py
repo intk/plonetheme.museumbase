@@ -317,8 +317,7 @@ class RedeemTransition(BrowserView):
 
         #print "Ticket UID transition.\nTransition: %s\nBooking UID: %s\nTicket UID: %s\nOrder UID: %s" %(transition, str(booking_uid), str(ticket_uid), str(order_uid))
 
-        ticket_state = self.do_ticket_transaction(transition, ticket_uid, ticket_booking)
-        
+        ticket_state = self.do_ticket_transaction(transition, ticket_uid, ticket_booking)        
         return self.dropdown(self.context, self.request, ticket_booking, ticket_state, ticket_uid).render()
 
 
@@ -540,6 +539,7 @@ class TicketTableData(BrowserView):
         catalog = getToolByName(self.context, 'portal_catalog')
 
         self.total_records = 0
+        
         for lazyrecord in self.slice(lazydata):
             booking = lazyrecord()
             count = booking.attrs['buyable_count']
@@ -628,7 +628,6 @@ class RedeemData(RedeemTable, TicketTableData):
         if term:
             query = query & Contains(self.search_text_index, term)
 
-
         # Show only tickets that are paid
         query = query & Eq('salaried', 'yes')
 
@@ -648,6 +647,7 @@ class RedeemData(RedeemTable, TicketTableData):
         except:
             length = 0
             pass
+
         return length, res
 
     def query2(self, soup):
@@ -710,6 +710,8 @@ class TicketView(CartView):
 
             first_name = data.order.attrs['personal_data.firstname']
             last_name =  data.order.attrs['personal_data.lastname']
+            created_date = data.order.attrs['created']
+
             customer_name = "%s %s" %(first_name, last_name)
             tickets['customer'] = customer_name
 
@@ -724,7 +726,8 @@ class TicketView(CartView):
                   "cart_item_price": ascur(price_total),
                   "cart_item_count": booking.attrs['buyable_count'],
                   "booking_uid": booking.attrs['uid'],
-                  "cart_item_original_price": ""          
+                  "cart_item_original_price": "",
+                  "order_created_date": created_date
                 })
 
             tickets["total_tickets"] = total_items

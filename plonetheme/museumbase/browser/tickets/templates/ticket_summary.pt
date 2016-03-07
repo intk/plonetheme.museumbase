@@ -20,9 +20,11 @@
                     original_price python: order['cart_item_original_price'];
                     booking_uid python: order['booking_uid'];
                     show python: count > 0;
+                    created_date python: order['order_created_date'].strftime('%d/%m/%Y');
                     ">
 
         <tal:count tal:repeat="item python:range(count)">
+
           <div class="ticket-item">
             <div id="ticket-header" class="ticket-header">
                 <div class="logo-container">
@@ -34,8 +36,6 @@
                 <p class="title-aux">Entreebewijs / CJP</p>
             </div>
 
-
-
             <tal:block
               tal:define="number repeat/item/number;
                           booking_uid_count python: '%s-%03d' %(str(booking_uid), number);
@@ -46,16 +46,11 @@
                 <div id="ticketBarcode" class="ticket-barcode" tal:attributes="data-text booking_uid_count;" style="padding-top: 50px;margin:0 auto;">
               </div>
 
-              
-
                 <table>
                   <tbody>
                     <tr>
                       <td><h3 i18n:translate="">Type of ticket</h3></td><td><span tal:content="title"></span></td>
-                      <td rowspan="5" class="ticket-info" tal:define="qr_code python: view.get_qr_code(booking_uid_count)" style="vertical-align: top; padding-top: 25px;">
-
-                        <!--<img class="ticket-qr-code" tal:attributes="src qr_code"/>-->
-                        <!--<p tal:content="booking_uid_count" style="margin-left:15px; line-height: 10px;"></p>-->
+                      <td rowspan="5" class="ticket-info" tal:define="qr_code python: view.get_qr_code(booking_uid_count)" style="vertical-align: top; padding-top: 14px;">
 
                         <div class="info-div">
                           <p i18n:translate="">This ticket is only valid on the date/time indicated above.</p>
@@ -76,7 +71,7 @@
                       <td><h3 i18n:translate="">Ticketnummer</h3></td><td><span tal:content="python: '%s/%s' %(counter, total_tickets)">1/2</span></td>
                     </tr>
                     <tr>
-                      <td><h3 i18n:translate="">Date of purchase</h3></td><td><span>25/06/2015</span></td>
+                      <td><h3 i18n:translate="">Date of purchase</h3></td><td><span tal:content="created_date">07/03/2016</span></td>
                     </tr>
                   </tbody>
                 </table>
