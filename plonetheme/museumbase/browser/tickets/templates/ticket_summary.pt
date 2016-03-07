@@ -43,14 +43,11 @@
 
               
               <div class="cart_item summary_item" tal:condition="show">
-                <div id="ticketBarcode" tal:attributes="data-text booking_uid_count" style="padding-top: 50px;margin:0 auto;">
-                          
+                <div id="ticketBarcode" class="ticket-barcode" tal:attributes="data-text booking_uid_count;" style="padding-top: 50px;margin:0 auto;">
               </div>
 
-              <script>
-                var text = $("#ticketBarcode").data("text");
-                $("#ticketBarcode").barcode(text, "code128", {barWidth: 1, barHeight:40, fontSize: 11});
-              </script>
+              
+
                 <table>
                   <tbody>
                     <tr>
@@ -58,8 +55,6 @@
                       <td rowspan="5" class="ticket-info" tal:define="qr_code python: view.get_qr_code(booking_uid_count)" style="vertical-align: top; padding-top: 25px;">
 
                         <!--<img class="ticket-qr-code" tal:attributes="src qr_code"/>-->
-                        
-
                         <!--<p tal:content="booking_uid_count" style="margin-left:15px; line-height: 10px;"></p>-->
 
                         <div class="info-div">
@@ -103,6 +98,13 @@
                 <div class="clearfix"></div>
               </div>
             </tal:block>
+
+            <script>
+                $(".ticket-barcode").each(function(index){
+                  var text = $(this).data("text");
+                  $(this).barcode(text, "code128", {barWidth: 1, barHeight:40, fontSize: 11});
+                });
+            </script>
           
           </div>
           
