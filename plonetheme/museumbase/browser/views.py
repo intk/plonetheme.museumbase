@@ -42,6 +42,7 @@ from z3c.relationfield.interfaces import IRelationValue
 from plone.app.layout.viewlets.content import DocumentBylineViewlet
 from Acquisition import aq_parent, aq_inner
 from Products.CMFPlone.interfaces import IPloneSiteRoot
+from decimal import Decimal
 
 SHOP_AVAILABLE = True
 
@@ -51,7 +52,7 @@ try:
 except ImportError:
     SHOP_AVAILABLE = False
 
-from decimal import Decimal
+
 
 try:
     from Products.PloneGetPaid.interfaces import IBuyableMarker

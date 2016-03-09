@@ -38,6 +38,11 @@
                           id="title-column">&nbsp;<tal:title i18n:translate="listingheader_title"
                           >Title</tal:title>&nbsp;</th>
 
+                        <th class="nosort header-price"
+                            id="price-column"
+                            >&nbsp;<tal:title i18n:translate="listingheader_price"
+                          >Prijs</tal:title>&nbsp;</th>
+
                         <th class="nosort header-stock"
                             id="stock-column"
                             >&nbsp;<tal:title i18n:translate="listingheader_stock"
@@ -64,6 +69,7 @@
                                     leadMedia item/leadMedia;
                                     product_stock item/product_stock;
                                     product_articleNumber item/product_articleNumber;
+                                    product_price item/product_price;
                                     item_type_class python:'contenttype-' + normalizeString(item_type);
                                     item_wf_state item/review_state|python: context.portal_workflow.getInfoFor(item, 'review_state', '');
                                     item_wf_state_class python:'state-' + normalizeString(item_wf_state);"
@@ -84,6 +90,13 @@
                                    tal:content="item_title_or_id">
                                     Item Title
                                 </a>
+                                <p tal:content="item_description"></p>
+                            </td>
+
+                            <td>
+                                <tal:stock tal:condition="product_price">
+                                  <span tal:content="product_price"></span>
+                                </tal:stock>
                             </td>
 
                             <td>
