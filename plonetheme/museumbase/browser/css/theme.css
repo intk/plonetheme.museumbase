@@ -14810,6 +14810,44 @@ body.portaltype-collection.template-edit .hidden {
     visibility: initial !important;
 }
 
+#content-view-portlets .portletWrapper {
+    padding-bottom: 100px;
+}
+
+#content-view-portlets .portletSearch .portletHeader {
+    font-size: 1.250em !important;
+}
+
+#content-view-portlets .portletSearch input.searchField {
+    font-size: 1.250em !important;
+}
+
+#content-view-portlets .portletSearch input.searchButton {
+    font-size: 1.250em !important;
+}
+
+#content-view-portlets .portletSearch input.searchButton:hover {
+    font-size: 1.250em !important;
+}
+
+#content-view-portlets .portletSearch input.searchButton:visited {
+    font-size: 1.250em !important;
+}
+
+@media (max-width: 481px) {
+    #content-core .portletItem .searchField {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 0px;
+        margin-left: 0px;
+    }
+
+    #content-core .portletItem .searchButton {
+        margin: 0;
+    }
+}
+
+
 
 
 
