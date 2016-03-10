@@ -14710,3 +14710,106 @@ body.userrole-authenticated div:not(.video-slide) .overlay-image {
 }
 
 
+/* MANAGE PORTLETS */
+body.template-portlets #content div.title-description-wrapper {
+    position: initial !important;
+    background-color: #f5f5f5 !important;
+}
+
+body.template-portlets #content {
+    background-color: #ffffff;
+}
+
+body.template-portlets #content div.title-description-wrapper h1.documentFirstHeading {
+    padding-top: 150px !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 100px !important;
+    color: #333333 !important;
+}
+
+body.template-portlets #content div.title-description-wrapper p {
+    display: none;
+}
+
+body.template-portlets #content-core {
+    width: 80%;
+    margin: 0 auto;
+}
+
+body.template-portlets #content-core .portletHeader {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    text-align: left !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+body.template-portlets #content-core .portletHeader .managedPortletActions {
+    padding-top: 5px;
+}
+
+body.template-plone-portlet-collection-collection #content h1.documentFirstHeading {
+    padding-top: 150px !important;
+    color: #333333 !important;
+}
+
+body.template-plone-portlet-collection-collection #content .documentDescription {
+    padding-bottom: 100px !important;
+    color: #333333 !important;
+}
+
+
+body.template-plone-portlet-collection-collection #content-core {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+body.template-plone-portlet-collection-collection #content {
+    background-color: #ffffff !important;
+}
+
+body.template-collective-portlet-customsearch-search #content h1.documentFirstHeading {
+    padding-top: 150px !important;
+    color: #333333 !important;
+}
+
+body.template-collective-portlet-customsearch-search #content .documentDescription {
+    padding-bottom: 100px !important;
+    color: #333333 !important;
+}
+
+body.template-collective-portlet-customsearch-search #content-core {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+body.template-collective-portlet-customsearch-search #content {
+    background-color: #ffffff !important;
+}
+
+body[class*="contextportlets++collective.portletpage.toprow"] #content .documentDescription {
+    display: none !important;
+}
+
+body[class*="contextportlets++collective.portletpage.toprow"] #content h1.documentFirstHeading {
+    padding-top: 180px !important;
+    padding-bottom: 100px !important;
+    color: #333333 !important;
+}
+
+body[class*="contextportlets++collective.portletpage.toprow"] #content-core {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+body.portaltype-collection.template-edit .hidden {
+    display: block !important;
+    visibility: initial !important;
+}
+
+
+
+
