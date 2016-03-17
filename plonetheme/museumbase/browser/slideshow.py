@@ -166,9 +166,15 @@ class get_nav_objects(BrowserView):
 
         for obj in results:
             if obj != None:
+                title = obj.Title()
+                copyrights = getattr(obj.getObject(), 'copyrights', None)
+                if copyrights:
+                    if len(copyrights) > 0:
+                        title = "%s %s" %(title, "©")
+
                 obj_media = ICanContainMedia(obj.getObject()).getLeadMedia()
                 if obj_media != None:
-                    items['list'].append({'url':obj.getURL(),'image_url': obj_media.absolute_url()+'/@@images/image/large', 'object_id': obj.getId(), 'title':obj.Title(), 'description': obj.Description(), 'body': ""})
+                    items['list'].append({'url':obj.getURL(),'image_url': obj_media.absolute_url()+'/@@images/image/large', 'object_id': obj.getId(), 'title':title, 'description': obj.Description(), 'body': ""})
 
         return items
 
@@ -703,22 +709,36 @@ class get_nav_objects(BrowserView):
 
         if is_folder:
             for obj in list_items:
+                #copyrights
+                title = obj.Title
+                copyrights = getattr(obj.getObject(), 'copyrights', None)
+                if copyrights:
+                    if len(copyrights) > 0:
+                        title = "%s %s" %(title, "©")
+
                 obj_media = ICanContainMedia(obj.getObject()).getLeadMedia()
                 if obj_media != None:
                     schema = self.get_all_fields_object(obj.getObject())
                     if not items['has_list_images']:
-                        items['list'].append({'schema':schema, 'url':obj.getURL(),'image_url': obj_media.absolute_url()+'/@@images/image/large', 'object_id': obj.getId, 'title':obj.Title, 'description': obj.Description, 'body': self.get_object_body(obj.getObject())})
+                        items['list'].append({'schema':schema, 'url':obj.getURL(),'image_url': obj_media.absolute_url()+'/@@images/image/large', 'object_id': obj.getId, 'title':title, 'description': obj.Description, 'body': self.get_object_body(obj.getObject())})
                     else:
-                        items['list'].append({'schema':schema, 'images':self.get_multiple_images(obj.getObject(), view_type), 'url':obj.getURL(),'image_url': obj_media.absolute_url()+'/@@images/image/large', 'object_id': obj.getId, 'title':obj.Title, 'description': obj.Description, 'body': self.get_object_body(obj.getObject())})              
+                        items['list'].append({'schema':schema, 'images':self.get_multiple_images(obj.getObject(), view_type), 'url':obj.getURL(),'image_url': obj_media.absolute_url()+'/@@images/image/large', 'object_id': obj.getId, 'title':title, 'description': obj.Description, 'body': self.get_object_body(obj.getObject())})              
         else:
             for obj in list_items:
                 obj_media = ICanContainMedia(obj.getObject()).getLeadMedia()
                 if obj_media != None:
+                    # copyrights
+                    title = obj.Title()
+                    copyrights = getattr(obj.getObject(), 'copyrights', None)
+                    if copyrights:
+                        if len(copyrights) > 0:
+                            title = "%s %s" %(title, "©")
+
                     schema = self.get_all_fields_object(obj.getObject())
                     if not items['has_list_images']:
-                        items['list'].append({'schema':schema, 'url':obj.getURL(),'image_url': obj_media.absolute_url()+'/@@images/image/large', 'object_id': obj.getId(), 'title':obj.Title(), 'description': obj.Description(), 'body': self.get_object_body(obj)})
+                        items['list'].append({'schema':schema, 'url':obj.getURL(),'image_url': obj_media.absolute_url()+'/@@images/image/large', 'object_id': obj.getId(), 'title':title, 'description': obj.Description(), 'body': self.get_object_body(obj)})
                     else:
-                        items['list'].append({'schema':schema, 'images':self.get_multiple_images(obj.getObject(), view_type), 'url':obj.getURL(),'image_url': obj_media.absolute_url()+'/@@images/image/large', 'object_id': obj.getId(), 'title':obj.Title(), 'description': obj.Description(), 'body': self.get_object_body(obj)})                
+                        items['list'].append({'schema':schema, 'images':self.get_multiple_images(obj.getObject(), view_type), 'url':obj.getURL(),'image_url': obj_media.absolute_url()+'/@@images/image/large', 'object_id': obj.getId(), 'title':title, 'description': obj.Description(), 'body': self.get_object_body(obj)})                
         return items
 
     """
