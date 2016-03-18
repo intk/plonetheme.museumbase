@@ -671,11 +671,15 @@ slickSlideshow.getNavigationContent = function(query, object_id, init) {
 					title = "";
 				}
 
-				if (title.length > 45) {
-					title = title;
+				if (title.length > 76) {
+					if (title[title.length-1] == "©") {
+						var to_replace = title.substring(76, title.length-1);
+						title = title.replace(to_replace, " (...) ");
+					} else {
+						title = title.substring(76, title.length) + " (...) ";
+					}
 				}
 				
-
 				var title_and_description = title + description;
 				if (title_and_description.length > 85) {
 					var offset = title_and_description.length - 85;
@@ -1468,11 +1472,19 @@ slickSlideshow.updateDOMTitle = function(body, title) {
 	/* Update title */
 
 	var document_title = document.title.split('—');
+	if (title.length > 76) {
+		if (title[title.length-1] == "©") {
+			var to_replace = title.substring(76, title.length-1);
+			title = title.replace(to_replace, " (...) ");
+		} else {
+			title = title.substring(76, title.length) + " (...) ";
+		}
+	}
+
 	document_title[0] = title;
 
 	document.title = document_title.join('—');
-	
-
+		
 	// Change title
 	$("#content h1.documentFirstHeading").html(title);
 };
@@ -1486,8 +1498,13 @@ slickSlideshow.updateSlideDescriptionBar = function(title, description) {
 		description = "";
 	}
 	
-	if (title.length > 45) {
-		title = title;
+	if (title.length > 76) {
+		if (title[title.length-1] == "©") {
+			var to_replace = title.substring(76, title.length-1);
+			title = title.replace(to_replace, " (...) ");
+		} else {
+			title = title.substring(76, title.length) + " (...) ";
+		}
 	}
 
 	var title_and_description = title + description;
@@ -1527,8 +1544,13 @@ slickSlideshow.updateSlideDetails = function(curr, currentSlide, title, descript
 		description = "";
 	}
 	
-	if (title.length > 45) {
-		title = title;
+	if (title.length > 76) {
+		if (title[title.length-1] == "©") {
+			var to_replace = title.substring(76, title.length-1);
+			title = title.replace(to_replace, " (...) ");
+		} else {
+			title = title.substring(76, title.length) + " (...) ";
+		}
 	}
 
 	var title_and_description = title + description;
