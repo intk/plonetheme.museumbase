@@ -14843,7 +14843,49 @@ body.portaltype-collection.template-edit .hidden {
     }
 }
 
+body.template-exportorders #portal-logo img {
+    content: url('++resource++plonetheme.museumbase.css/teylers_black.png') !important;
+}
+
+body.template-exportorders .orderscsvexport {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #ffffff;
+}
+
+body.template-exportorders .exportcsvform td {
+    padding-left: 0px !important;
+    float: left;
+}
+
+body.template-exportorders #field-exportorders-from {
+    margin-left: 0px !important;
+}
 
 
+body.template-exportorders #input-exportorders-export {
+    background: #d75745 !important;
+    font-family: 'Merriweather', serif !important;
+    color: #ffffff !important;
+    font-size: 0.875em !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: #d75745 !important;
+    border-radius: 30px !important;
+    padding: 8px 16px !important;
+}
 
+body.template-exportorders #input-exportorders-export:hover {
+    background: #000000 !important;
+    font-family: 'Merriweather', serif !important;
+    color: #ffffff !important;
+    font-size: 0.875em !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: #000000 !important;
+    border-radius: 30px !important;
+    padding: 8px 16px !important;
+}
 
