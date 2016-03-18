@@ -676,7 +676,7 @@ slickSlideshow.getNavigationContent = function(query, object_id, init) {
 						var to_replace = title.substring(76, title.length-1);
 						title = title.replace(to_replace, " (...) ");
 					} else {
-						title = title.substring(0, 75) + " (...) ";
+						title = title.substring(0, 76) + " (...) ";
 					}
 				}
 				
@@ -1477,7 +1477,7 @@ slickSlideshow.updateDOMTitle = function(body, title) {
 			var to_replace = title.substring(76, title.length-1);
 			title = title.replace(to_replace, " (...) ");
 		} else {
-			title = title.substring(0, 75) + " (...) ";
+			title = title.substring(0, 76) + " (...) ";
 		}
 	}
 
@@ -1503,7 +1503,7 @@ slickSlideshow.updateSlideDescriptionBar = function(title, description) {
 			var to_replace = title.substring(76, title.length-1);
 			title = title.replace(to_replace, " (...) ");
 		} else {
-			title = title.substring(0, 75) + " (...) ";
+			title = title.substring(0, 76) + " (...) ";
 		}
 	}
 
@@ -1549,7 +1549,7 @@ slickSlideshow.updateSlideDetails = function(curr, currentSlide, title, descript
 			var to_replace = title.substring(76, title.length-1);
 			title = title.replace(to_replace, " (...) ");
 		} else {
-			title = title.substring(0, 75) + " (...) ";
+			title = title.substring(0, 76) + " (...) ";
 		}
 	}
 
