@@ -78,19 +78,15 @@ msgstr "Openingstijden"
 
 #: browser/ticket_summary.pt
 msgid "Accessibility"
-msgstr "Bereikbaardheid en toegankelijkheid"
+msgstr "Bereikbaarheid en toegankelijkheid"
 
 #: browser/ticket_summary.pt
 msgid "This ticket is only valid on the date/time indicated above."
-msgstr "Dit ticket is uitsluitend geldig op de daum/tijd zoals vermeld."
-
-#: browser/ticket_summary.pt
-msgid "You do not need to go to the admissions counter."
-msgstr "Met dit ticket hoeft u niet langs de kassa. U heeft directe toegang tot het museum."
+msgstr "Dit ticket is geldig tot één jaar na de aankoopdatum. "
 
 #: browser/ticket_summary.pt
 msgid "This ticket is not redeemable for cash or for a ticket for a later time."
-msgstr "Dit ticket is niet inwisselbaar voor geld, of voor een entreebewijs voor een wordt gescand bij entree."
+msgstr "Dit tickets is niet inwisselbaar voor geld en wordt gescand bij de entree"
 
 #: ../object.py
 msgid 'identification_identification_objectNumber'

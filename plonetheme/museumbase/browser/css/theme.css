@@ -14864,7 +14864,6 @@ body.template-exportorders #field-exportorders-from {
     margin-left: 0px !important;
 }
 
-
 body.template-exportorders #input-exportorders-export {
     background: #d75745 !important;
     font-family: 'Merriweather', serif !important;
@@ -14887,5 +14886,10 @@ body.template-exportorders #input-exportorders-export:hover {
     border-color: #000000 !important;
     border-radius: 30px !important;
     padding: 8px 16px !important;
+}
+
+body.template-mollie_payment_success #parent-fieldname-title, .documentFirstHeading {
+    margin-bottom: 0px !important;
+    padding-bottom: 100px !important;
 }
 

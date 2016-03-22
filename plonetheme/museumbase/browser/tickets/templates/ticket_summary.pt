@@ -33,7 +33,7 @@
                 <div class="tickets-title">
                   <h1>E-Ticket</h1>
                 </div>
-                <p class="title-aux">Entreebewijs / CJP</p>
+                <p class="title-aux">Entreebewijs</p>
             </div>
 
             <tal:block
@@ -54,14 +54,14 @@
 
                         <div class="info-div">
                           <p i18n:translate="">This ticket is only valid on the date/time indicated above.</p>
-                          <p i18n:translate="">You do not need to go to the admissions counter.</p>
                           <p i18n:translate="">This ticket is not redeemable for cash or for a ticket for a later time.</p>
-                          <p i18n:translate="">De algemene bezoekersvoorwaarden zijn van toepassing op dit e-ticket.<br>
-                                                Zie: www.teylersmuseum.nl</p>
+                          <p i18n:translate="">De algemene bezoekersvoorwaarden zijn voan toepassing op dit e-ticket. Zie: www.teylersmuseum.nl</p>
                         </div>
                       </td>
+
                     </tr>
-                     <tr>
+
+                    <tr>
                       <td><h3 i18n:translate="">Customer name</h3></td><td><span tal:content="customer">Customer</span></td>
                     </tr>
                     <tr>
@@ -79,15 +79,15 @@
                 <div id="ticket-footer" class="ticket-footer">
                   <div>
                     <h4 i18n:translate="">Address</h4>
-                    <p i18n:translate="">Teylers Museum, Spaarne 16, 2011 CH HAARLEM</p>
+                    <p i18n:translate="">T eylers Museum, Spaarne 16, 2011 CH HAARLEM. 023-516 0960</p>
                   </div>
                   <div>
                     <h4 i18n:translate="">Opening hours</h4>
-                    <p i18n:translate="">Kijk voor de actuele openingstijden op www.teylersmuseum.nl/nl/bezoek-het-museum/praktische-informatie/openingstijden-en-prijzen</p>
+                    <p>Dinsdag t/m vrijdag: 10.00 - 17.00 uur. Zaterdag, zondag, feestdag: 11.00 - 17.00 uur. Let op onze aangepaste openingstijden tijdens feestdagen. Kijk voor actuele openingstijden op: <br>http://www.teylersmuseum.nl/nl/bezoek-het-museum/praktische-informatie/openingstijden-en-prijzen</p>
                   </div>
                   <div class="accessibility">
                     <h4 i18n:translate="">Accessibility</h4>
-                    <p i18n:translate="">Teylers Museum is goed te bereiken met de auto of lopend vanaf het Centraal Station in Haarlem (ca. 10 minuten) via De Jansweg, Jansstraat, linksaf de Korte Jansstraat in, rechtsaf de Bakenessergracht aflopen tot aan het eind, bij het Spaarne slaat u rechtsaf, Teylers Museum is vervolgens aan uw rechterhand</p>
+                    <p>T eylers Museum is goed te bereiken met de auto. Je kunt parkere in de nabijgelegen parkeergarage De Appelaar. Vanaf het Centraal Station in Haarlem lopend te bereiken (ca. 10 minuten) via de Jansweg, linksaf de Korte Jansstraat in, rechtsaf de Bakenessergracht aflopen tot aan het eind, bij het Spaarne slaat u rechtsaf. T eylers Museum is vervolgens aan uw rechterhand.</p>
                   </div>
                 </div>
                 <div class="clearfix"></div>
