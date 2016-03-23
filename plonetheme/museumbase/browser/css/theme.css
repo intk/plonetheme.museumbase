@@ -14893,3 +14893,6 @@ body.template-mollie_payment_success #parent-fieldname-title, .documentFirstHead
     padding-bottom: 100px !important;
 }
 
+body.template-cart #content div.post-cart a {
+    line-height: 15px !important;
+}
