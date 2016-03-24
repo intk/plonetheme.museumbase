@@ -14888,7 +14888,7 @@ body.template-exportorders #input-exportorders-export:hover {
     padding: 8px 16px !important;
 }
 
-body.template-mollie_payment_success #parent-fieldname-title, .documentFirstHeading {
+body.template-mollie_payment_success .documentFirstHeading {
     margin-bottom: 0px !important;
     padding-bottom: 100px !important;
 }
