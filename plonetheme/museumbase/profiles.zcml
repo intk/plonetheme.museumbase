@@ -11,6 +11,14 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:registerProfile
+        name="testfixture"
+        title="unittest content"
+        directory="profiles/testfixture"
+        description="unittest content / example content for development"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
   <genericsetup:importStep
       name="plonetheme.museumbase.various"
       title="Museum base theme: miscellaneous import steps"

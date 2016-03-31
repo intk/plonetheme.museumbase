@@ -113,6 +113,10 @@ msgid 'identification_objectName_objectname_type'
 msgstr 'Objectnaam'
 
 #: ../object.py
+msgid 'identification_objectName_objectname'
+msgstr 'Objectnaam'
+
+#: ../object.py
 msgid 'physicalCharacteristics_materials'
 msgstr 'Materiaal'
 

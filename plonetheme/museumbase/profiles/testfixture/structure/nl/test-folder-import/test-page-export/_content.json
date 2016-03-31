@@ -1,0 +1,18 @@
+{
+    "changeNote": "", 
+    "contributors": [], 
+    "creators": [
+        "admin"
+    ], 
+    "description": "", 
+    "exclude_from_nav": false, 
+    "language": "nl", 
+    "plone.uuid": "a35a227f81c740fdb0b8d0b1961abf5b", 
+    "relatedItems": [
+        "<z3c.relationfield.relation.RelationValue object at 0x108b84cf8>", 
+        "<z3c.relationfield.relation.RelationValue object at 0x108cd5488>"
+    ], 
+    "rights": "", 
+    "table_of_contents": false, 
+    "title": "Test page export"
+}

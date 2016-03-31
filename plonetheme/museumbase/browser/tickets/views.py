@@ -211,6 +211,7 @@ class RedeemDropdown(object):
     def create_items(self, transitions):
         ret = list()
         url = self.context.absolute_url()
+        
         # create and return available transitions for order
         uid = str(self.record.attrs['uid'])
         order_uid = str(self.record.attrs['order_uid'])
@@ -514,6 +515,7 @@ class TicketTableData(BrowserView):
         catalog = getToolByName(self.context, 'portal_catalog')
 
         self.total_records = 0
+        
         for lazyrecord in self.slice(lazydata):
             booking = lazyrecord()
             count = booking.attrs['buyable_count']
@@ -550,6 +552,8 @@ class TicketTableData(BrowserView):
             "iTotalDisplayRecords": length,
             "aaData": aaData,
         }
+
+        print data
 
         return json.dumps(data)
 

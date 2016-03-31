@@ -35,6 +35,9 @@ class AdvancedSearchView(CommonBrowserView, Search):
             },
             'identification_objectName_objectname_type': {
                 'data':'{"orderable": true, "vocabularyUrl": "%s/@@getVocabulary?name=collective.object.objectname_type&field=types", "initialValues": {}, "separator": "_"}' % (context_url)
+            },
+            'identification_objectName_objectname': {
+                'data':'{"orderable": true, "vocabularyUrl": "%s/@@getVocabulary?name=collective.object.objectname&field=types", "initialValues": {}, "separator": "_"}' % (context_url)
             }
         }
         

@@ -194,7 +194,7 @@
 
     <!-- redeem view -->
     <browser:page
-      for="zope.component.interfaces.ISite"
+      for="*"
       name="redeem"
       template="tickets/templates/redeem_view.pt"
       class=".tickets.views.RedeemView"
@@ -204,7 +204,7 @@
 
     <!-- redeem table -->
     <browser:page
-      for="zope.component.interfaces.ISite"
+      for="*"
       name="redeemtable"
       template="tickets/templates/redeem.pt"
       class=".tickets.views.RedeemTable"
@@ -213,7 +213,7 @@
       zcml:condition="installed bda.plone.orders"/>
 
     <browser:page
-      for="zope.component.interfaces.ISite"
+      for="*"
       name="redeemtransition"
       class=".tickets.views.RedeemStateTransition"
       permission="bda.plone.orders.ModifyOrders"
@@ -222,7 +222,7 @@
 
     <!-- orders data -->
     <browser:page
-      for="zope.component.interfaces.ISite"
+      for="*"
       name="redeemdata"
       class=".tickets.views.RedeemData"
       permission="bda.plone.orders.ViewOrders"

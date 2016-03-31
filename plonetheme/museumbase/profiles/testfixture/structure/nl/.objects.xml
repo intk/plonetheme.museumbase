@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+  <record type="Folder">intern</record>
+  <record type="Folder">revised-test-folder</record>
+  <record type="Folder">bibliotheek</record>
+  <record type="Folder">bezoek-het-museum</record>
+  <record type="Folder">test-folder</record>
+  <record type="Folder">import-folder</record>
+  <record type="Folder">shared</record>
+  <record type="Folder">import-test</record>
+  <record type="Folder">collectie</record>
+  <record type="Folder">tentoonstellingen</record>
+  <record type="Document">front-page</record>
+  <record type="Folder">shared</record>
+  <record type="Folder">geschiedenis-en-archeologie</record>
+  <record type="Folder">kunst</record>
+  <record type="Folder">test-folder-import</record>
+  <record type="Portlet Page">frontpage</record>
+  <record type="Collection">aggregator</record>
+  <record type="Folder">test-folder-export</record>
+  <record type="Image">image-3</record>
+</manifest>
