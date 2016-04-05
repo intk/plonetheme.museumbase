@@ -29,7 +29,7 @@
                         item_index repeat/item/index;
                         item_link item/getURL;
                         has_media item/leadMedia;
-                        item_obj item/getObject;
+                        item_obj nocall:item/getObject;
                         item_is_buyable python:view.isBuyable(item_obj);
                         number repeat/item/number;">
 
@@ -56,10 +56,10 @@
                     </h3>
                     
                     <p tal:condition="python: item_type in ['Event', 'Exhibition', 'BookableEvent', 'Bookable Event']" class="item-dates">
-                      <tal:ony_dates tal:condition="python: str(item.start_date) != '' and str(item.end_date) != '' and item.start_date != None and item.end_date != None">
-                        <tal:differentday tal:condition="python:not item.start_date.date() == item.end_date.date()" i18n:translate="event_when_differentday">
+                      <tal:ony_dates tal:condition="python: str(item.start) != '' and str(item.end_date) != '' and item.start != None and item.end_date != None">
+                        <tal:differentday tal:condition="python:not item.start.Date() == item.end_date.Date()" i18n:translate="event_when_differentday">
                           <abbr i18n:name="startdate">
-                            <span tal:replace="python: toLocalizedTime(item.start_date.strftime('%d %B %Y'))">Start Date</span>
+                            <span tal:replace="python: toLocalizedTime(item.start.strftime('%d %B %Y'))">Start Date</span>
                             <tal:word i18n:translate="event_when_differentday_optional_word_between_date_and_time" />
                           </abbr>
                           t/m
@@ -70,11 +70,11 @@
                           </abbr>
                         </tal:differentday>
 
-                        <tal:sameday tal:condition="python:item.start_date.date() == item.end_date.date()" i18n:translate="event_when_sameday">
-                          <span tal:replace="python: toLocalizedTime(item.start_date.strftime('%d %B %Y'))" i18n:name="date">Start Date Time</span>
+                        <tal:sameday tal:condition="python:item.start.Date() == item.end_date.Date()" i18n:translate="event_when_sameday">
+                          <span tal:replace="python: toLocalizedTime(item.start.strftime('%d %B %Y'))" i18n:name="date">Start Date Time</span>
                           <span i18n:name="linebreak"></span>
                           <abbr i18n:name="starttime">
-                            <span tal:content="python:toLocalizedTime(item.start_date, time_only=1)">Start Time</span>
+                            <span tal:content="python:toLocalizedTime(item.start, time_only=1)">Start Time</span>
                           </abbr >
                           -
                           <abbr i18n:name="endtime">

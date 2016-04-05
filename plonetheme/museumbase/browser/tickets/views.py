@@ -543,10 +543,9 @@ class TicketTableData(BrowserView):
         for lazyrecord in self.slice(lazydata):
             booking = lazyrecord()
             count = booking.attrs['buyable_count']
-
             buyable_uid = booking.attrs['buyable_uid']
-
             ticket = False
+
             brains = catalog.queryCatalog({"UID": str(buyable_uid)})
             if len(brains) > 0:
                 brain = brains[0]
@@ -556,18 +555,14 @@ class TicketTableData(BrowserView):
 
             if ticket:
                 self.total_records += 1
-                for item in range(count):
-                    booking_uid = booking.attrs["uid"]
-                    part = "%03d" %(item+1)
-                    booking_uid_part = "%s-%s" %(str(booking_uid), str(part))
 
+                for item in booking.attrs.get("redeemed", ''):
+                    is_redeemed = True
+                    aaData.append(record2list(booking, item, is_redeemed))
+
+                for item in booking.attrs.get("to_redeem", ''):
                     is_redeemed = False
-                    redeemed = booking.attrs.get("redeemed", '')
-                    if redeemed:
-                        if booking_uid_part in redeemed:
-                            is_redeemed = True
-
-                    aaData.append(record2list(booking, booking_uid_part, is_redeemed))
+                    aaData.append(record2list(booking, item, is_redeemed))
 
         data = {
             "sEcho": int(self.request.form['sEcho']),
@@ -724,10 +719,11 @@ class TicketView(CartView):
               tickets['tickets'].append({
                   "cart_item_title": booking.attrs['title'],
                   "cart_item_price": ascur(price_total),
-                  "cart_item_count": booking.attrs['buyable_count'],
+                  "cart_item_count": len(booking.attrs['to_redeem']),
                   "booking_uid": booking.attrs['uid'],
                   "cart_item_original_price": "",
-                  "order_created_date": created_date
+                  "order_created_date": created_date,
+                  "to_redeem": booking.attrs['to_redeem']
                 })
 
             tickets["total_tickets"] = total_items

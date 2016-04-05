@@ -253,7 +253,7 @@
       title="Full View"
     />
 
-    <browser:page
+    <!--<browser:page
         name="content_view"
         for="plone.event.interfaces.IEvent"
         layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
@@ -261,7 +261,7 @@
         permission="zope2.View"
         menu="plone_displayviews"
         title="View Content"
-    />
+    />-->
 
     <browser:page
         name="get_json_fields"
@@ -415,6 +415,18 @@
       template="alternative_templates/portlet_mailchimp.pt"
       layer=".interfaces.IThemeSpecific"
      />
+
+     <plone:behavior
+      title="Tickets Behavior"
+      description="Includes specific fields for Tickets"
+      provides=".tickets.behaviors.ITicketsBehavior"
+      for="plone.dexterity.interfaces.IDexterityContent" />
+
+
+    <subscriber
+        for="plonetheme.museumbase.browser.tickets.behaviors.ITicketsBehavior
+        zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+        handler=".tickets.behaviors.update_stock" />
 
      <!--<plone:portlet
         name="plonetheme.bootstrapModern.extendedMailchimp"
