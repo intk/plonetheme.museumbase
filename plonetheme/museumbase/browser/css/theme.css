@@ -14896,3 +14896,7 @@ body.template-mollie_payment_success .documentFirstHeading {
 body.template-cart #content div.post-cart a {
     line-height: 15px !important;
 }
+
+body.template-edit #form-widgets-ITicketsBehavior-barcode_list {
+    height: 500px !important;
+}

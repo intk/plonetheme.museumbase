@@ -23,14 +23,14 @@ class ITicketsBehavior(model.Schema):
 	)
 
 	use_barcodes = schema.Bool(
-        title=_(u'label_use_barcodes', default=u'Use barcodes'),
+        title=_(u'label_use_barcodes', default=u'Use custom barcodes'),
         required=False
     )
 
 	barcode_list = schema.Text(
         title=_(
             u"label_barcode_list",
-            default=u"List of barcodes available"
+            default=u"List of custom barcodes available"
         ),
         required=False
     )
@@ -81,6 +81,9 @@ def update_stock(ob, event):
 		
 		item_stock = get_item_stock(ob)
 		item_stock.available = new_stock
+	else:
+		tem_stock = get_item_stock(ob)
+		item_stock.available = None
 
 	return True
 	

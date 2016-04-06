@@ -99,7 +99,7 @@
             <script>
                 $(".ticket-barcode").each(function(index){
                   var text = $(this).data("text");
-                  $(this).barcode(text, "code128", {barWidth: 1, barHeight:40, fontSize: 11});
+                  $(this).barcode(""+text, "code39", {barWidth: 1, barHeight:40, fontSize: 11});
                 });
             </script>
           

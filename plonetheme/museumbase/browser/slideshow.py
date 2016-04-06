@@ -13,7 +13,11 @@ from zope.component import getUtility
 from Products.CMFCore.utils import getToolByName
 from zope.i18nmessageid import MessageFactory
 from plone.app.uuid.utils import uuidToCatalogBrain, uuidToObject
-from plone.app.contenttypes.behaviors.collection import ICollection
+try:
+    from plone.app.contenttypes.behaviors.collection import ICollection
+except:
+    from plone.app.contenttypes.interfaces import ICollection
+    
 import re
 
 MessageFactory = MessageFactory('Products.mediaObject')
