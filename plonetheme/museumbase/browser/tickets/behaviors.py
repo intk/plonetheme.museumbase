@@ -81,9 +81,6 @@ def update_stock(ob, event):
 		
 		item_stock = get_item_stock(ob)
 		item_stock.available = new_stock
-	else:
-		item_stock = get_item_stock(ob)
-		item_stock.available = None
 
 	return True
 	
