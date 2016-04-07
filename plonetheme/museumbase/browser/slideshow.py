@@ -412,6 +412,8 @@ class get_nav_objects(BrowserView):
         end_date = field['end']
         end_date_precision = field['end_precision']
 
+        lang = self.context.language
+
         if end_date == start_date:
             end_date = ""
 
@@ -437,9 +439,15 @@ class get_nav_objects(BrowserView):
             if result:
                 if end_date_precision not in NOT_ALLOWED:
                     if end_date_precision != start_date_precision:
-                        result = "%s - %s %s" %(result, end_date_precision, end_date)
+                        if lang == "nl":
+                            result = "van %s tot %s %s" %(result, end_date_precision, end_date)
+                        else:
+                            result = "%s - %s %s" %(result, end_date_precision, end_date)
                     else:
-                        result = "%s - %s" %(result, end_date)
+                        if lang == "nl":
+                            result = "van %s tot %s" %(result, end_date)
+                        else:
+                            result = "%s - %s" %(result, end_date)
                 else:
                     result = "%s - %s" %(result, end_date)
             else:
@@ -1234,6 +1242,8 @@ class get_fields(BrowserView):
         end_date = field['end']
         end_date_precision = field['end_precision']
 
+        lang = self.context.language
+
         if end_date == start_date:
             end_date = ""
 
@@ -1259,9 +1269,15 @@ class get_fields(BrowserView):
             if result:
                 if end_date_precision not in NOT_ALLOWED:
                     if end_date_precision != start_date_precision:
-                        result = "%s - %s %s" %(result, end_date_precision, end_date)
+                        if lang == "nl":
+                            result = "van %s tot %s %s" %(result, end_date_precision, end_date)
+                        else:
+                            result = "%s - %s %s" %(result, end_date_precision, end_date)
                     else:
-                        result = "%s - %s" %(result, end_date)
+                        if lang == "nl":
+                            result = "van %s tot %s" %(result, end_date)
+                        else:
+                            result = "%s - %s" %(result, end_date)
                 else:
                     result = "%s - %s" %(result, end_date)
             else:
