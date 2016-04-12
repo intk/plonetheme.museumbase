@@ -17,6 +17,7 @@
         tal:define="title python: order['cart_item_title'];
                     price python: order['cart_item_price'];
                     count python: order['cart_item_count'];
+                    to_redeem python: order['to_redeem'];
                     original_price python: order['cart_item_original_price'];
                     booking_uid python: order['booking_uid'];
                     show python: count > 0;
@@ -39,11 +40,12 @@
             <tal:block
               tal:define="number repeat/item/number;
                           booking_uid_count python: '%s-%03d' %(str(booking_uid), number);
+                          barcode_text python: to_redeem[number-1];
                           global counter python: counter + 1;">
 
               
               <div class="cart_item summary_item" tal:condition="show">
-                <div id="ticketBarcode" class="ticket-barcode" tal:attributes="data-text booking_uid_count;" style="padding-top: 50px;margin:0 auto;">
+                <div id="ticketBarcode" class="ticket-barcode" tal:attributes="data-text barcode_text;" style="padding-top: 50px;margin:0 auto;">
               </div>
 
                 <table>
@@ -97,7 +99,7 @@
             <script>
                 $(".ticket-barcode").each(function(index){
                   var text = $(this).data("text");
-                  $(this).barcode(text, "code128", {barWidth: 1, barHeight:40, fontSize: 11});
+                  $(this).barcode(""+text, "code39", {barWidth: 1, barHeight:40, fontSize: 11});
                 });
             </script>
           
