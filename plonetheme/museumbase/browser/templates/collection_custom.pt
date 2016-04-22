@@ -27,7 +27,7 @@
                         portal_type context/portal_type;
                         item_title item/Title;
                         has_media nocall:item/leadMedia;
-                        item_obj nocall:item/getObject;
+                        item_obj python:item.getObject();
                         item_is_buyable python:view.isBuyable(item_obj);
                         item_href python: view.getItemURL(item, item_url);">
 

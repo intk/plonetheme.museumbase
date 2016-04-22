@@ -19,7 +19,7 @@
 
           <tal:entry_details
             tal:define="collection_id context/UID;
-                        item_obj nocall:item/getObject;
+                        item_obj python:item.getObject();
                         item_index repeat/item/index;
                         number repeat/item/number;
                         lead_image python:view.getImageObject(item);

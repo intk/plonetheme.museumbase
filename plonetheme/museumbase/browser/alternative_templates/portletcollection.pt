@@ -29,7 +29,7 @@
                         item_index repeat/item/index;
                         item_link item/getURL;
                         has_media nocall:item/leadMedia;
-                        item_obj nocall:item/getObject;
+                        item_obj python:item.getObject();
                         item_is_buyable python:view.isBuyable(item_obj);
                         number repeat/item/number;">
 

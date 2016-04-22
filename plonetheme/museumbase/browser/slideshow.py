@@ -643,8 +643,8 @@ class get_nav_objects(BrowserView):
                     else:
                         value = self.trim_white_spaces(value)
                         if name in ["object_title", "translated_title"]:
-                            if "fossielen" in object.absolute_url():
-                                value = ""
+                            #if "fossielen" in object.absolute_url():
+                            #    value = ""
 
                             if name in ["object_title"]:
                                 if "boeken" in object.absolute_url():
@@ -1470,8 +1470,8 @@ class get_fields(BrowserView):
                     else:
                         value = self.trim_white_spaces(value)
                         if name in ["object_title", "translated_title"]:
-                            if "fossielen" in object.absolute_url():
-                                value = ""
+                            #if "fossielen" in object.absolute_url():
+                            #    value = ""
 
                             if name in ["object_title"]:
                                 if "boeken" in object.absolute_url():
