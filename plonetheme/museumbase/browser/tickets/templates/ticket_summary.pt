@@ -70,7 +70,7 @@
                       <td><h3 i18n:translate="">Price</h3></td><td><span tal:content="currency">EUR</span><span tal:content="price"></span></td>
                     </tr>
                     <tr>
-                      <td><h3 i18n:translate="">Ticketnummer</h3></td><td><span tal:content="python: '%s/%s' %(counter, total_tickets)">1/2</span></td>
+                      <td><h3 i18n:translate="">Ticket number</h3></td><td><span tal:content="python: '%s/%s' %(counter, total_tickets)">1/2</span></td>
                     </tr>
                     <tr>
                       <td><h3 i18n:translate="">Date of purchase</h3></td><td><span tal:content="created_date">07/03/2016</span></td>
