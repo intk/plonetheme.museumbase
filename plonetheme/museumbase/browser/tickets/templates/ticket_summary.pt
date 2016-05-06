@@ -85,7 +85,7 @@
                   </div>
                   <div>
                     <h4 i18n:translate="">Opening hours</h4>
-                    <p><span 18n:translate="opening_hours">Tuesdays to Fridays: 10 a.m - 5 p.m. Saturdays, Sundays, public holidays: 11 a.m. – 5 p.m. During public holidays other opening ours than usual may apply. For current opening times:</span><br><span 18n:translate="">http://www.teylersmuseum.nl/en/visiting-the-museum/practical-information/opening-hours-and-admission-fees</span></p>
+                    <p><span 18n:translate="opening_hours">Tuesdays to Fridays: 10 a.m - 5 p.m. Saturdays, Sundays, public holidays: 11 a.m. – 5 p.m. During public holidays other opening ours than usual may apply. For current opening times: http://www.teylersmuseum.nl/en/visiting-the-museum/practical-information/opening-hours-and-admission-fees</span></p>
                   </div>
                   <div class="accessibility">
                     <h4 i18n:translate="">Accessibility</h4>

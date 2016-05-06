@@ -209,16 +209,8 @@ msgid 'general_conditions'
 msgstr 'De algemene bezoekersvoorwaarden zijn voan toepassing op dit e-ticket. Zie: www.teylersmuseum.nl'
 
 #: ../object.py
-msgid 'http://www.teylersmuseum.nl/en/visiting-the-museum/practical-information/opening-hours-and-admission-fees'
-msgstr 'http://www.teylersmuseum.nl/nl/bezoek-het-museum/praktische-informatie/openingstijden-en-prijzen'
-
-#: ../object.py
-msgid 'opening_hours'
-msgstr 'Dinsdag t/m vrijdag: 10.00 - 17.00 uur. Zaterdag, zondag, feestdag: 11.00 - 17.00 uur. Let op onze aangepaste openingstijden tijdens feestdagen. Kijk voor actuele openingstijden op:'
-
-#: ../object.py
-msgid 'opening_hours_link'
-msgstr 'http://www.teylersmuseum.nl/nl/bezoek-het-museum/praktische-informatie/openingstijden-en-prijzen'
+msgid "opening_hours"
+msgstr "Dinsdag t/m vrijdag: 10.00 - 17.00 uur. Zaterdag, zondag, feestdag: 11.00 - 17.00 uur. Let op onze aangepaste openingstijden tijdens feestdagen. Kijk voor actuele openingstijden op: http://www.teylersmuseum.nl/nl/bezoek-het-museum/praktische-informatie/openingstijden-en-prijzen"
 
 #: ../object.py
 msgid 'label_accessibility'
@@ -227,6 +219,5 @@ msgstr 'Teylers Museum is goed te bereiken met de auto. Je kunt parkere in de na
 #: ../object.py
 msgid 'Ticket number'
 msgstr 'Ticketnummer'
-
 
 

@@ -123,12 +123,8 @@ msgid 'Boeken'
 msgstr 'Books'
 
 #: ../object.py
-msgid 'opening_hours'
-msgstr 'Tuesdays to Fridays: 10 a.m - 5 p.m. Saturdays, Sundays, public holidays: 11 a.m. – 5 p.m. During public holidays other opening ours than usual may apply. For current opening times:'
-
-#: ../object.py
-msgid 'opening_hours_link'
-msgstr 'http://www.teylersmuseum.nl/en/visiting-the-museum/practical-information/opening-hours-and-admission-fees'
+msgid "opening_hours"
+msgstr "Tuesdays to Fridays: 10 a.m - 5 p.m. Saturdays, Sundays, public holidays: 11 a.m. – 5 p.m. During public holidays other opening ours than usual may apply. For current opening times: http://www.teylersmuseum.nl/en/visiting-the-museum/practical-information/opening-hours-and-admission-fees"
 
 #: ../object.py
 msgid 'label_accessibility'
