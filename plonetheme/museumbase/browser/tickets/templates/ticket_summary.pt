@@ -57,7 +57,7 @@
                         <div class="info-div">
                           <p i18n:translate="">This ticket is only valid on the date/time indicated above.</p>
                           <p i18n:translate="">This ticket is not redeemable for cash or for a ticket for a later time.</p>
-                          <p i18n:translate="">The general conditions for visitors apply to this e-ticket. See: www.teylersmuseum.nl</p>
+                          <p i18n:translate="general_conditions">The general conditions for visitors apply to this e-ticket. See: www.teylersmuseum.nl</p>
                         </div>
                       </td>
 

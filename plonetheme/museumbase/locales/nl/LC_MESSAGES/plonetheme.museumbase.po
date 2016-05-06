@@ -205,7 +205,7 @@ msgid 'Entrance ticket'
 msgstr 'Entreebewijs'
 
 #: ../object.py
-msgid 'The general conditions for visitors apply to this e-ticket. See: www.teylersmuseum.nl'
+msgid 'general_conditions'
 msgstr 'De algemene bezoekersvoorwaarden zijn voan toepassing op dit e-ticket. Zie: www.teylersmuseum.nl'
 
 #: ../object.py
