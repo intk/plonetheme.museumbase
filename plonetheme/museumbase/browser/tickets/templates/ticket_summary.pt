@@ -34,7 +34,7 @@
                 <div class="tickets-title">
                   <h1>E-Ticket</h1>
                 </div>
-                <p class="title-aux">Entreebewijs</p>
+                <p class="title-aux" i18n:translate="">Entrance ticket</p>
             </div>
 
             <tal:block
@@ -57,7 +57,7 @@
                         <div class="info-div">
                           <p i18n:translate="">This ticket is only valid on the date/time indicated above.</p>
                           <p i18n:translate="">This ticket is not redeemable for cash or for a ticket for a later time.</p>
-                          <p i18n:translate="">De algemene bezoekersvoorwaarden zijn voan toepassing op dit e-ticket. Zie: www.teylersmuseum.nl</p>
+                          <p i18n:translate="">The general conditions for visitors apply to this e-ticket. See: www.teylersmuseum.nl</p>
                         </div>
                       </td>
 
@@ -85,11 +85,11 @@
                   </div>
                   <div>
                     <h4 i18n:translate="">Opening hours</h4>
-                    <p>Dinsdag t/m vrijdag: 10.00 - 17.00 uur. Zaterdag, zondag, feestdag: 11.00 - 17.00 uur. Let op onze aangepaste openingstijden tijdens feestdagen. Kijk voor actuele openingstijden op: <br>http://www.teylersmuseum.nl/nl/bezoek-het-museum/praktische-informatie/openingstijden-en-prijzen</p>
+                    <p><span 18n:translate="">Dinsdag t/m vrijdag: 10.00 - 17.00 uur. Zaterdag, zondag, feestdag: 11.00 - 17.00 uur. Let op onze aangepaste openingstijden tijdens feestdagen. Kijk voor actuele openingstijden op:</span><br><span 18n:translate="">http://www.teylersmuseum.nl/en/visiting-the-museum/practical-information/opening-hours-and-admission-fees</span></p>
                   </div>
                   <div class="accessibility">
                     <h4 i18n:translate="">Accessibility</h4>
-                    <p>Teylers Museum is goed te bereiken met de auto. Je kunt parkere in de nabijgelegen parkeergarage De Appelaar. Vanaf het Centraal Station in Haarlem lopend te bereiken (ca. 10 minuten) via de Jansweg, linksaf de Korte Jansstraat in, rechtsaf de Bakenessergracht aflopen tot aan het eind, bij het Spaarne slaat u rechtsaf. T eylers Museum is vervolgens aan uw rechterhand.</p>
+                    <p i18n:translate="">Teylers Museum is easy to reach by car and train. If you come by train, the museum is 10 minutes' walk from Central Station in Haarlem, taking the following route: Jansweg, Jansstraat, turn left into Korte Jansstraat, turn right into Bakenessergracht, straight on to the end, turn right at the Spaarne River, Teylers Museum will be on your right.</p>
                   </div>
                 </div>
                 <div class="clearfix"></div>
