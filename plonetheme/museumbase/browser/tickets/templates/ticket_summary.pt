@@ -85,7 +85,7 @@
                   </div>
                   <div>
                     <h4 i18n:translate="">Opening hours</h4>
-                    <p><span 18n:translate="">Dinsdag t/m vrijdag: 10.00 - 17.00 uur. Zaterdag, zondag, feestdag: 11.00 - 17.00 uur. Let op onze aangepaste openingstijden tijdens feestdagen. Kijk voor actuele openingstijden op:</span><br><span 18n:translate="">http://www.teylersmuseum.nl/en/visiting-the-museum/practical-information/opening-hours-and-admission-fees</span></p>
+                    <p><span 18n:translate="">Tuesdays to Fridays: 10 a.m - 5 p.m. Saturdays, Sundays, public holidays: 11 a.m. – 5 p.m. During public holidays other opening ours than usual may apply. For current opening times:</span><br><span 18n:translate="">http://www.teylersmuseum.nl/en/visiting-the-museum/practical-information/opening-hours-and-admission-fees</span></p>
                   </div>
                   <div class="accessibility">
                     <h4 i18n:translate="">Accessibility</h4>
