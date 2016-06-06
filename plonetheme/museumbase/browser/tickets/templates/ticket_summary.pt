@@ -55,7 +55,7 @@
                       <td rowspan="5" class="ticket-info" tal:define="qr_code python: view.get_qr_code(booking_uid_count)" style="vertical-align: top; padding-top: 14px;">
 
                         <div class="info-div">
-                          <p i18n:translate="">This ticket is valid until one year after the date of purchase.</p>
+                          <p i18n:translate="">This ticket is valid until one year after the date of purchase</p>
                           <p i18n:translate="">This ticket is not redeemable for cash and will be scanned at the entrance of the museum</p>
                           <p i18n:translate="general_conditions">The general conditions for visitors apply to this e-ticket. See: www.teylersmuseum.nl</p>
                         </div>
