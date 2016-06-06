@@ -55,8 +55,8 @@
                       <td rowspan="5" class="ticket-info" tal:define="qr_code python: view.get_qr_code(booking_uid_count)" style="vertical-align: top; padding-top: 14px;">
 
                         <div class="info-div">
-                          <p i18n:translate="">This ticket is only valid on the date/time indicated above.</p>
-                          <p i18n:translate="">This ticket is not redeemable for cash or for a ticket for a later time.</p>
+                          <p i18n:translate="">This ticket is valid until one year after the date of purchase.</p>
+                          <p i18n:translate="">This ticket is not redeemable for cash and will be scanned at the entrance of the museum</p>
                           <p i18n:translate="general_conditions">The general conditions for visitors apply to this e-ticket. See: www.teylersmuseum.nl</p>
                         </div>
                       </td>
@@ -86,14 +86,14 @@
                   <div>
                     <h4 i18n:translate="">Opening hours</h4>
                     <p>
-                      <span 18n:translate="" tal:condition="python: context.language == 'en'">Tuesdays to Fridays: 10 a.m - 5 p.m. Saturdays, Sundays, public holidays: 11 a.m. – 5 p.m. During public holidays other opening ours than usual may apply. For current opening times: http://www.teylersmuseum.nl/en/visiting-the-museum/practical-information/opening-hours-and-admission-fees</span>
+                      <span 18n:translate="" tal:condition="python: context.language == 'en'">Tuesdays to Fridays: 10 a.m - 5 p.m. Saturdays, Sundays, public holidays: 11 a.m. – 5 p.m. Please note that during public holidays, opening hours may differ from the regular opening times. Please check the opening hours before your visit on: http://www.teylersmuseum.nl/en/visitingthemuseum/practical-information/opening-hours-and-admission-fees</span>
                       <span 18n:translate="" tal:condition="python: context.language == 'nl'">Dinsdag t/m vrijdag: 10.00 - 17.00 uur. Zaterdag, zondag, feestdag: 11.00 - 17.00 uur. Let op onze aangepaste openingstijden tijdens feestdagen. Kijk voor actuele openingstijden op: http://www.teylersmuseum.nl/nl/bezoek-het-museum/praktische-informatie/openingstijden-en-prijzen</span>
 
                   </p>
                   </div>
                   <div class="accessibility">
-                    <h4 i18n:translate="">Accessibility</h4>
-                    <p i18n:translate="label_accessibility">Teylers Museum is easy to reach by car and train. If you come by train, the museum is 10 minutes' walk from Central Station in Haarlem, taking the following route: Jansweg, Jansstraat, turn left into Korte Jansstraat, turn right into Bakenessergracht, straight on to the end, turn right at the Spaarne River, Teylers Museum will be on your right.</p>
+                    <h4 i18n:translate="">How to find us</h4>
+                    <p i18n:translate="label_accessibility">Teylers Museum is easy to reach by car and train. If you come by train: the museum is on a 10 minutes walk from Haarlem Central Station. Take the following route; Jansweg, Jansstraat, turn left into Korte Jansstraat, turn right into Bakenessergracht, straight on to the end, turn right at the S paarne River, Teylers Museum will be on your right. If you come by car: multi-storey carpark De Appelaar is located next to the museum.</p>
                   </div>
                 </div>
                 <div class="clearfix"></div>

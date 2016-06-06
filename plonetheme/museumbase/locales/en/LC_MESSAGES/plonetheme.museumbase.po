@@ -128,7 +128,7 @@ msgstr "Tuesdays to Fridays: 10 a.m - 5 p.m. Saturdays, Sundays, public holidays
 
 #: ../object.py
 msgid 'label_accessibility'
-msgstr 'Teylers Museum is easy to reach by car and train. If you come by train, the museum is 10 minutes walk from Central Station in Haarlem, taking the following route: Jansweg, Jansstraat, turn left into Korte Jansstraat, turn right into Bakenessergracht, straight on to the end, turn right at the Spaarne River, Teylers Museum will be on your right.'
+msgstr 'Teylers Museum is easy to reach by car and train. If you come by train: the museum is on a 10 minutes walk from Haarlem Central Station. Take the following route; Jansweg, Jansstraat, turn left into Korte Jansstraat, turn right into Bakenessergracht, straight on to the end, turn right at the S paarne River, Teylers Museum will be on your right. If you come by car: multi-storey carpark De Appelaar is located next to the museum.'
 
 #: ../object.py
 msgid 'general_conditions'

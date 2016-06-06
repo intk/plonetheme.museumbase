@@ -119,7 +119,6 @@ $(document).ready(function() {
   if (slickSlideshow.$obj != undefined) {
     slickSlideshow.$obj.mousemove(slickSlideshow.slideMouseMove);
     $("iframe").mouseover(slickSlideshow.slideMouseMove);
-
     $(".portlet-gap, #row-items, body.template-content_view #parent-fieldname-text, .object-fields").mouseenter(function() {
       if ($("#slickslideshow").hasClass("fullscreen")) {
         $("#slideshow-controls").fadeOut();

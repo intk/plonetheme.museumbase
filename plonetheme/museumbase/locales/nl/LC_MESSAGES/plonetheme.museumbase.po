@@ -77,15 +77,15 @@ msgid "Opening hours"
 msgstr "Openingstijden"
 
 #: browser/ticket_summary.pt
-msgid "Accessibility"
+msgid "How to find us"
 msgstr "Bereikbaarheid en toegankelijkheid"
 
 #: browser/ticket_summary.pt
-msgid "This ticket is only valid on the date/time indicated above."
+msgid "This ticket is valid until one year after the date of purchase."
 msgstr "Dit ticket is geldig tot één jaar na de aankoopdatum. "
 
 #: browser/ticket_summary.pt
-msgid "This ticket is not redeemable for cash or for a ticket for a later time."
+msgid "This ticket is not redeemable for cash and will be scanned at the entrance of the museum"
 msgstr "Dit ticket is niet inwisselbaar voor geld en wordt gescand bij de entree"
 
 #: ../object.py
