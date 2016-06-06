@@ -34,7 +34,8 @@
                 <div class="tickets-title">
                   <h1>E-Ticket</h1>
                 </div>
-                <p class="title-aux" i18n:translate="">Entrance ticket</p>
+                <p class="title-aux" i18n:translate="" tal:condition="python: context.language == 'en'">Entrance ticket</p>
+                <p class="title-aux" i18n:translate="" tal:condition="python: context.language == 'nl'">Entreebewijs</p>
             </div>
 
             <tal:block
@@ -55,9 +56,12 @@
                       <td rowspan="5" class="ticket-info" tal:define="qr_code python: view.get_qr_code(booking_uid_count)" style="vertical-align: top; padding-top: 14px;">
 
                         <div class="info-div">
-                          <p i18n:translate="">This ticket is valid until one year after the date of purchase</p>
-                          <p i18n:translate="">This ticket is not redeemable for cash and will be scanned at the entrance of the museum</p>
-                          <p i18n:translate="general_conditions">The general conditions for visitors apply to this e-ticket. See: www.teylersmuseum.nl</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'en'">This ticket is valid until one year after the date of purchase</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'nl'">Dit ticket is geldig tot één jaar na de aankoopdatum.</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'en'">This ticket is not redeemable for cash and will be scanned at the entrance of the museum</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'nl'">Dit ticket is niet inwisselbaar voor geld en wordt gescand bij de entree</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'en'">The general conditions for visitors apply to this e-ticket. See: www.teylersmuseum.nl</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'nl'">De algemene bezoekersvoorwaarden zijn voan toepassing op dit e-ticket. Zie: www.teylersmuseum.nl</p>
                         </div>
                       </td>
 
@@ -70,7 +74,7 @@
                       <td><h3 i18n:translate="">Price</h3></td><td><span tal:content="currency">EUR</span><span tal:content="price"></span></td>
                     </tr>
                     <tr>
-                      <td><h3 i18n:translate="">Ticket number</h3></td><td><span tal:content="python: '%s/%s' %(counter, total_tickets)">1/2</span></td>
+                      <td><h3 i18n:translate="" tal:condition="python: context.language == 'en'">Ticket number</h3><h3 i18n:translate="" tal:condition="python: context.language == 'nl'">Ticketnummer</h3></td><td><span tal:content="python: '%s/%s' %(counter, total_tickets)">1/2</span></td>
                     </tr>
                     <tr>
                       <td><h3 i18n:translate="">Date of purchase</h3></td><td><span tal:content="created_date">07/03/2016</span></td>
@@ -92,8 +96,11 @@
                   </p>
                   </div>
                   <div class="accessibility">
-                    <h4 i18n:translate="">How to find us</h4>
-                    <p i18n:translate="label_accessibility">Teylers Museum is easy to reach by car and train. If you come by train: the museum is on a 10 minutes walk from Haarlem Central Station. Take the following route; Jansweg, Jansstraat, turn left into Korte Jansstraat, turn right into Bakenessergracht, straight on to the end, turn right at the S paarne River, Teylers Museum will be on your right. If you come by car: multi-storey carpark De Appelaar is located next to the museum.</p>
+                    <h4 i18n:translate="" tal:condition="python: context.language == 'en'">How to find us</h4>
+                    <h4 i18n:translate="" tal:condition="python: context.language == 'nl'">Bereikbaarheid en toegankelijkheid</h4>
+                    <p i18n:translate="" tal:condition="python: context.language == 'en'">Teylers Museum is easy to reach by car and train. If you come by train: the museum is on a 10 minutes walk from Haarlem Central Station. Take the following route; Jansweg, Jansstraat, turn left into Korte Jansstraat, turn right into Bakenessergracht, straight on to the end, turn right at the S paarne River, Teylers Museum will be on your right. If you come by car: multi-storey carpark De Appelaar is located next to the museum.</p>
+                    <p i18n:translate="" tal:condition="python: context.language == 'nl'">Teylers Museum is goed te bereiken met de auto. Je kunt parkere in de nabijgelegen parkeergarage De Appelaar. Vanaf het Centraal Station in Haarlem lopend te bereiken (ca. 10 minuten) via de Jansweg, linksaf de Korte Jansstraat in, rechtsaf de Bakenessergracht aflopen tot aan het eind, bij het Spaarne slaat u rechtsaf. Teylers Museum is vervolgens aan uw rechterhand.</p>
+                    
                   </div>
                 </div>
                 <div class="clearfix"></div>
