@@ -14901,4 +14901,90 @@ body.template-edit #form-widgets-ITicketsBehavior-barcode_list {
     height: 500px !important;
 }
 
+/* Tickets portlet */
+
+
+#content-core .portlet-static-tickets h2 {
+    font-family: 'Merriweather', serif !important;
+    font-weight: 700;
+    font-size: 1.875em;
+    text-transform: none !important;
+    letter-spacing: 0.05em;
+    margin-bottom: 25px;
+    color: #D75745 !important;
+}
+
+#content-core .portlet-static-tickets a.btn {
+    background: #D75745;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 0.875em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #D75745;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 30px;
+    padding: 5px 12px !important;
+    line-height: 33px;
+    text-decoration: none !important;
+}
+
+#content-core .portlet-static-tickets a.btn:hover {
+    background: #000000;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    color: #ffffff !important;
+    font-size: 0.875em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 30px;
+    padding: 5px 12px !important;
+    line-height: 33px;
+    text-decoration: none !important;
+}
+
+#column-collective-portletpage-toprow-portlet-tickets .portletWrapper {
+    padding-bottom: 0px !important;
+}
+
+#column-collective-portletpage-toprow-portlet-tickets .row {
+    width: 80% !important;
+    margin: 0 auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+}
+
+#column-collective-portletpage-toprow-portlet-tickets .btn-wrapper {
+    text-align: right;
+}
+
+@media (max-width: 992px) {
+    #column-collective-portletpage-toprow-portlet-tickets .btn-wrapper {
+        text-align: center;
+    }
+
+    #column-collective-portletpage-toprow-portlet-tickets .text-wrapper {
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+    #content-core .portlet-static-tickets h2 {
+        line-height: 46px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 448px) {
+    #column-collective-portletpage-toprow-portlet-tickets .row {
+        width: 100% !important;
+    }
+}
+
 
