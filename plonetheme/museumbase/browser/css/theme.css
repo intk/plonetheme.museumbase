@@ -14906,7 +14906,7 @@ body.template-edit #form-widgets-ITicketsBehavior-barcode_list {
 
 #content-core .portlet-static-tickets h2 {
     font-family: 'Merriweather', serif !important;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 1.875em;
     text-transform: none !important;
     letter-spacing: 0.05em;
@@ -14952,7 +14952,7 @@ body.template-edit #form-widgets-ITicketsBehavior-barcode_list {
     padding-bottom: 0px !important;
 }
 
-#column-collective-portletpage-toprow-portlet-tickets .row {
+#content-core .portlet-static-tickets .row {
     width: 80% !important;
     margin: 0 auto;
     margin-left: auto !important;
@@ -14960,16 +14960,16 @@ body.template-edit #form-widgets-ITicketsBehavior-barcode_list {
 
 }
 
-#column-collective-portletpage-toprow-portlet-tickets .btn-wrapper {
+#content-core .portlet-static-tickets .btn-wrapper {
     text-align: right;
 }
 
 @media (max-width: 992px) {
-    #column-collective-portletpage-toprow-portlet-tickets .btn-wrapper {
+    #content-core .portlet-static-tickets .btn-wrapper {
         text-align: center;
     }
 
-    #column-collective-portletpage-toprow-portlet-tickets .text-wrapper {
+    #content-core .portlet-static-tickets .text-wrapper {
         text-align: center;
     }
 }
@@ -14982,7 +14982,7 @@ body.template-edit #form-widgets-ITicketsBehavior-barcode_list {
 }
 
 @media (max-width: 448px) {
-    #column-collective-portletpage-toprow-portlet-tickets .row {
+    #content-core .portlet-static-tickets .row {
         width: 100% !important;
     }
 }
