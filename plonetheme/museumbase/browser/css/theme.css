@@ -14987,4 +14987,9 @@ body.template-edit #form-widgets-ITicketsBehavior-barcode_list {
     }
 }
 
+#tag-checkout-order_comment-heading,
+#field-checkout-order_comment-comment {
+    display: none;
+}
+
 
