@@ -115,8 +115,8 @@
                                   <div tal:attributes="class python:'contenttype-' + normalizeString(result_type) and 'col-lg-3 col-md-3 col-sm-5 thumb-pic'" 
                                     tal:define="image python: getImageObject(similar);">
                                     
-                                    <a tal:attributes="href url">
-                                        <img tal:attributes="src python: image.absolute_url()+'/@@images/image/mini'" tal:condition="python: item_type == 'Object'"/>
+                                    <a tal:attributes="href url" tal:condition="python: image != None" tal:on-error="nothing">
+                                        <img tal:attributes="src python: image'" tal:condition="python: item_type == 'Object'"/>
                                     </a>
                                      
                                   </div>
