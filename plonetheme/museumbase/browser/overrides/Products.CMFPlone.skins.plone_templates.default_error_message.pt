@@ -116,7 +116,7 @@
                                     tal:define="image python: getImageObject(similar);">
                                     
                                     <a tal:attributes="href url" tal:condition="python: image != None" tal:on-error="nothing">
-                                        <img tal:attributes="src python: image'" tal:condition="python: item_type == 'Object'"/>
+                                        <img tal:attributes="src python: image" tal:condition="python: item_type == 'Object'"/>
                                     </a>
                                      
                                   </div>

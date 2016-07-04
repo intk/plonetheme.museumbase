@@ -4,6 +4,32 @@ function supportsSvg() {
 };
 
 
+function do_ecommerce_transactions() {
+  console.log("do ecommerce transaction");
+  /* Product impressions */
+  console.log($("body.template-content_view.portaltype-product").length);
+  if ($("body.template-content_view.portaltype-product").length) {
+    var name = $("#parent-fieldname-text-details h2").text();
+    var raw_price = $("dd.price h2").text();
+    var price = raw_price.replace("€ ", "");
+    var currency = 'EUR';
+    console.log(price);
+    console.log(name);
+
+    /* Push product impression */
+    dataLayer.push({
+      'ecommerce': {
+        'currencyCode': currency,
+        'impressions': [
+         {
+           'name': name,
+           'price': price,
+           'position': 1
+         }]
+      }
+    });
+  }
+}
 
 $(document).ready(function() {
   if ($("body.site-nl").length > 0) {
@@ -46,6 +72,10 @@ $(document).ready(function() {
       }
     }
   }
+
+  /* --- ECOMMERCE --- */
+  do_ecommerce_transactions();
+  /* ----------------- */
 
   /* Search */
   var $default_res_container = $('#search-results');
