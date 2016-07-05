@@ -72,6 +72,13 @@ function do_ecommerce_transactions() {
       }
       document.location = url;
   });
+
+  /* Adding a product to the shopping cart */
+  /* done in cart.js */
+  $(".buyable_update_cart").on('click', function(evt) {
+    
+  });
+
 }
 
 $(document).ready(function() {
