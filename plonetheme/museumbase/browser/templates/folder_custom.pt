@@ -34,7 +34,7 @@
                 <div class="thumbnail">
                   <div class="thumb-wrapper">
 
-                    <a class="thumb-image" tal:condition="python: (has_media != None or item_type == 'Image') and lead_image != None" href="" tal:attributes="href python: item_url+'?collection_id='+collection_id+'&b_start='+str(b_start+item_index) if portal_type == 'Collection' and item_type == 'Object' else item_url"
+                    <a tal:condition="python: (has_media != None or item_type == 'Image') and lead_image != None" href="" tal:attributes="href python: item_url+'?collection_id='+collection_id+'&b_start='+str(b_start+item_index) if portal_type == 'Collection' and item_type == 'Object' else item_url; class python:'thumb-image product' if item_is_buyable else 'thumb-image';"
                       >
 
                       <tal:has_image tal:condition="nocall:lead_image">
@@ -48,7 +48,7 @@
                   </div>
                   <div class="caption">
                     <h3><a href="#"
-                         tal:attributes="href python: item_href+'?collection_id='+collection_id+'&b_start='+str(b_start+item_index) if portal_type == 'Collection' and item_type == 'Object' else item_href; class item_wf_state_class"
+                         tal:attributes="href python: item_href+'?collection_id='+collection_id+'&b_start='+str(b_start+item_index) if portal_type == 'Collection' and item_type == 'Object' else item_href; class python: item_wf_state_class+' product' if item_is_buyable else item_wf_state_class;"
                          tal:content="item_title"
                          >Title
                         </a>

@@ -5,30 +5,73 @@ function supportsSvg() {
 
 
 function do_ecommerce_transactions() {
-  console.log("do ecommerce transaction");
   /* Product impressions */
-  console.log($("body.template-content_view.portaltype-product").length);
   if ($("body.template-content_view.portaltype-product").length) {
     var name = $("#parent-fieldname-text-details h2").text();
     var raw_price = $("dd.price h2").text();
     var price = raw_price.replace("€ ", "");
     var currency = 'EUR';
-    console.log(price);
-    console.log(name);
 
-    /* Push product impression */
-    dataLayer.push({
-      'ecommerce': {
-        'currencyCode': currency,
-        'impressions': [
-         {
-           'name': name,
-           'price': price,
-           'position': 1
-         }]
-      }
-    });
+    if (typeof dataLayer != 'undefined') {
+      /* Push product impression */
+      dataLayer.push({
+        'ecommerce': {
+          'currencyCode': currency,
+          'impressions': [
+           {
+             'name': name,
+             'price': price,
+             'position': 1
+           }]
+        }
+      });
+    }
   }
+
+  /* Push product clicks */
+  $("a.product").on('click', function(evt) {
+      evt.preventDefault();
+      var name = $(this).text();
+      var url = $(this).attr("href");
+      var parents = [];
+      parents = $(this).parents('.thumbnail');
+      if (parents != undefined && parents.length) {
+        var price_elem = parents.find('.item-prices');
+        if (price_elem.length) {
+
+          var raw_price = $(price_elem[0]).text();
+          var price = raw_price.replace('€ ', '');
+
+          actionField_list = "Collection";
+          if ($("body").hasClass('template-search')) {
+            actionField_list = "Search Results";
+          }
+
+          if (typeof dataLayer != 'undefined') {
+            /* Do transaction */
+            dataLayer.push({
+              'event': 'productClick',
+              'ecommerce': {
+                'click': {
+                  'actionField': {'list': actionField_list},
+                  'products': [{
+                    'name': name,
+                    'price': price,
+                   }]
+                 }
+               },
+               'eventCallback': function() {
+                 document.location = url;
+               }
+            });
+          } else {
+            document.location = url;
+          }
+          /* End trasaction */ 
+        }
+      }
+      document.location = url;
+  });
 }
 
 $(document).ready(function() {
