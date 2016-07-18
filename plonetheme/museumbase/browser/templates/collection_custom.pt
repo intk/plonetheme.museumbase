@@ -33,7 +33,7 @@
 
 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" metal:define-macro="listitem">
-                <div class="thumbnail">
+                <div tal:attributes="class python:'thumbnail product' if item_is_buyable else 'thumbnail'" class="thumbnail">
                   <div class="thumb-wrapper">
                     <a tal:condition="python: (has_media != None or item_type == 'Image') and lead_image != None" href="" tal:attributes="href python: item_url+'?collection_id='+collection_id+'&b_start='+str(b_start+item_index) if portal_type == 'Collection' and item_type == 'Object' else item_url; class python:'thumb-image product' if item_is_buyable else 'thumb-image'"
                       >
@@ -41,7 +41,7 @@
                         <img tal:define="images_src python:lead_image;
                                          "
                              src="" alt=""
-                             tal:attributes="src images_src; class python:'tileImage'; alt item_title; title item_title;" /> 
+                             tal:attributes="src images_src; class python:'tileImage product' if item_is_buyable else 'tileImage'; alt item_title; title item_title;" /> 
                       </tal:has_image>
                     </a>   
                           

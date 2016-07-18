@@ -5,7 +5,39 @@ function supportsSvg() {
 
 
 function do_ecommerce_transactions() {
+
   /* Product impressions */
+  var products = $(".thumbnail.product");
+  var currencyCode = 'EUR';
+  var impressions = [];
+
+  for (i = 0; i < products.length; i++) {
+    
+    var $product = $(products[i]);
+    var title = $product.find('h3 a').text();
+    var raw_price = $product.find('.item-prices').text();
+    var price = raw_price.replace("€ ", "");
+    var position = i+1;
+    impressions.push({
+      'name': title,
+      'price': price,
+      'position': position
+    });
+  }
+
+  if (typeof dataLayer != 'undefined') {
+    dataLayer.push({
+      'event':'productImpressions',
+      'ecommerce': {
+        'currencyCode': currencyCode,
+        'impressions': impressions
+      }
+    });
+  }
+
+
+
+  /* Product views */
   if ($("body.template-content_view.portaltype-product").length) {
     var name = $("#parent-fieldname-text-details h2").text();
     var raw_price = $("dd.price h2").text();
@@ -13,16 +45,19 @@ function do_ecommerce_transactions() {
     var currency = 'EUR';
 
     if (typeof dataLayer != 'undefined') {
+      
       /* Push product impression */
       dataLayer.push({
+        'event': 'productView',
         'ecommerce': {
-          'currencyCode': currency,
-          'impressions': [
-           {
-             'name': name,
-             'price': price,
-             'position': 1
-           }]
+          'detail': {
+            'actionField': {'list':'Collection'},
+            'products': [{
+              'name': name,
+              'price': price,
+              'category': 'Product'
+            }]
+          }
         }
       });
     }
@@ -101,8 +136,6 @@ function do_ecommerce_transactions() {
         }
       }
 
-      console.log(products);
-
       if (typeof dataLayer != 'undefined') {
         dataLayer.push({
           'event': 'checkout',
@@ -170,7 +203,6 @@ function do_ecommerce_transactions() {
           products.push(new_product);
         }
       }
-      console.log(products);
 
       if (typeof dataLayer != 'undefined') {
         dataLayer.push({
@@ -214,7 +246,7 @@ function do_ecommerce_transactions() {
           products.push(new_product);
         }
       }
-      console.log(products);
+
       if (typeof dataLayer != 'undefined') {
         dataLayer.push({
           'event': 'checkout',

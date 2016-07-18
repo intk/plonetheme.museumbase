@@ -98,7 +98,7 @@
           
           <p style="text-align: center; " tal:condition="python: form_url != 'sold_out'"><a class="btn btn-inverse btn-large internal-link" target="_self" title="" tal:attributes="href form_url">Reserveer</a></p>
 
-          <p style="text-align: center; " tal:condition="python: form_url == 'sold_out'"><a class="btn btn-inverse btn-large internal-link unavailable" target="_self" title="" href="" i18n:domain="collective.bookableEvent" i18n:translate="">Online reservation is not possible</a></p>
+          <p style="text-align: center; " tal:condition="python: form_url == 'sold_out'"><a class="btn btn-inverse btn-large internal-link unavailable" target="_self" title="" href="" i18n:domain="collective.bookableEvent" i18n:translate="">Online reserveren niet meer mogelijk</a></p>
         </div>
         
     </metal:content-core>
