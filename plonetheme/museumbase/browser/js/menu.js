@@ -6,7 +6,262 @@ function supportsSvg() {
 
 function do_ecommerce_transactions() {
 
-};
+  /* Product impressions */
+  /*var products = $(".thumbnail.product");
+  var currencyCode = 'EUR';
+  var impressions = [];
+
+  for (i = 0; i < products.length; i++) {
+    
+    var $product = $(products[i]);
+    var title = $product.find('h3 a').text();
+    var raw_price = $product.find('.item-prices').text();
+    var price = raw_price.replace("€ ", "");
+    var position = i+1;
+    impressions.push({
+      'name': title,
+      'price': price,
+      'position': position
+    });
+  }
+
+  if (typeof dataLayer != 'undefined') {
+    dataLayer.push({
+      'event':'productImpressions',
+      'ecommerce': {
+        'currencyCode': currencyCode,
+        'impressions': impressions
+      }
+    });
+  }*/
+
+  /* Product views */
+  /*if ($("body.template-content_view.portaltype-product").length) {
+    var name = $("#parent-fieldname-text-details h2").text();
+    var raw_price = $("dd.price h2").text();
+    var price = raw_price.replace("€ ", "");
+    var currency = 'EUR';
+
+    if (typeof dataLayer != 'undefined') {
+      
+      // Push product impression
+      dataLayer.push({
+        'event': 'productView',
+        'ecommerce': {
+          'detail': {
+            'actionField': {'list':'Collection'},
+            'products': [{
+              'name': name,
+              'price': price,
+              'category': 'Product'
+            }]
+          }
+        }
+      });
+    }
+  }*/
+
+  /* Push product clicks */
+  /*$("a.product").on('click', function(evt) {
+      evt.preventDefault();
+      var name = $(this).text();
+      var url = $(this).attr("href");
+      var parents = [];
+      parents = $(this).parents('.thumbnail');
+      if (parents != undefined && parents.length) {
+        var price_elem = parents.find('.item-prices');
+        if (price_elem.length) {
+
+          var raw_price = $(price_elem[0]).text();
+          var price = raw_price.replace('€ ', '');
+
+          actionField_list = "Collection";
+          if ($("body").hasClass('template-search')) {
+            actionField_list = "Search Results";
+          }
+
+          if (typeof dataLayer != 'undefined') {
+            // Do transaction 
+            dataLayer.push({
+              'event': 'productClick',
+              'ecommerce': {
+                'click': {
+                  'actionField': {'list': actionField_list},
+                  'products': [{
+                    'name': name,
+                    'price': price
+                   }]
+                 }
+               },
+               'eventCallback': function() {
+                 document.location = url;
+               }
+            });
+          } else {
+            document.location = url;
+          }
+          // End trasaction
+        }
+      }
+      document.location = url;
+  });*/
+
+  /* Checkout steps */
+  if ($("body.template-cart").length > 0) {
+    console.log("Ecommerce: Step 1.");
+
+    setTimeout(function() {
+      var category = "Product";
+      if ($("body.section-tickets").length > 0) {
+        category = "Ticket";
+      }
+      /* Checkout step 1. */
+      products = [];
+      cart_items = $("tr.cart_item");
+      for (var i = 0; i < cart_items.length; i++) {
+        var title = $(cart_items[i]).find('.cart_item_title').text();
+        var price = $(cart_items[i]).find('.cart_item_price').text();
+        var raw_quantity = $(cart_items[i]).find('.cart_item_count').val();
+        var quantity = parseInt(raw_quantity);
+        if (quantity > 0) {
+          var new_product = {
+            "name": title,
+            "price": price,
+            "quantity": quantity,
+            "category": category
+          }
+          products.push(new_product);
+        }
+      }
+
+      if (typeof dataLayer != 'undefined') {
+        dataLayer.push({
+          'event': 'checkout',
+          'ecommerce': {
+            'checkout': {
+              'actionField': {'step': 1},
+              'products': products
+           }
+         },
+         'eventCallback': function() {
+            // do nothing
+         }
+        });
+      }
+    }, 2000);
+  }
+
+  /* Checkout step 2. */
+  if ($("body.template-checkout").length > 0 && !$("body.template-checkout #cart.final-checkout").length) {
+    console.log("Ecommerce: Step 2.");
+    var category = "Product";
+    if ($("body.section-tickets").length > 0) {
+      category = "Ticket";
+    }
+
+    if (typeof dataLayer != 'undefined') {
+      dataLayer.push({
+        'event': 'checkout',
+        'ecommerce': {
+          'checkout': {
+            'actionField': {'step': 2},
+            'products': []
+         }
+       },
+       'eventCallback': function() {
+          // do nothing
+       }
+      });
+    }
+  }
+
+  /* Checkout step 3. */
+  if ($("body.template-checkout").length > 0 && $("body.template-checkout #cart.final-checkout").length) {
+    console.log("Ecommerce: Step 3.");
+    var category = "Product";
+    if ($("body.section-tickets").length > 0) {
+      category = "Ticket";
+    }
+
+    setTimeout(function() {
+      products = [];
+      cart_items = $("tr.cart_item");
+      for (var i = 0; i < cart_items.length; i++) {
+        var title = $(cart_items[i]).find('.cart_item_title').text();
+        var price = $(cart_items[i]).find('.cart_item_original_price').text();
+        var raw_quantity = $(cart_items[i]).find('.cart_item_count').text();
+        var quantity = parseInt(raw_quantity);
+        if (quantity > 0) {
+          var new_product = {
+            "name": title,
+            "price": price,
+            "quantity": quantity,
+            "category": category
+          }
+          products.push(new_product);
+        }
+      }
+
+      if (typeof dataLayer != 'undefined') {
+        dataLayer.push({
+          'event': 'checkout',
+          'ecommerce': {
+            'checkout': {
+              'actionField': {'step': 3},
+              'products': products
+           }
+         },
+         'eventCallback': function() {
+            // do nothing
+         }
+        });
+      }
+    }, 1500); 
+  }
+
+  if ($("body.template-checkout #cart.final-checkout").length > 0) {
+    $("#form-checkout").submit(function(evt) {
+      console.log("Ecommerce: Step 4.");
+      var category = "Product";
+      if ($("body.section-tickets").length > 0) {
+        category = "Ticket";
+      }
+
+      products = [];
+      cart_items = $("tr.cart_item");
+      for (var i = 0; i < cart_items.length; i++) {
+        var title = $(cart_items[i]).find('.cart_item_title').text();
+        var price = $(cart_items[i]).find('.cart_item_original_price').text();
+        var raw_quantity = $(cart_items[i]).find('.cart_item_count').text();
+        var quantity = parseInt(raw_quantity);
+        if (quantity > 0) {
+          var new_product = {
+            "name": title,
+            "price": price,
+            "quantity": quantity,
+            "category": category
+          }
+          products.push(new_product);
+        }
+      }
+
+      if (typeof dataLayer != 'undefined') {
+        dataLayer.push({
+          'event': 'checkout',
+          'ecommerce': {
+            'checkout': {
+              'actionField': {'step': 4},
+              'products': products
+           }
+         },
+         'eventCallback': function() {
+            // do nothing
+         }
+        });
+      }
+    });
+  }
+}
 
 $(document).ready(function() {
   if ($("body.site-nl").length > 0) {
