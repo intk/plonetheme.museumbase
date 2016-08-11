@@ -7,7 +7,7 @@ function supportsSvg() {
 function do_ecommerce_transactions() {
 
   /* Product impressions */
-  var products = $(".thumbnail.product");
+  /*var products = $(".thumbnail.product");
   var currencyCode = 'EUR';
   var impressions = [];
 
@@ -33,12 +33,10 @@ function do_ecommerce_transactions() {
         'impressions': impressions
       }
     });
-  }
-
-
+  }*/
 
   /* Product views */
-  if ($("body.template-content_view.portaltype-product").length) {
+  /*if ($("body.template-content_view.portaltype-product").length) {
     var name = $("#parent-fieldname-text-details h2").text();
     var raw_price = $("dd.price h2").text();
     var price = raw_price.replace("€ ", "");
@@ -46,7 +44,7 @@ function do_ecommerce_transactions() {
 
     if (typeof dataLayer != 'undefined') {
       
-      /* Push product impression */
+      // Push product impression
       dataLayer.push({
         'event': 'productView',
         'ecommerce': {
@@ -61,10 +59,10 @@ function do_ecommerce_transactions() {
         }
       });
     }
-  }
+  }*/
 
   /* Push product clicks */
-  $("a.product").on('click', function(evt) {
+  /*$("a.product").on('click', function(evt) {
       evt.preventDefault();
       var name = $(this).text();
       var url = $(this).attr("href");
@@ -83,7 +81,7 @@ function do_ecommerce_transactions() {
           }
 
           if (typeof dataLayer != 'undefined') {
-            /* Do transaction */
+            // Do transaction
             dataLayer.push({
               'event': 'productClick',
               'ecommerce': {
@@ -102,22 +100,22 @@ function do_ecommerce_transactions() {
           } else {
             document.location = url;
           }
-          /* End trasaction */ 
+          // End trasaction
         }
       }
       document.location = url;
-  });
+  });*/
 
   /* Checkout steps */
-  if ($("body.template-cart").length > 0) {
-    console.log("Ecommerce: Step 1.");
+  /*if ($("body.template-cart").length > 0) {
+    //console.log("Ecommerce: Step 1.");
 
     setTimeout(function() {
       var category = "Product";
       if ($("body.section-tickets").length > 0) {
         category = "Ticket";
       }
-      /* Checkout step 1. */
+      // Checkout step 1.
       products = [];
       cart_items = $("tr.cart_item");
       for (var i = 0; i < cart_items.length; i++) {
@@ -151,11 +149,11 @@ function do_ecommerce_transactions() {
         });
       }
     }, 2000);
-  }
+  }*/
 
   /* Checkout step 2. */
-  if ($("body.template-checkout").length > 0 && !$("body.template-checkout #cart.final-checkout").length) {
-    console.log("Ecommerce: Step 2.");
+  /*if ($("body.template-checkout").length > 0 && !$("body.template-checkout #cart.final-checkout").length) {
+    //console.log("Ecommerce: Step 2.");
     var category = "Product";
     if ($("body.section-tickets").length > 0) {
       category = "Ticket";
@@ -175,11 +173,11 @@ function do_ecommerce_transactions() {
        }
       });
     }
-  }
+  }*/
 
   /* Checkout step 3. */
-  if ($("body.template-checkout").length > 0 && $("body.template-checkout #cart.final-checkout").length) {
-    console.log("Ecommerce: Step 3.");
+  /*if ($("body.template-checkout").length > 0 && $("body.template-checkout #cart.final-checkout").length) {
+    //console.log("Ecommerce: Step 3.");
     var category = "Product";
     if ($("body.section-tickets").length > 0) {
       category = "Ticket";
@@ -219,11 +217,12 @@ function do_ecommerce_transactions() {
         });
       }
     }, 1500); 
-  }
+  }*/
 
+  /*
   if ($("body.template-checkout #cart.final-checkout").length > 0) {
     $("#form-checkout").submit(function(evt) {
-      console.log("Ecommerce: Step 4.");
+      //console.log("Ecommerce: Step 4.");
       var category = "Product";
       if ($("body.section-tickets").length > 0) {
         category = "Ticket";
@@ -263,7 +262,7 @@ function do_ecommerce_transactions() {
       }
     });
   }
-}
+}*/
 
 $(document).ready(function() {
   if ($("body.site-nl").length > 0) {
