@@ -7,7 +7,7 @@ function supportsSvg() {
 function do_ecommerce_transactions() {
 
   /* Product impressions */
-  /*var products = $(".thumbnail.product");
+  var products = $(".thumbnail.product");
   var currencyCode = 'EUR';
   var impressions = [];
 
@@ -33,10 +33,10 @@ function do_ecommerce_transactions() {
         'impressions': impressions
       }
     });
-  }*/
+  }
 
   /* Product views */
-  /*if ($("body.template-content_view.portaltype-product").length) {
+  if ($("body.template-content_view.portaltype-product").length) {
     var name = $("#parent-fieldname-text-details h2").text();
     var raw_price = $("dd.price h2").text();
     var price = raw_price.replace("€ ", "");
@@ -59,10 +59,10 @@ function do_ecommerce_transactions() {
         }
       });
     }
-  }*/
+  }
 
   /* Push product clicks */
-  /*$("a.product").on('click', function(evt) {
+  $("a.product").on('click', function(evt) {
       evt.preventDefault();
       var name = $(this).text();
       var url = $(this).attr("href");
@@ -104,7 +104,7 @@ function do_ecommerce_transactions() {
         }
       }
       document.location = url;
-  });*/
+  });
 
   /* Checkout steps */
   if ($("body.template-cart").length > 0) {
