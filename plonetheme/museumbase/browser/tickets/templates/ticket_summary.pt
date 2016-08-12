@@ -62,6 +62,8 @@
                           <p i18n:translate="" tal:condition="python: context.language == 'nl'">Dit ticket is niet inwisselbaar voor geld en wordt gescand bij de entree</p>
                           <p i18n:translate="" tal:condition="python: context.language == 'en'">The general conditions for visitors apply to this e-ticket. See: www.teylersmuseum.nl</p>
                           <p i18n:translate="" tal:condition="python: context.language == 'nl'">De algemene bezoekersvoorwaarden zijn voan toepassing op dit e-ticket. Zie: www.teylersmuseum.nl</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'en'">For extradorinary exhibitions, Teylers Museum may require a small fee to cover the costs for the exhibition. This fee is not included in this e-ticket. We kindly ask you to pay the fee at the cash desk when you arrive. Most exhibitions can be visited without charge. In case a small fee is required, this will always be clearly stated at our website.</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'nl'">Voor bijzondere tentoonstellingen kan het zijn dat Teylers Museum een kleine toeslag vraagt om de kosten van de tentoonstelling te dekken. Deze toeslag is niet verrekend in dit e-ticket en kunt u aan de kassa in het museum betalen. De meeste tentoonstellingen kunt u zonder toeslag bezoeken. Een eventuele kleine toeslag wordt altijd duidelijk vermeld op de website in het prijzenoverzicht.</p>
                         </div>
                       </td>
 
