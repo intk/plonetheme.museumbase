@@ -52,6 +52,7 @@ try:
 except ImportError:
     SHOP_AVAILABLE = False
 
+ALLOWED_TYPES_TICKETS = ["Event"]
 
 
 try:
@@ -689,6 +690,24 @@ class CollectionPortlet(base.Renderer, FolderListing):
     render = _template
 
 class ContentView(BrowserView):
+
+    def is_ticket(self):
+        context = self.context
+        if context:
+            if "/tickets" in context.absolute_url():
+                return True
+
+            if context.portal_type in ALLOWED_TYPES_TICKETS:
+                physical_path = context.getPhysicalPath()
+                path = "/".join(physical_path)
+
+                results = context.portal_catalog(path={'query': path, 'depth': 1}, portal_type="product", Subject="ticket")
+                if len(results) > 0:
+                    return True
+
+            return False
+        else:
+            return False
 
     def getFormUrl(self):
         if self.context.portal_type in ["BookableEvent", "Bookable Event"]:

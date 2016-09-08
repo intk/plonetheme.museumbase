@@ -3,6 +3,25 @@
 
 from decimal import Decimal
 
+ALLOWED_TYPES_TICKETS = ['Event']
+
+def is_ticket(context):
+    if context:
+        if "/tickets" in context.absolute_url():
+            return True
+
+        if context.portal_type in ALLOWED_TYPES_TICKETS:
+            physical_path = context.getPhysicalPath()
+            path = "/".join(physical_path)
+
+            results = context.portal_catalog(path={'query': path, 'depth': 1}, portal_type="product", Subject="ticket")
+            if len(results) > 0:
+                return True
+
+        return False
+    else:
+        return False
+
 def find_context(request):
     published = request.get('PUBLISHED', None)
     context = getattr(published, '__parent__', None)
@@ -12,8 +31,9 @@ def find_context(request):
 
 def find_tickets(context):
     catalog = context.portal_catalog
-    path = "/NewTeylers/%s/tickets" %(context.language)
-    brains = catalog(path={'query': path, 'depth': 1}, portal_type='product', sort_on='getObjPositionInParent')
+    physical_path = context.getPhysicalPath()
+    path = "/".join(physical_path)
+    brains = catalog(path={'query': path, 'depth': 1}, portal_type='product', sort_on='getObjPositionInParent', Subject="ticket")
     return brains
 
 def add_tickets(ret, context):
@@ -51,7 +71,7 @@ def extractTickets(ret, request):
     if request != None:
         context = find_context(request)
 
-        if '/tickets' in context.absolute_url():
+        if is_ticket(context):
             ret = add_tickets(ret, context)
         else:
             ret = remove_tickets(ret, context)
