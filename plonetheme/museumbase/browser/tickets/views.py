@@ -19,7 +19,7 @@ from bda.plone.orders.common import get_orders_soup
 from bda.plone.orders.common import get_vendor_by_uid
 from bda.plone.orders.common import get_vendor_uids_for
 from bda.plone.orders.common import get_vendors_for
-
+from bda.plone.orders.interfaces import IBuyable
 from repoze.catalog.query import Any
 from repoze.catalog.query import Contains
 from repoze.catalog.query import Eq
@@ -620,6 +620,7 @@ class RedeemData(RedeemTable, TicketTableData):
         if customer:
             query = query & Eq('creator', customer)
 
+        query = Eq('salaried', 'yes')
         # filter by search term if given
         term = self.request.form['sSearch'].decode('utf-8')
 
@@ -627,11 +628,12 @@ class RedeemData(RedeemTable, TicketTableData):
             query = query & Contains(self.search_text_index, term)
 
         # Show only tickets that are paid
-        query = query & Eq('salaried', 'yes')
+        
 
         if not ISiteRoot.providedBy(self.context):
             buyable_uids = self._get_buyables_in_context()
-            query = query & Any('buyable_uids', buyable_uids)
+            b_uids = list(buyable_uids)
+            query = query & Any('buyable_uid', b_uids)
 
         # query orders and return result
         sort = self.sort()
