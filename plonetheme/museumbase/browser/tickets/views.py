@@ -47,6 +47,8 @@ from bda.plone.orders import vocabularies as vocabs
 from bda.plone.orders import interfaces as ifaces
 
 from Products.CMFCore.utils import getToolByName
+from plone.app.layout.navigation.interfaces import INavigationRoot
+from Products.CMFCore.interfaces import ISiteRoot
 
 import json
 
@@ -152,7 +154,7 @@ class RedeemTableBase(BrowserView):
     @property
     def ajaxurl(self):
         site = plone.api.portal.get()
-        return '%s/%s' % (site.absolute_url(), self.data_view_name)
+        return '%s/%s' % (self.context.absolute_url(), self.data_view_name)
 
     @property
     def columns(self):
@@ -433,7 +435,7 @@ class RedeemTable(RedeemTableBase):
         query = query and '?{0}'.format(query) or ''
         site = plone.api.portal.get()
 
-        return '%s/%s%s' % (site.absolute_url(), self.data_view_name, query)
+        return '%s/%s%s' % (self.context.absolute_url(), self.data_view_name, query)
 
     def __call__(self):
         # check if authenticated user is vendor
@@ -547,6 +549,7 @@ class TicketTableData(BrowserView):
             ticket = False
 
             brains = catalog.queryCatalog({"UID": str(buyable_uid)})
+
             if len(brains) > 0:
                 brain = brains[0]
                 tags = brain.Subject
@@ -626,7 +629,7 @@ class RedeemData(RedeemTable, TicketTableData):
         # Show only tickets that are paid
         query = query & Eq('salaried', 'yes')
 
-        if not IPloneSiteRoot.providedBy(self.context):
+        if not ISiteRoot.providedBy(self.context):
             buyable_uids = self._get_buyables_in_context()
             query = query & Any('buyable_uids', buyable_uids)
 
