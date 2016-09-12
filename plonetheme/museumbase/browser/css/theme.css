@@ -14992,4 +14992,7 @@ body.template-edit #form-widgets-ITicketsBehavior-barcode_list {
     display: none;
 }
 
-
+.template-etickets td:not(.ticket-info) {
+    padding-right: 0px !important; 
+    line-height: 10px !important;
+}

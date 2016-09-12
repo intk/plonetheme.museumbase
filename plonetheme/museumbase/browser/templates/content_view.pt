@@ -82,6 +82,9 @@
             </p>
 
         </div>
+        <div id="parent-fieldname-text" tal:condition="python: view.is_ticket()" style="padding-top: 40px; padding-bottom: 0px !important;">
+          <p style="text-align: center;"><a href="@@cart" class="btn btn-inverse btn-large internal-link" target="_self" title="">KOOP KAARTEN</a></p>
+        </div>
 
         <div id="parent-fieldname-text-details" tal:condition="python: context.portal_type == 'product'">
           <h2 tal:content="context/Title"></h2>
@@ -100,10 +103,6 @@
           <p style="text-align: center; " tal:condition="python: form_url != 'sold_out'"><a class="btn btn-inverse btn-large internal-link" target="_self" title="" tal:attributes="href form_url">Reserveer</a></p>
 
           <p style="text-align: center; " tal:condition="python: form_url == 'sold_out'"><a class="btn btn-inverse btn-large internal-link unavailable" target="_self" title="" href="" i18n:domain="collective.bookableEvent" i18n:translate="">Online reserveren niet meer mogelijk</a></p>
-        </div>
-
-        <div id="parent-fieldname-text" tal:condition="python: view.is_ticket()" style="padding-top: 20px;">
-          <p style="text-align: center;"><a href="@@cart" class="btn btn-inverse btn-large internal-link" target="_self" title="">Koop je tickets</a></p>
         </div>
         
     </metal:content-core>

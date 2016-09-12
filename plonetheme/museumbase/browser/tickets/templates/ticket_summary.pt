@@ -8,10 +8,13 @@
   <tal:cart
     tal:define="orders python: view.get_etickets(order_id);
                 total_tickets python: orders['total_tickets'];
+                is_event python: orders['is_event'];
+                event_date python: orders['event_date'];
                 global counter python: 0;">
 
     <tal:entry tal:repeat="order python: orders['tickets']"
-               tal:define="customer python: orders['customer']">
+               tal:define="customer python: orders['customer'];
+                           is_event python: orders['is_event'];">
 
       <tal:block
         tal:define="title python: order['cart_item_title'];
@@ -34,8 +37,10 @@
                 <div class="tickets-title">
                   <h1>E-Ticket</h1>
                 </div>
-                <p class="title-aux" i18n:translate="" tal:condition="python: context.language == 'en'">Entrance ticket</p>
-                <p class="title-aux" i18n:translate="" tal:condition="python: context.language == 'nl'">Entreebewijs</p>
+                <p class="title-aux" i18n:translate="" tal:condition="python: context.language == 'en' and not is_event">Entrance ticket</p>
+                <p class="title-aux" i18n:translate="" tal:condition="python: context.language == 'nl' and not is_event">Entreebewijs</p>
+		<p class="title-aux" i18n:translate="" tal:condition="python: context.language == 'nl' and is_event">Evenement</p>
+                <p class="title-aux" i18n:translate="" tal:condition="python: context.language == 'en' and is_event">Event</p>
             </div>
 
             <tal:block
@@ -56,19 +61,21 @@
                       <td rowspan="5" class="ticket-info" tal:define="qr_code python: view.get_qr_code(booking_uid_count)" style="vertical-align: top; padding-top: 14px;">
 
                         <div class="info-div">
-                          <p i18n:translate="" tal:condition="python: context.language == 'en'">This ticket is valid until one year after the date of purchase</p>
-                          <p i18n:translate="" tal:condition="python: context.language == 'nl'">Dit ticket is geldig tot één jaar na de aankoopdatum.</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'en' and not is_event">This ticket is valid until one year after the date of purchase</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'nl' and not is_event">Dit ticket is geldig tot één jaar na de aankoopdatum.</p>
                           <p i18n:translate="" tal:condition="python: context.language == 'en'">This ticket is not redeemable for cash and will be scanned at the entrance of the museum</p>
                           <p i18n:translate="" tal:condition="python: context.language == 'nl'">Dit ticket is niet inwisselbaar voor geld en wordt gescand bij de entree</p>
                           <p i18n:translate="" tal:condition="python: context.language == 'en'">The general conditions for visitors apply to this e-ticket. See: www.teylersmuseum.nl</p>
                           <p i18n:translate="" tal:condition="python: context.language == 'nl'">De algemene bezoekersvoorwaarden zijn voan toepassing op dit e-ticket. Zie: www.teylersmuseum.nl</p>
-                          <p i18n:translate="" tal:condition="python: context.language == 'en'">For extradorinary exhibitions, Teylers Museum may require a small fee to cover the costs for the exhibition. This fee is not included in this e-ticket. We kindly ask you to pay the fee at the cash desk when you arrive. Most exhibitions can be visited without charge. In case a small fee is required, this will always be clearly stated at our website.</p>
-                          <p i18n:translate="" tal:condition="python: context.language == 'nl'">Voor bijzondere tentoonstellingen kan het zijn dat Teylers Museum een kleine toeslag vraagt om de kosten van de tentoonstelling te dekken. Deze toeslag is niet verrekend in dit e-ticket en kunt u aan de kassa in het museum betalen. De meeste tentoonstellingen kunt u zonder toeslag bezoeken. Een eventuele kleine toeslag wordt altijd duidelijk vermeld op de website in het prijzenoverzicht.</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'en' and not is_event">For extradorinary exhibitions, Teylers Museum may require a small fee to cover the costs for the exhibition. This fee is not included in this e-ticket. We kindly ask you to pay the fee at the cash desk when you arrive. Most exhibitions can be visited without charge. In case a small fee is required, this will always be clearly stated at our website.</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'nl' and not is_event">Voor bijzondere tentoonstellingen kan het zijn dat Teylers Museum een kleine toeslag vraagt om de kosten van de tentoonstelling te dekken. Deze toeslag is niet verrekend in dit e-ticket en kunt u aan de kassa in het museum betalen. De meeste tentoonstellingen kunt u zonder toeslag bezoeken. Een eventuele kleine toeslag wordt altijd duidelijk vermeld op de website in het prijzenoverzicht.</p>
                         </div>
                       </td>
 
                     </tr>
-
+<tr tal:condition="python:is_event">
+                      <td><h3 i18n:translate="">Datum</h3></td><td><span tal:content="event_date">Date</span></td>
+                    </tr>
                     <tr>
                       <td><h3 i18n:translate="">Customer name</h3></td><td><span tal:content="customer">Customer</span></td>
                     </tr>
@@ -78,7 +85,7 @@
                     <tr>
                       <td><h3 i18n:translate="" tal:condition="python: context.language == 'en'">Ticket number</h3><h3 i18n:translate="" tal:condition="python: context.language == 'nl'">Ticketnummer</h3></td><td><span tal:content="python: '%s/%s' %(counter, total_tickets)">1/2</span></td>
                     </tr>
-                    <tr>
+                    <tr tal:condition="python: not is_event">
                       <td><h3 i18n:translate="">Date of purchase</h3></td><td><span tal:content="created_date">07/03/2016</span></td>
                     </tr>
                   </tbody>

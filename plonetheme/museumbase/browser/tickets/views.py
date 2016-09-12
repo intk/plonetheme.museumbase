@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*
-
-
+from Acquisition import aq_inner
+from plone.app.uuid.utils import uuidToObject
 from bda.plone.cart.browser import CartView
 from bda.plone.orders.browser.views import OrderView, OrdersViewBase, OrdersView
 from bda.plone.orders.browser.views import OrdersTable
@@ -696,12 +696,22 @@ class TicketView(CartView):
     def get_tickets(self):
         return self.data_provider.data["cart_items"]
 
+    def toLocalizedTime(self, time, long_format=None, time_only=None):
+        """Convert time to localized time
+        """
+        context = aq_inner(self.context)
+        util = getToolByName(context, 'translation_service')
+        return util.ulocalized_time(time, long_format, time_only,
+                                    context=context, domain='plonelocales',
+                                    request=self.request)
+
     def get_etickets(self, order_id):
         tickets = {
           "tickets": [],
           "customer": "",
           "total_tickets": 0
         }
+
         
         try:
             data = OrderData(self.context, uid=order_id)
@@ -711,10 +721,25 @@ class TicketView(CartView):
             first_name = data.order.attrs['personal_data.firstname']
             last_name =  data.order.attrs['personal_data.lastname']
             created_date = data.order.attrs['created']
-
+            b_uids = data.order.attrs['buyable_uids']
             customer_name = "%s %s" %(first_name, last_name)
             tickets['customer'] = customer_name
-
+            tickets['is_event'] = False
+            tickets['event_date'] = ""
+            if b_uids:
+                b_uid = b_uids[0]
+                b_obj = uuidToObject(b_uid)
+                b_parent = b_obj.aq_parent
+                if b_parent.portal_type == "Event":
+                    tickets["is_event"] = True
+                    start_date = b_parent.start_date.date()
+                    end_date = b_parent.end_date.date()
+                    formatted_date = ""
+                    if start_date == end_date:
+                        formatted_date = "%s, %s - %s" %(self.toLocalizedTime(b_parent.start_date.strftime('%d %B %Y')), self.toLocalizedTime(b_parent.start_date, time_only=1), self.toLocalizedTime(b_parent.end_date, time_only=1))
+                    else:
+                        formatted_date = "%s - %s" %(self.toLocalizedTime(b_parent.start_date.strftime('%d %B %Y')), self.toLocalizedTime(b_parent.end_date.strftime('%d %B %Y')))
+                    tickets["event_date"] = formatted_date
             for booking in bookings:
               original_price = (Decimal(str(booking.attrs['net']))) * 1
               price_total = original_price + original_price / Decimal(100) * Decimal(str(booking.attrs['vat']))
@@ -733,6 +758,7 @@ class TicketView(CartView):
 
             tickets["total_tickets"] = total_items
         except:
+            raise
             return tickets
         
         return tickets
