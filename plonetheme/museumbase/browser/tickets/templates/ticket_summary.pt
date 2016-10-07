@@ -12,13 +12,13 @@
                 global counter python: 0;">
 
     <tal:entry tal:repeat="order python: orders['tickets']"
-               tal:define="customer python: orders['customer'];
-                           is_event python: order['is_event'];">
+               tal:define="customer python: orders['customer'];">
 
       <tal:block
         tal:define="title python: order['cart_item_title'];
                     price python: order['cart_item_price'];
                     count python: order['cart_item_count'];
+                    is_event python: order['is_event'];
                     to_redeem python: order['to_redeem'];
                     original_price python: order['cart_item_original_price'];
                     booking_uid python: order['booking_uid'];

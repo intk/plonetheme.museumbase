@@ -724,14 +724,12 @@ class TicketView(CartView):
             b_uids = data.order.attrs['buyable_uids']
             customer_name = "%s %s" %(first_name, last_name)
             tickets['customer'] = customer_name
-            #tickets['is_event'] = False
             tickets['event_date'] = ""
-            """if b_uids:
+            if b_uids:
                 b_uid = b_uids[0]
                 b_obj = uuidToObject(b_uid)
                 b_parent = b_obj.aq_parent
                 if b_parent.portal_type == "Event":
-                    tickets["is_event"] = True
                     start_date = b_parent.start_date.date()
                     end_date = b_parent.end_date.date()
                     formatted_date = ""
@@ -739,7 +737,7 @@ class TicketView(CartView):
                         formatted_date = "%s, %s - %s" %(self.toLocalizedTime(b_parent.start_date.strftime('%d %B %Y')), self.toLocalizedTime(b_parent.start_date, time_only=1), self.toLocalizedTime(b_parent.end_date, time_only=1))
                     else:
                         formatted_date = "%s - %s" %(self.toLocalizedTime(b_parent.start_date.strftime('%d %B %Y')), self.toLocalizedTime(b_parent.end_date.strftime('%d %B %Y')))
-                    tickets["event_date"] = formatted_date"""
+                    tickets["event_date"] = formatted_date
             
             for booking in bookings:
                 # Check if booking is an event
