@@ -8,13 +8,12 @@
   <tal:cart
     tal:define="orders python: view.get_etickets(order_id);
                 total_tickets python: orders['total_tickets'];
-                is_event python: orders['is_event'];
                 event_date python: orders['event_date'];
                 global counter python: 0;">
 
     <tal:entry tal:repeat="order python: orders['tickets']"
                tal:define="customer python: orders['customer'];
-                           is_event python: orders['is_event'];">
+                           is_event python: order['is_event'];">
 
       <tal:block
         tal:define="title python: order['cart_item_title'];

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*
 from Acquisition import aq_inner
-from plone.app.uuid.utils import uuidToObject
+from plone.app.uuid.utils import uuidToObject, uuidToCatalogBrain
 from bda.plone.cart.browser import CartView
 from bda.plone.orders.browser.views import OrderView, OrdersViewBase, OrdersView
 from bda.plone.orders.browser.views import OrdersTable
@@ -724,9 +724,9 @@ class TicketView(CartView):
             b_uids = data.order.attrs['buyable_uids']
             customer_name = "%s %s" %(first_name, last_name)
             tickets['customer'] = customer_name
-            tickets['is_event'] = False
+            #tickets['is_event'] = False
             tickets['event_date'] = ""
-            if b_uids:
+            """if b_uids:
                 b_uid = b_uids[0]
                 b_obj = uuidToObject(b_uid)
                 b_parent = b_obj.aq_parent
@@ -739,24 +739,33 @@ class TicketView(CartView):
                         formatted_date = "%s, %s - %s" %(self.toLocalizedTime(b_parent.start_date.strftime('%d %B %Y')), self.toLocalizedTime(b_parent.start_date, time_only=1), self.toLocalizedTime(b_parent.end_date, time_only=1))
                     else:
                         formatted_date = "%s - %s" %(self.toLocalizedTime(b_parent.start_date.strftime('%d %B %Y')), self.toLocalizedTime(b_parent.end_date.strftime('%d %B %Y')))
-                    tickets["event_date"] = formatted_date
+                    tickets["event_date"] = formatted_date"""
+            
             for booking in bookings:
-              original_price = (Decimal(str(booking.attrs['net']))) * 1
-              price_total = original_price + original_price / Decimal(100) * Decimal(str(booking.attrs['vat']))
+                # Check if booking is an event
+                is_event = False
+                buyable_uid = booking.attrs['buyable_uid']
+                b_brain = uuidToCatalogBrain(buyable_uid)
+                if "event" in b_brain.Subject:
+                    is_event = True
 
-              total_items += booking.attrs['buyable_count']
+                original_price = (Decimal(str(booking.attrs['net']))) * 1
+                price_total = original_price + original_price / Decimal(100) * Decimal(str(booking.attrs['vat']))
 
-              tickets['tickets'].append({
+                total_items += booking.attrs['buyable_count']
+
+                tickets['tickets'].append({
                   "cart_item_title": booking.attrs['title'],
                   "cart_item_price": ascur(price_total),
                   "cart_item_count": len(booking.attrs['to_redeem']),
                   "booking_uid": booking.attrs['uid'],
                   "cart_item_original_price": "",
                   "order_created_date": created_date,
-                  "to_redeem": booking.attrs['to_redeem']
+                  "to_redeem": booking.attrs['to_redeem'],
+                  "is_event": is_event
                 })
 
-            tickets["total_tickets"] = total_items
+                tickets["total_tickets"] = total_items
         except:
             raise
             return tickets
