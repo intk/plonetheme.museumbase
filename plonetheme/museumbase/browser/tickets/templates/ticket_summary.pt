@@ -64,9 +64,9 @@
                           <p i18n:translate="" tal:condition="python: context.language == 'en' and not is_event">This ticket is valid until one year after the date of purchase</p>
                           <p i18n:translate="" tal:condition="python: context.language == 'nl' and not is_event">Dit ticket is geldig tot één jaar na de aankoopdatum.</p>
                           <p i18n:translate="" tal:condition="python: context.language == 'en'">This ticket is not redeemable for cash and will be scanned at the entrance of the museum</p>
-                          <p i18n:translate="" tal:condition="python: context.language == 'nl'">Dit ticket is niet inwisselbaar voor geld en wordt gescand bij de entree</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'nl'">Dit ticket is niet inwisselbaar voor geld en wordt gescand bij de Entree.</p>
                           <p i18n:translate="" tal:condition="python: context.language == 'en'">The general conditions for visitors apply to this e-ticket. See: www.teylersmuseum.nl</p>
-                          <p i18n:translate="" tal:condition="python: context.language == 'nl'">De algemene bezoekersvoorwaarden zijn voan toepassing op dit e-ticket. Zie: www.teylersmuseum.nl</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'nl'">De algemene bezoekersvoorwaarden zijn van toepassing op dit e-ticket. Zie: www.teylersmuseum.nl.</p>
                           <p i18n:translate="" tal:condition="python: context.language == 'en' and not is_event">For extradorinary exhibitions, Teylers Museum may require a small fee to cover the costs for the exhibition. This fee is not included in this e-ticket. We kindly ask you to pay the fee at the cash desk when you arrive. Most exhibitions can be visited without charge. In case a small fee is required, this will always be clearly stated at our website.</p>
                           <p i18n:translate="" tal:condition="python: context.language == 'nl' and not is_event">Voor bijzondere tentoonstellingen kan het zijn dat Teylers Museum een kleine toeslag vraagt om de kosten van de tentoonstelling te dekken. Deze toeslag is niet verrekend in dit e-ticket en kunt u aan de kassa in het museum betalen. De meeste tentoonstellingen kunt u zonder toeslag bezoeken. Een eventuele kleine toeslag wordt altijd duidelijk vermeld op de website in het prijzenoverzicht.</p>
                         </div>
@@ -101,7 +101,7 @@
                     <p>
                       <span 18n:translate="" tal:condition="python: context.language == 'nl'">Dinsdag t/m vrijdag: 10.00 - 17.00 uur. Zaterdag, zondag, feestdag: 11.00 - 17.00 uur. Let op onze aangepaste openingstijden tijdens feestdagen. Kijk voor actuele openingstijden op:</span>
                       <br/>
-                      <span 18n:translate="" tal:condition="python: context.language == 'nl'">http://www.teylersmuseum.nl/nl/bezoek-het-museum/praktische-informatie/openingstijden-en-prijzen</span>
+                      <span 18n:translate="" tal:condition="python: context.language == 'nl'">http://www.teylersmuseum.nl/nl/bezoek-het-museum/praktische-informatie/openingstijden-en-prijzen.</span>
                       <span 18n:translate="" tal:condition="python: context.language == 'en'">Tuesdays to Fridays: 10 a.m - 5 p.m. Saturdays, Sundays, public holidays: 11 a.m. – 5 p.m. Please note that during public holidays, opening hours may differ from the regular opening times. Please check the opening hours before your visit on:</span>
                       <span 18n:translate="" tal:condition="python: context.language == 'en'">http://www.teylersmuseum.nl/en/visiting-the-museum/practical-information/opening-hours-and-admission-fees</span>
                       
@@ -111,8 +111,9 @@
                     <h4 i18n:translate="" tal:condition="python: context.language == 'en'">How to find us</h4>
                     <h4 i18n:translate="" tal:condition="python: context.language == 'nl'">Bereikbaarheid en toegankelijkheid</h4>
                     <p i18n:translate="" tal:condition="python: context.language == 'en'">Teylers Museum is easy to reach by car and train. If you come by train: the museum is on a 10 minutes walk from Haarlem Central Station. Take the following route; Jansweg, Jansstraat, turn left into Korte Jansstraat, turn right into Bakenessergracht, straight on to the end, turn right at the S paarne River, Teylers Museum will be on your right. If you come by car: multi-storey carpark De Appelaar is located next to the museum.</p>
-                    <p i18n:translate="" tal:condition="python: context.language == 'nl'">Teylers Museum is goed te bereiken met de auto. Je kunt parkere in de nabijgelegen parkeergarage De Appelaar. Vanaf het Centraal Station in Haarlem lopend te bereiken (ca. 10 minuten) via de Jansweg, linksaf de Korte Jansstraat in, rechtsaf de Bakenessergracht aflopen tot aan het eind, bij het Spaarne slaat u rechtsaf. Teylers Museum is vervolgens aan uw rechterhand.</p>
-                  </div>
+                    <p i18n:translate="" tal:condition="python: context.language == 'nl' and not is_event">Teylers Museum is goed te bereiken met de auto. Je kunt parkeren in de nabijgelegen parkeergarage De Appelaar. Vanaf het Centraal Station Haarlem loop je in ongeveer 10 minuten naar het museum (via de Jansweg, linksaf de Korte Jansstraat in, rechtsaf de Bakenessergracht aflopen tot aan het einde van de straat, bij het Spaarne rechtsaf. Teylers Museum vind je aan je rechterhand).</p>
+                <p i18n:translate="" tal:condition="python: context.language == 'nl' and is_event">Teylers Museum is goed te bereiken met de auto. Je kunt parkeren in de nabijgelegen parkeergarage De Appelaar. Vanaf het Centraal Station Haarlem loop je in ongeveer 10 minuten naar het museum (via de Jansweg, linksaf de Korte Jansstraat in, rechtsaf de Bakenessergracht aflopen tot aan het einde van de straat, bij het Spaarne rechtsaf. Teylers Museum vind je aan je rechterhand).</p>  
+		</div>
                 </div>
                 <div class="clearfix"></div>
               </div>

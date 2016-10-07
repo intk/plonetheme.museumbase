@@ -68,7 +68,7 @@
               <tal:sameday tal:condition="python:context.start_date.date() == context.end_date.date()" i18n:translate="event_when_sameday">
                 <span tal:replace="python: toLocalizedTime(context.start_date.strftime('%d %B %Y'))" i18n:name="date">Start Date Time</span>
                 <span i18n:name="linebreak" />
-                ,
+                <tal:lg tal:condition="python: context.language == 'nl'">,</tal:lg>
                 <abbr i18n:name="starttime">
                   <span tal:content="python: toLocalizedTime(context.start_date, time_only=1)">Start Time</span>
                 </abbr >
@@ -82,8 +82,11 @@
             </p>
 
         </div>
-        <div id="parent-fieldname-text" tal:condition="python: view.is_ticket()" style="padding-top: 40px; padding-bottom: 0px !important;">
+        <div id="parent-fieldname-text" tal:condition="python: view.is_ticket() and context.language == 'nl'" style="padding-top: 40px; padding-bottom: 0px !important;">
           <p style="text-align: center;"><a href="@@cart" class="btn btn-inverse btn-large internal-link" target="_self" title="">KOOP KAARTEN</a></p>
+        </div>
+<div id="parent-fieldname-text" tal:condition="python: view.is_ticket() and context.language == 'en'" style="padding-top: 40px; padding-bottom: 0px !important;">
+          <p style="text-align: center;"><a href="@@cart" class="btn btn-inverse btn-large internal-link" target="_self" title="">BUY TICKETS</a></p>
         </div>
 
         <div id="parent-fieldname-text-details" tal:condition="python: context.portal_type == 'product'">
