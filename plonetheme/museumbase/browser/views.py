@@ -568,7 +568,12 @@ class SearchView(CommonBrowserView, Search):
     def getSearchFilters(self):
         searchFilters = []
         registry = getUtility(IRegistry)
-        searchFiltersRecord = registry['searchfilters.folders']
+
+        if getattr(self.context, 'language', 'nl') == "en":
+            searchFiltersRecord = ['fdf1c8ce1bca4b4ca29f3acd3eaa49b4', 'ae9b0411ccb94b9e9c963bf6ef6509bc', 'f0bced06b5dd4ff79317c91a006811ab', 'c0b8cd32a27d48e0814bf897ede32e04', '98adb7de37cc45159a36bd4fcd819a0a']
+        else:
+            searchFiltersRecord = registry['searchfilters.folders']
+
         if searchFiltersRecord:
             filters = list(searchFiltersRecord)
 
@@ -712,7 +717,8 @@ class ContentView(BrowserView):
     def getFormUrl(self):
         if self.context.portal_type in ["BookableEvent", "Bookable Event"]:
             limit_subscriptions = getattr(self.context, 'limit_subscriptions', '')
-            if limit_subscriptions == "0":
+
+            if limit_subscriptions in ["0", 0]:
                 return "sold_out"
 
             form_folder = None
