@@ -306,8 +306,9 @@
                                      </a>
                                    </h2>
                                    
-                                   <p tal:condition="python: item_type in ['Event', 'Exhibition', 'BookableEvent', 'Bookable Event']" class="item-dates">
-
+                                   <tal:is_event tal:condition="python: item_type in ['Event', 'Exhibition', 'BookableEvent', 'Bookable Event']"
+                                    tal:define="is_past python: context.restrictedTraverse('@@context_tools').isEventPastFolder(item)">
+                                   <p class="item-dates" tal:attributes="class python: 'item-dates past' if is_past else 'item-dates'">
                                       <tal:restrict tal:condition="python: str(item.start) != '' and str(item.end) != '' and item.start != None and item.end != None" i18n:domain="plonelocales">
                                         <tal:differentday tal:condition="python:not item.start.Date() == item.end.Date()" i18n:translate="event_when_differentday">
                                           <abbr i18n:name="startdate">
@@ -334,6 +335,7 @@
                                         </tal:sameday>
                                     </tal:restrict>
                                   </p>
+                                  </tal:is_event>
 
                                    <div class="description">
                                     <span tal:condition="python:item_description != ''" tal:replace="python:item_description"></span>

@@ -47,8 +47,9 @@
 <metal:content-core fill-slot="content-core">
     
     <metal:content-core define-macro="content-core">
-          <div id="parent-fieldname-text-dates" tal:condition="python: context.portal_type in ['Event', 'Exhibition', 'BookableEvent', 'Bookable Event']" tal:define="toLocalizedTime nocall:plone_view/toLocalizedTime;">
-            <p>
+          <div id="parent-fieldname-text-dates" tal:condition="python: context.portal_type in ['Event', 'Exhibition', 'BookableEvent', 'Bookable Event']" tal:define="toLocalizedTime nocall:plone_view/toLocalizedTime;
+                      is_past python: context.restrictedTraverse('@@context_tools').isEventPast(context)">
+            <p class="event-date" tal:attributes="class python: 'event-date past' if is_past else 'event-date'">
             
             <tal:restrict tal:condition="python: getattr(context, 'start_date', None) != None and getattr(context, 'end_date', None) != None">
               <tal:differentday tal:condition="python:not context.start_date.date() == context.end_date.date()" i18n:translate="event_when_differentday">

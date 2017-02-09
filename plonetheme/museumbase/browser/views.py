@@ -44,6 +44,10 @@ from Acquisition import aq_parent, aq_inner
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from decimal import Decimal
 
+from datetime import date
+from DateTime import DateTime
+import time
+
 SHOP_AVAILABLE = True
 
 try:
@@ -62,6 +66,43 @@ try:
     GETPAID_EXISTS = True
 except ImportError:
     GETPAID_EXISTS = False
+
+
+class ContextToolsView(BrowserView):
+
+    def isEventPastFolder(self, event):
+        """ Checks if the event is already past """
+        if event.portal_type != 'Event':
+            return False
+        else:
+            try:
+                t = DateTime(time.time())
+                if event.end is not None:
+                    end = DateTime(event.end)
+                    return end.year() < t.year() or (end.year() == t.year() and end.month() < t.month()) or(end.year() == t.year() and end.month() == t.month() and end.day() < t.day())
+                else:
+                    start = DateTime(event.start)
+                    return start.year() < t.year() or (start.year() == t.year() and start.month() < t.month()) or(start.year() == t.year() and start.month() == t.month() and start.day() < t.day())
+            except:
+                raise
+        return True
+
+    def isEventPast(self, event):
+        """ Checks if the event is already past """
+        if event.portal_type != 'Event':
+            return False
+        else:
+            try:
+                t = DateTime(time.time())
+                if event.end_date is not None:
+                    end = DateTime(event.end_date)
+                    return end.year() < t.year() or (end.year() == t.year() and end.month() < t.month()) or(end.year() == t.year() and end.month() == t.month() and end.day() < t.day())
+                else:
+                    start = DateTime(event.start_date)
+                    return start.year() < t.year() or (start.year() == t.year() and start.month() < t.month()) or(start.year() == t.year() and start.month() == t.month() and start.day() < t.day())
+            except:
+                raise
+        return True
 
 
 class CommonBrowserView(BrowserView):

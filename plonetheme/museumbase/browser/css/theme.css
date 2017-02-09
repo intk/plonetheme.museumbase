@@ -14996,3 +14996,10 @@ body.template-edit #form-widgets-ITicketsBehavior-barcode_list {
     padding-right: 0px !important; 
     line-height: 10px !important;
 }
+
+.event-date.past,
+.item-dates.past {
+    text-decoration: line-through !important;
+}
+
+

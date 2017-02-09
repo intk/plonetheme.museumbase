@@ -56,7 +56,9 @@
                       <span tal:content="python: view.trimText(item_description, 200, strip=False)"></span>
                     </p>
 
-                    <p tal:condition="python: item_type in ['Event', 'Exhibition', 'BookableEvent', 'Bookable Event']" class="item-dates">
+                    <tal:is_event tal:condition="python: item_type in ['Event', 'Exhibition', 'BookableEvent', 'Bookable Event']"
+                     tal:define="is_past python: context.restrictedTraverse('@@context_tools').isEventPast(item)">
+                    <p class="item-dates" tal:attributes="class python: 'item-dates past' if is_past else 'item-dates'">
                       <tal:restrict tal:condition="python: item.start != None and item.end != None">
                     <tal:differentday tal:condition="python:not item.start.Date() == item.end.Date()" i18n:translate="event_when_differentday">
                       <abbr i18n:name="startdate">
@@ -83,6 +85,7 @@
                     </tal:sameday>
                   </tal:restrict>
                   </p>
+                  </tal:is_event>
 
                   <p tal:condition="item_is_buyable">
                       <tal:buyable-info tal:define="price python:view.getPrice(item_obj)" tal:condition="python: price != None">

@@ -24,6 +24,12 @@
       layer=".interfaces.IThemeSpecific"
     />
 
+    <browser:page
+        name="context_tools"
+        for="*"
+        class=".views.ContextToolsView"
+        permission="zope2.View"
+    />
 
     <browser:resourceDirectory
       name="plonetheme.museumbase.fonts"
