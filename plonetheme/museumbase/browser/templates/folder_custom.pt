@@ -57,8 +57,10 @@
                     </p>
 
                     <tal:is_event tal:condition="python: item_type in ['Event', 'Exhibition', 'BookableEvent', 'Bookable Event']"
-                     tal:define="is_past python: context.restrictedTraverse('@@context_tools').isEventPast(item)">
+                     tal:define="is_past python: context.restrictedTraverse('@@context_tools').isEventPastFolder(item)">
+                    
                     <p class="item-dates" tal:attributes="class python: 'item-dates past' if is_past else 'item-dates'">
+                      
                       <tal:restrict tal:condition="python: item.start != None and item.end != None">
                     <tal:differentday tal:condition="python:not item.start.Date() == item.end.Date()" i18n:translate="event_when_differentday">
                       <abbr i18n:name="startdate">

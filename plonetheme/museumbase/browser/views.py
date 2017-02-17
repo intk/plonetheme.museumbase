@@ -72,7 +72,7 @@ class ContextToolsView(BrowserView):
 
     def isEventPastFolder(self, event):
         """ Checks if the event is already past """
-        if event.portal_type != 'Event':
+        if event.portal_type not in ['Event', 'Bookable Event', 'BookableEvent']:
             return False
         else:
             try:
@@ -89,7 +89,7 @@ class ContextToolsView(BrowserView):
 
     def isEventPast(self, event):
         """ Checks if the event is already past """
-        if event.portal_type != 'Event':
+        if event.portal_type not in ['Event', 'Bookable Event', 'BookableEvent']:
             return False
         else:
             try:

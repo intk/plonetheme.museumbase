@@ -1,9 +1,15 @@
 
-<div id="cart"
+<div id="cart" style="page-break-after: avoid !important;"
      i18n:domain="plonetheme.museumbase"
      tal:define="tickets view/get_tickets;
                  currency view/currency;
                  order_id python: request.get('order_id', 0);">
+
+  <style>
+    html {
+      height: 99% !important;
+    }
+  </style>
 
   <tal:cart
     tal:define="orders python: view.get_etickets(order_id);
@@ -60,8 +66,8 @@
                       <td rowspan="5" class="ticket-info" tal:define="qr_code python: view.get_qr_code(booking_uid_count)" style="vertical-align: top; padding-top: 14px;">
 
                         <div class="info-div">
-                          <p i18n:translate="" tal:condition="python: context.language == 'en' and not is_event">This ticket is valid until one year after the date of purchase</p>
-                          <p i18n:translate="" tal:condition="python: context.language == 'nl' and not is_event">Dit ticket is geldig tot één jaar na de aankoopdatum.</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'en' and not is_event">This ticket is valid during the Watteau exhibition: from February 1st until May 14.</p>
+                          <p i18n:translate="" tal:condition="python: context.language == 'nl' and not is_event">Dit ticket is geldig tijdens de tentoonstelling Watteau: van 1 februari t/m 14 mei 2017.</p>
                           <p i18n:translate="" tal:condition="python: context.language == 'en'">This ticket is not redeemable for cash and will be scanned at the entrance of the museum</p>
                           <p i18n:translate="" tal:condition="python: context.language == 'nl'">Dit ticket is niet inwisselbaar voor geld en wordt gescand bij de Entree.</p>
                           <p i18n:translate="" tal:condition="python: context.language == 'en'">The general conditions for visitors apply to this e-ticket. See: www.teylersmuseum.nl</p>

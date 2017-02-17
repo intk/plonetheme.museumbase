@@ -15002,4 +15002,100 @@ body.template-edit #form-widgets-ITicketsBehavior-barcode_list {
     text-decoration: line-through !important;
 }
 
+#viewlet-cookiepolicy {
+    background: rgb(40, 40, 40);
+    background: rgba(0, 0, 0, 0.8);
+    background-image: none;
+    border-radius: 0 0 0 0;
+    bottom: 0;
+    box-shadow: 0 0 12px -2px #808080;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 7px 1%;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    min-height: 30px;
+}
+
+#tlspu_cookiepolicy_message a,
+#tlspu_cookiepolicy_message a:hover,
+#tlspu_cookiepolicy_message a:active,
+#tlspu_cookiepolicy_message a:focus,
+#tlspu_cookiepolicy_message a:visited {
+    color: #ffffff !important;
+    text-decoration: underline;
+}
+
+#tlspu_cookiepolicy_form {
+    position: absolute;
+    right: 13px;
+    bottom: 5px;
+    width: 200px;
+}
+
+#tlspu_cookiepolicy_agreed {
+    display: none;
+}
+
+label[for="tlspu_cookiepolicy_agreed"] {
+    display: none;
+}
+
+#tlspu_cookiepolicy_button {
+    color: #FFF;
+    background-color: black;
+    border-radius: 9px;
+    moz-border-radius: 9px;
+    webkit-border-radius: 9px;
+    border: medium none;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 0;
+}
+
+#tlspu_cookiepolicy_button {
+    padding: 2px 8px 2px 8px;
+    margin-left: 16px;
+}
+
+#tlspu_cookiepolicy_title {
+    color: #FFFFFF;
+    text-align: center;
+    display: none;
+}
+
+#tlspu_cookiepolicy_title {
+    padding: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #404040;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+#tlspu_cookiepolicy_message {
+    padding-right: 90px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: normal;
+    text-align: center;
+}
+
+#tlspu_cookiepolicy_message, #tlspu_cookiepolicy_form {
+    color: #FFFFFF;
+}
+
+body.portaltype-portlet-page div.title-description-wrapper {
+    display: none !important;
+}
+
+body #parent-fieldname-text i.glyphicon.link-external {
+    display: none !important;
+}
+
+
+
 

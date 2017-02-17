@@ -83,10 +83,10 @@
             </p>
 
         </div>
-        <div id="parent-fieldname-text" tal:condition="python: view.is_ticket() and context.language == 'nl'" style="padding-top: 40px; padding-bottom: 0px !important;">
+        <div id="parent-fieldname-text" tal:condition="python: view.is_ticket() and context.language == 'nl'" style="padding-top: 40px; padding-bottom: 0px !important;" tal:on-error="nothing">
           <p style="text-align: center;"><a href="@@cart" class="btn btn-inverse btn-large internal-link" target="_self" title="">KOOP KAARTEN</a></p>
         </div>
-<div id="parent-fieldname-text" tal:condition="python: view.is_ticket() and context.language == 'en'" style="padding-top: 40px; padding-bottom: 0px !important;">
+<div id="parent-fieldname-text" tal:condition="python: view.is_ticket() and context.language == 'en'" style="padding-top: 40px; padding-bottom: 0px !important;" tal:on-error="nothing">
           <p style="text-align: center;"><a href="@@cart" class="btn btn-inverse btn-large internal-link" target="_self" title="">BUY TICKETS</a></p>
         </div>
 
