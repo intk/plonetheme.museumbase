@@ -9,6 +9,10 @@
     html {
       height: 99% !important;
     }
+
+    #ticketBarcode > div:last-child {
+      margin-left: -20px !important;
+    }
   </style>
 
   <tal:cart
@@ -25,6 +29,7 @@
                     price python: order['cart_item_price'];
                     count python: order['cart_item_count'];
                     is_event python: order['is_event'];
+                    ticket_info python: order.get('ticket_info', '');
                     to_redeem python: order['to_redeem'];
                     original_price python: order['cart_item_original_price'];
                     booking_uid python: order['booking_uid'];
@@ -66,19 +71,25 @@
                       <td rowspan="5" class="ticket-info" tal:define="qr_code python: view.get_qr_code(booking_uid_count)" style="vertical-align: top; padding-top: 14px;">
 
                         <div class="info-div">
-                          <p i18n:translate="" tal:condition="python: context.language == 'en' and not is_event">This ticket is valid during the Watteau exhibition: from February 1st until May 14.</p>
-                          <p i18n:translate="" tal:condition="python: context.language == 'nl' and not is_event">Dit ticket is geldig tijdens de tentoonstelling Watteau: van 1 februari t/m 14 mei 2017.</p>
-                          <p i18n:translate="" tal:condition="python: context.language == 'en'">This ticket is not redeemable for cash and will be scanned at the entrance of the museum</p>
-                          <p i18n:translate="" tal:condition="python: context.language == 'nl'">Dit ticket is niet inwisselbaar voor geld en wordt gescand bij de Entree.</p>
-                          <p i18n:translate="" tal:condition="python: context.language == 'en'">The general conditions for visitors apply to this e-ticket. See: www.teylersmuseum.nl</p>
-                          <p i18n:translate="" tal:condition="python: context.language == 'nl'">De algemene bezoekersvoorwaarden zijn van toepassing op dit e-ticket. Zie: www.teylersmuseum.nl.</p>
-                          <p i18n:translate="" tal:condition="python: context.language == 'en' and not is_event">For extradorinary exhibitions, Teylers Museum may require a small fee to cover the costs for the exhibition. This fee is not included in this e-ticket. We kindly ask you to pay the fee at the cash desk when you arrive. Most exhibitions can be visited without charge. In case a small fee is required, this will always be clearly stated at our website.</p>
-                          <p i18n:translate="" tal:condition="python: context.language == 'nl' and not is_event">Voor bijzondere tentoonstellingen kan het zijn dat Teylers Museum een kleine toeslag vraagt om de kosten van de tentoonstelling te dekken. Deze toeslag is niet verrekend in dit e-ticket en kunt u aan de kassa in het museum betalen. De meeste tentoonstellingen kunt u zonder toeslag bezoeken. Een eventuele kleine toeslag wordt altijd duidelijk vermeld op de website in het prijzenoverzicht.</p>
+                          <tal:no_ticket_info tal:condition="not:ticket_info">
+                            <p i18n:translate="" tal:condition="python: context.language == 'en' and not is_event">This ticket is valid during the Watteau exhibition: from February 1st until May 14.</p>
+                            <p i18n:translate="" tal:condition="python: context.language == 'nl' and not is_event">Dit ticket is geldig tijdens de tentoonstelling Watteau: van 1 februari t/m 14 mei 2017.</p>
+                            <p i18n:translate="" tal:condition="python: context.language == 'en'">This ticket is not redeemable for cash and will be scanned at the entrance of the museum</p>
+                            <p i18n:translate="" tal:condition="python: context.language == 'nl'">Dit ticket is niet inwisselbaar voor geld en wordt gescand bij de Entree.</p>
+                            <p i18n:translate="" tal:condition="python: context.language == 'en'">The general conditions for visitors apply to this e-ticket. See: www.teylersmuseum.nl</p>
+                            <p i18n:translate="" tal:condition="python: context.language == 'nl'">De algemene bezoekersvoorwaarden zijn van toepassing op dit e-ticket. Zie: www.teylersmuseum.nl.</p>
+                            <p i18n:translate="" tal:condition="python: context.language == 'en' and not is_event">For extradorinary exhibitions, Teylers Museum may require a small fee to cover the costs for the exhibition. This fee is not included in this e-ticket. We kindly ask you to pay the fee at the cash desk when you arrive. Most exhibitions can be visited without charge. In case a small fee is required, this will always be clearly stated at our website.</p>
+                            <p i18n:translate="" tal:condition="python: context.language == 'nl' and not is_event">Voor bijzondere tentoonstellingen kan het zijn dat Teylers Museum een kleine toeslag vraagt om de kosten van de tentoonstelling te dekken. Deze toeslag is niet verrekend in dit e-ticket en kunt u aan de kassa in het museum betalen. De meeste tentoonstellingen kunt u zonder toeslag bezoeken. Een eventuele kleine toeslag wordt altijd duidelijk vermeld op de website in het prijzenoverzicht.</p>
+                          </tal:no_ticket_info>
+                          <tal:ticket_info tal:condition="ticket_info">
+                            <p tal:content="structure python: ticket_info.output_relative_to(context.view)"></p>
+                          </tal:ticket_info>
+
                         </div>
                       </td>
 
                     </tr>
-<tr tal:condition="python:is_event">
+                  <tr tal:condition="python:is_event">
                       <td><h3 i18n:translate="">Datum</h3></td><td><span tal:content="event_date">Date</span></td>
                     </tr>
                     <tr>

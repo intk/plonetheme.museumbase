@@ -725,11 +725,15 @@ class TicketView(CartView):
             customer_name = "%s %s" %(first_name, last_name)
             tickets['customer'] = customer_name
             tickets['event_date'] = ""
+
+            ticket_info = ""
+
             if b_uids:
                 b_uid = b_uids[0]
                 b_obj = uuidToObject(b_uid)
                 b_parent = b_obj.aq_parent
                 if b_parent.portal_type == "Event":
+                    
                     start_date = b_parent.start_date.date()
                     end_date = b_parent.end_date.date()
                     formatted_date = ""
@@ -738,12 +742,23 @@ class TicketView(CartView):
                     else:
                         formatted_date = "%s - %s" %(self.toLocalizedTime(b_parent.start_date.strftime('%d %B %Y')), self.toLocalizedTime(b_parent.end_date.strftime('%d %B %Y')))
                     tickets["event_date"] = formatted_date
+
+                    contents = b_parent.getFolderContents({"portal_type": "Document", "Title":"ticket-info"})
+                    if len(contents) > 0:
+                        ticket_info_brain = contents[0]
+                        ticket_info_obj = ticket_info_brain.getObject()
+                        if hasattr(ticket_info_obj, "text"):
+                            ticket_info = ticket_info_obj.text
+                    else:
+                        ticket_info = ""
+
             
             for booking in bookings:
                 # Check if booking is an event
                 is_event = False
                 buyable_uid = booking.attrs['buyable_uid']
                 b_brain = uuidToCatalogBrain(buyable_uid)
+
                 if "event" in b_brain.Subject:
                     is_event = True
 
@@ -760,7 +775,8 @@ class TicketView(CartView):
                   "cart_item_original_price": "",
                   "order_created_date": created_date,
                   "to_redeem": booking.attrs['to_redeem'],
-                  "is_event": is_event
+                  "is_event": is_event,
+                  "ticket_info": ticket_info
                 })
 
                 tickets["total_tickets"] = total_items
